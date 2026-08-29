@@ -1,0 +1,497 @@
+<title>Arquitectura Palacio Real</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,560;9..144,680&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #F7F5F0;
+    --surface: #FFFFFF;
+    --surface-sunk: #F0ECE2;
+    --ink: #1A1D29;
+    --ink-soft: #4C4F5C;
+    --ink-faint: #7A7C86;
+    --hair: #E2DCCE;
+    --navy: #0E1B33;
+    --gold: #A9822C;
+    --gold-bright: #C79A3A;
+    --t-data: #566A80;
+    --t-ml: #2E6E6A;
+    --t-opt: #8A5A2B;
+    --t-gen: #6C4B8C;
+    --danger: #A6392F;
+    --danger-bg: #F6E7E3;
+    --shadow: 0 1px 2px rgba(20,22,35,.04), 0 8px 28px -14px rgba(20,22,35,.18);
+    --maxw: 1080px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0B1220;
+      --surface: #121B2C;
+      --surface-sunk: #0E1626;
+      --ink: #ECEAE2;
+      --ink-soft: #B4B7C2;
+      --ink-faint: #808593;
+      --hair: #26324a;
+      --navy: #0A1526;
+      --gold: #D0A445;
+      --gold-bright: #E0B85C;
+      --t-data: #8FA6BF;
+      --t-ml: #5FB5AE;
+      --t-opt: #D69A5C;
+      --t-gen: #B191D6;
+      --danger: #E08479;
+      --danger-bg: #2C1A17;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 34px -16px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0B1220;
+    --surface: #121B2C;
+    --surface-sunk: #0E1626;
+    --ink: #ECEAE2;
+    --ink-soft: #B4B7C2;
+    --ink-faint: #808593;
+    --hair: #26324a;
+    --navy: #0A1526;
+    --gold: #D0A445;
+    --gold-bright: #E0B85C;
+    --t-data: #8FA6BF;
+    --t-ml: #5FB5AE;
+    --t-opt: #D69A5C;
+    --t-gen: #B191D6;
+    --danger: #E08479;
+    --danger-bg: #2C1A17;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 34px -16px rgba(0,0,0,.6);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 560; text-wrap: balance; line-height: 1.15; }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: .72rem; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--gold); margin: 0 0 18px;
+  }
+
+  /* ---------- header ---------- */
+  header {
+    background: var(--navy);
+    color: #EFEAdd;
+    padding: 68px 0 60px;
+    border-bottom: 3px solid var(--gold);
+  }
+  header .eyebrow { color: var(--gold-bright); }
+  header h1 { margin: 0; font-size: clamp(2.1rem, 5vw, 3.3rem); color: #F6F1E4; }
+  header .dek {
+    margin: 20px 0 0; max-width: 62ch;
+    font-size: 1.08rem; color: #C6CBD9;
+  }
+  header .meta {
+    margin-top: 26px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.14);
+    font-family: "IBM Plex Mono", monospace; font-size: .8rem; letter-spacing: .04em;
+    color: #9DA6B8; display: flex; flex-wrap: wrap; gap: 8px 24px;
+  }
+
+  section { padding: 58px 0; border-bottom: 1px solid var(--hair); }
+  section:last-of-type { border-bottom: 0; }
+  .section-head { margin-bottom: 34px; }
+  .section-head h2 { margin: 0; font-size: clamp(1.5rem, 3vw, 2rem); }
+  .section-head p { margin: 10px 0 0; color: var(--ink-soft); max-width: 64ch; }
+
+  /* ---------- hero flow ---------- */
+  .flow {
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: stretch;
+    background: var(--surface); border: 1px solid var(--hair); border-radius: 14px;
+    padding: 22px; box-shadow: var(--shadow); overflow-x: auto;
+  }
+  .flow-node {
+    flex: 1 1 130px; min-width: 128px;
+    border: 1px solid var(--hair); border-radius: 10px;
+    background: var(--surface-sunk);
+    padding: 14px 13px 13px; position: relative;
+    border-top: 3px solid var(--tier, var(--t-data));
+  }
+  .flow-node .n {
+    font-family: "IBM Plex Mono", monospace; font-size: .7rem;
+    color: var(--ink-faint); letter-spacing: .1em;
+  }
+  .flow-node .label { display: block; margin-top: 4px; font-weight: 600; font-size: .93rem; }
+  .flow-node .sub { display: block; margin-top: 3px; font-size: .76rem; color: var(--ink-soft); line-height: 1.45; }
+  .flow-node[data-tier="data"] { --tier: var(--t-data); }
+  .flow-node[data-tier="ml"] { --tier: var(--t-ml); }
+  .flow-node[data-tier="opt"] { --tier: var(--t-opt); }
+  .flow-node[data-tier="gen"] { --tier: var(--t-gen); }
+  .flow-arrow { align-self: center; color: var(--gold); font-weight: 700; font-size: 1.1rem; flex: 0 0 auto; }
+  .flow-legend {
+    display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 16px;
+    font-size: .78rem; color: var(--ink-soft);
+  }
+  .flow-legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .dot { width: 9px; height: 9px; border-radius: 3px; display: inline-block; }
+
+  .guardrail {
+    margin-top: 14px; display: flex; gap: 12px; align-items: flex-start;
+    background: var(--danger-bg); border: 1px solid var(--danger);
+    border-left-width: 4px; border-radius: 8px; padding: 14px 16px;
+  }
+  .guardrail strong { color: var(--danger); }
+  .guardrail .ico { color: var(--danger); font-weight: 700; font-family: "IBM Plex Mono", monospace; flex: 0 0 auto; }
+  .guardrail p { margin: 0; font-size: .9rem; color: var(--ink-soft); }
+
+  /* ---------- stages ---------- */
+  .stages { display: flex; flex-direction: column; }
+  .stage {
+    display: grid; grid-template-columns: 72px 1fr; gap: 24px;
+    padding: 26px 0; border-top: 1px solid var(--hair);
+  }
+  .stage:first-child { border-top: 0; }
+  .stage-num {
+    font-family: "Fraunces", serif; font-size: 2rem; font-weight: 680;
+    color: var(--gold); line-height: 1; padding-top: 2px;
+    border-right: 2px solid var(--gold); padding-right: 0; text-align: left;
+  }
+  .stage h3 { margin: 0 0 4px; font-size: 1.24rem; }
+  .stage .role {
+    font-family: "IBM Plex Mono", monospace; font-size: .72rem; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--ink-faint);
+  }
+  .stage .desc { margin: 12px 0 14px; color: var(--ink-soft); max-width: 60ch; }
+  .comp-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+  .comp {
+    background: var(--surface); border: 1px solid var(--hair); border-radius: 9px;
+    padding: 11px 13px; flex: 1 1 220px; box-shadow: var(--shadow);
+  }
+  .comp .cname { font-family: "IBM Plex Mono", monospace; font-size: .82rem; font-weight: 500; color: var(--ink); }
+  .comp .cdesc { margin-top: 3px; font-size: .82rem; color: var(--ink-soft); line-height: 1.5; }
+  .handoff {
+    margin-top: 14px; font-family: "IBM Plex Mono", monospace; font-size: .76rem;
+    color: var(--ink-faint);
+  }
+  .handoff b { color: var(--t-ml); font-weight: 500; }
+
+  /* ---------- tables ---------- */
+  .tbl-scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--hair); vertical-align: top; }
+  th {
+    font-family: "IBM Plex Mono", monospace; font-size: .72rem; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--ink-faint); font-weight: 500;
+    background: var(--surface-sunk);
+  }
+  td:first-child { font-weight: 600; white-space: nowrap; }
+  tbody tr:last-child td { border-bottom: 0; }
+
+  /* ---------- stack ---------- */
+  .stack { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .stack-card { background: var(--surface); border: 1px solid var(--hair); border-radius: 11px; padding: 18px; box-shadow: var(--shadow); }
+  .stack-card h3 { margin: 0 0 10px; font-size: .95rem; font-family: "IBM Plex Sans", sans-serif; font-weight: 600; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font-family: "IBM Plex Mono", monospace; font-size: .76rem;
+    background: var(--surface-sunk); border: 1px solid var(--hair);
+    border-radius: 6px; padding: 4px 9px; color: var(--ink-soft);
+  }
+
+  .note {
+    font-size: .82rem; color: var(--ink-faint); margin-top: 14px;
+    font-style: italic;
+  }
+  footer {
+    padding: 40px 0 60px; color: var(--ink-faint);
+    font-family: "IBM Plex Mono", monospace; font-size: .78rem;
+  }
+  @media (max-width: 620px) {
+    .stage { grid-template-columns: 44px 1fr; gap: 16px; }
+    .stage-num { font-size: 1.5rem; }
+    header { padding: 48px 0 40px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .flow-node { transition: transform .15s ease; }
+    .flow-node:hover { transform: translateY(-2px); }
+  }
+</style>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Proyecto Integrador · Primer seguimiento</p>
+    <h1>Arquitectura de la solución</h1>
+    <p class="dek">
+      Del histórico de sesiones de juego a una decisión explicada de recompensa por
+      cliente: dos modelos de Machine Learning, un optimizador con restricción de
+      presupuesto y una capa de IA generativa, con juego responsable como límite duro.
+    </p>
+    <div class="meta">
+      <span>Casino Palacio Real</span>
+      <span>Datos simulados · 100 000 sesiones · 888 clientes</span>
+      <span>28 · 08 · 2026</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Recorrido de extremo a extremo</h2>
+      <p>Seis etapas encadenadas. El dato entra desde SQL Server y sale como una
+        ficha accionable en la app; el nivel de riesgo actúa como filtro antes de
+        la optimización.</p>
+    </div>
+
+    <div class="flow">
+      <div class="flow-node" data-tier="data">
+        <span class="n">01</span><span class="label">Fuente</span>
+        <span class="sub">SQL Server · FctPlayerSession + modelo estrella</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node" data-tier="data">
+        <span class="n">02</span><span class="label">ETL + features</span>
+        <span class="sub">Tabla analítica: 1 fila por cliente</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node" data-tier="ml">
+        <span class="n">03</span><span class="label">Modelos</span>
+        <span class="sub">Riesgo (Bajo/Medio/Alto) · Respuesta P(0–1)</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node" data-tier="opt">
+        <span class="n">04</span><span class="label">Optimización</span>
+        <span class="sub">Valor esperado − costo ≤ presupuesto</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node" data-tier="gen">
+        <span class="n">05</span><span class="label">IA generativa</span>
+        <span class="sub">Explica el score · redacta oferta y mensaje · RAG</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node" data-tier="gen">
+        <span class="n">06</span><span class="label">Entrega</span>
+        <span class="sub">App Streamlit: tablero + demo + chat</span>
+      </div>
+    </div>
+
+    <div class="flow-legend">
+      <span><span class="dot" style="background:var(--t-data)"></span> Datos e ingesta</span>
+      <span><span class="dot" style="background:var(--t-ml)"></span> Machine Learning</span>
+      <span><span class="dot" style="background:var(--t-opt)"></span> Optimización</span>
+      <span><span class="dot" style="background:var(--t-gen)"></span> IA generativa</span>
+    </div>
+
+    <div class="guardrail">
+      <span class="ico">!</span>
+      <p><strong>Guardrail de juego responsable.</strong> Un cliente clasificado como
+        riesgo <b>Alto</b> no entra al optimizador (etapa 4) y la capa generativa
+        (etapa 5) no produce oferta para él: se genera una nota de derivación al
+        protocolo de juego responsable. La ética es una regla del sistema, no una
+        decisión del modelo.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Las seis etapas en detalle</h2>
+      <p>Cada etapa entrega un artefacto concreto y versionado a la siguiente.</p>
+    </div>
+
+    <div class="stages">
+
+      <div class="stage">
+        <div class="stage-num">1</div>
+        <div>
+          <p class="role">Fuente de datos</p>
+          <h3>SQL Server — <span class="mono">CasinoPalacioReal</span></h3>
+          <p class="desc">Tabla de hechos de sesiones más un modelo estrella de
+            dimensiones. La lógica de features vive en vistas SQL para que sea
+            auditable sin ejecutar Python.</p>
+          <div class="comp-grid">
+            <div class="comp"><div class="cname">dbo.FctPlayerSession</div><div class="cdesc">100 000 sesiones · cliente, máquina, tiempo, apuestas, resultado, puntos, comps</div></div>
+            <div class="comp"><div class="cname">DimCliente · DimMaquina · DimSala · DimCalendario …</div><div class="cdesc">Modelo estrella para enriquecer y segmentar</div></div>
+            <div class="comp"><div class="cname">vw_FeaturesCliente · vw_ClientesScoring</div><div class="cdesc">Tabla analítica y baseline por reglas, en SQL</div></div>
+          </div>
+          <p class="handoff">entrega → <b>vw_FeaturesCliente</b> (888 filas)</p>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-num">2</div>
+        <div>
+          <p class="role">ETL y construcción de features</p>
+          <h3>De sesiones a un vector por cliente</h3>
+          <p class="desc">Extracción por SQLAlchemy + pyodbc (autenticación de
+            Windows). Si no hay conexión, <em>fallback</em> al CSV y las features se
+            reconstruyen en pandas con la misma lógica. Partición train/test
+            <strong>temporal</strong>.</p>
+          <div class="comp-grid">
+            <div class="comp"><div class="cname">data/extract.py</div><div class="cdesc">SQL → Parquet · fallback a CSV</div></div>
+            <div class="comp"><div class="cname">features/build.py</div><div class="cdesc">Imputación, acotado de outliers (p1–p99), encoding, split temporal</div></div>
+          </div>
+          <p class="handoff">entrega → <b>data/processed/abt_cliente.parquet</b></p>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-num">3</div>
+        <div>
+          <p class="role">Modelos de Machine Learning</p>
+          <h3>Riesgo y probabilidad de respuesta</h3>
+          <p class="desc">Dos modelos independientes sobre la misma tabla analítica.
+            Gradient Boosting para datos tabulares; la probabilidad de respuesta se
+            <strong>calibra</strong> porque el optimizador necesita probabilidades
+            reales, no solo un ranking.</p>
+          <div class="comp-grid">
+            <div class="comp"><div class="cname">models/risk.py</div><div class="cdesc">IsolationForest (perfil atípico) + GradientBoosting → Bajo / Medio / Alto</div></div>
+            <div class="comp"><div class="cname">models/response.py</div><div class="cdesc">GradientBoosting + CalibratedClassifierCV → P(respuesta) ∈ [0,1] + decil</div></div>
+          </div>
+          <p class="handoff">entrega → <b>NivelRiesgo, RiesgoScore, ProbRespuesta</b> por cliente</p>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-num">4</div>
+        <div>
+          <p class="role">Optimización</p>
+          <h3>Asignación de recompensas bajo presupuesto</h3>
+          <p class="desc">Para cada cliente elegible y cada tipo de recompensa se
+            calcula <span class="mono">P(respuesta) · uplift_valor − costo</span>.
+            Se ordena por eficiencia y se selecciona tipo mochila hasta agotar el
+            presupuesto. Baseline de comparación: las reglas de segmento actuales.</p>
+          <div class="comp-grid">
+            <div class="comp"><div class="cname">optimization/allocate.py</div><div class="cdesc">Ranking por valor esperado / costo · corte por presupuesto · topes por segmento</div></div>
+            <div class="comp"><div class="cname">Restricciones</div><div class="cdesc">Riesgo Alto: excluido · Riesgo Medio: solo recompensa baja/media</div></div>
+          </div>
+          <p class="handoff">entrega → <b>plan_asignacion.csv</b> (cliente → recompensa)</p>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-num">5</div>
+        <div>
+          <p class="role">IA generativa · bloques 2 y 3 del diploma</p>
+          <h3>Explicación, oferta y asistente</h3>
+          <p class="desc">Un LLM traduce los scores y sus contribuciones a lenguaje
+            claro, redacta la comunicación personalizada, y responde consultas del
+            analista con RAG anclado en las políticas internas.</p>
+          <div class="comp-grid">
+            <div class="comp"><div class="cname">genai/explainer.py</div><div class="cdesc">Score + contribuciones → explicación + oferta + mensaje (JSON). Guardrail para riesgo Alto</div></div>
+            <div class="comp"><div class="cname">genai/rag.py</div><div class="cdesc">Chunking → embeddings → índice vectorial → respuesta citada. Fallback explícito si no hay contexto</div></div>
+            <div class="comp"><div class="cname">rag/politicas/</div><div class="cdesc">Política de recompensas · protocolo de juego responsable</div></div>
+          </div>
+          <p class="handoff">entrega → <b>fichas explicadas</b> + respuestas del chat</p>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-num">6</div>
+        <div>
+          <p class="role">Entrega</p>
+          <h3>App de demo</h3>
+          <p class="desc">Una demo que el jurado puede operar en vivo: el tablero
+            muestra el resultado de la campaña frente al baseline; la ficha por
+            cliente muestra features, scores y textos generados.</p>
+          <div class="comp-grid">
+            <div class="comp"><div class="cname">app/streamlit_app.py</div><div class="cdesc">Tablero de cartera · ficha por cliente · pestaña de chat con el asistente</div></div>
+          </div>
+          <p class="handoff">entrega → <b>demo funcional</b> + tablero de resultados</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Decisiones técnicas</h2>
+      <p>Qué se eligió, por qué, y qué alternativa se descartó.</p>
+    </div>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Decisión</th><th>Justificación</th><th>Alternativa descartada</th></tr></thead>
+        <tbody>
+          <tr><td>Features en vistas SQL</td><td>Auditables y reutilizables fuera de Python; el docente las revisa sin correr código</td><td>Todo en pandas · dbt (excede el alcance)</td></tr>
+          <tr><td>Gradient Boosting en ambos modelos</td><td>Fuerte en datos tabulares, capta interacciones, rápido de entrenar</td><td>Redes neuronales (poco dato) · solo regresión logística (poca capacidad)</td></tr>
+          <tr><td>Calibración de P(respuesta)</td><td>El valor esperado del optimizador necesita probabilidades reales</td><td>Usar el score crudo (sesga la asignación)</td></tr>
+          <tr><td>Optimización greedy tipo mochila</td><td>Solución buena en milisegundos y fácil de explicar</td><td>LP/ILP exacto (extensión) · reglas de segmento (es el baseline)</td></tr>
+          <tr><td>RAG para el chatbot</td><td>Respuestas verificables y citadas; evita inventar políticas internas</td><td>Fine-tuning (costoso) · LLM sin contexto (alucina normas)</td></tr>
+          <tr><td>Guardrail como regla dura</td><td>La exclusión de riesgo Alto no puede depender del criterio del modelo</td><td>Confiar solo en el prompt del LLM</td></tr>
+          <tr><td>Streamlit para la demo</td><td>Prototipo operable en vivo; rápido de construir</td><td>FastAPI + frontend propio (más tiempo) · notebook (no es demo)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head"><h2>Stack tecnológico</h2></div>
+    <div class="stack">
+      <div class="stack-card"><h3>Datos</h3><div class="chips"><span class="chip">SQL Server 2022</span><span class="chip">SQLAlchemy</span><span class="chip">pyodbc</span><span class="chip">pandas</span><span class="chip">Parquet</span></div></div>
+      <div class="stack-card"><h3>Modelado</h3><div class="chips"><span class="chip">scikit-learn</span><span class="chip">GradientBoosting</span><span class="chip">IsolationForest</span><span class="chip">CalibratedClassifierCV</span></div></div>
+      <div class="stack-card"><h3>IA generativa</h3><div class="chips"><span class="chip">API Anthropic</span><span class="chip">claude-sonnet-5</span><span class="chip">RAG · índice vectorial</span></div></div>
+      <div class="stack-card"><h3>Entrega</h3><div class="chips"><span class="chip">Streamlit</span><span class="chip">joblib</span><span class="chip">pytest</span><span class="chip">ruff</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Cómo se evalúa</h2>
+      <p>Partición temporal: se entrena con los primeros días y se valida con los últimos.</p>
+    </div>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Componente</th><th>Métricas</th></tr></thead>
+        <tbody>
+          <tr><td>Modelo de riesgo</td><td>F1 macro, recall en clase «Alto», matriz de confusión; validación contra reglas expertas</td></tr>
+          <tr><td>Modelo de respuesta</td><td>ROC-AUC, PR-AUC, Brier (calibración), lift del decil superior</td></tr>
+          <tr><td>Optimización</td><td>Retorno esperado de la cartera vs. baseline de reglas · uso de presupuesto · cobertura</td></tr>
+          <tr><td>IA generativa</td><td>Rúbrica de utilidad y fidelidad · % de salidas conformes a política (RAG groundedness)</td></tr>
+          <tr><td>Negocio</td><td>ROI incremental simulado · nº de clientes de riesgo Alto correctamente excluidos</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Ruta a Azure</h2>
+      <p>Trabajo futuro — bloque 4 del diploma. La arquitectura local mapea 1:1 a servicios gestionados.</p>
+    </div>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Local / demo</th><th>Azure</th></tr></thead>
+        <tbody>
+          <tr><td>SQL Server</td><td>Azure SQL Database</td></tr>
+          <tr><td>CSV / Parquet</td><td>Azure Blob Storage</td></tr>
+          <tr><td>API Anthropic</td><td>Azure OpenAI</td></tr>
+          <tr><td>Índice vectorial local</td><td>Azure AI Search</td></tr>
+          <tr><td>streamlit run</td><td>Azure Container Apps</td></tr>
+          <tr><td>.env</td><td>Azure Key Vault</td></tr>
+          <tr><td>—</td><td>Application Insights (nº consultas, latencia, errores)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">El objetivo del prototipo es demostrar valor end-to-end en local;
+      la nube se incorpora una vez validados los modelos.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    DMC Institute · Diploma AI Engineer · Proyecto Integrador 2026 — documento de arquitectura (primer seguimiento)
+  </div>
+</footer>

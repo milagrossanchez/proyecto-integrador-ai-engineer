@@ -1,0 +1,26 @@
+# Versiones verificadas en el entorno de desarrollo (Python 3.14, Windows).
+# Núcleo de datos
+pandas==3.0.0
+pyarrow>=17.0
+
+# Acceso a SQL Server (autenticación de Windows / trusted connection)
+SQLAlchemy==2.0.52
+pyodbc==5.3.0
+
+# Modelado
+scikit-learn==1.9.0
+matplotlib>=3.9
+
+# IA generativa (capa LLM + RAG) - bloque 2 y 3 del diploma
+anthropic>=0.40
+tiktoken>=0.8
+
+# App de demo
+streamlit>=1.38
+
+# Utilidades
+python-dotenv>=1.0
+
+# Desarrollo / calidad
+pytest>=8.0
+ruff>=0.6

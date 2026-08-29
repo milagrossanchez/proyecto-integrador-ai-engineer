@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyecto Integrador - Diploma AI Engineer</title>
+<style>
+  :root {
+    --azul-oscuro: #0a2a5e;
+    --azul: #1e4ba8;
+    --azul-claro: #3b82f6;
+    --gris-claro: #f1f5f9;
+    --gris: #64748b;
+    --blanco: #ffffff;
+    --acento: #06b6d4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    line-height: 1.6;
+    color: #1e293b;
+    background: var(--gris-claro);
+  }
+  header {
+    background: linear-gradient(135deg, var(--azul-oscuro), var(--azul));
+    color: var(--blanco);
+    padding: 60px 40px;
+    text-align: center;
+  }
+  header .tag {
+    display: inline-block;
+    background: var(--acento);
+    color: var(--azul-oscuro);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  header h1 { font-size: 2.6rem; margin-bottom: 10px; }
+  header p { font-size: 1.1rem; opacity: 0.9; }
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+  section {
+    background: var(--blanco);
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  h2 {
+    color: var(--azul-oscuro);
+    font-size: 1.6rem;
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+    border-bottom: 3px solid var(--azul-claro);
+  }
+  h3 {
+    color: var(--azul);
+    font-size: 1.15rem;
+    margin: 18px 0 10px;
+  }
+  p { margin-bottom: 12px; }
+  ul, ol { margin-left: 22px; margin-bottom: 12px; }
+  li { margin-bottom: 6px; }
+
+  .objetivo {
+    background: linear-gradient(135deg, #e0f2fe, #ede9fe);
+    border-left: 6px solid var(--azul-claro);
+  }
+
+  .cronograma {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 18px;
+  }
+  .fecha-card {
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fecha-card::before {
+    content: "";
+    position: absolute; top: 0; right: 0;
+    width: 60px; height: 60px;
+    background: var(--acento); opacity: 0.2;
+    border-radius: 50%;
+    transform: translate(20px, -20px);
+  }
+  .fecha-card .fecha {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--acento);
+    margin-bottom: 6px;
+  }
+  .fecha-card .hito { font-size: 0.95rem; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+  }
+  th, td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  th {
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+    font-weight: 600;
+  }
+  tr:nth-child(even) { background: #f8fafc; }
+  .peso {
+    display: inline-block;
+    background: var(--azul-claro);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  .entrega-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 14px;
+  }
+  .entrega-card {
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 18px;
+    transition: all 0.2s;
+  }
+  .entrega-card:hover {
+    border-color: var(--azul-claro);
+    transform: translateY(-3px);
+  }
+  .entrega-card .icon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+  .entrega-card h4 { color: var(--azul-oscuro); margin-bottom: 8px; }
+
+  footer {
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 24px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 640px) {
+    header h1 { font-size: 1.8rem; }
+    section { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="tag">DIPLOMA AI ENGINEER</span>
+  <h1>Proyecto Integrador</h1>
+  <p>Guía completa para estudiantes · DMC Institute</p>
+</header>
+
+<main>
+
+  <section class="objetivo">
+    <h2>Objetivo del curso</h2>
+    <p>El curso <strong>Proyecto Integrador</strong> tiene como objetivo que el estudiante <strong>aplique lo aprendido</strong> a lo largo del Diploma AI Engineer, consolidando sus conocimientos en el diseño, implementación y despliegue de soluciones de inteligencia artificial que respondan a problemáticas reales de negocio.</p>
+    <p>Los estudiantes integrarán las competencias adquiridas en sistemas de recomendación adaptativos, agentes conversacionales (chatbots con Rasa, LLM y RAG), pipelines generativos multimodales y servicios de IA en Microsoft Azure, desarrollando una solución end-to-end que puedan incluir en su portafolio profesional.</p>
+  </section>
+
+  <section>
+    <h2>Descripción del proyecto</h2>
+    <p>Los estudiantes, organizados en grupos, deberán identificar una problemática de negocio concreta y proponer una solución basada en inteligencia artificial. El proyecto debe integrar al menos <strong>dos de los grandes bloques</strong> trabajados en el diploma:</p>
+    <ul>
+      <li>Agentes inteligentes y sistemas de recomendación adaptativos.</li>
+      <li>Diseño e implementación de Chatbots (Rasa + LLM + RAG).</li>
+      <li>Ingeniería de aplicaciones generativas (texto, imagen, audio).</li>
+      <li>Soluciones de IA con servicios de Microsoft Azure.</li>
+    </ul>
+    <h3>Conformación de grupos</h3>
+    <p>Los grupos estarán conformados por <strong>3 a 5 estudiantes</strong>. Cada grupo deberá designar un líder responsable de la coordinación y comunicación con el docente mentor.</p>
+  </section>
+
+  <section>
+    <h2>Cronograma y entregables</h2>
+    <div class="cronograma">
+      <div class="fecha-card">
+        <div class="fecha">15/04/2026</div>
+        <div class="hito"><strong>Sesión 1</strong><br>Conformación de grupos y explicación de lineamientos generales del proyecto.</div>
+      </div>
+      <div class="fecha-card">
+        <div class="fecha">21/05/2026</div>
+        <div class="hito"><strong>Primer seguimiento</strong><br>Presentación del problema, objetivos, datos disponibles y arquitectura propuesta.</div>
+      </div>
+      <div class="fecha-card">
+        <div class="fecha">10/06/2026</div>
+        <div class="hito"><strong>Segundo seguimiento</strong><br>Revisión de avance técnico: prototipo funcional parcial y feedback del docente.</div>
+      </div>
+      <div class="fecha-card">
+        <div class="fecha">06/07/2026</div>
+        <div class="hito"><strong>Entrega final</strong><br>Sustentación, demo en vivo y entrega de código, documentación y video.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Aspectos a evaluar</h2>
+    <p>La calificación final del proyecto se distribuye de la siguiente manera:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Criterio</th>
+          <th>Descripción</th>
+          <th>Peso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Pertinencia del problema</strong></td>
+          <td>Claridad y relevancia del caso de negocio escogido; justificación del uso de IA.</td>
+          <td><span class="peso">10%</span></td>
+        </tr>
+        <tr>
+          <td><strong>Diseño de la solución</strong></td>
+          <td>Arquitectura coherente, selección adecuada de componentes (LLM, RAG, Azure, etc.) y justificación técnica.</td>
+          <td><span class="peso">15%</span></td>
+        </tr>
+        <tr>
+          <td><strong>Implementación técnica</strong></td>
+          <td>Calidad del código, buenas prácticas, uso correcto de frameworks (Python, Rasa, LangChain, HuggingFace, Azure).</td>
+          <td><span class="peso">25%</span></td>
+        </tr>
+        <tr>
+          <td><strong>Funcionamiento del prototipo</strong></td>
+          <td>La solución cumple con los objetivos, responde correctamente y es desplegable.</td>
+          <td><span class="peso">15%</span></td>
+        </tr>
+        <tr>
+          <td><strong>Integración de contenidos del diploma</strong></td>
+          <td>Aplicación efectiva de al menos dos bloques temáticos del programa.</td>
+          <td><span class="peso">10%</span></td>
+        </tr>
+        <tr>
+          <td><strong>Documentación</strong></td>
+          <td>Informe técnico claro, diagramas, instrucciones de uso y repositorio ordenado.</td>
+          <td><span class="peso">10%</span></td>
+        </tr>
+        <tr>
+          <td><strong>Presentación y sustentación</strong></td>
+          <td>Calidad expositiva, manejo del tiempo, claridad y respuesta a preguntas del jurado.</td>
+          <td><span class="peso">10%</span></td>
+        </tr>
+        <tr>
+          <td><strong>Trabajo en equipo y avance</strong></td>
+          <td>Cumplimiento de los seguimientos, participación equilibrada y respuesta al feedback.</td>
+          <td><span class="peso">5%</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Forma de presentar los resultados</h2>
+    <p>En la sesión de <strong>entrega final (06/07/2026)</strong> cada grupo deberá presentar los siguientes entregables:</p>
+    <div class="entrega-grid">
+      <div class="entrega-card">
+        <div class="icon">🎤</div>
+        <h4>Sustentación en vivo</h4>
+        <p>Exposición de <strong>20 minutos</strong> por grupo, más 10 minutos de preguntas. Todos los integrantes deben participar.</p>
+      </div>
+      <div class="entrega-card">
+        <div class="icon">📊</div>
+        <h4>Presentación (PPTX o PDF)</h4>
+        <p>Problema, objetivos, arquitectura, tecnologías, resultados obtenidos, limitaciones y próximos pasos.</p>
+      </div>
+      <div class="entrega-card">
+        <div class="icon">💻</div>
+        <h4>Demo funcional</h4>
+        <p>Demostración en vivo del prototipo (chatbot, pipeline generativo, recomendador o servicio en Azure).</p>
+      </div>
+      <div class="entrega-card">
+        <div class="icon">📁</div>
+        <h4>Repositorio de código</h4>
+        <p>Repositorio en GitHub con código fuente, archivo <em>README.md</em>, instrucciones de instalación y requirements.</p>
+      </div>
+      <div class="entrega-card">
+        <div class="icon">📄</div>
+        <h4>Informe técnico</h4>
+        <p>Documento en PDF (10–20 páginas) con descripción del problema, metodología, resultados y conclusiones.</p>
+      </div>
+      <div class="entrega-card">
+        <div class="icon">🎬</div>
+        <h4>Video demostrativo</h4>
+        <p>Video corto (3–5 minutos) mostrando el funcionamiento de la solución, apto para el portafolio profesional.</p>
+      </div>
+    </div>
+    <h3>Canal de entrega</h3>
+    <p>Los entregables deben subirse a la plataforma del diploma <strong>hasta las 12:00 del 06/07/2026</strong> (el mismo día de la sustentación). El enlace al repositorio y al video debe incluirse dentro del informe técnico.</p>
+  </section>
+
+  <section>
+    <h2>Recomendaciones finales</h2>
+    <ul>
+      <li>Elige un problema cuyos datos tengas disponibles desde el inicio para evitar bloqueos.</li>
+      <li>Aprovecha los seguimientos para ajustar el alcance según el feedback del docente.</li>
+      <li>Prioriza un prototipo funcional sobre una solución demasiado ambiciosa y sin terminar.</li>
+      <li>Documenta el proceso a medida que avanzas; no dejes la redacción del informe para el final.</li>
+      <li>Practica la sustentación al menos una vez antes del 06/07 para controlar los tiempos.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>DMC Institute · Diploma AI Engineer · Proyecto Integrador 2026</p>
+</footer>
+
+</body>
+</html>

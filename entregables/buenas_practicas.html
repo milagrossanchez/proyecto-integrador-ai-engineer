@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buenas Prácticas - Proyecto Integrador AI Engineer</title>
+<style>
+  :root {
+    --azul-oscuro: #0a2a5e;
+    --azul: #1e4ba8;
+    --azul-claro: #3b82f6;
+    --acento: #06b6d4;
+    --verde: #10b981;
+    --amarillo: #f59e0b;
+    --rojo: #ef4444;
+    --gris-claro: #f1f5f9;
+    --gris: #64748b;
+    --blanco: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    line-height: 1.65;
+    color: #1e293b;
+    background: var(--gris-claro);
+  }
+  header {
+    background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul) 60%, var(--acento) 100%);
+    color: var(--blanco);
+    padding: 70px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: "";
+    position: absolute; top: -50%; right: -10%;
+    width: 400px; height: 400px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  header .tag {
+    display: inline-block;
+    background: var(--acento);
+    color: var(--azul-oscuro);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  header h1 { font-size: 2.6rem; margin-bottom: 10px; position: relative; }
+  header p { font-size: 1.15rem; opacity: 0.9; position: relative; }
+
+  main {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+
+  .intro {
+    background: var(--blanco);
+    border-left: 6px solid var(--acento);
+    padding: 24px 28px;
+    border-radius: 10px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+
+  .phase {
+    background: var(--blanco);
+    border-radius: 14px;
+    padding: 32px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .phase-number {
+    position: absolute;
+    top: -15px; right: -15px;
+    width: 110px; height: 110px;
+    background: var(--gris-claro);
+    color: var(--azul-oscuro);
+    border-radius: 50%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 20px 0 0 20px;
+    font-size: 2.8rem;
+    font-weight: 900;
+    opacity: 0.3;
+  }
+  .phase h2 {
+    color: var(--azul-oscuro);
+    font-size: 1.55rem;
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+    border-bottom: 3px solid var(--azul-claro);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .phase h2 .emoji { font-size: 1.8rem; }
+
+  h3 {
+    color: var(--azul);
+    font-size: 1.1rem;
+    margin: 20px 0 10px;
+  }
+
+  ul { margin-left: 22px; margin-bottom: 14px; }
+  li { margin-bottom: 8px; }
+
+  .tip, .warn, .do, .dont {
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin: 14px 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .tip { background: #ecfdf5; border-left: 4px solid var(--verde); }
+  .warn { background: #fffbeb; border-left: 4px solid var(--amarillo); }
+  .do { background: #eff6ff; border-left: 4px solid var(--azul-claro); }
+  .dont { background: #fef2f2; border-left: 4px solid var(--rojo); }
+  .tip-icon {
+    font-weight: 900;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 14px;
+  }
+  .card {
+    background: var(--gris-claro);
+    padding: 18px;
+    border-radius: 10px;
+    border-top: 3px solid var(--azul-claro);
+  }
+  .card h4 {
+    color: var(--azul-oscuro);
+    margin-bottom: 8px;
+    font-size: 1rem;
+  }
+  .card p { font-size: 0.92rem; color: #334155; }
+
+  code {
+    background: #1e293b;
+    color: #e0f2fe;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+  }
+
+  .checklist {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: var(--blanco);
+    border-radius: 14px;
+    padding: 32px;
+    margin-bottom: 28px;
+  }
+  .checklist h2 {
+    color: var(--acento);
+    border-bottom: 3px solid var(--acento);
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+    font-size: 1.55rem;
+  }
+  .checklist ul { list-style: none; margin-left: 0; }
+  .checklist li {
+    padding: 8px 0 8px 32px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--acento);
+    font-weight: 900;
+    font-size: 1.1rem;
+  }
+
+  footer {
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 26px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 640px) {
+    header h1 { font-size: 1.8rem; }
+    .phase, .checklist { padding: 22px; }
+    .phase-number { font-size: 2rem; width: 80px; height: 80px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="tag">DIPLOMA AI ENGINEER</span>
+  <h1>Buenas Prácticas del Proyecto Integrador</h1>
+  <p>Guía para obtener los mejores resultados · DMC Institute</p>
+</header>
+
+<main>
+
+  <div class="intro">
+    <p>Este documento reúne <strong>buenas prácticas recomendadas</strong> para los estudiantes que desarrollarán el Proyecto Integrador del Diploma AI Engineer. Aplicarlas incrementa la calidad técnica del entregable, reduce el riesgo de bloqueos y mejora la presentación final ante el jurado. Están organizadas siguiendo el ciclo natural de un proyecto de IA: <em>planificación → datos → modelado → despliegue → presentación</em>.</p>
+  </div>
+
+  <!-- FASE 1 -->
+  <section class="phase">
+    <div class="phase-number">01</div>
+    <h2><span class="emoji">🎯</span> Planificación y alcance del proyecto</h2>
+
+    <h3>Definir el problema antes que la tecnología</h3>
+    <p>Muchos proyectos fracasan porque los estudiantes empiezan eligiendo una tecnología (LLM, Rasa, Azure) y luego buscan dónde aplicarla. El orden correcto es el inverso: primero define el problema de negocio, luego elige la herramienta que mejor lo resuelva.</p>
+
+    <div class="do">
+      <span class="tip-icon">✅</span>
+      <div><strong>Hazlo así:</strong> "Reducir el tiempo de atención a clientes de un call center mediante un chatbot que consulta las FAQ y escala casos complejos."</div>
+    </div>
+    <div class="dont">
+      <span class="tip-icon">❌</span>
+      <div><strong>Evita:</strong> "Queremos usar RAG 2.0 porque suena avanzado" sin un caso de negocio claro detrás.</div>
+    </div>
+
+    <h3>Delimita el alcance (MVP primero)</h3>
+    <ul>
+      <li>Define un <strong>Producto Mínimo Viable</strong> que puedas terminar en las 12 semanas del curso.</li>
+      <li>Haz una lista de funcionalidades "nice to have" y déjalas para después.</li>
+      <li>Aplica la regla 80/20: prioriza lo que genera el 80% del valor con el 20% del esfuerzo.</li>
+    </ul>
+
+    <h3>Criterios de éxito medibles</h3>
+    <p>Define desde el inicio <strong>cómo vas a medir</strong> que tu solución funciona: precisión, recall, tiempo de respuesta, satisfacción del usuario, reducción de costos, etc. Sin métricas, no hay manera de demostrar resultados.</p>
+
+    <div class="tip">
+      <span class="tip-icon">💡</span>
+      <div><strong>Tip:</strong> Escribe el <em>objetivo SMART</em> del proyecto en una sola oración. Si no cabe en una oración, el alcance está mal definido.</div>
+    </div>
+  </section>
+
+  <!-- FASE 2 -->
+  <section class="phase">
+    <div class="phase-number">02</div>
+    <h2><span class="emoji">👥</span> Organización del equipo</h2>
+
+    <h3>Roles claros desde el inicio</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>Líder / PM</h4>
+        <p>Coordina al equipo, comunica con el docente, gestiona el cronograma y las entregas.</p>
+      </div>
+      <div class="card">
+        <h4>Data / ML Engineer</h4>
+        <p>Responsable del tratamiento de datos, entrenamiento y evaluación de modelos.</p>
+      </div>
+      <div class="card">
+        <h4>AI / Backend Developer</h4>
+        <p>Implementa la lógica del agente, integra APIs, LLMs, RAG y orquesta el pipeline.</p>
+      </div>
+      <div class="card">
+        <h4>Cloud / DevOps</h4>
+        <p>Maneja el despliegue en Azure, contenedores, variables de entorno y monitoreo.</p>
+      </div>
+      <div class="card">
+        <h4>UX / Presentación</h4>
+        <p>Diseña la demo, slides, video y cuida la narrativa de la presentación final.</p>
+      </div>
+    </div>
+
+    <h3>Herramientas de colaboración</h3>
+    <ul>
+      <li><strong>Git + GitHub:</strong> trabaja con ramas (<code>feature/*</code>), haz Pull Requests y revisa código entre pares.</li>
+      <li><strong>Trello / Notion / Jira:</strong> tablero Kanban con tareas asignadas y fechas.</li>
+      <li><strong>Reuniones semanales:</strong> 30 minutos para sincronizar avances y desbloquear.</li>
+      <li><strong>Canal de comunicación asíncrono:</strong> Slack, Discord o WhatsApp para dudas rápidas.</li>
+    </ul>
+
+    <div class="warn">
+      <span class="tip-icon">⚠️</span>
+      <div><strong>Cuidado:</strong> No dejes que una sola persona concentre todo el código. Si esa persona falla, el proyecto se cae. Distribuye y documenta.</div>
+    </div>
+  </section>
+
+  <!-- FASE 3 -->
+  <section class="phase">
+    <div class="phase-number">03</div>
+    <h2><span class="emoji">📊</span> Gestión de datos</h2>
+
+    <h3>Asegura los datos antes de empezar a construir</h3>
+    <p>El error más común en proyectos de IA es asumir que "luego conseguiremos los datos". Si no tienes datos representativos el día 1, busca alternativas: datasets públicos (Kaggle, HuggingFace Datasets), datos sintéticos o APIs abiertas.</p>
+
+    <h3>Calidad sobre cantidad</h3>
+    <ul>
+      <li>Explora tus datos con un EDA antes de modelar (nulos, duplicados, distribución, sesgos).</li>
+      <li>Para RAG, invierte tiempo en <strong>chunking</strong> y limpieza de documentos. Un índice sucio produce respuestas sucias.</li>
+      <li>Versiona tus datasets (DVC, MLflow o simplemente fechas y hashes en los nombres).</li>
+    </ul>
+
+    <h3>Privacidad y seguridad</h3>
+    <div class="warn">
+      <span class="tip-icon">⚠️</span>
+      <div>Nunca subas a GitHub datos reales de clientes, credenciales, ni API keys. Usa <code>.env</code>, <code>.gitignore</code> y datos anonimizados.</div>
+    </div>
+  </section>
+
+  <!-- FASE 4 -->
+  <section class="phase">
+    <div class="phase-number">04</div>
+    <h2><span class="emoji">🧠</span> Modelado e implementación</h2>
+
+    <h3>Empieza simple, itera rápido</h3>
+    <ul>
+      <li>Implementa primero una <strong>baseline</strong> sencilla (regla fija, modelo pequeño, prompt básico) y mide su desempeño.</li>
+      <li>Sube la complejidad solo cuando la baseline esté funcionando end-to-end.</li>
+      <li>No intentes optimizar antes de tener el pipeline completo.</li>
+    </ul>
+
+    <h3>Selección de arquitectura</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>¿Chatbot?</h4>
+        <p>Evalúa si necesitas Rasa puro, Rasa + LLM o RAG 2.0. Cada nivel agrega complejidad y costo.</p>
+      </div>
+      <div class="card">
+        <h4>¿Recomendador?</h4>
+        <p>Empieza con filtrado colaborativo o bandits. Pasa a Deep Q-Networks solo si el problema lo justifica.</p>
+      </div>
+      <div class="card">
+        <h4>¿Generativo?</h4>
+        <p>Primero prueba con prompt engineering. El fine-tuning (LoRA) viene después si el prompt no alcanza.</p>
+      </div>
+      <div class="card">
+        <h4>¿Azure?</h4>
+        <p>Si el caso se resuelve con Cognitive Services, úsalos. No reinventes lo que ya existe.</p>
+      </div>
+    </div>
+
+    <h3>Buenas prácticas de código</h3>
+    <ul>
+      <li>Usa <strong>entornos virtuales</strong> (<code>venv</code>, <code>conda</code>) y un <code>requirements.txt</code> fijando versiones.</li>
+      <li>Separa configuración (prompts, parámetros) del código en archivos <code>.yaml</code> o <code>.env</code>.</li>
+      <li>Modulariza: un archivo por responsabilidad (datos, modelo, API, frontend).</li>
+      <li>Aplica <em>type hints</em>, docstrings y nombres descriptivos.</li>
+      <li>Escribe tests mínimos para las funciones críticas.</li>
+    </ul>
+
+    <h3>Control de alucinaciones (si usas LLM)</h3>
+    <ul>
+      <li>Define prompts con <strong>instrucciones claras</strong> y restricciones ("responde solo con información del contexto").</li>
+      <li>Implementa un <strong>fallback</strong>: si el modelo no sabe, que lo diga, no invente.</li>
+      <li>Valida las respuestas contra el contexto (RAG) antes de devolverlas al usuario.</li>
+      <li>Registra logs de entradas y salidas para analizar casos problemáticos.</li>
+    </ul>
+  </section>
+
+  <!-- FASE 5 -->
+  <section class="phase">
+    <div class="phase-number">05</div>
+    <h2><span class="emoji">☁️</span> Despliegue y reproducibilidad</h2>
+
+    <h3>Piensa en producción desde el inicio</h3>
+    <ul>
+      <li>Contenedoriza tu solución con <strong>Docker</strong> para que funcione en cualquier máquina.</li>
+      <li>Despliega al menos un endpoint accesible: Azure Functions, Streamlit, FastAPI + Telegram, Hugging Face Spaces.</li>
+      <li>Incluye instrucciones en el README para que cualquiera pueda levantar el proyecto en menos de 10 minutos.</li>
+    </ul>
+
+    <h3>Monitoreo básico</h3>
+    <p>Registra métricas simples: número de consultas, tiempo de respuesta, errores. Esto diferencia un prototipo de juguete de una solución seria.</p>
+
+    <div class="tip">
+      <span class="tip-icon">💡</span>
+      <div><strong>Tip:</strong> Una demo que el jurado puede probar en vivo en su celular vale más que 20 slides de arquitectura.</div>
+    </div>
+  </section>
+
+  <!-- FASE 6 -->
+  <section class="phase">
+    <div class="phase-number">06</div>
+    <h2><span class="emoji">📝</span> Documentación e informe técnico</h2>
+
+    <h3>Documenta mientras construyes</h3>
+    <p>No dejes la documentación para el final. Cada semana, al cerrar, escribe un párrafo sobre lo que hiciste, los problemas encontrados y las decisiones tomadas. El informe final será un ensamblaje de esos fragmentos.</p>
+
+    <h3>Estructura recomendada del informe</h3>
+    <ol>
+      <li>Resumen ejecutivo (1 página).</li>
+      <li>Contexto y problema de negocio.</li>
+      <li>Objetivos y métricas de éxito.</li>
+      <li>Datos utilizados y preprocesamiento.</li>
+      <li>Arquitectura de la solución (con diagrama).</li>
+      <li>Implementación (tecnologías, decisiones clave).</li>
+      <li>Resultados y evaluación.</li>
+      <li>Limitaciones y trabajo futuro.</li>
+      <li>Conclusiones.</li>
+      <li>Anexos: enlaces al repositorio y video.</li>
+    </ol>
+
+    <h3>Un buen README vale más que 10 páginas de informe</h3>
+    <ul>
+      <li>Descripción corta del proyecto.</li>
+      <li>Arquitectura (diagrama).</li>
+      <li>Requisitos e instrucciones de instalación paso a paso.</li>
+      <li>Ejemplo de uso (con capturas o GIF).</li>
+      <li>Créditos al equipo.</li>
+    </ul>
+  </section>
+
+  <!-- FASE 7 -->
+  <section class="phase">
+    <div class="phase-number">07</div>
+    <h2><span class="emoji">🎤</span> Presentación y sustentación</h2>
+
+    <h3>Estructura de una sustentación ganadora (20 min)</h3>
+    <ul>
+      <li><strong>1 min:</strong> Hook inicial. ¿Por qué este problema importa?</li>
+      <li><strong>3 min:</strong> Contexto, problema y objetivos.</li>
+      <li><strong>4 min:</strong> Arquitectura y decisiones técnicas clave.</li>
+      <li><strong>6 min:</strong> Demo en vivo del prototipo (lo más importante).</li>
+      <li><strong>3 min:</strong> Resultados, métricas y validación.</li>
+      <li><strong>2 min:</strong> Limitaciones y próximos pasos.</li>
+      <li><strong>1 min:</strong> Cierre y llamado a preguntas.</li>
+    </ul>
+
+    <h3>Consejos de presentación</h3>
+    <ul>
+      <li><strong>Ensaya al menos dos veces</strong> cronometrando. El tiempo siempre se va.</li>
+      <li>Ten un <strong>video de respaldo</strong> de la demo por si falla internet.</li>
+      <li>Todos los integrantes deben hablar: distribuye las secciones.</li>
+      <li>Usa pocas palabras por slide. Habla tú, el slide solo apoya.</li>
+      <li>Prepara respuestas para las preguntas obvias (escalabilidad, costos, seguridad, alternativas).</li>
+    </ul>
+
+    <div class="warn">
+      <span class="tip-icon">⚠️</span>
+      <div><strong>Error clásico:</strong> pasar 15 minutos en teoría y no llegar a la demo. El jurado quiere <em>ver funcionar</em> tu solución.</div>
+    </div>
+  </section>
+
+  <!-- CHECKLIST FINAL -->
+  <section class="checklist">
+    <h2>✅ Checklist de entrega final</h2>
+    <ul>
+      <li>Repositorio en GitHub público o compartido con el docente.</li>
+      <li>README claro con instrucciones de instalación y uso.</li>
+      <li><code>requirements.txt</code> con versiones fijas.</li>
+      <li>Archivo <code>.env.example</code> (sin credenciales reales).</li>
+      <li>Código modular, comentado y sin credenciales hardcodeadas.</li>
+      <li>Informe técnico en PDF (10–20 páginas).</li>
+      <li>Presentación (PPTX o PDF) revisada por todo el equipo.</li>
+      <li>Video demostrativo de 3 a 5 minutos subido a YouTube/Drive.</li>
+      <li>Demo funcional probada el día anterior en el mismo equipo que usarás.</li>
+      <li>Plan B documentado por si falla el despliegue en vivo.</li>
+      <li>Todos los integrantes preparados para hablar y responder preguntas.</li>
+      <li>Entregables cargados en la plataforma antes de las 12:00 del 06/07/2026.</li>
+    </ul>
+  </section>
+
+  <!-- ERRORES -->
+  <section class="phase">
+    <div class="phase-number">!</div>
+    <h2><span class="emoji">🚫</span> Errores frecuentes que debes evitar</h2>
+    <div class="grid">
+      <div class="card">
+        <h4>Sobreingeniería</h4>
+        <p>Usar RAG + fine-tuning + Azure para un problema que se resolvía con un FAQ simple.</p>
+      </div>
+      <div class="card">
+        <h4>Demo en producción el mismo día</h4>
+        <p>Desplegar la solución horas antes de la sustentación. Siempre falla algo.</p>
+      </div>
+      <div class="card">
+        <h4>Métricas ausentes</h4>
+        <p>Presentar una solución que "funciona" sin números que lo respalden.</p>
+      </div>
+      <div class="card">
+        <h4>Código en un solo notebook</h4>
+        <p>Entregar un .ipynb monolítico imposible de leer, probar o desplegar.</p>
+      </div>
+      <div class="card">
+        <h4>Credenciales expuestas</h4>
+        <p>Subir API keys a GitHub. Revocación inmediata y mala imagen profesional.</p>
+      </div>
+      <div class="card">
+        <h4>Un solo integrante activo</h4>
+        <p>Que un miembro haga todo y el resto solo aparezca en la sustentación.</p>
+      </div>
+      <div class="card">
+        <h4>Ignorar el feedback</h4>
+        <p>No ajustar después del primer y segundo seguimiento. Los hitos existen por algo.</p>
+      </div>
+      <div class="card">
+        <h4>Olvidar el usuario final</h4>
+        <p>Construir una solución técnicamente impresionante que nadie usaría en la realidad.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>DMC Institute · Diploma AI Engineer · Buenas Prácticas del Proyecto Integrador · 2026</p>
+</footer>
+
+</body>
+</html>

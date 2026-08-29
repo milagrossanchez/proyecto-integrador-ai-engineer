@@ -1,0 +1,41 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+
+# --- Entorno / credenciales ---
+.env
+*.key
+
+# --- Datos derivados y artefactos (se regeneran con el pipeline) ---
+data/interim/*
+data/processed/*
+!data/**/.gitkeep
+reports/figures/*
+!reports/figures/.gitkeep
+models_store/
+*.joblib
+*.pkl
+
+# --- Binarios pesados (se comparten por Drive, ver entregables/LEEME_restaurar_base.md) ---
+*.bak
+*.bacpac
+*.zip
+entregables/*.xlsx
+entregables/IA-ENG.pptx
+entregables/CasinoPalacioReal*.*
+
+# --- SO / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+desktop.ini
+
+# deck obsoleto (reemplazado por Primer_Seguimiento_Riesgos_Recompensas.pptx)
+entregables/*_obs.pptx
