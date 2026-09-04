@@ -46,6 +46,9 @@ tab_cartera, tab_cliente, tab_chat = st.tabs(["Cartera", "Cliente", "Asistente"]
 with tab_cartera:
     presupuesto = st.slider("Presupuesto de la campaña (S/)", 200, 40000, int(config.REWARDS.presupuesto), 200)
     cand = asignar_recompensas(pred, presupuesto=presupuesto)
+    if len(cand) and "Asignada" not in cand.columns:  # módulo desactualizado en la sesión
+        st.error("Reinicia la app (Ctrl+C y volver a lanzar): hay una versión vieja del optimizador en memoria.")
+        st.stop()
     asignadas = cand[cand["Asignada"]] if len(cand) else cand
 
     c1, c2, c3, c4 = st.columns(4)
@@ -61,13 +64,10 @@ with tab_cartera:
     )
     st.bar_chart(pred["NivelRiesgo"].value_counts())
     if len(cand):
-        st.dataframe(
-            cand[
-                ["IdCliente", "Segmento", "NivelRiesgo", "ProbRespuesta", "Recompensa",
-                 "Costo", "ValorEsperado", "Eficiencia", "GastoAcumulado", "Asignada"]
-            ],
-            use_container_width=True, hide_index=True,
-        )
+        cols = [c for c in ["IdCliente", "Segmento", "NivelRiesgo", "ProbRespuesta",
+                            "Recompensa", "Costo", "ValorEsperado", "Eficiencia",
+                            "GastoAcumulado", "Asignada"] if c in cand.columns]
+        st.dataframe(cand[cols], use_container_width=True, hide_index=True)
     else:
         st.info("Ningún cliente tiene valor esperado positivo con estos parámetros.")
 
