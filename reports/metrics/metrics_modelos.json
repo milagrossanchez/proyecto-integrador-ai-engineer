@@ -1,50 +1,50 @@
 {
   "riesgo": {
-    "f1_macro_cv": 0.864,
+    "f1_macro_cv": 0.83,
     "reporte_cv": {
       "Bajo": {
-        "precision": 0.9044368600682594,
-        "recall": 0.8952702702702703,
-        "f1-score": 0.8998302207130731,
-        "support": 296.0
+        "precision": 0.9548286604361371,
+        "recall": 0.9871175523349437,
+        "f1-score": 0.9707046714172605,
+        "support": 621.0
       },
       "Medio": {
-        "precision": 0.7868852459016393,
-        "recall": 0.8108108108108109,
-        "f1-score": 0.7986688851913477,
-        "support": 296.0
+        "precision": 0.8153846153846154,
+        "recall": 0.8112244897959183,
+        "f1-score": 0.8132992327365729,
+        "support": 196.0
       },
       "Alto": {
-        "precision": 0.903448275862069,
-        "recall": 0.8851351351351351,
-        "f1-score": 0.89419795221843,
-        "support": 296.0
+        "precision": 0.8431372549019608,
+        "recall": 0.6056338028169014,
+        "f1-score": 0.7049180327868853,
+        "support": 71.0
       },
-      "accuracy": 0.8637387387387387,
+      "accuracy": 0.9177927927927928,
       "macro avg": {
-        "precision": 0.8649234606106558,
-        "recall": 0.8637387387387387,
-        "f1-score": 0.8642323527076169,
+        "precision": 0.8711168435742378,
+        "recall": 0.8013252816492544,
+        "f1-score": 0.8296406456469062,
         "support": 888.0
       },
       "weighted avg": {
-        "precision": 0.864923460610656,
-        "recall": 0.8637387387387387,
-        "f1-score": 0.8642323527076169,
+        "precision": 0.9151201890138119,
+        "recall": 0.9177927927927928,
+        "f1-score": 0.9147110708269773,
         "support": 888.0
       }
     },
     "importancias": {
-      "DuracionMaximaMin": 0.329,
-      "CoinInPorHora": 0.242,
-      "VolatilidadResultado": 0.136,
-      "PctSesionesChasing": 0.102,
-      "ApuestaMaxima": 0.085,
-      "PctSesionesLargas": 0.063,
-      "ApuestaMediaPromedio": 0.024,
-      "DuracionPromedioMin": 0.009,
-      "PerdidasAcumuladas": 0.005,
-      "PctJuegoMadrugada": 0.004
+      "CoinInPorHora": 0.259,
+      "DuracionMaximaMin": 0.23,
+      "PctSesionesChasing": 0.163,
+      "VolatilidadResultado": 0.099,
+      "PctSesionesLargas": 0.088,
+      "ApuestaMaxima": 0.064,
+      "ApuestaMediaPromedio": 0.04,
+      "PerdidasAcumuladas": 0.026,
+      "DuracionPromedioMin": 0.023,
+      "PctJuegoMadrugada": 0.006
     }
   },
   "respuesta": {

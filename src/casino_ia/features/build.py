@@ -118,8 +118,11 @@ def agregar_scoring_reglas(feats: pd.DataFrame) -> pd.DataFrame:
         + _percentil(df["ApuestaMaxima"])
     ) / 6.0
     df["RiesgoScore"] = riesgo.round(3)
+    # Pirámide de riesgo realista: ~70% Bajo, ~22% Medio, ~8% Alto.
     df["NivelRiesgo"] = pd.qcut(
-        riesgo.rank(method="first"), 3, labels=["Bajo", "Medio", "Alto"]
+        riesgo.rank(method="first"),
+        q=[0, 0.70, 0.92, 1.0],
+        labels=["Bajo", "Medio", "Alto"],
     ).astype(str)
 
     prop = (

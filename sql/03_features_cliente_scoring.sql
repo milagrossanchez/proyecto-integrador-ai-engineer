@@ -148,7 +148,7 @@ GO
    vw_ClientesScoring
    - RiesgoScore  : promedio de percentiles de 6 senales de intensidad/riesgo
    - PropScore    : combinacion de recencia, tendencia y uso de beneficios
-   - NivelRiesgo  : tercios de RiesgoScore -> Bajo / Medio / Alto
+   - NivelRiesgo  : piramide de RiesgoScore -> ~70% Bajo / ~22% Medio / ~8% Alto
    - DecilPropension : deciles de PropScore (10 = mas propenso a responder)
    - AccionRecomendada : regla base para la asignacion de recompensa
 ---------------------------------------------------------------------------- */
@@ -184,14 +184,18 @@ SELECT
     s.PctSesionesLargas,
     s.PctJuegoMadrugada,
     CAST(s.RiesgoScore AS decimal(5,3))                                AS RiesgoScore,
-    CASE NTILE(3) OVER (ORDER BY s.RiesgoScore)
-         WHEN 3 THEN 'Alto' WHEN 2 THEN 'Medio' ELSE 'Bajo' END        AS NivelRiesgo,
+    -- Piramide de riesgo realista: ~70% Bajo, ~22% Medio, ~8% Alto
+    CASE
+        WHEN PERCENT_RANK() OVER (ORDER BY s.RiesgoScore) >= 0.92 THEN 'Alto'
+        WHEN PERCENT_RANK() OVER (ORDER BY s.RiesgoScore) >= 0.70 THEN 'Medio'
+        ELSE 'Bajo'
+    END                                                               AS NivelRiesgo,
     CAST(s.PropScore AS decimal(5,3))                                  AS PropensionScore,
     NTILE(10) OVER (ORDER BY s.PropScore)                              AS DecilPropension,
     CASE
-        WHEN NTILE(3)  OVER (ORDER BY s.RiesgoScore) = 3               THEN 'No incentivar - derivar a juego responsable'
-        WHEN NTILE(10) OVER (ORDER BY s.PropScore)  >= 8               THEN 'Recompensa alta (bono + beneficio)'
-        WHEN NTILE(10) OVER (ORDER BY s.PropScore)  >= 5               THEN 'Recompensa media (promocion dirigida)'
+        WHEN PERCENT_RANK() OVER (ORDER BY s.RiesgoScore) >= 0.92      THEN 'No incentivar - derivar a juego responsable'
+        WHEN NTILE(10) OVER (ORDER BY s.PropScore)  >= 8              THEN 'Recompensa alta (bono + beneficio)'
+        WHEN NTILE(10) OVER (ORDER BY s.PropScore)  >= 5              THEN 'Recompensa media (promocion dirigida)'
         ELSE 'Recompensa baja o nutricion de marca'
     END                                                               AS AccionRecomendada
 FROM s;
