@@ -26,7 +26,7 @@ REPORTS = ROOT / "reports"
 FIGURES = REPORTS / "figures"
 METRICS = REPORTS / "metrics"
 MODELS_STORE = ROOT / "models_store"
-RAG_DOCS = ROOT / "rag" / "politicas"
+RAG_DOCS = ROOT / "rag"  # base de conocimiento: rag/politicas/ + rag/referencia/
 
 CSV_SESIONES = DATA_RAW / "playersession_ficticio_100k.csv"
 

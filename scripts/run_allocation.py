@@ -31,13 +31,14 @@ def main() -> None:
         .merge(respuesta.predict_proba(feats)[["IdCliente", "ProbRespuesta"]], on="IdCliente")
     )
 
-    plan = asignar_recompensas(scoring, presupuesto=args.presupuesto)
+    candidatos = asignar_recompensas(scoring, presupuesto=args.presupuesto)
+    plan = candidatos[candidatos["Asignada"]]
     base = baseline_reglas(scoring)
-    plan.to_csv(config.METRICS / "plan_asignacion.csv", index=False)
+    candidatos.to_csv(config.METRICS / "plan_asignacion.csv", index=False)
 
     print(f"Presupuesto: {args.presupuesto:,.0f}")
-    print(f"Optimizador -> clientes: {len(plan)}  gasto: {plan['Costo'].sum():,.0f}  "
-          f"valor esperado: {plan['ValorEsperado'].sum():,.0f}")
+    print(f"Optimizador -> candidatos con valor positivo: {len(candidatos)}  |  asignados: {len(plan)}  "
+          f"gasto: {plan['Costo'].sum():,.0f}  valor esperado: {plan['ValorEsperado'].sum():,.0f}")
     print(f"Baseline    -> clientes: {len(base)}  gasto: {base['Costo'].sum():,.0f}  "
           f"valor esperado: {base['ValorEsperado'].sum():,.0f}")
     if base["ValorEsperado"].sum() > 0:

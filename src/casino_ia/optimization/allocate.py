@@ -88,15 +88,17 @@ def asignar_recompensas(
 
     # selección greedy por eficiencia dentro del presupuesto
     cand = cand.sort_values("Eficiencia", ascending=False).reset_index(drop=True)
-    gasto_acum = cand["Costo"].cumsum()
-    cand["Asignada"] = gasto_acum <= presupuesto
+    cand["GastoAcumulado"] = cand["Costo"].cumsum()
+    cand["Asignada"] = cand["GastoAcumulado"] <= presupuesto
 
-    plan = cand[cand["Asignada"]].copy()
-    plan.attrs["presupuesto"] = presupuesto
-    plan.attrs["gasto_total"] = float(plan["Costo"].sum())
-    plan.attrs["valor_esperado_total"] = float(plan["ValorEsperado"].sum())
-    plan.attrs["clientes_asignados"] = len(plan)
-    return plan
+    asignadas = cand[cand["Asignada"]]
+    cand.attrs["presupuesto"] = presupuesto
+    cand.attrs["gasto_total"] = float(asignadas["Costo"].sum())
+    cand.attrs["valor_esperado_total"] = float(asignadas["ValorEsperado"].sum())
+    cand.attrs["clientes_asignados"] = int(len(asignadas))
+    cand.attrs["candidatos_totales"] = int(len(cand))
+    # se devuelven TODOS los candidatos rankeados; 'Asignada' marca cuáles entraron
+    return cand
 
 
 def baseline_reglas(scoring: pd.DataFrame, costos: dict[str, float] | None = None) -> pd.DataFrame:

@@ -32,7 +32,7 @@ class AsistentePoliticas:
     def __init__(self, carpeta: Path | None = None):
         self.carpeta = carpeta or RAG_DOCS
         self.chunks: list[dict] = []
-        for md in sorted(self.carpeta.glob("*.md")):
+        for md in sorted(self.carpeta.rglob("*.md")):
             self.chunks.extend(_trocear(md.read_text(encoding="utf-8"), md.name))
         self._fit()
 

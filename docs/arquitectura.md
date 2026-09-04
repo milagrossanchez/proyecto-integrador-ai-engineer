@@ -92,7 +92,28 @@ Grupos de variables (detalle en [`docs/datos.md`](datos.md)):
   actividad; en producción, resultado real de campañas (con grupo de control ⇒
   modelo de **uplift**).
 
-### 2.5 Optimizador de asignación de recompensas — `optimization/allocate.py`
+### 2.5 Modelo de recomendación (siguiente mejor oferta) — `optimization/allocate.py`
+
+No es un recomendador clásico (no hay matriz usuario × ítem ni filtrado
+colaborativo). Es un recomendador de **siguiente mejor oferta** (*Next Best Offer*),
+el patrón de recomendación usado en marketing/CRM. Se compone de:
+
+| Pieza | Rol | Implementación |
+|---|---|---|
+| Modelo de propensión | P(el cliente responde) | `models/response.py` (Gradient Boosting calibrado) |
+| Estimación de valor | ganancia si responde | `_uplift_valor()` sobre `ValorTeoricoCasa` + tendencia |
+| Política de recomendación | elige la recompensa por cliente | ranking por valor esperado + selección greedy tipo mochila |
+
+Versión **adaptativa** (lo que exige "recomendación adaptativa" del diploma):
+*contextual bandit* (Thompson Sampling / LinUCB) que aprende en línea qué recompensa
+funciona mejor por perfil a medida que llegan resultados de campañas, equilibrando
+explotación y exploración.
+
+Por qué no filtrado colaborativo / ALS: el catálogo son 3 recompensas (no miles de
+ítems), el objetivo es maximizar retorno bajo presupuesto (no predecir un rating),
+y el arranque en frío se resuelve con atributos de comportamiento del cliente.
+
+### 2.6 Optimizador de asignación de recompensas — `optimization/allocate.py`
 
 - **Función objetivo por cliente y tipo de recompensa r:**
 
@@ -113,7 +134,7 @@ Grupos de variables (detalle en [`docs/datos.md`](datos.md)):
 - **Extensión adaptativa:** *contextual bandit* (Thompson Sampling) para aprender
   en línea qué recompensa funciona mejor por perfil a medida que llegan resultados.
 
-### 2.6 Capa de IA generativa — `genai/explainer.py`
+### 2.7 Capa de IA generativa — `genai/explainer.py`
 
 - Entrada: fila de features del cliente + scores + contribuciones del modelo
   (importancia local tipo SHAP) + recompensa asignada.
@@ -127,17 +148,18 @@ Grupos de variables (detalle en [`docs/datos.md`](datos.md)):
   a juego responsable.
 - Modelo: API de Anthropic (`claude-sonnet-5`), configurable por `.env`.
 
-### 2.7 Chatbot RAG para el analista — `genai/rag.py`
+### 2.8 Chatbot RAG para el analista — `genai/rag.py`
 
 - Base de conocimiento: `rag/politicas/` (política de recompensas, protocolo de
-  juego responsable) + un resumen de la cartera scoreada.
-- *Pipeline*: *chunking* de los documentos → *embeddings* → índice vectorial
-  (FAISS local; Azure AI Search en la nube) → recuperación top-k → respuesta del
-  LLM anclada al contexto, con cita de la sección de política.
+  juego responsable) y `rag/referencia/` (guía de asignación, catálogo de
+  recompensas, preguntas frecuentes, glosario).
+- *Pipeline* (v1): *chunking* por sección → recuperación TF-IDF top-k → respuesta
+  del LLM anclada al contexto y con cita de la fuente. Versión final: *embeddings*
+  + índice vectorial (FAISS local; Azure AI Search en la nube).
 - *Fallback* explícito: si la pregunta no se puede responder con el contexto, el
   bot lo dice y no inventa.
 
-### 2.8 App de demo — `app/streamlit_app.py`
+### 2.9 App de demo — `app/streamlit_app.py`
 
 - Tablero de la cartera: distribución de riesgo, deciles de propensión, resultado
   de la asignación vs. baseline, presupuesto usado.

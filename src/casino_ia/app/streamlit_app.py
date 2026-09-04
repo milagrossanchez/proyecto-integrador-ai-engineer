@@ -44,15 +44,32 @@ st.title("Casino Palacio Real — asignación de recompensas")
 tab_cartera, tab_cliente, tab_chat = st.tabs(["Cartera", "Cliente", "Asistente"])
 
 with tab_cartera:
-    presupuesto = st.slider("Presupuesto de la campaña", 2000, 40000, int(config.REWARDS.presupuesto), 1000)
-    plan = asignar_recompensas(pred, presupuesto=presupuesto)
+    presupuesto = st.slider("Presupuesto de la campaña (S/)", 200, 40000, int(config.REWARDS.presupuesto), 200)
+    cand = asignar_recompensas(pred, presupuesto=presupuesto)
+    asignadas = cand[cand["Asignada"]] if len(cand) else cand
+
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("Clientes en cartera", len(pred))
     c2.metric("Riesgo alto (excluidos)", int((pred["NivelRiesgo"] == "Alto").sum()))
-    c3.metric("Recompensas asignadas", len(plan))
-    c4.metric("Gasto", f"{plan['Costo'].sum():,.0f}" if len(plan) else "0")
+    c3.metric("Recompensas asignadas", f"{len(asignadas)} / {len(cand)}")
+    c4.metric("Gasto / presupuesto", f"{asignadas['Costo'].sum():,.0f} / {presupuesto:,.0f}" if len(asignadas) else "0")
+
+    st.caption(
+        "El optimizador rankea a los clientes elegibles por **eficiencia** (valor esperado por sol) "
+        "y asigna de arriba hacia abajo hasta agotar el presupuesto. "
+        "La columna **Asignada** marca cuáles entraron; el resto son candidatos que quedaron fuera por presupuesto."
+    )
     st.bar_chart(pred["NivelRiesgo"].value_counts())
-    st.dataframe(plan, use_container_width=True)
+    if len(cand):
+        st.dataframe(
+            cand[
+                ["IdCliente", "Segmento", "NivelRiesgo", "ProbRespuesta", "Recompensa",
+                 "Costo", "ValorEsperado", "Eficiencia", "GastoAcumulado", "Asignada"]
+            ],
+            use_container_width=True, hide_index=True,
+        )
+    else:
+        st.info("Ningún cliente tiene valor esperado positivo con estos parámetros.")
 
 with tab_cliente:
     cid = st.selectbox("Cliente", pred["IdCliente"].tolist())
@@ -64,10 +81,36 @@ with tab_cliente:
     st.write("**Mensaje**", textos["mensaje"])
 
 with tab_chat:
-    asistente = AsistentePoliticas()
-    q = st.text_input("Pregunta sobre la política de recompensas o juego responsable")
-    if q:
-        r = asistente.responder(q)
-        st.write(r["respuesta"])
+    st.caption(
+        "Chatbot para el analista. Responde con RAG sobre las políticas y la guía de "
+        "asignación de recompensas; si algo no está en los documentos, lo dice."
+    )
+
+    @st.cache_resource
+    def _asistente():
+        return AsistentePoliticas()
+
+    asistente = _asistente()
+    ejemplos = [
+        "¿Un cliente de riesgo medio puede recibir recompensa alta?",
+        "¿Qué pasa con los clientes de riesgo alto?",
+        "¿Cómo se elige a quién premiar si el presupuesto no alcanza?",
+        "¿Qué incluye la recompensa media?",
+    ]
+    st.write("Ejemplos: " + " · ".join(f"`{e}`" for e in ejemplos))
+
+    if "chat" not in st.session_state:
+        st.session_state.chat = []
+    for m in st.session_state.chat:
+        st.chat_message(m["role"]).write(m["content"])
+
+    pregunta = st.chat_input("Escribe tu pregunta")
+    if pregunta:
+        st.session_state.chat.append({"role": "user", "content": pregunta})
+        st.chat_message("user").write(pregunta)
+        r = asistente.responder(pregunta)
+        texto = r["respuesta"]
         if r["fuentes"]:
-            st.caption("Fuentes: " + ", ".join(r["fuentes"]))
+            texto += "\n\n_Fuentes: " + ", ".join(sorted(set(r["fuentes"]))) + "_"
+        st.session_state.chat.append({"role": "assistant", "content": texto})
+        st.chat_message("assistant").write(texto)

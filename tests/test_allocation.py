@@ -25,22 +25,25 @@ def _scoring():
 
 
 def test_excluye_riesgo_alto():
-    plan = asignar_recompensas(_scoring(), presupuesto=10_000)
-    assert not plan.empty
-    assert (plan["NivelRiesgo"] != "Alto").all()
+    cand = asignar_recompensas(_scoring(), presupuesto=10_000)
+    assert not cand.empty
+    assert (cand["NivelRiesgo"] != "Alto").all()
 
 
 def test_respeta_presupuesto():
-    plan = asignar_recompensas(_scoring(), presupuesto=30)
-    assert plan["Costo"].sum() <= 30
+    cand = asignar_recompensas(_scoring(), presupuesto=30)
+    asignadas = cand[cand["Asignada"]]
+    assert asignadas["Costo"].sum() <= 30
+    # los no asignados quedan fuera por presupuesto, no por otra razón
+    assert (~cand["Asignada"]).any() or cand["Costo"].sum() <= 30
 
 
 def test_riesgo_medio_sin_recompensa_alta():
-    plan = asignar_recompensas(_scoring(), presupuesto=10_000)
-    medios = plan[plan["NivelRiesgo"] == "Medio"]
+    cand = asignar_recompensas(_scoring(), presupuesto=10_000)
+    medios = cand[cand["NivelRiesgo"] == "Medio"]
     assert (medios["Recompensa"] != "alta").all()
 
 
 def test_un_registro_por_cliente():
-    plan = asignar_recompensas(_scoring(), presupuesto=10_000)
-    assert plan["IdCliente"].is_unique
+    cand = asignar_recompensas(_scoring(), presupuesto=10_000)
+    assert cand["IdCliente"].is_unique
