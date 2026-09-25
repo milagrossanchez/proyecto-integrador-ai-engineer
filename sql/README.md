@@ -7,6 +7,7 @@ Ejecutar en **SQL Server 2022+** (SSMS), en orden:
 | 1 | `01_cargar_FctPlayerSession.sql` | BD `CasinoPalacioReal` + tabla `dbo.FctPlayerSession` y carga del CSV |
 | 2 | `02_crear_dimensiones_y_vista.sql` | Modelo estrella (`DimCliente`, `DimMaquina`, `DimSala`, `DimEmpresa`, `DimUbicacion`, `DimMoneda`, `DimNegocio`, `DimTipoSesion`, `DimCalendario`) + claves foráneas + vistas `vw_SesionesDetalle`, `vw_ResumenCliente`, `vw_ResumenMaquina`, `vw_ResumenDiario` |
 | 3 | `03_features_cliente_scoring.sql` | `vw_FeaturesCliente` (tabla analítica, 1 fila por cliente) y `vw_ClientesScoring` (baseline por reglas: `NivelRiesgo`, `DecilPropension`, `AccionRecomendada`) |
+| 4 | `04_catalogo_y_relaciones.sql` | (opcional) inventario de tablas/vistas con filas y columnas, mapa de relaciones (foreign keys), diccionario de columnas y un resumen ejecutivo — todo en SQL puro, sin Python |
 
 ## Antes de empezar
 
