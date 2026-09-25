@@ -124,15 +124,21 @@ clientes, 15 días (jul 2026). Deriva de la tabla real `FctPlayerSession` de un
 data warehouse de casino; **todos los identificadores y atributos son sintéticos**,
 no hay datos personales. Diccionario en [`docs/datos.md`](docs/datos.md).
 
+## Modelos
+
+Descripción detallada de qué hace cada modelo, sus variables, cómo se ajustan
+y se evalúan, y un diagrama: [`docs/modelos.md`](docs/modelos.md).
+
 ## Estado del proyecto
 
 - [x] Base de datos, modelo estrella y tabla analítica por cliente (SQL)
 - [x] EDA y baseline por reglas
-- [x] Modelo de riesgo y modelo de respuesta (v1)
-- [x] Optimizador de asignación de recompensas (v1)
-- [ ] Capa de IA generativa integrada (explicación + oferta + RAG)
-- [ ] App de demo completa
+- [x] Modelo de riesgo y modelo de respuesta, con búsqueda de hiperparámetros (v2)
+- [x] Optimizador de asignación de recompensas
+- [x] Capa de IA generativa integrada (explicación + oferta + chatbot RAG)
+- [x] App de demo (Streamlit)
 - [ ] Evaluación completa e informe técnico
+- [ ] Despliegue en Azure
 - [ ] Despliegue en Azure
 
 ## Equipo

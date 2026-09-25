@@ -29,10 +29,14 @@ def main() -> None:
     )
 
     print("== Riesgo ==")
-    print("  F1 macro (CV):", riesgo.metrics_["f1_macro_cv"])
-    print("  top features:", list(riesgo.metrics_["importancias"])[:4])
+    print("  mejores hiperparametros:", riesgo.metrics_["mejores_hiperparametros"])
+    print("  F1 macro (busqueda CV):", riesgo.metrics_["f1_macro_busqueda_cv"])
+    print("  F1 macro (holdout):    ", riesgo.metrics_["f1_macro_holdout"])
+    print("  top features (permutation importance):", list(riesgo.metrics_["importancias_permutacion"])[:4])
     print("== Respuesta ==")
-    for k in ("tasa_positivos", "roc_auc", "pr_auc", "brier", "lift_top_decil"):
+    print("  mejores hiperparametros:", respuesta.metrics_["mejores_hiperparametros"])
+    for k in ("tasa_positivos", "pr_auc_busqueda_cv", "roc_auc", "pr_auc", "brier",
+              "roc_auc_baseline_logistica", "pr_auc_baseline_logistica", "lift_top_decil"):
         print(f"  {k}: {respuesta.metrics_[k]}")
     print(f"\nOK  ->  {config.MODELS_STORE}")
 
