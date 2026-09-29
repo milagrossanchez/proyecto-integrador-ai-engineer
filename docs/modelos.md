@@ -1,11 +1,12 @@
 # Los modelos — qué hace cada uno y cómo se construyó
 
-Este documento describe en detalle los dos modelos de Machine Learning del
-sistema: **riesgo** y **respuesta**. Complementa a [`arquitectura.md`](arquitectura.md)
+Este documento describe en detalle los tres modelos de Machine Learning del
+sistema: **riesgo**, **respuesta V1** (baseline) y **respuesta V2 / NBO**
+(siguiente mejor oferta). Complementa a [`arquitectura.md`](arquitectura.md)
 (donde viven dentro del pipeline completo) y a [`datos.md`](datos.md) (de dónde
 salen sus variables de entrada).
 
-## Diagrama — de la tabla analítica a los dos modelos
+## Diagrama — de la tabla analítica a los modelos
 
 ```mermaid
 flowchart TB
@@ -20,7 +21,7 @@ flowchart TB
         OUT1["NivelRiesgo (Bajo/Medio/Alto)\nRiesgoScore\nEsPerfilAtipico"]
     end
 
-    subgraph M2["Modelo de RESPUESTA"]
+    subgraph M2["Modelo de RESPUESTA V1"]
         direction TB
         L3["HistGradientBoostingClassifier\n(tuneado con RandomizedSearchCV)"]
         L4["CalibratedClassifierCV\n(isotónica)"]
@@ -28,10 +29,24 @@ flowchart TB
         OUT2["ProbRespuesta [0-1]\nDecilPropension"]
     end
 
+    subgraph M3["Modelo de RESPUESTA V2 (NBO)"]
+        direction TB
+        SIM["simular_historico_campanas\n8 campañas semi-sintéticas"]
+        L5["Clasificador por recompensa\nHistGradientBoostingClassifier + calibración"]
+        L6["Regresor de valor\nHistGradientBoostingRegressor"]
+        SIM --> L5
+        SIM --> L6
+        L5 --> OUT3
+        L6 --> OUT3
+        OUT3["ProbRespuesta_baja/media/alta\nValorIncremental_baja/media/alta"]
+    end
+
     ABT --> M1
     ABT --> M2
-    OUT1 --> OPT["Optimizador de recompensas"]
+    ABT --> M3
+    OUT1 --> OPT["Optimizador de recompensas\n(MotivoDecision trazable)"]
     OUT2 --> OPT
+    OUT3 --> OPT
 ```
 
 ---
@@ -158,7 +173,61 @@ para los números exactos de la última ejecución).
 
 ---
 
-## 3. Resumen de la mejora respecto a la v1
+## 3. Modelo de respuesta V2 — siguiente mejor oferta (NBO)
+
+**Aporte de Henry Ramos**, integrado sobre la base v2. Resuelve la limitación
+más importante del modelo de respuesta V1: una sola probabilidad por cliente
+no distingue *qué recompensa* conviene ofrecerle. `ModeloRespuestaNBO`
+(`src/casino_ia/models/response.py`) predice, **para cada tipo de recompensa**
+(baja/media/alta), tanto la probabilidad de respuesta como el valor
+incremental si responde.
+
+### 3.1 El problema de no tener campañas reales
+
+No existe histórico de campañas (no hay grupo de control ni resultados
+observados). `simular_historico_campanas()` construye uno **semi-sintético**:
+rota a cada cliente por 8 campañas simuladas entre `control` y los 3 tipos de
+recompensa (respetando el guardrail: riesgo Alto nunca se expone, riesgo Medio
+solo ve `control`/`baja`). La probabilidad y el valor de respuesta no se
+sortean al azar — se calculan a partir de una **afinidad** por tipo de
+recompensa derivada de percentiles reales del cliente (valor histórico,
+puntos, comps), para que el patrón simulado sea coherente con el
+comportamiento observado. Queda documentado explícitamente como
+`FuenteDatos = "semi_sintetico_desde_features_cliente"` en cada fila — nunca
+se presenta como dato real.
+
+### 3.2 Cómo se entrena
+
+Dos modelos sobre ese histórico simulado:
+
+| Componente | Algoritmo | Predice |
+|---|---|---|
+| Clasificador | `HistGradientBoostingClassifier` + `CalibratedClassifierCV` (isotónica) | P(responde \| cliente, tipo de recompensa) |
+| Regresor | `HistGradientBoostingRegressor` (`loss='absolute_error'`, robusto a outliers) | Valor incremental si responde |
+
+**Partición temporal por campaña** (no por fila): las primeras 6 campañas
+entrenan, las últimas 2 validan — así el modelo se evalúa contra "campañas
+futuras" nunca vistas, igual que pasaría con datos reales.
+
+### 3.3 Cómo se usa
+
+`predict_wide()` devuelve, por cliente, las columnas
+`ProbRespuesta_<tipo>` y `ValorIncremental_<tipo>` para los 3 tipos. El
+optimizador (`optimization/allocate.py::evaluar_recompensas`) las usa para
+calcular el valor esperado de **cada** combinación cliente-recompensa y elegir
+la mejor — en vez de asumir la misma probabilidad sin importar qué se ofrezca.
+
+### 3.4 Reemplazo por datos reales
+
+En cuanto existan resultados reales de campañas (ver la sección de
+arquitectura de producción sobre medición de respuestas), `simular_historico_campanas()` se reemplaza por la consulta a la tabla de
+resultados reales y el resto del pipeline no cambia — es el mismo contrato de
+columnas (`IdCampana`, `IdCliente`, `TipoRecompensa`, `Respondio`,
+`ValorIncremental`, `NivelRiesgo`).
+
+---
+
+## 4. Resumen de la mejora respecto a la v1
 
 | | v1 (primer seguimiento) | v2 (esta versión) |
 |---|---|---|
