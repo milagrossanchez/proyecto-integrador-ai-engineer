@@ -260,6 +260,16 @@ flowchart LR
 | `.env` | Azure Key Vault |
 | — | Application Insights (monitoreo: nº consultas, latencia, errores) |
 
+### 6.4 Entorno real de casino con tráfico masivo
+
+La tabla anterior mapea servicio por servicio; para el diseño completo de
+cómo se ve el sistema con tráfico masivo de clientes —orquestador, cola de
+eventos y workers autoescalables, Telegram (notificación + captura de
+respuesta), reemplazo de Streamlit por un frontend robusto cara al negocio,
+redes/conectividad y logs centralizados— ver
+[**`arquitectura_produccion.md`**](arquitectura_produccion.md), con el
+diagrama completo en `img/arquitectura_produccion.png`.
+
 ---
 
 ## 7. Riesgos y mitigación

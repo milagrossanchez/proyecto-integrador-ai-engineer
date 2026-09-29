@@ -60,7 +60,9 @@ flowchart LR
 ```
 
 Detalle completo (componentes, decisiones, alternativas, plan Azure) en
-[`docs/arquitectura.md`](docs/arquitectura.md).
+[`docs/arquitectura.md`](docs/arquitectura.md). Diagrama y diseño para un
+**entorno real de casino con tráfico masivo** (orquestador, Telegram, colas,
+red, logs) en [`docs/arquitectura_produccion.md`](docs/arquitectura_produccion.md).
 
 ## Estructura del repositorio
 
@@ -76,15 +78,19 @@ Detalle completo (componentes, decisiones, alternativas, plan Azure) en
 │   ├── data/extract.py   extracción desde SQL Server
 │   ├── features/build.py construcción de la tabla analítica por cliente
 │   ├── models/risk.py    modelo de nivel de riesgo
-│   ├── models/response.py modelo de probabilidad de respuesta
-│   ├── optimization/allocate.py  asignación óptima de recompensas
+│   ├── models/response.py modelo de respuesta V1 + V2 (NBO, siguiente mejor oferta)
+│   ├── optimization/allocate.py  asignación óptima de recompensas, con motivo trazable
 │   ├── genai/explainer.py capa LLM: explicación + generación de oferta
-│   ├── genai/rag.py      chatbot RAG para el analista
-│   └── app/streamlit_app.py  tablero y demo
-├── scripts/              puntos de entrada: EDA, entrenamiento, asignación
+│   ├── genai/rag.py      chatbot RAG (web + Telegram + operador)
+│   ├── genai/telegram_bot.py  notifica la oferta y captura la respuesta por Telegram
+│   ├── metrics/respuesta_real.py  registro y medición de respuestas reales
+│   └── app/streamlit_app.py  tablero, ficha por cliente y chat flotante
+├── scripts/              EDA, entrenamiento, asignación, diagrama de producción
 ├── notebooks/            01_eda.ipynb
 ├── rag/politicas/        documentos de política (base de conocimiento del RAG)
-├── tests/                pruebas de features y de la asignación
+├── rag/referencia/       guía de asignación, catálogo, FAQ, glosario
+├── docs/                 arquitectura.md, arquitectura_produccion.md, modelos.md, datos.md
+├── tests/                pruebas de features, asignación, métricas y Telegram
 └── reports/              figuras y métricas generadas
 ```
 
@@ -133,12 +139,16 @@ y se evalúan, y un diagrama: [`docs/modelos.md`](docs/modelos.md).
 
 - [x] Base de datos, modelo estrella y tabla analítica por cliente (SQL)
 - [x] EDA y baseline por reglas
-- [x] Modelo de riesgo y modelo de respuesta, con búsqueda de hiperparámetros (v2)
-- [x] Optimizador de asignación de recompensas
+- [x] Modelo de riesgo y modelo de respuesta V1, con búsqueda de hiperparámetros (v2)
+- [x] Modelo de respuesta V2 / siguiente mejor oferta (NBO), por tipo de recompensa
+- [x] Optimizador de asignación de recompensas, con política trazable (`MotivoDecision`)
 - [x] Capa de IA generativa integrada (explicación + oferta + chatbot RAG)
+- [x] Chatbot como widget flotante en la web (persiste entre pestañas)
+- [x] Módulo de Telegram — notificación de la oferta y captura de la respuesta (modo dry-run sin token)
+- [x] Medición de la respuesta real (`metrics/respuesta_real.py`) para reemplazar las campañas simuladas
+- [x] Arquitectura de producción documentada (orquestador, colas, red, logs) con diagrama
 - [x] App de demo (Streamlit)
 - [ ] Evaluación completa e informe técnico
-- [ ] Despliegue en Azure
 - [ ] Despliegue en Azure
 
 ## Equipo

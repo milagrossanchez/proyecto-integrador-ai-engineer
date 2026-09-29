@@ -38,6 +38,88 @@ def _metricas_guardadas() -> dict:
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
 
 
+@st.cache_resource
+def _asistente() -> AsistentePoliticas:
+    return AsistentePoliticas()
+
+
+_EJEMPLOS_CHAT = [
+    "¿Un cliente de riesgo medio puede recibir recompensa alta?",
+    "¿Qué pasa con los clientes de riesgo alto?",
+    "¿Cómo se elige a quién premiar si el presupuesto no alcanza?",
+    "¿Qué incluye la recompensa media?",
+]
+
+_CSS_WIDGET = """
+<style>
+div.st-key-chat_toggle button {
+    position: fixed; bottom: 22px; right: 22px; z-index: 999999;
+    width: 58px; height: 58px; border-radius: 50%; font-size: 1.4rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,.28);
+}
+div.st-key-chat_panel {
+    position: fixed; bottom: 22px; right: 22px; z-index: 999999;
+    width: 380px; max-height: 62vh; overflow-y: auto;
+    background: var(--background-color);
+    border: 1px solid rgba(120,120,120,.35); border-radius: 16px;
+    padding: 14px 16px; box-shadow: 0 10px 34px rgba(0,0,0,.30);
+}
+</style>
+"""
+
+
+def _widget_flotante() -> None:
+    """Asistente en una burbuja fija en la esquina, visible en cualquier
+    pestaña. Mismo motor RAG que se conectará a Telegram (ver
+    docs/arquitectura_produccion.md) y que atiende tanto al cliente final
+    como al operador de marketing preguntando por perfiles de clientes.
+    """
+    st.markdown(_CSS_WIDGET, unsafe_allow_html=True)
+    st.session_state.setdefault("chat_abierto", False)
+    st.session_state.setdefault("chat_historial", [])
+
+    if not st.session_state.chat_abierto:
+        with st.container(key="chat_toggle"):
+            if st.button("💬", key="btn_abrir_chat", help="Abrir el asistente"):
+                st.session_state.chat_abierto = True
+                st.rerun()
+        return
+
+    with st.container(key="chat_panel"):
+        c1, c2 = st.columns([5, 1])
+        c1.markdown("**🎰 Asistente Palacio Real**")
+        if c2.button("✕", key="btn_cerrar_chat"):
+            st.session_state.chat_abierto = False
+            st.rerun()
+        st.caption(
+            "Responde con RAG sobre políticas y datos de la cartera. "
+            "Mismo asistente disponible por Telegram."
+        )
+
+        if not st.session_state.chat_historial:
+            st.caption("Ejemplos:")
+            for e in _EJEMPLOS_CHAT:
+                st.caption(f"· {e}")
+
+        for m in st.session_state.chat_historial:
+            st.chat_message(m["role"]).write(m["content"])
+
+        with st.form(key="form_chat", clear_on_submit=True):
+            pregunta = st.text_input("Escribe tu pregunta", label_visibility="collapsed",
+                                      placeholder="Preguntá algo…")
+            enviado = st.form_submit_button("Enviar")
+
+        if enviado and pregunta:
+            st.session_state.chat_historial.append({"role": "user", "content": pregunta})
+            with st.spinner("Buscando..."):
+                r = _asistente().responder(pregunta)
+            texto = r["respuesta"]
+            if r["fuentes"]:
+                texto += "\n\n_Fuentes: " + ", ".join(sorted(set(r["fuentes"]))) + "_"
+            st.session_state.chat_historial.append({"role": "assistant", "content": texto})
+            st.rerun()
+
+
 feats = _data()
 riesgo, respuesta, respuesta_nbo = _modelos()
 pred = (
@@ -76,7 +158,7 @@ with st.sidebar:
     )
 
 st.title("Casino Palacio Real — asignación de recompensas")
-tab_cartera, tab_cliente, tab_chat = st.tabs(["📊 Cartera", "🧑 Cliente", "💬 Asistente"])
+tab_cartera, tab_cliente = st.tabs(["📊 Cartera", "🧑 Cliente"])
 
 # ----------------------------------------------------------------- cartera --
 with tab_cartera:
@@ -179,39 +261,10 @@ with tab_cliente:
     st.markdown(f"**Oferta**  \n{textos['oferta']}")
     st.markdown(f"**Mensaje**  \n{textos['mensaje']}")
 
-# ------------------------------------------------------------------- chat --
-with tab_chat:
-    st.caption(
-        "Chatbot para el analista. Responde con RAG sobre las políticas y la guía de "
-        "asignación de recompensas; si algo no está en los documentos, lo dice."
-    )
-
-    @st.cache_resource
-    def _asistente():
-        return AsistentePoliticas()
-
-    asistente = _asistente()
-    ejemplos = [
-        "¿Un cliente de riesgo medio puede recibir recompensa alta?",
-        "¿Qué pasa con los clientes de riesgo alto?",
-        "¿Cómo se elige a quién premiar si el presupuesto no alcanza?",
-        "¿Qué incluye la recompensa media?",
-    ]
-    st.write("Ejemplos: " + " · ".join(f"`{e}`" for e in ejemplos))
-
-    if "chat" not in st.session_state:
-        st.session_state.chat = []
-    for m in st.session_state.chat:
-        st.chat_message(m["role"]).write(m["content"])
-
-    pregunta = st.chat_input("Escribe tu pregunta")
-    if pregunta:
-        st.session_state.chat.append({"role": "user", "content": pregunta})
-        st.chat_message("user").write(pregunta)
-        with st.spinner("Buscando en las políticas..."):
-            r = asistente.responder(pregunta)
-        texto = r["respuesta"]
-        if r["fuentes"]:
-            texto += "\n\n_Fuentes: " + ", ".join(sorted(set(r["fuentes"]))) + "_"
-        st.session_state.chat.append({"role": "assistant", "content": texto})
-        st.chat_message("assistant").write(texto)
+# -------------------------------------------------- asistente (flotante) --
+# Vive fuera de las pestañas: no está "dentro" de Cartera ni de Cliente, así
+# que al cambiar de pestaña sigue ahí, en la esquina, con su historial intacto.
+# Es el mismo motor (genai.rag.AsistentePoliticas) que se conectará a Telegram
+# y que responde tanto consultas del analista/operador de marketing sobre
+# clientes puntuales como preguntas de política general.
+_widget_flotante()

@@ -84,9 +84,24 @@ class RewardConfig:
     factor_uplift: float = 0.15
 
 
+# --- Telegram (canal de notificación y respuesta del cliente) -----------------
+@dataclass(frozen=True)
+class TelegramConfig:
+    bot_token: str = os.getenv("TELEGRAM_BOT_TOKEN", "")
+    webhook_secret: str = os.getenv("TELEGRAM_WEBHOOK_SECRET", "")
+
+    @property
+    def enabled(self) -> bool:
+        return bool(self.bot_token)
+
+    def api_url(self, metodo: str) -> str:
+        return f"https://api.telegram.org/bot{self.bot_token}/{metodo}"
+
+
 DB = DBConfig()
 LLM = LLMConfig()
 REWARDS = RewardConfig()
+TELEGRAM = TelegramConfig()
 
 # Fecha de corte del histórico simulado (último día con datos).
 FECHA_CORTE = "2026-07-29"
