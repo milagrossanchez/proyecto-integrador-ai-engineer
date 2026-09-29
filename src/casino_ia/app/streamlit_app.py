@@ -13,7 +13,7 @@ import streamlit as st
 from casino_ia import config
 from casino_ia.data import cargar_features_cliente
 from casino_ia.genai import AsistentePoliticas, explicar_cliente
-from casino_ia.models import ModeloRespuesta, ModeloRiesgo
+from casino_ia.models import ModeloRespuesta, ModeloRespuestaNBO, ModeloRiesgo
 from casino_ia.optimization.allocate import asignar_recompensas
 
 st.set_page_config(page_title="Palacio Real · Recompensas", layout="wide", page_icon="🎰")
@@ -29,6 +29,7 @@ def _modelos():
     return (
         ModeloRiesgo.load(config.MODELS_STORE / "modelo_riesgo.joblib"),
         ModeloRespuesta.load(config.MODELS_STORE / "modelo_respuesta.joblib"),
+        ModeloRespuestaNBO.load(config.MODELS_STORE / "modelo_respuesta_nbo.joblib"),
     )
 
 
@@ -38,10 +39,11 @@ def _metricas_guardadas() -> dict:
 
 
 feats = _data()
-riesgo, respuesta = _modelos()
+riesgo, respuesta, respuesta_nbo = _modelos()
 pred = (
     riesgo.predict(feats)[["IdCliente", "NivelRiesgo", "RiesgoScore", "EsPerfilAtipico"]]
     .merge(respuesta.predict_proba(feats), on="IdCliente")
+    .merge(respuesta_nbo.predict_wide(feats), on="IdCliente", validate="one_to_one")
     .merge(feats, on="IdCliente")
 )
 metricas = _metricas_guardadas()
@@ -54,11 +56,14 @@ with st.sidebar:
     st.markdown("**Estado de los modelos**")
     if metricas:
         r_m = metricas.get("riesgo", {})
-        p_m = metricas.get("respuesta", {})
+        p_m = metricas.get("respuesta_v1", metricas.get("respuesta", {}))
+        nbo_m = metricas.get("respuesta_v2_nbo", {}).get("respuesta", {})
         st.metric("Riesgo — F1 macro (holdout)", r_m.get("f1_macro_holdout", "—"))
-        st.metric("Respuesta — ROC-AUC", p_m.get("roc_auc", "—"),
+        st.metric("Respuesta V1 — ROC-AUC", p_m.get("roc_auc", "—"),
                    delta=(f"+{round(p_m['roc_auc']-p_m['roc_auc_baseline_logistica'],3)} vs. logística"
                           if p_m.get("roc_auc") and p_m.get("roc_auc_baseline_logistica") else None))
+        if nbo_m:
+            st.metric("Respuesta V2 (NBO) — PR-AUC", nbo_m.get("pr_auc", "—"))
     else:
         st.caption("Ejecutá `scripts/train_models.py` para ver métricas.")
     st.divider()
@@ -75,23 +80,35 @@ tab_cartera, tab_cliente, tab_chat = st.tabs(["📊 Cartera", "🧑 Cliente", "�
 
 # ----------------------------------------------------------------- cartera --
 with tab_cartera:
-    presupuesto = st.slider("Presupuesto de la campaña (S/)", 200, 40000, int(config.REWARDS.presupuesto), 200)
+    presupuesto = st.slider(
+        "Presupuesto de la campaña (S/)",
+        200,
+        40000,
+        int(config.REWARDS.presupuesto),
+        200,
+    )
     cand = asignar_recompensas(pred, presupuesto=presupuesto)
     if len(cand) and "Asignada" not in cand.columns:  # módulo desactualizado en la sesión
-        st.error("Reinicia la app (Ctrl+C y volver a lanzar): hay una versión vieja del optimizador en memoria.")
+        st.error(
+            "Reinicia la app (Ctrl+C y volver a lanzar): "
+            "hay una versión vieja del optimizador en memoria."
+        )
         st.stop()
     asignadas = cand[cand["Asignada"]] if len(cand) else cand
+    candidatas = cand[cand["RecompensaSugerida"].notna()] if len(cand) else cand
 
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("Clientes en cartera", len(pred))
     c2.metric("Riesgo alto (excluidos)", int((pred["NivelRiesgo"] == "Alto").sum()))
-    c3.metric("Recompensas asignadas", f"{len(asignadas)} / {len(cand)}")
-    c4.metric("Gasto / presupuesto", f"{asignadas['Costo'].sum():,.0f} / {presupuesto:,.0f}" if len(asignadas) else "0")
+    c3.metric("Recompensas asignadas", f"{len(asignadas)} / {len(candidatas)}")
+    gasto = asignadas["Costo"].sum() if len(asignadas) else 0
+    c4.metric("Gasto / presupuesto", f"{gasto:,.0f} / {presupuesto:,.0f}")
 
     st.caption(
-        "El optimizador rankea a los clientes elegibles por **eficiencia** (valor esperado por sol) "
-        "y asigna de arriba hacia abajo hasta agotar el presupuesto. "
-        "La columna **Asignada** marca cuáles entraron; el resto son candidatos que quedaron fuera por presupuesto."
+        "El optimizador rankea a los clientes elegibles por **eficiencia** "
+        "(valor esperado por sol) "
+        "y evalúa toda la lista aplicando presupuesto, topes y guardrails. "
+        "**MotivoDecision** explica el resultado de cada cliente."
     )
     col_a, col_b = st.columns(2)
     with col_a:
@@ -102,17 +119,46 @@ with tab_cartera:
         st.bar_chart(asignadas["Recompensa"].value_counts() if len(asignadas) else pred["NivelRiesgo"].value_counts() * 0)
 
     if len(cand):
-        cols = [c for c in ["IdCliente", "Segmento", "NivelRiesgo", "ProbRespuesta",
-                            "Recompensa", "Costo", "ValorEsperado", "Eficiencia",
-                            "GastoAcumulado", "Asignada"] if c in cand.columns]
-        st.dataframe(cand[cols], use_container_width=True, hide_index=True)
+        cols = [
+            c
+            for c in [
+                "IdCliente",
+                "Segmento",
+                "NivelRiesgo",
+                "SesionesUltimos90d",
+                "ProbRespuesta",
+                "Recompensa",
+                "Costo",
+                "ValorIncremental",
+                "ValorEsperado",
+                "Eficiencia",
+                "GastoAcumulado",
+                "Asignada",
+                "MotivoDecision",
+            ]
+            if c in cand.columns
+        ]
+        st.dataframe(cand[cols], width="stretch", hide_index=True)
     else:
         st.info("Ningún cliente tiene valor esperado positivo con estos parámetros.")
 
 # ----------------------------------------------------------------- cliente --
 with tab_cliente:
-    cid = st.selectbox("Cliente", pred["IdCliente"].tolist())
-    ficha = pred[pred["IdCliente"] == cid].iloc[0].to_dict()
+    columnas_decision = [
+        "IdCliente",
+        "Recompensa",
+        "Costo",
+        "ProbRespuesta",
+        "ValorIncremental",
+        "ValorEsperado",
+        "Asignada",
+        "MotivoDecision",
+    ]
+    fichas = pred.drop(columns="ProbRespuesta").merge(
+        cand[columnas_decision], on="IdCliente", how="left"
+    )
+    cid = st.selectbox("Cliente", fichas["IdCliente"].tolist())
+    ficha = fichas[fichas["IdCliente"] == cid].iloc[0].to_dict()
 
     c1, c2, c3, c4 = st.columns(4)
     color = {"Bajo": "normal", "Medio": "off", "Alto": "inverse"}.get(ficha["NivelRiesgo"], "normal")
@@ -122,6 +168,10 @@ with tab_cliente:
     c4.metric("CoinIn total", f"S/ {ficha['CoinInTotal']:,.0f}")
     if ficha.get("EsPerfilAtipico"):
         st.caption("⚠️ Marcado como perfil atípico por el detector de anomalías (IsolationForest).")
+    st.caption(
+        f"**Decisión del optimizador:** {ficha.get('MotivoDecision') or '—'}"
+        + (f" · recompensa **{ficha['Recompensa']}**" if ficha.get("Recompensa") else "")
+    )
 
     with st.spinner("Generando explicación..."):
         textos = explicar_cliente(ficha)
