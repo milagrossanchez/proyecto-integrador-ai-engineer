@@ -63,8 +63,17 @@ def construir_features_desde_sesiones(sesiones: pd.DataFrame) -> pd.DataFrame:
     out["DiasActivos"] = by["Dia"].nunique()
     out["NroVisitas"] = by["TripNumber"].max()
     out["UltimaSesion"] = by["StartTime"].max()
+    # El CSV no incluye FechaAlta; el intervalo observado es una cota inferior.
+    out["AntiguedadDias"] = (
+        by["StartTime"].max().dt.normalize() - by["StartTime"].min().dt.normalize()
+    ).dt.days
     out["DiasDesdeUltimaSesion"] = (fecha_corte - by["Dia"].max()).dt.days
     out["CoinInTotal"] = by["CoinIn"].sum()
+    out["Segmento"] = pd.qcut(
+        out["CoinInTotal"].rank(method="first", ascending=False),
+        q=4,
+        labels=["VIP", "Alto", "Medio", "Estandar"],
+    ).astype(str)
     out["CoinInPromedioSesion"] = by["CoinIn"].mean()
     out["ValorTeoricoCasa"] = by["TheoWin"].sum()
     out["ResultadoClienteTotal"] = by["Win"].sum()

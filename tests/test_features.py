@@ -52,8 +52,17 @@ def test_una_fila_por_cliente(sesiones):
 
 def test_columnas_esperadas(sesiones):
     feats = construir_features_desde_sesiones(sesiones)
-    for col in ("CoinInTotal", "PctSesionesChasing", "DiasDesdeUltimaSesion", "RatioTendenciaCoinIn"):
+    for col in (
+        "CoinInTotal",
+        "PctSesionesChasing",
+        "DiasDesdeUltimaSesion",
+        "AntiguedadDias",
+        "Segmento",
+        "RatioTendenciaCoinIn",
+    ):
         assert col in feats.columns
+    assert feats["AntiguedadDias"].eq(11).all()
+    assert set(feats["Segmento"]) == {"VIP", "Alto", "Medio", "Estandar"}
 
 
 def test_scoring_tres_niveles(sesiones):

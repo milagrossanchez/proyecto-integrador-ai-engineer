@@ -126,6 +126,35 @@ streamlit run src/casino_ia/app/streamlit_app.py
 Si no hay conexión a SQL Server, el pipeline usa como *fallback* el CSV de
 `data/raw/` y las vistas se replican en pandas.
 
+## Interfaz React y API administrativa
+
+La interfaz React consume una API FastAPI que reutiliza los modelos, features y
+guardrails existentes. Streamlit se conserva como demo independiente. Esta
+implementación es para uso administrativo local: la API se enlaza a `127.0.0.1`
+y no incluye autenticación para exponerla en una red.
+
+Si aún no existen los modelos en `models_store/`, genera primero los artefactos
+con `python scripts/train_models.py`. Luego inicia cada proceso en una terminal
+distinta, desde la raíz del repositorio.
+
+**Terminal 1 — API**
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+uvicorn casino_ia.api.main:app --app-dir src --host 127.0.0.1 --port 8000
+```
+
+**Terminal 2 — React**
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+Abre `http://localhost:5173/`. La documentación interactiva de la API está en
+`http://127.0.0.1:8000/docs`.
+
 ## Datos
 
 `data/raw/playersession_ficticio_100k.csv` — 100 000 sesiones simuladas, 888
