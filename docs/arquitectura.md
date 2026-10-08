@@ -1,5 +1,8 @@
 # Arquitectura propuesta
 
+> Para distinguir el diseño de lo que ya existe, consulta el
+> [estado de implementación y pendientes](estado_arquitectura.md).
+
 Proyecto Integrador · *Identificación de riesgos y optimización de recompensas — Casino Palacio Real*
 
 Este documento es el entregable de **arquitectura propuesta** del primer seguimiento.
@@ -168,7 +171,7 @@ y el arranque en frío se resuelve con atributos de comportamiento del cliente.
 - Tablero de la cartera: distribución de riesgo, deciles de propensión, resultado
   de la asignación vs. baseline, presupuesto usado.
 - Ficha por cliente: features, scores, recompensa asignada y textos generados.
-- Pestaña de chat con el asistente RAG.
+- Widget flotante de chat con el asistente RAG e historial en la sesión.
 
 ---
 

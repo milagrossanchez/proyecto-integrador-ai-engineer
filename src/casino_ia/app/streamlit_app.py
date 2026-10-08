@@ -55,14 +55,68 @@ _CSS_WIDGET = """
 div.st-key-chat_toggle button {
     position: fixed; bottom: 22px; right: 22px; z-index: 999999;
     width: 58px; height: 58px; border-radius: 50%; font-size: 1.4rem;
+    background: #142238; color: #ffffff; border: 1px solid #c9a866;
     box-shadow: 0 6px 18px rgba(0,0,0,.28);
 }
 div.st-key-chat_panel {
     position: fixed; bottom: 22px; right: 22px; z-index: 999999;
-    width: 380px; max-height: 62vh; overflow-y: auto;
-    background: var(--background-color);
-    border: 1px solid rgba(120,120,120,.35); border-radius: 16px;
-    padding: 14px 16px; box-shadow: 0 10px 34px rgba(0,0,0,.30);
+    width: min(400px, calc(100vw - 32px));
+    max-height: min(640px, calc(100dvh - 100px)); overflow-y: auto;
+    background: #101b2d; color: #f5f7fb; color-scheme: dark;
+    border: 1px solid #43516a; border-top: 3px solid #c9a866;
+    border-radius: 16px; box-sizing: border-box; isolation: isolate;
+    padding: 18px; box-shadow: 0 16px 48px rgba(0,0,0,.45);
+    scrollbar-color: #697a94 #101b2d;
+}
+div.st-key-chat_panel [data-testid="stMarkdownContainer"],
+div.st-key-chat_panel label {
+    color: #f5f7fb;
+}
+div.st-key-chat_panel [data-testid="stCaptionContainer"],
+div.st-key-chat_panel [data-testid="stCaptionContainer"] p {
+    color: #c1cbdc; opacity: 1;
+}
+div.st-key-chat_panel a { color: #9eceff; }
+div.st-key-chat_header [data-testid="stHorizontalBlock"] { flex-wrap: nowrap; }
+div.st-key-chat_header [data-testid="stColumn"]:first-child {
+    flex: 1 1 auto; min-width: 0;
+}
+div.st-key-chat_header [data-testid="stColumn"]:last-child {
+    flex: 0 0 40px; min-width: 40px;
+}
+div.st-key-chat_panel [data-testid="stChatMessage"] {
+    background: #1c2c44; border: 1px solid #43516a; border-radius: 12px;
+}
+div.st-key-chat_panel [data-testid="stForm"] {
+    background: #101b2d; border: 1px solid #43516a; border-radius: 12px;
+}
+div.st-key-chat_panel [data-baseweb="input"],
+div.st-key-chat_panel input {
+    background: #20314a; color: #ffffff; caret-color: #ffffff;
+}
+div.st-key-chat_panel input::placeholder { color: #c1cbdc; opacity: 1; }
+div.st-key-chat_panel button {
+    background: #243650; color: #ffffff; border: 1px solid #697a94;
+}
+div.st-key-chat_panel button:hover,
+div.st-key-chat_toggle button:hover {
+    background: #354d6b; color: #ffffff; border-color: #c9a866;
+}
+div.st-key-chat_panel [data-testid="stFormSubmitButton"] button {
+    background: #c9a866; color: #101b2d; border-color: #c9a866;
+    width: 100%; font-weight: 600;
+}
+div.st-key-chat_panel [data-testid="stFormSubmitButton"] button:hover {
+    background: #dfc38c; border-color: #dfc38c;
+}
+div.st-key-chat_panel button [data-testid="stMarkdownContainer"],
+div.st-key-chat_panel button p { color: inherit; }
+div.st-key-chat_panel button:focus-visible,
+div.st-key-chat_toggle button:focus-visible {
+    outline: 2px solid #e5c98f; outline-offset: 3px;
+}
+@media (max-width: 480px) {
+    div.st-key-chat_panel { bottom: 12px; right: 12px; width: calc(100vw - 24px); }
 }
 </style>
 """
@@ -70,9 +124,8 @@ div.st-key-chat_panel {
 
 def _widget_flotante() -> None:
     """Asistente en una burbuja fija en la esquina, visible en cualquier
-    pestaña. Mismo motor RAG que se conectará a Telegram (ver
-    docs/arquitectura_produccion.md) y que atiende tanto al cliente final
-    como al operador de marketing preguntando por perfiles de clientes.
+    pestaña. Comparte el motor RAG de políticas con el prototipo de Telegram
+    (ver docs/arquitectura_produccion.md).
     """
     st.markdown(_CSS_WIDGET, unsafe_allow_html=True)
     st.session_state.setdefault("chat_abierto", False)
@@ -86,14 +139,14 @@ def _widget_flotante() -> None:
         return
 
     with st.container(key="chat_panel"):
-        c1, c2 = st.columns([5, 1])
-        c1.markdown("**🎰 Asistente Palacio Real**")
-        if c2.button("✕", key="btn_cerrar_chat"):
-            st.session_state.chat_abierto = False
-            st.rerun()
+        with st.container(key="chat_header"):
+            c1, c2 = st.columns([5, 1])
+            c1.markdown("**Asistente Palacio Real**")
+            if c2.button("✕", key="btn_cerrar_chat", help="Cerrar el asistente"):
+                st.session_state.chat_abierto = False
+                st.rerun()
         st.caption(
-            "Responde con RAG sobre políticas y datos de la cartera. "
-            "Mismo asistente disponible por Telegram."
+            "Consulta las políticas de juego responsable y la guía de recompensas."
         )
 
         if not st.session_state.chat_historial:
@@ -106,7 +159,7 @@ def _widget_flotante() -> None:
 
         with st.form(key="form_chat", clear_on_submit=True):
             pregunta = st.text_input("Escribe tu pregunta", label_visibility="collapsed",
-                                      placeholder="Preguntá algo…")
+                                      placeholder="Escribe tu consulta…")
             enviado = st.form_submit_button("Enviar")
 
         if enviado and pregunta:
@@ -264,7 +317,5 @@ with tab_cliente:
 # -------------------------------------------------- asistente (flotante) --
 # Vive fuera de las pestañas: no está "dentro" de Cartera ni de Cliente, así
 # que al cambiar de pestaña sigue ahí, en la esquina, con su historial intacto.
-# Es el mismo motor (genai.rag.AsistentePoliticas) que se conectará a Telegram
-# y que responde tanto consultas del analista/operador de marketing sobre
-# clientes puntuales como preguntas de política general.
+# Comparte el motor de políticas (genai.rag.AsistentePoliticas) con Telegram.
 _widget_flotante()

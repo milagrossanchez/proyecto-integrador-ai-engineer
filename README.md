@@ -27,6 +27,9 @@ asignación por reglas actual.
 
 ## Arquitectura
 
+Estado contrastado con el código y orden de implementación:
+[qué está aplicado y qué falta](docs/estado_arquitectura.md).
+
 ```mermaid
 flowchart LR
     subgraph Fuente["1 · Fuente de datos"]
