@@ -58,9 +58,56 @@ def _metricas_guardadas() -> dict:
 
 
 @st.cache_resource
+def _estado_llm() -> tuple[str, str]:
+    """Prueba una sola vez por sesión si la API key realmente funciona
+    (no solo si está presente). `count_tokens` no genera salida: es gratis/rápido.
+    """
+    if not config.LLM.enabled:
+        return "⚪", "Sin configurar (falta ANTHROPIC_API_KEY)"
+    try:
+        import anthropic
+
+        client = anthropic.Anthropic(api_key=config.LLM.api_key)
+        client.messages.count_tokens(model=config.LLM.model, messages=[{"role": "user", "content": "hola"}])
+        return "🟢", f"Conectada ({config.LLM.model})"
+    except Exception as exc:  # noqa: BLE001
+        return "🔴", f"Clave inválida o sin acceso ({type(exc).__name__}) — modo plantilla"
+
+
+@st.cache_data(show_spinner=False)
+def _plan_asignacion(presupuesto: float):
+    """Cachea la corrida del optimizador por presupuesto: evita recalcularla
+    (recorre 888 clientes fila por fila) en cada interacción ajena a Cartera,
+    como abrir o cerrar el chat. `pred` es estable durante la sesión."""
+    return asignar_recompensas(pred, presupuesto=presupuesto)
+
+
+@st.cache_resource
 def _asistente() -> AsistentePoliticas:
     return AsistentePoliticas()
 
+
+_DICCIONARIO_CARTERA = [
+    ("Cliente", "Nombre del cliente. Dato ficticio generado de forma determinista a partir del IdCliente — no corresponde a una persona real."),
+    ("Segmento", "VIP / Alto / Medio / Estándar, por cuartiles de gasto histórico (CoinIn) del cliente."),
+    ("NivelRiesgo", "Bajo / Medio / Alto. Salida del modelo de riesgo (HistGradientBoosting) sobre señales de intensidad de juego."),
+    ("SesionesUltimos90d", "Sesiones registradas en los últimos 90 días. Requisito de elegibilidad: mínimo 3 para poder recibir una recompensa."),
+    ("ProbRespuesta", "Probabilidad de que el cliente responda a ESA recompensa particular (modelo NBO, calibrado con evidencia real Hillstrom/Criteo cuando está disponible)."),
+    ("Recompensa", "Tipo elegido por el optimizador: baja, media o alta — o vacío si no se le asigna nada."),
+    ("Costo", "Lo que cuesta esa recompensa (parámetro de negocio: alta S/40, media S/15, baja S/5)."),
+    ("ValorIncremental", "Cuánto gana el casino si el cliente responde a esa recompensa (salida del modelo de valor)."),
+    ("ValorEsperado", "ProbRespuesta × ValorIncremental − Costo. Solo se asignan recompensas con este valor positivo."),
+    ("Eficiencia", "ValorEsperado ÷ Costo: retorno por cada sol invertido. Es el criterio de orden para repartir el presupuesto."),
+    ("GastoAcumulado", "Suma acumulada del costo recorriendo la lista ordenada por Eficiencia, hasta ese cliente — marca dónde se corta el presupuesto."),
+    ("Asignada", "True/False — si entró dentro del presupuesto y los topes (25% en recompensas altas, 40% por segmento)."),
+    ("MotivoDecision", "Explica el resultado: riesgo alto, pocas sesiones, sin presupuesto, tope de recompensas altas, tope por segmento, o Asignada."),
+]
+
+_DICCIONARIO_CLIENTE = [
+    ("RiesgoScore", "Probabilidad continua (0 a 1) de ser riesgo Alto, antes de convertirla en categoría Bajo/Medio/Alto."),
+    ("CoinInTotal", "Suma histórica del dinero apostado por el cliente (de FctPlayerSession)."),
+    ("EsPerfilAtipico", "Marca del detector de anomalías (IsolationForest): si el patrón de juego es inusual frente al resto de la cartera."),
+]
 
 _EJEMPLOS_CHAT = [
     "¿Un cliente de riesgo medio puede recibir recompensa alta?",
@@ -79,8 +126,8 @@ div.st-key-chat_toggle button {
 }
 div.st-key-chat_panel {
     position: fixed; bottom: 22px; right: 22px; z-index: 999999;
-    width: min(400px, calc(100vw - 32px));
-    max-height: min(640px, calc(100dvh - 100px)); overflow-y: auto;
+    width: min(460px, calc(100vw - 32px));
+    max-height: min(82vh, calc(100dvh - 60px)); overflow-y: auto;
     background: #101b2d; color: #f5f7fb; color-scheme: dark;
     border: 1px solid #43516a; border-top: 3px solid #c9a866;
     border-radius: 16px; box-sizing: border-box; isolation: isolate;
@@ -223,7 +270,8 @@ with st.sidebar:
     st.caption(f"NBO activo: {nbo_version}")
     st.divider()
     st.markdown("**IA generativa**")
-    st.caption("🟢 Conectada (API Anthropic)" if config.LLM.enabled else "⚪ Modo plantilla (sin API key)")
+    _icono_llm, _detalle_llm = _estado_llm()
+    st.caption(f"{_icono_llm} {_detalle_llm}")
     st.divider()
     st.caption(
         "Guardrail: los clientes de **riesgo alto** quedan excluidos de toda "
@@ -242,13 +290,15 @@ with tab_cartera:
         int(config.REWARDS.presupuesto),
         200,
     )
-    cand = asignar_recompensas(pred, presupuesto=presupuesto)
+    cand = _plan_asignacion(presupuesto)
     if len(cand) and "Asignada" not in cand.columns:  # módulo desactualizado en la sesión
         st.error(
             "Reinicia la app (Ctrl+C y volver a lanzar): "
             "hay una versión vieja del optimizador en memoria."
         )
         st.stop()
+    if len(cand):
+        cand = cand.merge(feats[["IdCliente", "NombreCompleto"]], on="IdCliente", how="left")
     asignadas = cand[cand["Asignada"]] if len(cand) else cand
     candidatas = cand[cand["RecompensaSugerida"].notna()] if len(cand) else cand
 
@@ -273,11 +323,15 @@ with tab_cartera:
         st.caption("Recompensas asignadas por tipo")
         st.bar_chart(asignadas["Recompensa"].value_counts() if len(asignadas) else pred["NivelRiesgo"].value_counts() * 0)
 
+    with st.expander("¿Qué significa cada columna?"):
+        st.table({"Columna": [c for c, _ in _DICCIONARIO_CARTERA],
+                   "Qué es": [d for _, d in _DICCIONARIO_CARTERA]})
+
     if len(cand):
         cols = [
             c
             for c in [
-                "IdCliente",
+                "NombreCompleto",
                 "Segmento",
                 "NivelRiesgo",
                 "SesionesUltimos90d",
@@ -293,7 +347,10 @@ with tab_cartera:
             ]
             if c in cand.columns
         ]
-        st.dataframe(cand[cols], width="stretch", hide_index=True)
+        st.dataframe(
+            cand[cols].rename(columns={"NombreCompleto": "Cliente"}),
+            width="stretch", hide_index=True,
+        )
     else:
         st.info("Ningún cliente tiene valor esperado positivo con estos parámetros.")
 
@@ -311,9 +368,16 @@ with tab_cliente:
     ]
     fichas = pred.drop(columns="ProbRespuesta").merge(
         cand[columnas_decision], on="IdCliente", how="left"
+    ).sort_values("NombreCompleto")
+    cid = st.selectbox(
+        "Cliente",
+        fichas["IdCliente"].tolist(),
+        format_func=lambda i: fichas.loc[fichas["IdCliente"] == i, "NombreCompleto"].iloc[0],
     )
-    cid = st.selectbox("Cliente", fichas["IdCliente"].tolist())
     ficha = fichas[fichas["IdCliente"] == cid].iloc[0].to_dict()
+    with st.expander("¿Qué significa cada dato?"):
+        st.table({"Columna": [c for c, _ in _DICCIONARIO_CARTERA + _DICCIONARIO_CLIENTE],
+                   "Qué es": [d for _, d in _DICCIONARIO_CARTERA + _DICCIONARIO_CLIENTE]})
 
     c1, c2, c3, c4 = st.columns(4)
     color = {"Bajo": "normal", "Medio": "off", "Alto": "inverse"}.get(ficha["NivelRiesgo"], "normal")

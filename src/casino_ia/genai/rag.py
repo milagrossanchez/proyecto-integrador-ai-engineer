@@ -28,6 +28,19 @@ def _trocear(texto: str, fuente: str) -> list[dict]:
     return [{"fuente": fuente, "texto": b.strip()} for b in bloques if b.strip()]
 
 
+def _sin_encabezados(texto: str) -> str:
+    """Quita los `#`/`##` de markdown para que un fragmento crudo no se vea
+    como un titulo gigante en la UI (st.chat_message renderiza markdown)."""
+    return re.sub(r"(?m)^#{1,6}\s*(.+)$", r"**\1**", texto)
+
+
+def _formatear_fragmentos(contexto: list[dict], motivo: str) -> str:
+    partes = [f"_{motivo}_"]
+    for c in contexto:
+        partes.append(f"**Fuente: {c['fuente']}**\n\n{_sin_encabezados(c['texto'])}")
+    return "\n\n---\n\n".join(partes)
+
+
 class AsistentePoliticas:
     def __init__(self, carpeta: Path | None = None):
         self.carpeta = carpeta or RAG_DOCS
@@ -67,15 +80,15 @@ class AsistentePoliticas:
         if not contexto:
             return {"respuesta": "No encuentro esa información en las políticas cargadas.", "fuentes": []}
 
-        bloque = "\n\n---\n\n".join(f"[{c['fuente']}]\n{c['texto']}" for c in contexto)
+        fuentes = [c["fuente"] for c in contexto]
         if not LLM.enabled:
             return {
-                "respuesta": (
-                    "Fragmentos de política relevantes (respuesta del LLM no disponible "
-                    "sin ANTHROPIC_API_KEY):\n\n" + bloque
+                "respuesta": _formatear_fragmentos(
+                    contexto, "Modo plantilla (sin ANTHROPIC_API_KEY): fragmentos relevantes"
                 ),
-                "fuentes": [c["fuente"] for c in contexto],
+                "fuentes": fuentes,
             }
+        bloque_llm = "\n\n---\n\n".join(f"[{c['fuente']}]\n{c['texto']}" for c in contexto)
         try:
             import anthropic
 
@@ -84,8 +97,13 @@ class AsistentePoliticas:
                 model=LLM.model,
                 max_tokens=LLM.max_tokens,
                 system=_SYS,
-                messages=[{"role": "user", "content": f"Fragmentos:\n{bloque}\n\nPregunta: {pregunta}"}],
+                messages=[{"role": "user", "content": f"Fragmentos:\n{bloque_llm}\n\nPregunta: {pregunta}"}],
             )
-            return {"respuesta": msg.content[0].text, "fuentes": [c["fuente"] for c in contexto]}
-        except Exception:  # noqa: BLE001
-            return {"respuesta": bloque, "fuentes": [c["fuente"] for c in contexto]}
+            return {"respuesta": msg.content[0].text, "fuentes": fuentes}
+        except Exception as exc:  # noqa: BLE001
+            return {
+                "respuesta": _formatear_fragmentos(
+                    contexto, f"La IA generativa no respondió ({type(exc).__name__}); fragmentos relevantes"
+                ),
+                "fuentes": fuentes,
+            }
