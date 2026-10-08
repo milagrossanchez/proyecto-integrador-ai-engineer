@@ -13,7 +13,12 @@ import streamlit as st
 from casino_ia import config
 from casino_ia.data import cargar_features_cliente
 from casino_ia.genai import AsistentePoliticas, explicar_cliente
-from casino_ia.models import ModeloRespuesta, ModeloRespuestaNBO, ModeloRiesgo
+from casino_ia.models import (
+    ModeloRespuesta,
+    ModeloRespuestaNBO,
+    ModeloRespuestaNBOCalibrado,
+    ModeloRiesgo,
+)
 from casino_ia.optimization.allocate import asignar_recompensas
 
 st.set_page_config(page_title="Palacio Real · Recompensas", layout="wide", page_icon="🎰")
@@ -26,11 +31,25 @@ def _data():
 
 @st.cache_resource
 def _modelos():
-    return (
-        ModeloRiesgo.load(config.MODELS_STORE / "modelo_riesgo.joblib"),
-        ModeloRespuesta.load(config.MODELS_STORE / "modelo_respuesta.joblib"),
-        ModeloRespuestaNBO.load(config.MODELS_STORE / "modelo_respuesta_nbo.joblib"),
-    )
+    """Carga riesgo + respuesta V1 + NBO.
+
+    El NBO calibrado (`ModeloRespuestaNBOCalibrado`, anclado a evidencia RCT
+    real de Hillstrom/Criteo — ver docs/etapa3_modelo_respuesta_nbo.md) todavía
+    no se puede entrenar aquí: sus fuentes `ext.HillstromEmail` y
+    `ext.CriteoUpliftV21` no están cargadas en esta base. Mientras tanto se usa
+    el NBO semi-sintético anterior (`ModeloRespuestaNBO`), sin romper la demo.
+    Apenas exista `modelo_respuesta_nbo_calibrado.joblib`, la app lo adopta solo.
+    """
+    riesgo = ModeloRiesgo.load(config.MODELS_STORE / "modelo_riesgo.joblib")
+    respuesta = ModeloRespuesta.load(config.MODELS_STORE / "modelo_respuesta.joblib")
+    ruta_calibrado = config.MODELS_STORE / "modelo_respuesta_nbo_calibrado.joblib"
+    if ruta_calibrado.exists():
+        nbo = ModeloRespuestaNBOCalibrado.load(ruta_calibrado)
+        nbo_version = "V2 calibrado (evidencia RCT Hillstrom/Criteo)"
+    else:
+        nbo = ModeloRespuestaNBO.load(config.MODELS_STORE / "modelo_respuesta_nbo.joblib")
+        nbo_version = "V2 semi-sintético (pendiente: cargar ext.HillstromEmail/CriteoUpliftV21)"
+    return riesgo, respuesta, nbo, nbo_version
 
 
 def _metricas_guardadas() -> dict:
@@ -174,7 +193,7 @@ def _widget_flotante() -> None:
 
 
 feats = _data()
-riesgo, respuesta, respuesta_nbo = _modelos()
+riesgo, respuesta, respuesta_nbo, nbo_version = _modelos()
 pred = (
     riesgo.predict(feats)[["IdCliente", "NivelRiesgo", "RiesgoScore", "EsPerfilAtipico"]]
     .merge(respuesta.predict_proba(feats), on="IdCliente")
@@ -201,6 +220,7 @@ with st.sidebar:
             st.metric("Respuesta V2 (NBO) — PR-AUC", nbo_m.get("pr_auc", "—"))
     else:
         st.caption("Ejecutá `scripts/train_models.py` para ver métricas.")
+    st.caption(f"NBO activo: {nbo_version}")
     st.divider()
     st.markdown("**IA generativa**")
     st.caption("🟢 Conectada (API Anthropic)" if config.LLM.enabled else "⚪ Modo plantilla (sin API key)")
