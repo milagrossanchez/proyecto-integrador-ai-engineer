@@ -1,6 +1,6 @@
 {
   "optimizer_version": "greedy-nbo-v2.0.0",
-  "response_model_run_id": 2,
+  "response_model_run_id": 3,
   "risk_source": "modelo-riesgo-comportamental-casino-v1",
   "session_window_note": "NroSesiones usa los 15 dias disponibles, contenidos en la ventana de 90 dias",
   "guardrails": {
@@ -15,16 +15,16 @@
     "clients": 888,
     "positive_candidates": 817,
     "assigned_clients": 781,
-    "total_spend": 7790.0,
-    "budget_utilization": 0.519333,
-    "total_expected_value": 76824.07,
+    "total_spend": 7880.0,
+    "budget_utilization": 0.525333,
+    "total_expected_value": 77083.33,
     "high_reward_spend": 3720.0,
     "high_reward_budget_share": 0.248,
-    "max_segment_budget_share": 0.198,
+    "max_segment_budget_share": 0.197333,
     "assigned_by_reward": {
       "alta": 93,
-      "baja": 625,
-      "media": 63
+      "baja": 616,
+      "media": 72
     },
     "assigned_by_risk": {
       "Bajo": 585,
@@ -38,29 +38,29 @@
   },
   "baseline_v1": {
     "clients": 888,
-    "positive_candidates": 189,
-    "assigned_clients": 189,
-    "total_spend": 945.0,
-    "budget_utilization": 0.063,
-    "total_expected_value": 578.34,
+    "positive_candidates": 181,
+    "assigned_clients": 181,
+    "total_spend": 905.0,
+    "budget_utilization": 0.060333,
+    "total_expected_value": 575.73,
     "high_reward_spend": 0.0,
     "high_reward_budget_share": 0.0,
-    "max_segment_budget_share": 0.032667,
+    "max_segment_budget_share": 0.033,
     "assigned_by_reward": {
-      "baja": 189
+      "baja": 181
     },
     "assigned_by_risk": {
-      "Bajo": 94,
+      "Bajo": 86,
       "Medio": 95
     },
     "decisions_by_reason": {
-      "Sin recompensa: valor esperado no positivo": 628,
-      "Asignada": 189,
+      "Sin recompensa: valor esperado no positivo": 636,
+      "Asignada": 181,
       "Sin recompensa: riesgo alto": 71
     }
   },
   "comparison": {
-    "expected_value_delta": 76245.73,
-    "expected_value_improvement": 131.835477
+    "expected_value_delta": 76507.6,
+    "expected_value_improvement": 132.887986
   }
 }

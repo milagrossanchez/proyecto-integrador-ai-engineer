@@ -1,889 +1,889 @@
-IdCliente,Segmento,NivelRiesgo,ProbRespuesta,SesionesUltimos90d,RecompensaSugerida,CostoSugerido,Recompensa,Costo,ValorIncremental,ValorEsperado,Eficiencia,GastoAcumulado,Asignada,MotivoDecision
-900070,VIP,Medio,0.6825,110,baja,5.0,baja,5.0,206.9575,136.25,27.25,5.0,True,Asignada
-900838,VIP,Medio,0.7077,125,baja,5.0,baja,5.0,189.3528,129.0,25.801,10.0,True,Asignada
-900204,VIP,Medio,0.6598,127,baja,5.0,baja,5.0,166.3609,104.76,20.953,15.0,True,Asignada
-900363,VIP,Medio,0.6393,111,baja,5.0,baja,5.0,168.9876,103.03,20.607,20.0,True,Asignada
-900809,VIP,Medio,0.7335,109,baja,5.0,baja,5.0,144.5743,101.05,20.209,25.0,True,Asignada
-900748,VIP,Medio,0.6407,107,baja,5.0,baja,5.0,163.1979,99.56,19.912,30.0,True,Asignada
-900790,VIP,Medio,0.7317,104,baja,5.0,baja,5.0,142.7988,99.49,19.897,35.0,True,Asignada
-900799,VIP,Medio,0.7192,124,baja,5.0,baja,5.0,138.2718,94.45,18.889,40.0,True,Asignada
-900003,VIP,Medio,0.6697,131,baja,5.0,baja,5.0,148.2944,94.31,18.863,45.0,True,Asignada
-900587,VIP,Medio,0.6931,99,baja,5.0,baja,5.0,142.8142,93.98,18.797,50.0,True,Asignada
-900581,VIP,Medio,0.6407,121,baja,5.0,baja,5.0,142.5571,86.34,17.267,55.0,True,Asignada
-900481,VIP,Medio,0.6277,127,baja,5.0,baja,5.0,144.5023,85.7,17.141,60.0,True,Asignada
-900337,VIP,Medio,0.5679,117,baja,5.0,baja,5.0,159.5186,85.59,17.118,65.0,True,Asignada
-900460,VIP,Medio,0.6933,101,baja,5.0,baja,5.0,129.1755,84.56,16.911,70.0,True,Asignada
-900451,VIP,Bajo,0.7456,117,baja,5.0,baja,5.0,115.1582,80.86,16.172,75.0,True,Asignada
-900571,VIP,Bajo,0.7155,102,baja,5.0,baja,5.0,118.0507,79.47,15.893,80.0,True,Asignada
-900285,VIP,Bajo,0.6841,111,baja,5.0,baja,5.0,123.1264,79.23,15.846,85.0,True,Asignada
-900219,VIP,Medio,0.673,107,baja,5.0,baja,5.0,123.426,78.07,15.613,90.0,True,Asignada
-900733,VIP,Medio,0.6497,114,baja,5.0,baja,5.0,125.288,76.4,15.28,95.0,True,Asignada
-900508,VIP,Medio,0.6554,104,baja,5.0,baja,5.0,122.6192,75.36,15.073,100.0,True,Asignada
-900660,VIP,Medio,0.7456,117,baja,5.0,baja,5.0,107.6519,75.27,15.053,105.0,True,Asignada
-900221,VIP,Medio,0.6853,125,baja,5.0,baja,5.0,116.6163,74.92,14.983,110.0,True,Asignada
-900072,VIP,Medio,0.7007,101,baja,5.0,baja,5.0,113.1652,74.29,14.859,115.0,True,Asignada
-900764,VIP,Medio,0.7661,127,baja,5.0,baja,5.0,103.0465,73.94,14.789,120.0,True,Asignada
-900279,VIP,Medio,0.6327,104,baja,5.0,baja,5.0,121.1861,71.67,14.335,125.0,True,Asignada
-900021,VIP,Medio,0.6216,109,baja,5.0,baja,5.0,122.1237,70.91,14.182,130.0,True,Asignada
-900723,VIP,Medio,0.6715,139,baja,5.0,baja,5.0,113.0275,70.9,14.18,135.0,True,Asignada
-900633,VIP,Bajo,0.6995,122,baja,5.0,baja,5.0,107.6014,70.27,14.053,140.0,True,Asignada
-900019,VIP,Medio,0.6411,110,baja,5.0,baja,5.0,116.4237,69.64,13.928,145.0,True,Asignada
-900029,VIP,Medio,0.6853,128,baja,5.0,baja,5.0,108.8639,69.6,13.921,150.0,True,Asignada
-900232,VIP,Medio,0.6715,109,baja,5.0,baja,5.0,111.1043,69.61,13.921,155.0,True,Asignada
-900087,VIP,Medio,0.7007,119,baja,5.0,baja,5.0,105.6309,69.02,13.803,160.0,True,Asignada
-900829,VIP,Bajo,0.7335,107,baja,5.0,baja,5.0,100.8367,68.96,13.793,165.0,True,Asignada
-900739,VIP,Medio,0.6917,109,baja,5.0,baja,5.0,105.9585,68.29,13.658,170.0,True,Asignada
-900253,VIP,Bajo,0.6347,102,baja,5.0,baja,5.0,114.8126,67.87,13.574,175.0,True,Asignada
-900366,VIP,Medio,0.6327,110,baja,5.0,baja,5.0,114.4497,67.41,13.482,180.0,True,Asignada
-900573,VIP,Medio,0.6411,110,baja,5.0,baja,5.0,112.9094,67.39,13.477,185.0,True,Asignada
-900212,VIP,Medio,0.6933,100,baja,5.0,baja,5.0,102.6964,66.2,13.24,190.0,True,Asignada
-900654,VIP,Medio,0.6853,109,baja,5.0,baja,5.0,103.7235,66.08,13.216,195.0,True,Asignada
-900747,VIP,Medio,0.6757,123,baja,5.0,baja,5.0,105.1526,66.05,13.21,200.0,True,Asignada
-900696,VIP,Bajo,0.6777,111,baja,5.0,baja,5.0,103.4522,65.11,13.022,205.0,True,Asignada
-900188,VIP,Medio,0.6072,98,baja,5.0,baja,5.0,113.3547,63.83,12.766,210.0,True,Asignada
-900586,VIP,Medio,0.7007,115,baja,5.0,baja,5.0,97.7574,63.5,12.7,215.0,True,Asignada
-900225,Alto,Medio,0.6853,111,baja,5.0,baja,5.0,97.4215,61.76,12.353,220.0,True,Asignada
-900071,VIP,Medio,0.7155,110,baja,5.0,baja,5.0,92.3044,61.04,12.209,225.0,True,Asignada
-900846,VIP,Bajo,0.6598,112,baja,5.0,baja,5.0,98.8743,60.24,12.047,230.0,True,Asignada
-900600,Alto,Medio,0.6683,110,baja,5.0,baja,5.0,95.5154,58.83,11.767,235.0,True,Asignada
-900818,Alto,Medio,0.6683,117,baja,5.0,baja,5.0,94.8217,58.37,11.674,240.0,True,Asignada
-900173,Alto,Medio,0.6327,103,baja,5.0,baja,5.0,99.3615,57.87,11.573,245.0,True,Asignada
-900465,VIP,Medio,0.6572,112,baja,5.0,baja,5.0,95.3003,57.63,11.526,250.0,True,Asignada
-900322,Alto,Bajo,0.7392,104,baja,5.0,baja,5.0,84.3365,57.34,11.468,255.0,True,Asignada
-900851,VIP,Medio,0.7008,110,baja,5.0,baja,5.0,88.8157,57.24,11.448,260.0,True,Asignada
-900709,VIP,Medio,0.6772,118,baja,5.0,baja,5.0,91.8138,57.18,11.435,265.0,True,Asignada
-900280,VIP,Medio,0.6446,117,baja,5.0,baja,5.0,96.1664,56.99,11.398,270.0,True,Asignada
-900050,VIP,Medio,0.6076,115,baja,5.0,baja,5.0,101.8795,56.9,11.38,275.0,True,Asignada
-900551,Alto,Medio,0.6683,113,baja,5.0,baja,5.0,90.9476,55.78,11.156,280.0,True,Asignada
-900519,Alto,Medio,0.7015,116,baja,5.0,baja,5.0,86.4576,55.65,11.13,285.0,True,Asignada
-900252,VIP,Bajo,0.675,94,baja,5.0,baja,5.0,89.307,55.28,11.056,290.0,True,Asignada
-900140,Alto,Bajo,0.7128,109,baja,5.0,baja,5.0,84.2529,55.06,11.011,295.0,True,Asignada
-900007,Alto,Bajo,0.692,104,baja,5.0,baja,5.0,86.046,54.54,10.909,300.0,True,Asignada
-900348,Alto,Bajo,0.7487,91,baja,5.0,baja,5.0,79.1824,54.28,10.857,305.0,True,Asignada
-900273,VIP,Medio,0.6147,132,baja,5.0,baja,5.0,96.135,54.09,10.819,310.0,True,Asignada
-900388,Alto,Bajo,0.7155,109,baja,5.0,baja,5.0,81.4933,53.31,10.662,315.0,True,Asignada
-900383,VIP,Medio,0.6683,101,baja,5.0,baja,5.0,86.4716,52.79,10.558,320.0,True,Asignada
-900093,VIP,Medio,0.6683,118,baja,5.0,baja,5.0,86.3107,52.68,10.536,325.0,True,Asignada
-900257,VIP,Medio,0.6713,125,baja,5.0,baja,5.0,85.8911,52.66,10.532,330.0,True,Asignada
-900745,VIP,Bajo,0.6055,135,baja,5.0,baja,5.0,94.4774,52.21,10.441,335.0,True,Asignada
-900292,VIP,Medio,0.692,115,baja,5.0,baja,5.0,82.3058,51.96,10.391,340.0,True,Asignada
-900751,Alto,Bajo,0.6984,104,baja,5.0,baja,5.0,81.1863,51.7,10.34,345.0,True,Asignada
-900659,VIP,Bajo,0.6777,134,baja,5.0,baja,5.0,83.3137,51.46,10.292,350.0,True,Asignada
-900006,VIP,Medio,0.6867,130,baja,5.0,baja,5.0,82.0472,51.34,10.268,355.0,True,Asignada
-900606,VIP,Medio,0.6577,90,baja,5.0,baja,5.0,85.0143,50.91,10.183,360.0,True,Asignada
-900004,VIP,Medio,0.6381,106,baja,5.0,baja,5.0,87.1082,50.58,10.117,365.0,True,Asignada
-900734,Alto,Medio,0.7149,118,baja,5.0,baja,5.0,76.7894,49.9,9.979,370.0,True,Asignada
-900260,Alto,Bajo,0.7007,106,baja,5.0,baja,5.0,78.2326,49.82,9.964,375.0,True,Asignada
-900105,VIP,Medio,0.6817,136,baja,5.0,baja,5.0,80.3894,49.8,9.96,380.0,True,Asignada
-900331,Alto,Bajo,0.692,106,baja,5.0,baja,5.0,78.6536,49.43,9.886,385.0,True,Asignada
-900761,VIP,Medio,0.6853,130,baja,5.0,baja,5.0,78.8295,49.02,9.804,390.0,True,Asignada
-900494,Alto,Bajo,0.6777,105,baja,5.0,baja,5.0,79.5677,48.92,9.785,395.0,True,Asignada
-900688,Alto,Medio,0.6697,118,baja,5.0,baja,5.0,80.2523,48.74,9.749,400.0,True,Asignada
-900139,Alto,Bajo,0.6697,119,baja,5.0,baja,5.0,80.2262,48.73,9.745,405.0,True,Asignada
-900632,VIP,Medio,0.6683,126,baja,5.0,baja,5.0,79.9158,48.41,9.682,410.0,True,Asignada
-900628,VIP,Medio,0.6697,111,baja,5.0,baja,5.0,79.3321,48.13,9.626,415.0,True,Asignada
-900565,Alto,Medio,0.6784,112,baja,5.0,baja,5.0,78.24,48.08,9.616,420.0,True,Asignada
-900698,VIP,Medio,0.5452,148,baja,5.0,baja,5.0,97.1809,47.98,9.597,425.0,True,Asignada
-900833,Alto,Bajo,0.6716,106,baja,5.0,baja,5.0,78.5343,47.74,9.549,430.0,True,Asignada
-900269,Alto,Medio,0.6237,103,baja,5.0,baja,5.0,81.7869,46.01,9.202,435.0,True,Asignada
-900579,VIP,Medio,0.6177,105,baja,5.0,baja,5.0,82.4859,45.95,9.19,440.0,True,Asignada
-900464,VIP,Medio,0.7192,107,baja,5.0,baja,5.0,70.6057,45.78,9.156,445.0,True,Asignada
-900650,Alto,Bajo,0.6683,110,baja,5.0,baja,5.0,75.9112,45.73,9.146,450.0,True,Asignada
-900832,VIP,Medio,0.6995,130,baja,5.0,baja,5.0,72.361,45.62,9.123,455.0,True,Asignada
-900414,VIP,Medio,0.6411,104,baja,5.0,baja,5.0,78.7217,45.47,9.094,460.0,True,Asignada
-900207,VIP,Medio,0.6242,105,baja,5.0,baja,5.0,80.6544,45.34,9.069,465.0,True,Asignada
-900768,Alto,Medio,0.6475,105,baja,5.0,baja,5.0,77.1029,44.92,8.985,470.0,True,Asignada
-900774,VIP,Medio,0.709,113,baja,5.0,baja,5.0,70.2298,44.79,8.959,475.0,True,Asignada
-900054,VIP,Medio,0.5779,111,baja,5.0,baja,5.0,85.4996,44.41,8.882,480.0,True,Asignada
-900303,Alto,Medio,0.6607,113,baja,5.0,baja,5.0,74.4464,44.19,8.837,485.0,True,Asignada
-900178,Alto,Medio,0.6372,94,baja,5.0,baja,5.0,77.1147,44.14,8.827,490.0,True,Asignada
-900449,VIP,Medio,0.6407,114,baja,5.0,baja,5.0,76.363,43.93,8.785,495.0,True,Asignada
-900326,VIP,Medio,0.6942,124,baja,5.0,baja,5.0,69.9179,43.54,8.707,500.0,True,Asignada
-900804,VIP,Medio,0.6984,118,baja,5.0,baja,5.0,69.0417,43.22,8.644,505.0,True,Asignada
-900444,Alto,Medio,0.6683,113,baja,5.0,baja,5.0,72.0481,43.15,8.63,510.0,True,Asignada
-900289,VIP,Bajo,0.6814,125,baja,5.0,baja,5.0,70.601,43.11,8.622,515.0,True,Asignada
-900619,Alto,Bajo,0.6338,121,baja,5.0,baja,5.0,75.2626,42.7,8.54,520.0,True,Asignada
-900040,Alto,Bajo,0.6607,113,baja,5.0,baja,5.0,72.0553,42.61,8.521,525.0,True,Asignada
-900614,VIP,Medio,0.6792,122,baja,5.0,baja,5.0,69.9672,42.52,8.504,530.0,True,Asignada
-900797,VIP,Bajo,0.6772,118,baja,5.0,baja,5.0,70.1317,42.49,8.499,535.0,True,Asignada
-900405,Alto,Bajo,0.6338,113,baja,5.0,baja,5.0,74.5074,42.22,8.445,540.0,True,Asignada
-900373,Alto,Medio,0.6777,116,baja,5.0,baja,5.0,69.6072,42.17,8.435,545.0,True,Asignada
-900884,Alto,Medio,0.6984,115,baja,5.0,baja,5.0,66.4774,41.43,8.286,550.0,True,Asignada
-900196,Alto,Bajo,0.6984,120,baja,5.0,baja,5.0,66.4049,41.38,8.275,555.0,True,Asignada
-900287,VIP,Medio,0.5911,112,baja,5.0,baja,5.0,78.1995,41.22,8.245,560.0,True,Asignada
-900793,Alto,Bajo,0.6327,94,baja,5.0,baja,5.0,72.453,40.84,8.168,565.0,True,Asignada
-900264,Alto,Medio,0.6242,97,baja,5.0,baja,5.0,73.3383,40.78,8.156,570.0,True,Asignada
-900731,Alto,Medio,0.6841,118,baja,5.0,baja,5.0,65.9985,40.15,8.03,575.0,True,Asignada
-900016,VIP,Medio,0.6416,112,baja,5.0,baja,5.0,70.248,40.07,8.014,580.0,True,Asignada
-900525,Alto,Bajo,0.6446,120,baja,5.0,baja,5.0,69.7587,39.97,7.993,585.0,True,Asignada
-900352,Alto,Medio,0.6237,123,baja,5.0,baja,5.0,72.0601,39.94,7.989,590.0,True,Asignada
-900146,Alto,Medio,0.6845,107,baja,5.0,baja,5.0,65.4687,39.81,7.963,595.0,True,Asignada
-900341,Alto,Medio,0.7327,120,baja,5.0,baja,5.0,61.0379,39.72,7.944,600.0,True,Asignada
-900164,Alto,Medio,0.6942,107,baja,5.0,baja,5.0,63.9015,39.36,7.872,605.0,True,Asignada
-900336,Alto,Bajo,0.6607,111,baja,5.0,baja,5.0,66.5259,38.95,7.791,610.0,True,Asignada
-900148,Medio,Bajo,0.7155,104,baja,5.0,baja,5.0,61.4279,38.95,7.79,615.0,True,Asignada
-900504,Alto,Medio,0.6177,106,baja,5.0,baja,5.0,70.2291,38.38,7.676,620.0,True,Asignada
-900323,Alto,Bajo,0.6598,129,baja,5.0,baja,5.0,65.7145,38.36,7.672,625.0,True,Asignada
-900821,VIP,Bajo,0.6942,105,baja,5.0,baja,5.0,62.2494,38.21,7.643,630.0,True,Asignada
-900121,VIP,Medio,0.6607,129,baja,5.0,baja,5.0,64.9731,37.93,7.586,635.0,True,Asignada
-900871,Alto,Bajo,0.6225,125,baja,5.0,baja,5.0,68.8019,37.83,7.566,640.0,True,Asignada
-900192,VIP,Medio,0.6867,124,baja,5.0,baja,5.0,62.2141,37.72,7.544,645.0,True,Asignada
-900073,VIP,Medio,0.6616,122,baja,5.0,baja,5.0,64.5513,37.71,7.541,650.0,True,Asignada
-900058,Alto,Bajo,0.6683,94,baja,5.0,baja,5.0,63.7756,37.62,7.524,655.0,True,Asignada
-900298,VIP,Medio,0.6407,126,baja,5.0,baja,5.0,66.3957,37.54,7.508,660.0,True,Asignada
-900222,Alto,Bajo,0.7202,110,baja,5.0,baja,5.0,58.9964,37.49,7.498,665.0,True,Asignada
-900151,Alto,Medio,0.6942,153,baja,5.0,baja,5.0,60.7407,37.17,7.433,670.0,True,Asignada
-900416,VIP,Medio,0.6076,115,baja,5.0,baja,5.0,68.4127,36.57,7.314,675.0,True,Asignada
-900864,VIP,Medio,0.6942,132,baja,5.0,baja,5.0,59.6323,36.4,7.279,680.0,True,Asignada
-900476,Alto,Medio,0.6237,119,baja,5.0,baja,5.0,65.136,35.63,7.125,685.0,True,Asignada
-900711,VIP,Medio,0.6622,124,baja,5.0,baja,5.0,60.909,35.33,7.067,690.0,True,Asignada
-900041,Alto,Bajo,0.7007,106,baja,5.0,baja,5.0,57.3361,35.18,7.035,695.0,True,Asignada
-900229,Alto,Bajo,0.5911,112,baja,5.0,baja,5.0,67.9517,35.17,7.033,700.0,True,Asignada
-900042,VIP,Medio,0.5911,115,baja,5.0,baja,5.0,67.884,35.13,7.025,705.0,True,Asignada
-900876,VIP,Bajo,0.706,129,baja,5.0,baja,5.0,55.7866,34.39,6.877,710.0,True,Asignada
-900886,VIP,Medio,0.6942,111,baja,5.0,baja,5.0,56.6713,34.34,6.868,715.0,True,Asignada
-900386,Alto,Bajo,0.5911,132,baja,5.0,baja,5.0,66.4432,34.27,6.855,720.0,True,Asignada
-900259,Alto,Bajo,0.6338,117,baja,5.0,baja,5.0,61.1562,33.76,6.752,725.0,True,Asignada
-900076,VIP,Bajo,0.6683,111,baja,5.0,baja,5.0,57.649,33.53,6.705,730.0,True,Asignada
-900839,Alto,Medio,0.6577,115,baja,5.0,baja,5.0,58.5425,33.5,6.701,735.0,True,Asignada
-900769,Alto,Bajo,0.6177,116,baja,5.0,baja,5.0,61.9929,33.29,6.659,740.0,True,Asignada
-900773,Alto,Medio,0.5911,115,baja,5.0,baja,5.0,64.7218,33.26,6.651,745.0,True,Asignada
-900060,VIP,Medio,0.6055,104,baja,5.0,baja,5.0,62.8794,33.07,6.615,750.0,True,Asignada
-900024,VIP,Medio,0.6338,115,baja,5.0,baja,5.0,59.9692,33.01,6.602,755.0,True,Asignada
-900880,Alto,Bajo,0.6338,127,baja,5.0,baja,5.0,59.8461,32.93,6.586,760.0,True,Asignada
-900847,Alto,Bajo,0.6072,112,baja,5.0,baja,5.0,62.4434,32.92,6.583,765.0,True,Asignada
-900147,VIP,Medio,0.6841,98,baja,5.0,baja,5.0,55.2035,32.76,6.553,770.0,True,Asignada
-900415,Alto,Bajo,0.6072,107,baja,5.0,baja,5.0,61.6844,32.45,6.491,775.0,True,Asignada
-900113,Medio,Bajo,0.6446,100,baja,5.0,baja,5.0,57.8117,32.27,6.453,780.0,True,Asignada
-900727,Alto,Bajo,0.6616,128,baja,5.0,baja,5.0,56.2837,32.24,6.447,785.0,True,Asignada
-900182,VIP,Medio,0.6072,112,baja,5.0,baja,5.0,61.1627,32.14,6.428,790.0,True,Asignada
-900478,Alto,Medio,0.706,110,baja,5.0,baja,5.0,52.1177,31.8,6.359,795.0,True,Asignada
-900557,Alto,Bajo,0.6428,107,baja,5.0,baja,5.0,56.9885,31.63,6.326,800.0,True,Asignada
-900574,VIP,Medio,0.6522,119,baja,5.0,baja,5.0,55.9774,31.51,6.302,805.0,True,Asignada
-900538,Alto,Bajo,0.6508,115,baja,5.0,baja,5.0,55.7545,31.29,6.257,810.0,True,Asignada
-900778,Alto,Medio,0.7073,112,baja,5.0,baja,5.0,50.1308,30.46,6.092,815.0,True,Asignada
-900385,Alto,Bajo,0.6242,129,baja,5.0,baja,5.0,56.6034,30.33,6.066,820.0,True,Asignada
-900663,Medio,Medio,0.7015,121,baja,5.0,baja,5.0,50.1528,30.18,6.036,825.0,True,Asignada
-900236,Alto,Medio,0.6407,128,baja,5.0,baja,5.0,54.7945,30.11,6.021,830.0,True,Asignada
-900708,VIP,Medio,0.6772,119,baja,5.0,baja,5.0,51.6957,30.01,6.002,835.0,True,Asignada
-900312,Alto,Bajo,0.6407,115,baja,5.0,baja,5.0,54.2562,29.76,5.952,840.0,True,Asignada
-900245,Alto,Bajo,0.6508,118,baja,5.0,baja,5.0,53.0807,29.54,5.909,845.0,True,Asignada
-900067,VIP,Medio,0.6882,115,baja,5.0,baja,5.0,49.6587,29.18,5.835,850.0,True,Asignada
-900407,Alto,Medio,0.6338,108,baja,5.0,baja,5.0,53.7064,29.04,5.808,855.0,True,Asignada
-900791,Alto,Bajo,0.6814,116,baja,5.0,baja,5.0,49.8661,28.98,5.796,860.0,True,Asignada
-900302,Alto,Medio,0.6155,116,baja,5.0,baja,5.0,55.0333,28.87,5.775,865.0,True,Asignada
-900635,VIP,Bajo,0.6662,107,baja,5.0,baja,5.0,50.6978,28.77,5.755,870.0,True,Asignada
-900134,Alto,Bajo,0.6472,120,baja,5.0,baja,5.0,51.9554,28.63,5.725,875.0,True,Asignada
-900358,Alto,Bajo,0.6942,111,baja,5.0,baja,5.0,48.4251,28.62,5.723,880.0,True,Asignada
-900874,Alto,Bajo,0.6716,107,baja,5.0,baja,5.0,50.0558,28.62,5.723,885.0,True,Asignada
-900509,Alto,Bajo,0.6327,107,baja,5.0,baja,5.0,52.2513,28.06,5.612,890.0,True,Asignada
-900673,Alto,Bajo,0.6697,117,baja,5.0,baja,5.0,48.8842,27.74,5.548,895.0,True,Asignada
-900044,Alto,Bajo,0.6242,125,baja,5.0,baja,5.0,52.1939,27.58,5.516,900.0,True,Asignada
-900879,Alto,Bajo,0.6237,114,baja,5.0,baja,5.0,52.0831,27.48,5.497,905.0,True,Asignada
-900290,Alto,Bajo,0.6072,107,baja,5.0,baja,5.0,52.6826,26.99,5.398,910.0,True,Asignada
-900536,VIP,Medio,0.6216,108,baja,5.0,baja,5.0,51.3358,26.91,5.382,915.0,True,Asignada
-900012,Alto,Bajo,0.6237,114,baja,5.0,baja,5.0,51.0547,26.84,5.369,920.0,True,Asignada
-900375,Medio,Bajo,0.6177,125,baja,5.0,baja,5.0,50.7327,26.34,5.268,925.0,True,Asignada
-900250,VIP,Bajo,0.6076,110,baja,5.0,baja,5.0,51.3499,26.2,5.24,930.0,True,Asignada
-900485,Alto,Medio,0.6076,99,baja,5.0,baja,5.0,51.1257,26.06,5.213,935.0,True,Asignada
-900108,VIP,Bajo,0.8249,113,media,15.0,media,15.0,112.4408,77.75,5.183,950.0,True,Asignada
-900786,Alto,Medio,0.5413,127,baja,5.0,baja,5.0,56.8605,25.78,5.156,955.0,True,Asignada
-900400,VIP,Medio,0.6177,115,baja,5.0,baja,5.0,49.7489,25.73,5.146,960.0,True,Asignada
-900655,VIP,Bajo,0.6917,106,media,15.0,media,15.0,131.6136,76.04,5.069,975.0,True,Asignada
-900694,Alto,Bajo,0.6155,103,baja,5.0,baja,5.0,48.7184,24.99,4.997,980.0,True,Asignada
-900156,Alto,Medio,0.692,98,baja,5.0,baja,5.0,42.7347,24.57,4.914,985.0,True,Asignada
-900203,Alto,Bajo,0.6237,128,baja,5.0,baja,5.0,47.2691,24.48,4.896,990.0,True,Asignada
-900286,VIP,Medio,0.6216,93,baja,5.0,baja,5.0,47.4112,24.47,4.894,995.0,True,Asignada
-900703,Alto,Medio,0.6407,115,baja,5.0,baja,5.0,45.7806,24.33,4.866,1000.0,True,Asignada
-900807,Alto,Medio,0.6177,111,baja,5.0,baja,5.0,47.1274,24.11,4.822,1005.0,True,Asignada
-900878,Alto,Bajo,0.6407,108,baja,5.0,baja,5.0,45.3609,24.06,4.813,1010.0,True,Asignada
-900658,Alto,Bajo,0.5981,108,baja,5.0,baja,5.0,47.9978,23.71,4.741,1015.0,True,Asignada
-900233,VIP,Bajo,0.6683,124,baja,5.0,baja,5.0,42.5551,23.44,4.688,1020.0,True,Asignada
-900610,Medio,Bajo,0.6867,111,baja,5.0,baja,5.0,41.4022,23.43,4.686,1025.0,True,Asignada
-900033,Medio,Bajo,0.6917,115,baja,5.0,baja,5.0,40.6775,23.14,4.627,1030.0,True,Asignada
-900056,Alto,Bajo,0.5557,112,baja,5.0,baja,5.0,50.5499,23.09,4.618,1035.0,True,Asignada
-900550,Medio,Bajo,0.6327,115,baja,5.0,baja,5.0,43.9534,22.81,4.562,1040.0,True,Asignada
-900304,VIP,Medio,0.6683,113,baja,5.0,baja,5.0,41.6024,22.8,4.561,1045.0,True,Asignada
-900301,VIP,Medio,0.7008,128,baja,5.0,baja,5.0,39.2187,22.48,4.497,1050.0,True,Asignada
-900687,Alto,Bajo,0.5911,129,baja,5.0,baja,5.0,46.493,22.48,4.496,1055.0,True,Asignada
-900175,Alto,Medio,0.5911,104,baja,5.0,baja,5.0,45.8809,22.12,4.424,1060.0,True,Asignada
-900038,Alto,Bajo,0.6772,103,baja,5.0,baja,5.0,39.7154,21.9,4.379,1065.0,True,Asignada
-900500,Alto,Bajo,0.8012,91,media,15.0,media,15.0,98.5494,63.96,4.264,1080.0,True,Asignada
-900244,Alto,Bajo,0.5727,109,baja,5.0,baja,5.0,45.878,21.27,4.255,1085.0,True,Asignada
-900863,Medio,Bajo,0.6577,108,baja,5.0,baja,5.0,38.9239,20.6,4.12,1090.0,True,Asignada
-900697,Alto,Bajo,0.5553,111,baja,5.0,baja,5.0,45.5607,20.3,4.06,1095.0,True,Asignada
-900813,Alto,Bajo,0.6607,115,baja,5.0,baja,5.0,37.9389,20.07,4.013,1100.0,True,Asignada
-900186,Medio,Medio,0.709,108,baja,5.0,baja,5.0,35.344,20.06,4.012,1105.0,True,Asignada
-900158,Medio,Bajo,0.6867,105,baja,5.0,baja,5.0,36.3996,20.0,3.999,1110.0,True,Asignada
-900517,Medio,Bajo,0.6598,121,baja,5.0,baja,5.0,37.734,19.9,3.979,1115.0,True,Asignada
-900621,Alto,Bajo,0.6506,125,baja,5.0,baja,5.0,37.9572,19.69,3.939,1120.0,True,Asignada
-900309,VIP,Bajo,0.6777,108,media,15.0,media,15.0,108.68,58.65,3.91,1135.0,True,Asignada
-900783,VIP,Medio,0.5413,124,baja,5.0,baja,5.0,45.089,19.41,3.881,1140.0,True,Asignada
-900166,Alto,Bajo,0.7222,110,baja,5.0,baja,5.0,33.5722,19.25,3.849,1145.0,True,Asignada
-900399,Medio,Bajo,0.6931,120,baja,5.0,baja,5.0,34.9279,19.21,3.842,1150.0,True,Asignada
-900521,Alto,Medio,0.6447,113,baja,5.0,baja,5.0,37.4234,19.13,3.825,1155.0,True,Asignada
-900057,Alto,Bajo,0.6853,125,media,15.0,media,15.0,105.5897,57.36,3.824,1170.0,True,Asignada
-900667,Alto,Bajo,0.6216,111,baja,5.0,baja,5.0,38.7915,19.11,3.823,1175.0,True,Asignada
-900299,VIP,Medio,0.6607,119,baja,5.0,baja,5.0,36.2643,18.96,3.792,1180.0,True,Asignada
-900685,VIP,Medio,0.6407,109,baja,5.0,baja,5.0,37.3754,18.95,3.789,1185.0,True,Asignada
-900365,Alto,Medio,0.6155,112,baja,5.0,baja,5.0,38.776,18.87,3.773,1190.0,True,Asignada
-900844,Alto,Bajo,0.6277,109,baja,5.0,baja,5.0,37.9736,18.84,3.767,1195.0,True,Asignada
-900078,VIP,Medio,0.638,116,baja,5.0,baja,5.0,36.9638,18.58,3.717,1200.0,True,Asignada
-900625,VIP,Bajo,0.6942,124,media,15.0,media,15.0,101.7552,55.64,3.709,1215.0,True,Asignada
-900194,Alto,Medio,0.6683,114,baja,5.0,baja,5.0,35.1279,18.48,3.695,1220.0,True,Asignada
-900237,VIP,Bajo,0.6246,112,baja,5.0,baja,5.0,37.3695,18.34,3.668,1225.0,True,Asignada
-900881,Medio,Bajo,0.706,112,baja,5.0,baja,5.0,32.534,17.97,3.594,1230.0,True,Asignada
-900255,Alto,Medio,0.6338,114,baja,5.0,baja,5.0,36.0262,17.83,3.567,1235.0,True,Asignada
-900227,Medio,Medio,0.6607,126,baja,5.0,baja,5.0,34.5454,17.82,3.565,1240.0,True,Asignada
-900441,Medio,Bajo,0.6777,117,baja,5.0,baja,5.0,33.5996,17.77,3.554,1245.0,True,Asignada
-900413,Alto,Bajo,0.6177,101,baja,5.0,baja,5.0,36.8307,17.75,3.55,1250.0,True,Asignada
-900588,Alto,Bajo,0.7519,140,baja,5.0,baja,5.0,30.2509,17.75,3.549,1255.0,True,Asignada
-900539,Medio,Bajo,0.6607,101,baja,5.0,baja,5.0,34.3797,17.71,3.543,1260.0,True,Asignada
-900542,Alto,Bajo,0.6607,98,media,15.0,media,15.0,101.9136,52.33,3.489,1275.0,True,Asignada
-900382,Alto,Bajo,0.7007,108,media,15.0,media,15.0,95.9984,52.27,3.484,1290.0,True,Asignada
-900594,Alto,Bajo,0.6428,105,baja,5.0,baja,5.0,34.7764,17.35,3.471,1295.0,True,Asignada
-900022,Alto,Medio,0.6076,104,baja,5.0,baja,5.0,36.504,17.18,3.436,1300.0,True,Asignada
-900110,VIP,Bajo,0.6867,111,media,15.0,media,15.0,96.7163,51.42,3.428,1315.0,True,Asignada
-900616,Alto,Bajo,0.6407,109,baja,5.0,baja,5.0,34.0398,16.81,3.362,1320.0,True,Asignada
-900327,Alto,Bajo,0.6072,106,baja,5.0,baja,5.0,35.8267,16.75,3.351,1325.0,True,Asignada
-900530,Medio,Medio,0.6177,102,baja,5.0,baja,5.0,35.1741,16.73,3.345,1330.0,True,Asignada
-900803,VIP,Medio,0.6683,93,baja,5.0,baja,5.0,32.0798,16.44,3.288,1335.0,True,Asignada
-900822,Medio,Bajo,0.6446,103,baja,5.0,baja,5.0,32.9783,16.26,3.252,1340.0,True,Asignada
-900387,Medio,Bajo,0.6246,108,baja,5.0,baja,5.0,34.0027,16.24,3.248,1345.0,True,Asignada
-900150,Alto,Bajo,0.5911,112,baja,5.0,baja,5.0,35.9089,16.23,3.245,1350.0,True,Asignada
-900873,Alto,Medio,0.7297,88,baja,5.0,baja,5.0,29.0874,16.23,3.245,1355.0,True,Asignada
-900270,Alto,Bajo,0.6246,105,baja,5.0,baja,5.0,33.9638,16.21,3.243,1360.0,True,Asignada
-900136,Alto,Medio,0.6607,108,baja,5.0,baja,5.0,32.0943,16.2,3.241,1365.0,True,Asignada
-900762,Medio,Bajo,0.6177,109,baja,5.0,baja,5.0,33.9551,15.97,3.195,1370.0,True,Asignada
-900379,Medio,Bajo,0.6933,127,baja,5.0,baja,5.0,30.0122,15.81,3.161,1375.0,True,Asignada
-900849,Medio,Bajo,0.6428,118,baja,5.0,baja,5.0,32.2462,15.73,3.146,1380.0,True,Asignada
-900825,Medio,Bajo,0.6055,112,baja,5.0,baja,5.0,34.1869,15.7,3.14,1385.0,True,Asignada
-900419,Alto,Bajo,0.6338,122,baja,5.0,baja,5.0,32.5659,15.64,3.128,1390.0,True,Asignada
-900138,Medio,Bajo,0.6853,126,baja,5.0,baja,5.0,30.0786,15.61,3.123,1395.0,True,Asignada
-900234,Alto,Medio,0.7734,102,baja,5.0,baja,5.0,26.5754,15.55,3.111,1400.0,True,Asignada
-900103,Medio,Bajo,0.6607,117,baja,5.0,baja,5.0,30.9317,15.44,3.087,1405.0,True,Asignada
-900421,Medio,Bajo,0.6177,107,baja,5.0,baja,5.0,33.0725,15.43,3.086,1410.0,True,Asignada
-900649,Medio,Bajo,0.6607,106,baja,5.0,baja,5.0,30.8714,15.4,3.079,1415.0,True,Asignada
-900669,VIP,Medio,0.6942,113,baja,5.0,baja,5.0,29.3616,15.38,3.077,1420.0,True,Asignada
-900560,Medio,Bajo,0.6933,115,baja,5.0,baja,5.0,29.3395,15.34,3.068,1425.0,True,Asignada
-900100,Medio,Bajo,0.7106,97,baja,5.0,baja,5.0,28.419,15.19,3.039,1430.0,True,Asignada
-900346,VIP,Bajo,0.6407,116,baja,5.0,baja,5.0,31.3464,15.08,3.017,1435.0,True,Asignada
-900393,Medio,Bajo,0.6237,132,baja,5.0,baja,5.0,32.1663,15.06,3.012,1440.0,True,Asignada
-900722,Alto,Bajo,0.7335,117,baja,5.0,baja,5.0,27.2486,14.99,2.997,1445.0,True,Asignada
-900798,Medio,Bajo,0.6225,103,baja,5.0,baja,5.0,31.9408,14.88,2.977,1450.0,True,Asignada
-900740,Medio,Bajo,0.6942,121,baja,5.0,baja,5.0,28.5293,14.81,2.961,1455.0,True,Asignada
-900854,VIP,Medio,0.6687,93,baja,5.0,baja,5.0,29.6163,14.8,2.961,1460.0,True,Asignada
-900314,Medio,Bajo,0.7149,109,baja,5.0,baja,5.0,27.6637,14.78,2.955,1465.0,True,Asignada
-900284,Medio,Bajo,0.7015,120,baja,5.0,baja,5.0,27.975,14.62,2.925,1470.0,True,Asignada
-900648,Alto,Bajo,0.6177,106,baja,5.0,baja,5.0,31.5811,14.51,2.902,1475.0,True,Asignada
-900811,Medio,Bajo,0.6995,120,baja,5.0,baja,5.0,27.5541,14.27,2.855,1480.0,True,Asignada
-900258,Medio,Bajo,0.709,121,baja,5.0,baja,5.0,27.167,14.26,2.852,1485.0,True,Asignada
-900592,Medio,Medio,0.6177,113,baja,5.0,baja,5.0,31.1203,14.22,2.845,1490.0,True,Asignada
-900593,Medio,Medio,0.6607,125,baja,5.0,baja,5.0,28.9597,14.13,2.827,1495.0,True,Asignada
-900372,Alto,Bajo,0.6338,86,baja,5.0,baja,5.0,29.9489,13.98,2.796,1500.0,True,Asignada
-900870,VIP,Bajo,0.6607,113,baja,5.0,baja,5.0,28.6938,13.96,2.792,1505.0,True,Asignada
-900342,Alto,Medio,0.3571,111,baja,5.0,baja,5.0,52.903,13.89,2.778,1510.0,True,Asignada
-900428,VIP,Medio,0.6147,120,baja,5.0,baja,5.0,30.7031,13.87,2.775,1515.0,True,Asignada
-900670,Medio,Bajo,0.7599,100,baja,5.0,baja,5.0,24.6433,13.73,2.745,1520.0,True,Asignada
-900360,Medio,Bajo,0.7074,104,baja,5.0,baja,5.0,26.4642,13.72,2.744,1525.0,True,Asignada
-900010,Alto,Bajo,0.7215,109,baja,5.0,baja,5.0,25.9332,13.71,2.742,1530.0,True,Asignada
-900052,Alto,Bajo,0.7232,109,baja,5.0,baja,5.0,25.7839,13.65,2.729,1535.0,True,Asignada
-900152,VIP,Bajo,0.6561,107,baja,5.0,baja,5.0,28.3863,13.62,2.725,1540.0,True,Asignada
-900055,Alto,Bajo,0.6853,132,media,15.0,media,15.0,81.1882,40.64,2.709,1555.0,True,Asignada
-900457,VIP,Medio,0.6942,106,baja,5.0,baja,5.0,26.6234,13.48,2.696,1560.0,True,Asignada
-900017,VIP,Bajo,0.6289,107,baja,5.0,baja,5.0,29.3732,13.47,2.695,1565.0,True,Asignada
-900684,Alto,Medio,0.6147,125,baja,5.0,baja,5.0,30.0335,13.46,2.692,1570.0,True,Asignada
-900374,Medio,Bajo,0.6338,97,baja,5.0,baja,5.0,28.9776,13.37,2.673,1575.0,True,Asignada
-900296,Alto,Medio,0.6076,110,baja,5.0,baja,5.0,30.0744,13.27,2.655,1580.0,True,Asignada
-900123,Medio,Bajo,0.6237,128,baja,5.0,baja,5.0,29.1113,13.16,2.631,1585.0,True,Asignada
-900161,VIP,Medio,0.6683,112,baja,5.0,baja,5.0,26.9865,13.04,2.607,1590.0,True,Asignada
-900816,VIP,Bajo,0.6942,121,baja,5.0,baja,5.0,25.7895,12.9,2.581,1595.0,True,Asignada
-900310,Alto,Bajo,0.6508,114,baja,5.0,baja,5.0,27.3898,12.83,2.565,1600.0,True,Asignada
-900700,Alto,Bajo,0.6777,117,baja,5.0,baja,5.0,26.3006,12.82,2.565,1605.0,True,Asignada
-900824,Medio,Bajo,0.6177,123,baja,5.0,baja,5.0,28.7176,12.74,2.548,1610.0,True,Asignada
-900427,Alto,Bajo,0.6995,104,baja,5.0,baja,5.0,25.3007,12.7,2.54,1615.0,True,Asignada
-900320,Alto,Medio,0.6716,103,baja,5.0,baja,5.0,26.0956,12.53,2.505,1620.0,True,Asignada
-900201,Medio,Bajo,0.6481,113,baja,5.0,baja,5.0,27.0191,12.51,2.502,1625.0,True,Asignada
-900224,Alto,Medio,0.6777,112,baja,5.0,baja,5.0,25.8013,12.49,2.497,1630.0,True,Asignada
-900554,Alto,Bajo,0.6496,122,baja,5.0,baja,5.0,26.8514,12.44,2.489,1635.0,True,Asignada
-900364,Alto,Bajo,0.6155,100,baja,5.0,baja,5.0,28.2627,12.4,2.479,1640.0,True,Asignada
-900501,Alto,Bajo,0.6867,104,media,15.0,media,15.0,75.2618,36.68,2.445,1655.0,True,Asignada
-900462,VIP,Medio,0.6942,107,baja,5.0,baja,5.0,24.7589,12.19,2.438,1660.0,True,Asignada
-900437,VIP,Medio,0.6327,107,baja,5.0,baja,5.0,27.1267,12.16,2.433,1665.0,True,Asignada
-900802,Medio,Bajo,0.7155,102,media,15.0,media,15.0,71.8603,36.42,2.428,1680.0,True,Asignada
-900397,Medio,Bajo,0.6554,122,baja,5.0,baja,5.0,26.1213,12.12,2.424,1685.0,True,Asignada
-900453,Alto,Bajo,0.6572,108,baja,5.0,baja,5.0,25.9179,12.03,2.407,1690.0,True,Asignada
-900502,Alto,Bajo,0.6598,128,baja,5.0,baja,5.0,25.7189,11.97,2.394,1695.0,True,Asignada
-900515,Medio,Bajo,0.6546,112,baja,5.0,baja,5.0,25.9007,11.95,2.391,1700.0,True,Asignada
-900597,Alto,Bajo,0.7007,132,baja,5.0,baja,5.0,24.199,11.96,2.391,1705.0,True,Asignada
-900771,Alto,Bajo,0.6867,113,media,15.0,media,15.0,73.7183,35.62,2.375,1720.0,True,Asignada
-900812,VIP,Medio,0.7141,121,baja,5.0,baja,5.0,23.6042,11.86,2.371,1725.0,True,Asignada
-900401,Alto,Medio,0.6072,106,baja,5.0,baja,5.0,27.7372,11.84,2.368,1730.0,True,Asignada
-900857,Alto,Medio,0.6666,111,baja,5.0,baja,5.0,25.2291,11.82,2.364,1735.0,True,Asignada
-900814,Alto,Bajo,0.6867,121,media,15.0,media,15.0,73.362,35.38,2.359,1750.0,True,Asignada
-900549,Medio,Bajo,0.6825,131,baja,5.0,baja,5.0,24.4672,11.7,2.34,1755.0,True,Asignada
-900558,Alto,Bajo,0.6177,114,baja,5.0,baja,5.0,26.9382,11.64,2.328,1760.0,True,Asignada
-900455,Alto,Bajo,0.6777,121,media,15.0,media,15.0,73.1844,34.6,2.306,1775.0,True,Asignada
-900101,Alto,Bajo,0.709,114,media,15.0,media,15.0,69.7966,34.49,2.299,1790.0,True,Asignada
-900132,Medio,Bajo,0.5679,102,baja,5.0,baja,5.0,28.8842,11.4,2.281,1795.0,True,Asignada
-900495,Medio,Medio,0.6237,112,baja,5.0,baja,5.0,26.2748,11.39,2.278,1800.0,True,Asignada
-900695,Medio,Bajo,0.7079,113,media,15.0,media,15.0,69.2213,34.0,2.267,1815.0,True,Asignada
-900179,Medio,Medio,0.6076,109,baja,5.0,baja,5.0,26.859,11.32,2.264,1820.0,True,Asignada
-900866,VIP,Medio,0.6917,116,baja,5.0,baja,5.0,23.5245,11.27,2.254,1825.0,True,Asignada
-900277,Medio,Bajo,0.6917,105,baja,5.0,baja,5.0,23.3942,11.18,2.236,1830.0,True,Asignada
-900607,Estandar,Bajo,0.7335,99,baja,5.0,baja,5.0,22.0451,11.17,2.234,1835.0,True,Asignada
-900030,Alto,Bajo,0.6237,118,media,15.0,media,15.0,77.5391,33.36,2.224,1850.0,True,Asignada
-900339,Medio,Bajo,0.7015,123,baja,5.0,baja,5.0,22.9546,11.1,2.221,1855.0,True,Asignada
-900543,Alto,Bajo,0.6338,110,baja,5.0,baja,5.0,25.2973,11.03,2.207,1860.0,True,Asignada
-900627,VIP,Bajo,0.681,105,baja,5.0,baja,5.0,23.4458,10.97,2.193,1865.0,True,Asignada
-900657,Alto,Bajo,0.3571,102,baja,5.0,baja,5.0,44.6995,10.96,2.192,1870.0,True,Asignada
-900609,Medio,Bajo,0.7073,121,media,15.0,media,15.0,67.5829,32.8,2.187,1885.0,True,Asignada
-900718,Medio,Bajo,0.709,112,baja,5.0,baja,5.0,22.2782,10.8,2.159,1890.0,True,Asignada
-900249,VIP,Bajo,0.7599,116,alta,40.0,alta,40.0,165.4641,85.74,2.143,1930.0,True,Asignada
-900570,Medio,Bajo,0.5452,102,baja,5.0,baja,5.0,28.7437,10.67,2.134,1935.0,True,Asignada
-900765,Medio,Bajo,0.6995,129,baja,5.0,baja,5.0,22.405,10.67,2.134,1940.0,True,Asignada
-900128,Medio,Bajo,0.7335,121,media,15.0,media,15.0,63.8675,31.85,2.123,1955.0,True,Asignada
-900753,Medio,Bajo,0.5911,102,baja,5.0,baja,5.0,26.2704,10.53,2.106,1960.0,True,Asignada
-900059,Alto,Bajo,0.6554,136,baja,5.0,baja,5.0,23.687,10.52,2.105,1965.0,True,Asignada
-900097,Medio,Bajo,0.6984,101,baja,5.0,baja,5.0,22.0898,10.43,2.086,1970.0,True,Asignada
-900497,VIP,Medio,0.6777,99,baja,5.0,baja,5.0,22.6449,10.35,2.069,1975.0,True,Asignada
-900808,Medio,Bajo,0.7007,118,baja,5.0,baja,5.0,21.8642,10.32,2.064,1980.0,True,Asignada
-900198,Medio,Bajo,0.6055,92,baja,5.0,baja,5.0,25.1414,10.22,2.045,1985.0,True,Asignada
-900620,Alto,Medio,0.6942,105,baja,5.0,baja,5.0,21.8333,10.16,2.031,1990.0,True,Asignada
-900526,Alto,Medio,0.6508,111,baja,5.0,baja,5.0,23.2776,10.15,2.03,1995.0,True,Asignada
-900721,Medio,Bajo,0.6177,121,baja,5.0,baja,5.0,24.4853,10.12,2.025,2000.0,True,Asignada
-900015,Medio,Medio,0.6216,112,baja,5.0,baja,5.0,24.3048,10.11,2.022,2005.0,True,Asignada
-900278,VIP,Medio,0.6607,121,baja,5.0,baja,5.0,22.862,10.1,2.021,2010.0,True,Asignada
-900357,Alto,Bajo,0.709,123,baja,5.0,baja,5.0,21.3049,10.11,2.021,2015.0,True,Asignada
-900432,Medio,Bajo,0.6072,98,baja,5.0,baja,5.0,24.8676,10.1,2.02,2020.0,True,Asignada
-900450,Medio,Bajo,0.7015,106,baja,5.0,baja,5.0,21.5093,10.09,2.018,2025.0,True,Asignada
-900001,Medio,Bajo,0.6984,137,baja,5.0,baja,5.0,21.5014,10.02,2.003,2030.0,True,Asignada
-900020,Estandar,Bajo,0.7149,111,baja,5.0,baja,5.0,20.9153,9.95,1.99,2035.0,True,Asignada
-900099,Medio,Bajo,0.709,128,baja,5.0,baja,5.0,20.9192,9.83,1.966,2040.0,True,Asignada
-900247,Alto,Medio,0.6867,126,baja,5.0,baja,5.0,21.5013,9.76,1.953,2045.0,True,Asignada
-900355,Estandar,Bajo,0.7007,102,baja,5.0,baja,5.0,20.8929,9.64,1.928,2050.0,True,Asignada
-900674,Alto,Bajo,0.9028,117,alta,40.0,alta,40.0,129.4729,76.89,1.922,2090.0,True,Asignada
-900430,Medio,Bajo,0.6237,126,baja,5.0,baja,5.0,23.3144,9.54,1.908,2095.0,True,Asignada
-900106,Estandar,Bajo,0.6853,107,baja,5.0,baja,5.0,21.2163,9.54,1.908,2100.0,True,Asignada
-900598,Alto,Bajo,0.6338,134,baja,5.0,baja,5.0,22.92,9.53,1.905,2105.0,True,Asignada
-900118,Alto,Bajo,0.6508,111,media,15.0,media,15.0,66.8749,28.52,1.901,2120.0,True,Asignada
-900810,Medio,Bajo,0.6942,104,baja,5.0,baja,5.0,20.8263,9.46,1.892,2125.0,True,Asignada
-900002,Alto,Bajo,0.6072,101,baja,5.0,baja,5.0,23.757,9.43,1.885,2130.0,True,Asignada
-900371,VIP,Bajo,0.8824,128,alta,40.0,alta,40.0,130.578,75.22,1.881,2170.0,True,Asignada
-900836,Alto,Bajo,0.6311,125,baja,5.0,baja,5.0,22.766,9.37,1.874,2175.0,True,Asignada
-900329,Alto,Bajo,0.6428,110,media,15.0,media,15.0,67.0281,28.09,1.872,2190.0,True,Asignada
-900766,Estandar,Bajo,0.7007,114,baja,5.0,baja,5.0,20.466,9.34,1.868,2195.0,True,Asignada
-900344,Medio,Bajo,0.5911,106,baja,5.0,baja,5.0,24.179,9.29,1.858,2200.0,True,Asignada
-900831,Estandar,Bajo,0.7202,107,baja,5.0,baja,5.0,19.7615,9.23,1.846,2205.0,True,Asignada
-900717,Medio,Bajo,0.6777,124,baja,5.0,baja,5.0,20.9918,9.23,1.845,2210.0,True,Asignada
-900781,VIP,Medio,0.6237,115,baja,5.0,baja,5.0,22.7499,9.19,1.838,2215.0,True,Asignada
-900276,Estandar,Bajo,0.6942,102,baja,5.0,baja,5.0,20.4339,9.19,1.837,2220.0,True,Asignada
-900547,Alto,Medio,0.6777,110,baja,5.0,baja,5.0,20.8981,9.16,1.833,2225.0,True,Asignada
-900461,Medio,Bajo,0.6055,109,baja,5.0,baja,5.0,23.3392,9.13,1.826,2230.0,True,Asignada
-900668,Alto,Bajo,0.6072,94,baja,5.0,baja,5.0,23.2011,9.09,1.818,2235.0,True,Asignada
-900520,Medio,Bajo,0.6338,118,baja,5.0,baja,5.0,22.2109,9.08,1.815,2240.0,True,Asignada
-900780,VIP,Bajo,0.7734,105,alta,40.0,alta,40.0,145.5574,72.57,1.814,2280.0,True,Asignada
-900737,Medio,Bajo,0.6076,122,baja,5.0,baja,5.0,22.9024,8.92,1.783,2285.0,True,Asignada
-900583,VIP,Bajo,0.7335,120,alta,40.0,alta,40.0,151.6142,71.21,1.78,2325.0,True,Asignada
-900417,Medio,Bajo,0.5911,120,baja,5.0,baja,5.0,23.4365,8.85,1.771,2330.0,True,Asignada
-900862,Estandar,Bajo,0.6654,107,baja,5.0,baja,5.0,20.7649,8.82,1.763,2335.0,True,Asignada
-900328,VIP,Bajo,0.7456,117,alta,40.0,alta,40.0,148.1168,70.44,1.761,2375.0,True,Asignada
-900231,Alto,Medio,0.675,117,baja,5.0,baja,5.0,20.4174,8.78,1.756,2380.0,True,Asignada
-900306,Estandar,Bajo,0.6841,115,baja,5.0,baja,5.0,20.0783,8.74,1.747,2385.0,True,Asignada
-900516,Alto,Bajo,0.6386,115,baja,5.0,baja,5.0,21.394,8.66,1.732,2390.0,True,Asignada
-900514,Alto,Bajo,0.4107,115,baja,5.0,baja,5.0,33.1176,8.6,1.72,2395.0,True,Asignada
-900367,Alto,Bajo,0.6772,141,baja,5.0,baja,5.0,20.0706,8.59,1.718,2400.0,True,Asignada
-900431,Medio,Bajo,0.6984,118,baja,5.0,baja,5.0,19.4393,8.58,1.715,2405.0,True,Asignada
-900754,Medio,Bajo,0.6237,116,baja,5.0,baja,5.0,21.7094,8.54,1.708,2410.0,True,Asignada
-900396,Medio,Bajo,0.6683,97,baja,5.0,baja,5.0,20.2531,8.54,1.707,2415.0,True,Asignada
-900758,VIP,Medio,0.6772,132,baja,5.0,baja,5.0,19.9828,8.53,1.706,2420.0,True,Asignada
-900349,Medio,Bajo,0.6763,97,baja,5.0,baja,5.0,20.0055,8.53,1.706,2425.0,True,Asignada
-900613,Medio,Bajo,0.6481,104,baja,5.0,baja,5.0,20.831,8.5,1.7,2430.0,True,Asignada
-900615,Medio,Bajo,0.6867,105,media,15.0,media,15.0,58.8827,25.43,1.696,2445.0,True,Asignada
-900856,Medio,Bajo,0.6572,106,media,15.0,media,15.0,61.5092,25.42,1.695,2460.0,True,Asignada
-900661,VIP,Bajo,0.7297,130,alta,40.0,alta,40.0,147.545,67.66,1.692,2500.0,True,Asignada
-900638,VIP,Bajo,0.6508,123,baja,5.0,baja,5.0,20.6193,8.42,1.684,2505.0,True,Asignada
-900483,VIP,Medio,0.7007,117,baja,5.0,baja,5.0,19.148,8.42,1.683,2510.0,True,Asignada
-900728,VIP,Bajo,0.8134,121,alta,40.0,alta,40.0,131.757,67.17,1.679,2550.0,True,Asignada
-900354,Medio,Bajo,0.6349,106,baja,5.0,baja,5.0,20.9499,8.3,1.66,2555.0,True,Asignada
-900801,Alto,Medio,0.5911,98,baja,5.0,baja,5.0,22.3171,8.19,1.638,2560.0,True,Asignada
-900315,Medio,Bajo,0.6338,107,baja,5.0,baja,5.0,20.797,8.18,1.636,2565.0,True,Asignada
-900716,Medio,Bajo,0.6697,119,baja,5.0,baja,5.0,19.6373,8.15,1.63,2570.0,True,Asignada
-900842,Medio,Bajo,0.6522,104,baja,5.0,baja,5.0,20.1185,8.12,1.624,2575.0,True,Asignada
-900575,Alto,Medio,0.5579,121,baja,5.0,baja,5.0,23.4881,8.1,1.621,2580.0,True,Asignada
-900559,VIP,Medio,0.6237,115,baja,5.0,baja,5.0,20.9831,8.09,1.617,2585.0,True,Asignada
-900505,Estandar,Medio,0.6716,115,baja,5.0,baja,5.0,19.2912,7.96,1.591,2590.0,True,Asignada
-900014,Alto,Bajo,0.6177,88,baja,5.0,baja,5.0,20.933,7.93,1.586,2595.0,True,Asignada
-900295,Alto,Bajo,0.6651,117,media,15.0,media,15.0,58.2868,23.77,1.584,2610.0,True,Asignada
-900013,Alto,Bajo,0.6338,129,baja,5.0,baja,5.0,20.2736,7.85,1.57,2615.0,True,Asignada
-900590,Medio,Bajo,0.6076,115,baja,5.0,baja,5.0,21.0998,7.82,1.564,2620.0,True,Asignada
-900340,Estandar,Bajo,0.7599,112,baja,5.0,baja,5.0,16.8405,7.8,1.559,2625.0,True,Asignada
-900316,Medio,Bajo,0.6931,116,baja,5.0,baja,5.0,18.3958,7.75,1.55,2630.0,True,Asignada
-900263,Estandar,Bajo,0.6508,100,baja,5.0,baja,5.0,19.5937,7.75,1.55,2635.0,True,Asignada
-900585,Medio,Bajo,0.714,109,baja,5.0,baja,5.0,17.7586,7.68,1.536,2640.0,True,Asignada
-900643,Medio,Bajo,0.6411,100,baja,5.0,baja,5.0,19.7577,7.67,1.533,2645.0,True,Asignada
-900262,VIP,Bajo,0.7979,128,alta,40.0,alta,40.0,126.8335,61.2,1.53,2685.0,True,Asignada
-900426,VIP,Bajo,0.7734,89,alta,40.0,alta,40.0,130.7331,61.11,1.528,2725.0,True,Asignada
-900634,Alto,Bajo,0.6338,106,baja,5.0,baja,5.0,19.7788,7.54,1.507,2730.0,True,Asignada
-900875,Medio,Bajo,0.6781,106,baja,5.0,baja,5.0,18.4606,7.52,1.504,2735.0,True,Asignada
-900271,VIP,Bajo,0.7007,112,alta,40.0,alta,40.0,142.7765,60.04,1.501,2775.0,True,Asignada
-900527,Alto,Bajo,0.8044,117,alta,40.0,alta,40.0,124.0977,59.82,1.496,2815.0,True,Asignada
-900828,Estandar,Bajo,0.6867,116,baja,5.0,baja,5.0,18.1323,7.45,1.49,2820.0,True,Asignada
-900499,Estandar,Bajo,0.6697,105,baja,5.0,baja,5.0,18.5873,7.45,1.49,2825.0,True,Asignada
-900622,Medio,Medio,0.6216,115,baja,5.0,baja,5.0,19.9882,7.42,1.485,2830.0,True,Asignada
-900246,Medio,Bajo,0.7074,113,baja,5.0,baja,5.0,17.5177,7.39,1.478,2835.0,True,Asignada
-900830,Medio,Bajo,0.6853,120,baja,5.0,baja,5.0,18.0636,7.38,1.476,2840.0,True,Asignada
-900034,Alto,Bajo,0.6607,103,baja,5.0,baja,5.0,18.7299,7.37,1.475,2845.0,True,Asignada
-900297,Medio,Bajo,0.6853,114,baja,5.0,baja,5.0,18.0523,7.37,1.474,2850.0,True,Asignada
-900381,VIP,Bajo,0.6987,129,alta,40.0,alta,40.0,141.354,58.76,1.469,2890.0,True,Asignada
-900235,Medio,Bajo,0.5452,108,baja,5.0,baja,5.0,22.6279,7.34,1.467,2895.0,True,Asignada
-900599,VIP,Medio,0.6237,114,baja,5.0,baja,5.0,19.7118,7.29,1.459,2900.0,True,Asignada
-900011,Medio,Bajo,0.6622,103,baja,5.0,baja,5.0,18.5615,7.29,1.458,2905.0,True,Asignada
-900435,Alto,Bajo,0.7202,99,alta,40.0,alta,40.0,136.1793,58.08,1.452,2945.0,True,Asignada
-900452,Estandar,Bajo,0.6814,103,baja,5.0,baja,5.0,17.8386,7.16,1.431,2950.0,True,Asignada
-900466,Medio,Bajo,0.6216,112,baja,5.0,baja,5.0,19.5019,7.12,1.424,2955.0,True,Asignada
-900131,Estandar,Bajo,0.7297,112,baja,5.0,baja,5.0,16.4918,7.03,1.407,2960.0,True,Asignada
-900079,VIP,Bajo,0.8404,121,alta,40.0,alta,40.0,114.5621,56.28,1.407,3000.0,True,Asignada
-900109,Estandar,Bajo,0.6428,109,baja,5.0,baja,5.0,18.7003,7.02,1.404,3005.0,True,Asignada
-900665,Alto,Bajo,0.7599,121,alta,40.0,alta,40.0,126.3249,55.99,1.4,3045.0,True,Asignada
-900163,Medio,Bajo,0.6446,122,baja,5.0,baja,5.0,18.551,6.96,1.392,3050.0,True,Asignada
-900512,Estandar,Bajo,0.6481,119,baja,5.0,baja,5.0,18.3867,6.92,1.383,3055.0,True,Asignada
-900157,Medio,Bajo,0.5813,100,baja,5.0,baja,5.0,20.4749,6.9,1.38,3060.0,True,Asignada
-900545,VIP,Bajo,0.6987,111,alta,40.0,alta,40.0,136.016,55.03,1.376,3100.0,True,Asignada
-900445,Medio,Bajo,0.6607,106,baja,5.0,baja,5.0,17.9541,6.86,1.372,3105.0,True,Asignada
-900486,Medio,Bajo,0.6177,127,baja,5.0,baja,5.0,19.1637,6.84,1.367,3110.0,True,Asignada
-900238,Estandar,Bajo,0.6338,103,baja,5.0,baja,5.0,18.5554,6.76,1.352,3115.0,True,Asignada
-900096,VIP,Bajo,0.9028,118,alta,40.0,alta,40.0,103.8489,53.75,1.344,3155.0,True,Asignada
-900409,Estandar,Bajo,0.6984,104,baja,5.0,baja,5.0,16.7309,6.68,1.337,3160.0,True,Asignada
-900368,Estandar,Bajo,0.6683,108,baja,5.0,baja,5.0,17.4388,6.65,1.331,3165.0,True,Asignada
-900333,Estandar,Bajo,0.7007,119,baja,5.0,baja,5.0,16.5914,6.63,1.325,3170.0,True,Asignada
-900767,Medio,Medio,0.4763,115,baja,5.0,baja,5.0,24.3749,6.61,1.322,3175.0,True,Asignada
-900027,Medio,Medio,0.6338,113,baja,5.0,baja,5.0,18.2768,6.58,1.317,3180.0,True,Asignada
-900119,Estandar,Bajo,0.6572,108,baja,5.0,baja,5.0,17.5239,6.52,1.303,3185.0,True,Asignada
-900032,Medio,Bajo,0.6237,127,baja,5.0,baja,5.0,18.2968,6.41,1.282,3190.0,True,Asignada
-900345,Alto,Bajo,0.4772,101,baja,5.0,baja,5.0,23.8824,6.4,1.279,3195.0,True,Asignada
-900436,Alto,Bajo,0.6867,97,baja,5.0,baja,5.0,16.5761,6.38,1.277,3200.0,True,Asignada
-900384,Alto,Bajo,0.709,112,media,15.0,media,15.0,48.0533,19.07,1.271,3215.0,True,Asignada
-900532,Estandar,Bajo,0.6942,103,baja,5.0,baja,5.0,16.3205,6.33,1.266,3220.0,True,Asignada
-900319,Medio,Bajo,0.6338,111,baja,5.0,baja,5.0,17.876,6.33,1.266,3225.0,True,Asignada
-900553,Estandar,Bajo,0.6407,119,baja,5.0,baja,5.0,17.6196,6.29,1.258,3230.0,True,Asignada
-900267,Estandar,Bajo,0.6867,101,baja,5.0,baja,5.0,16.4384,6.29,1.258,3235.0,True,Asignada
-900491,Estandar,Bajo,0.6476,96,baja,5.0,baja,5.0,17.4093,6.27,1.255,3240.0,True,Asignada
-900736,Alto,Bajo,0.6072,98,media,15.0,media,15.0,55.7027,18.82,1.255,3255.0,True,Asignada
-900710,Medio,Bajo,0.6076,112,baja,5.0,baja,5.0,18.5457,6.27,1.254,3260.0,True,Asignada
-900835,Estandar,Bajo,0.6931,102,baja,5.0,baja,5.0,16.2489,6.26,1.252,3265.0,True,Asignada
-900018,Estandar,Bajo,0.6762,125,baja,5.0,baja,5.0,16.6462,6.26,1.251,3270.0,True,Asignada
-900806,Medio,Bajo,0.5579,103,baja,5.0,baja,5.0,20.1643,6.25,1.25,3275.0,True,Asignada
-900477,Alto,Bajo,0.6237,118,baja,5.0,baja,5.0,18.0058,6.23,1.246,3280.0,True,Asignada
-900749,Estandar,Bajo,0.6522,103,baja,5.0,baja,5.0,17.2154,6.23,1.246,3285.0,True,Asignada
-900572,Alto,Bajo,0.6072,103,baja,5.0,baja,5.0,18.4793,6.22,1.244,3290.0,True,Asignada
-900423,Alto,Bajo,0.6867,123,baja,5.0,baja,5.0,16.3275,6.21,1.242,3295.0,True,Asignada
-900735,Alto,Bajo,0.9028,117,alta,40.0,alta,40.0,99.067,49.44,1.236,3335.0,True,Asignada
-900683,Medio,Bajo,0.6072,111,baja,5.0,baja,5.0,18.3833,6.16,1.232,3340.0,True,Asignada
-900439,Estandar,Bajo,0.7007,117,baja,5.0,baja,5.0,15.9266,6.16,1.232,3345.0,True,Asignada
-900672,Estandar,Bajo,0.6942,121,baja,5.0,baja,5.0,15.9563,6.08,1.215,3350.0,True,Asignada
-900714,Medio,Bajo,0.7008,124,baja,5.0,baja,5.0,15.6228,5.95,1.19,3355.0,True,Asignada
-900612,Estandar,Bajo,0.6716,118,baja,5.0,baja,5.0,16.2259,5.9,1.179,3360.0,True,Asignada
-900562,Medio,Bajo,0.6662,131,baja,5.0,baja,5.0,16.3213,5.87,1.175,3365.0,True,Asignada
-900561,Medio,Bajo,0.7007,117,baja,5.0,baja,5.0,15.4832,5.85,1.17,3370.0,True,Asignada
-900705,Estandar,Bajo,0.6407,103,baja,5.0,baja,5.0,16.9218,5.84,1.168,3375.0,True,Asignada
-900757,Medio,Bajo,0.6683,109,baja,5.0,baja,5.0,16.1737,5.81,1.162,3380.0,True,Asignada
-900843,Medio,Bajo,0.6607,115,baja,5.0,baja,5.0,16.3524,5.8,1.161,3385.0,True,Asignada
-900291,Alto,Bajo,0.5911,114,baja,5.0,baja,5.0,18.264,5.8,1.159,3390.0,True,Asignada
-900130,Alto,Bajo,0.6508,105,baja,5.0,baja,5.0,16.472,5.72,1.144,3395.0,True,Asignada
-900261,VIP,Bajo,0.7192,120,alta,40.0,alta,40.0,119.1409,45.69,1.142,3435.0,True,Asignada
-900266,Alto,Bajo,0.7073,106,alta,40.0,alta,40.0,120.9525,45.55,1.139,3475.0,True,Asignada
-900707,Estandar,Bajo,0.6327,105,baja,5.0,baja,5.0,16.8381,5.65,1.131,3480.0,True,Asignada
-900351,Estandar,Bajo,0.7128,108,baja,5.0,baja,5.0,14.9317,5.64,1.129,3485.0,True,Asignada
-900677,Estandar,Bajo,0.7392,118,baja,5.0,baja,5.0,14.3755,5.63,1.125,3490.0,True,Asignada
-900690,Estandar,Bajo,0.6931,108,baja,5.0,baja,5.0,15.3039,5.61,1.121,3495.0,True,Asignada
-900356,Medio,Bajo,0.6622,123,baja,5.0,baja,5.0,15.9852,5.59,1.117,3500.0,True,Asignada
-900068,Estandar,Bajo,0.6853,105,baja,5.0,baja,5.0,15.4415,5.58,1.116,3505.0,True,Asignada
-900675,Medio,Bajo,0.7487,147,baja,5.0,baja,5.0,13.9585,5.45,1.09,3510.0,True,Asignada
-900104,Medio,Bajo,0.6683,106,baja,5.0,baja,5.0,15.585,5.42,1.083,3515.0,True,Asignada
-900531,Medio,Bajo,0.6481,121,baja,5.0,baja,5.0,16.0699,5.41,1.083,3520.0,True,Asignada
-900877,Alto,Bajo,0.7202,113,alta,40.0,alta,40.0,115.6195,43.27,1.082,3560.0,True,Asignada
-900288,Alto,Bajo,0.5911,103,baja,5.0,baja,5.0,17.5601,5.38,1.076,3565.0,True,Asignada
-900362,Alto,Bajo,0.7074,120,alta,40.0,alta,40.0,117.1114,42.84,1.071,3605.0,True,Asignada
-900552,Estandar,Bajo,0.6216,97,baja,5.0,baja,5.0,16.61,5.32,1.065,3610.0,True,Asignada
-900474,VIP,Bajo,0.7335,113,alta,40.0,alta,40.0,112.4347,42.47,1.062,3650.0,True,Asignada
-900490,Alto,Bajo,0.7155,122,alta,40.0,alta,40.0,115.2414,42.46,1.061,3690.0,True,Asignada
-900172,Estandar,Bajo,0.7192,113,baja,5.0,baja,5.0,14.3245,5.3,1.06,3695.0,True,Asignada
-900639,Medio,Bajo,0.6853,117,baja,5.0,baja,5.0,14.9798,5.27,1.053,3700.0,True,Asignada
-900394,Estandar,Bajo,0.7155,100,baja,5.0,baja,5.0,14.3306,5.25,1.051,3705.0,True,Asignada
-900618,Alto,Bajo,0.7155,108,alta,40.0,alta,40.0,114.492,41.92,1.048,3745.0,True,Asignada
-900713,Medio,Bajo,0.6237,124,baja,5.0,baja,5.0,16.3808,5.22,1.043,3750.0,True,Asignada
-900467,Estandar,Bajo,0.7297,129,baja,5.0,baja,5.0,13.94,5.17,1.034,3755.0,True,Asignada
-900652,Medio,Bajo,0.6683,113,baja,5.0,baja,5.0,15.2081,5.16,1.033,3760.0,True,Asignada
-900469,Medio,Bajo,0.5981,116,baja,5.0,baja,5.0,16.9977,5.17,1.033,3765.0,True,Asignada
-900602,Estandar,Bajo,0.7073,119,baja,5.0,baja,5.0,14.3696,5.16,1.033,3770.0,True,Asignada
-900440,Medio,Bajo,0.6494,119,baja,5.0,baja,5.0,15.6312,5.15,1.03,3775.0,True,Asignada
-900335,Estandar,Bajo,0.6683,124,baja,5.0,baja,5.0,15.152,5.13,1.025,3780.0,True,Asignada
-900031,Medio,Bajo,0.6076,117,baja,5.0,baja,5.0,16.6436,5.11,1.023,3785.0,True,Asignada
-900220,Alto,Bajo,0.6317,122,baja,5.0,baja,5.0,15.9931,5.1,1.021,3790.0,True,Asignada
-900591,Medio,Bajo,0.6237,113,baja,5.0,baja,5.0,16.2019,5.11,1.021,3795.0,True,Asignada
-900867,Medio,Bajo,0.6942,111,baja,5.0,baja,5.0,14.4705,5.05,1.009,3800.0,True,Asignada
-900129,Medio,Bajo,0.6161,126,baja,5.0,baja,5.0,16.2347,5.0,1.0,3805.0,True,Asignada
-900226,Alto,Bajo,0.6772,97,baja,5.0,baja,5.0,14.7591,4.99,0.999,3810.0,True,Asignada
-900000,Estandar,Bajo,0.6772,101,baja,5.0,baja,5.0,14.7487,4.99,0.998,3815.0,True,Asignada
-900094,Alto,Bajo,0.7192,116,alta,40.0,alta,40.0,110.9861,39.82,0.996,3855.0,True,Asignada
-900775,Estandar,Bajo,0.6237,90,baja,5.0,baja,5.0,15.9775,4.97,0.993,3860.0,True,Asignada
-900035,Estandar,Bajo,0.6792,124,baja,5.0,baja,5.0,14.6626,4.96,0.992,3865.0,True,Asignada
-900350,Alto,Bajo,0.6076,110,baja,5.0,baja,5.0,16.3858,4.96,0.991,3870.0,True,Asignada
-900190,Estandar,Bajo,0.6607,119,baja,5.0,baja,5.0,15.0317,4.93,0.986,3875.0,True,Asignada
-900869,Medio,Bajo,0.6177,116,baja,5.0,baja,5.0,16.0523,4.92,0.983,3880.0,True,Asignada
-900240,Estandar,Bajo,0.6338,111,baja,5.0,baja,5.0,15.5854,4.88,0.976,3885.0,True,Asignada
-900213,Estandar,Bajo,0.6942,118,baja,5.0,baja,5.0,14.2149,4.87,0.974,3890.0,True,Asignada
-900359,Estandar,Bajo,0.6598,96,baja,5.0,baja,5.0,14.895,4.83,0.966,3895.0,True,Asignada
-900283,Estandar,Bajo,0.5911,94,baja,5.0,baja,5.0,16.6191,4.82,0.965,3900.0,True,Asignada
-900680,Estandar,Bajo,0.6237,114,baja,5.0,baja,5.0,15.7108,4.8,0.96,3905.0,True,Asignada
-900584,Estandar,Bajo,0.6277,117,baja,5.0,baja,5.0,15.4881,4.72,0.944,3910.0,True,Asignada
-900848,Medio,Bajo,0.6076,109,baja,5.0,baja,5.0,15.9481,4.69,0.938,3915.0,True,Asignada
-900837,Estandar,Bajo,0.6777,106,baja,5.0,baja,5.0,14.29,4.68,0.937,3920.0,True,Asignada
-900169,Estandar,Bajo,0.8408,119,baja,5.0,baja,5.0,11.5003,4.67,0.934,3925.0,True,Asignada
-900860,Medio,Bajo,0.6076,104,baja,5.0,baja,5.0,15.871,4.64,0.929,3930.0,True,Asignada
-900645,Medio,Bajo,0.6246,105,baja,5.0,baja,5.0,15.4315,4.64,0.928,3935.0,True,Asignada
-900676,Medio,Bajo,0.6825,108,baja,5.0,baja,5.0,14.0715,4.6,0.921,3940.0,True,Asignada
-900473,Alto,Bajo,0.6942,106,baja,5.0,baja,5.0,13.8241,4.6,0.919,3945.0,True,Asignada
-900143,Estandar,Bajo,0.6873,93,baja,5.0,baja,5.0,13.9109,4.56,0.912,3950.0,True,Asignada
-900624,Medio,Bajo,0.6777,93,baja,5.0,baja,5.0,14.0622,4.53,0.906,3955.0,True,Asignada
-900759,Estandar,Bajo,0.7007,118,baja,5.0,baja,5.0,13.5976,4.53,0.906,3960.0,True,Asignada
-900604,Estandar,Bajo,0.6338,111,baja,5.0,baja,5.0,15.03,4.53,0.905,3965.0,True,Asignada
-900679,Medio,Bajo,0.6011,118,baja,5.0,baja,5.0,15.8349,4.52,0.904,3970.0,True,Asignada
-900608,Medio,Bajo,0.7297,134,baja,5.0,baja,5.0,12.999,4.49,0.897,3975.0,True,Asignada
-900197,Medio,Bajo,0.6011,109,baja,5.0,baja,5.0,15.7571,4.47,0.894,3980.0,True,Asignada
-900063,Estandar,Bajo,0.7155,118,baja,5.0,baja,5.0,13.198,4.44,0.889,3985.0,True,Asignada
-900630,Medio,Medio,0.5452,127,baja,5.0,baja,5.0,17.26,4.41,0.882,3990.0,True,Asignada
-900496,Medio,Bajo,0.5413,102,baja,5.0,baja,5.0,17.3504,4.39,0.878,3995.0,True,Asignada
-900544,Medio,Bajo,0.6248,110,baja,5.0,baja,5.0,14.9967,4.37,0.874,4000.0,True,Asignada
-900380,Estandar,Bajo,0.6517,123,baja,5.0,baja,5.0,14.3815,4.37,0.874,4005.0,True,Asignada
-900850,Estandar,Bajo,0.6777,113,baja,5.0,baja,5.0,13.8082,4.36,0.872,4010.0,True,Asignada
-900223,Alto,Bajo,0.7007,114,alta,40.0,alta,40.0,106.814,34.84,0.871,4050.0,True,Asignada
-900796,Medio,Bajo,0.6942,110,baja,5.0,baja,5.0,13.4748,4.35,0.871,4055.0,True,Asignada
-900503,Medio,Medio,0.6607,117,baja,5.0,baja,5.0,14.0717,4.3,0.859,4060.0,True,Asignada
-900077,Estandar,Bajo,0.6508,113,baja,5.0,baja,5.0,14.2493,4.27,0.855,4065.0,True,Asignada
-900209,Medio,Bajo,0.6995,120,baja,5.0,baja,5.0,13.2546,4.27,0.854,4070.0,True,Asignada
-900378,Estandar,Bajo,0.6508,115,baja,5.0,baja,5.0,14.235,4.26,0.853,4075.0,True,Asignada
-900183,Medio,Bajo,0.6997,105,baja,5.0,baja,5.0,13.2205,4.25,0.85,4080.0,True,Asignada
-900511,Alto,Bajo,0.5911,96,media,15.0,media,15.0,46.8056,12.67,0.844,4095.0,True,Asignada
-900180,Estandar,Bajo,0.6338,109,baja,5.0,baja,5.0,14.5298,4.21,0.842,4100.0,True,Asignada
-900755,VIP,Bajo,0.7553,119,alta,40.0,alta,40.0,97.3949,33.56,0.839,4140.0,True,Asignada
-900241,Alto,Bajo,0.6277,127,baja,5.0,baja,5.0,14.629,4.18,0.837,4145.0,True,Asignada
-900048,Estandar,Bajo,0.6931,116,baja,5.0,baja,5.0,13.1474,4.11,0.822,4150.0,True,Asignada
-900777,Alto,Bajo,0.6984,133,baja,5.0,baja,5.0,13.0195,4.09,0.819,4155.0,True,Asignada
-900626,Medio,Bajo,0.6072,114,baja,5.0,baja,5.0,14.9779,4.09,0.819,4160.0,True,Asignada
-900603,Medio,Bajo,0.6607,116,baja,5.0,baja,5.0,13.7403,4.08,0.816,4165.0,True,Asignada
-900248,Estandar,Bajo,0.6607,108,baja,5.0,baja,5.0,13.7343,4.07,0.815,4170.0,True,Asignada
-900187,Medio,Bajo,0.6177,124,baja,5.0,baja,5.0,14.6815,4.07,0.814,4175.0,True,Asignada
-900763,Medio,Bajo,0.6347,115,baja,5.0,baja,5.0,14.215,4.02,0.804,4180.0,True,Asignada
-900681,VIP,Bajo,0.706,122,alta,40.0,alta,40.0,102.174,32.13,0.803,4220.0,True,Asignada
-900666,Medio,Bajo,0.6853,111,baja,5.0,baja,5.0,13.1509,4.01,0.802,4225.0,True,Asignada
-900039,Estandar,Medio,0.6716,102,baja,5.0,baja,5.0,13.4155,4.01,0.802,4230.0,True,Asignada
-900120,Alto,Medio,0.5579,136,baja,5.0,baja,5.0,16.1379,4.0,0.801,4235.0,True,Asignada
-900026,Medio,Bajo,0.7215,107,baja,5.0,baja,5.0,12.478,4.0,0.801,4240.0,True,Asignada
-900347,Medio,Bajo,0.6662,128,baja,5.0,baja,5.0,13.4486,3.96,0.792,4245.0,True,Asignada
-900343,Medio,Bajo,0.6338,110,baja,5.0,baja,5.0,14.112,3.94,0.789,4250.0,True,Asignada
-900752,Estandar,Bajo,0.6997,111,baja,5.0,baja,5.0,12.7684,3.93,0.787,4255.0,True,Asignada
-900202,Estandar,Bajo,0.6277,105,baja,5.0,baja,5.0,14.1768,3.9,0.78,4260.0,True,Asignada
-900200,Medio,Bajo,0.6777,121,baja,5.0,baja,5.0,13.0678,3.86,0.771,4265.0,True,Asignada
-900195,Estandar,Bajo,0.6497,88,baja,5.0,baja,5.0,13.6246,3.85,0.77,4270.0,True,Asignada
-900265,VIP,Bajo,0.8408,116,alta,40.0,alta,40.0,84.1571,30.76,0.769,4310.0,True,Asignada
-900541,Estandar,Bajo,0.6853,112,baja,5.0,baja,5.0,12.786,3.76,0.752,4315.0,True,Asignada
-900294,Estandar,Bajo,0.6777,115,baja,5.0,baja,5.0,12.9195,3.76,0.751,4320.0,True,Asignada
-900165,Medio,Bajo,0.6237,126,baja,5.0,baja,5.0,13.962,3.71,0.742,4325.0,True,Asignada
-900540,Alto,Bajo,0.7335,120,alta,40.0,alta,40.0,94.7526,29.5,0.738,4365.0,True,Asignada
-900566,Medio,Medio,0.6055,104,baja,5.0,baja,5.0,14.3149,3.67,0.734,4370.0,True,Asignada
-900434,Estandar,Bajo,0.6933,107,baja,5.0,baja,5.0,12.4515,3.63,0.727,4375.0,True,Asignada
-900167,Medio,Bajo,0.5422,128,baja,5.0,baja,5.0,15.9034,3.62,0.725,4380.0,True,Asignada
-900883,Medio,Medio,0.6995,101,baja,5.0,baja,5.0,12.3324,3.63,0.725,4385.0,True,Asignada
-900084,Medio,Bajo,0.6508,118,baja,5.0,baja,5.0,13.1861,3.58,0.716,4390.0,True,Asignada
-900471,Medio,Medio,0.6076,115,baja,5.0,baja,5.0,14.1158,3.58,0.715,4395.0,True,Asignada
-900391,Medio,Bajo,0.6931,130,baja,5.0,baja,5.0,12.3288,3.55,0.709,4400.0,True,Asignada
-900107,Alto,Bajo,0.6177,117,baja,5.0,baja,5.0,13.7824,3.51,0.703,4405.0,True,Asignada
-900489,VIP,Bajo,0.7456,102,alta,40.0,alta,40.0,91.3341,28.1,0.702,4445.0,True,Asignada
-900230,Medio,Bajo,0.6607,119,baja,5.0,baja,5.0,12.8558,3.49,0.699,4450.0,True,Asignada
-900664,Medio,Bajo,0.6683,111,baja,5.0,baja,5.0,12.6705,3.47,0.694,4455.0,True,Asignada
-900702,Medio,Bajo,0.6338,116,baja,5.0,baja,5.0,13.3393,3.45,0.691,4460.0,True,Asignada
-900693,Estandar,Bajo,0.6242,92,baja,5.0,baja,5.0,13.5395,3.45,0.69,4465.0,True,Asignada
-900338,Medio,Bajo,0.7222,109,baja,5.0,baja,5.0,11.6979,3.45,0.69,4470.0,True,Asignada
-900442,Estandar,Bajo,0.6428,108,baja,5.0,baja,5.0,13.0105,3.36,0.673,4475.0,True,Asignada
-900085,Medio,Bajo,0.6613,115,baja,5.0,baja,5.0,12.6304,3.35,0.67,4480.0,True,Asignada
-900162,Estandar,Bajo,0.6607,108,baja,5.0,baja,5.0,12.6278,3.34,0.669,4485.0,True,Asignada
-900159,Estandar,Bajo,0.6546,102,baja,5.0,baja,5.0,12.7293,3.33,0.667,4490.0,True,Asignada
-900251,Estandar,Bajo,0.6072,85,baja,5.0,baja,5.0,13.7221,3.33,0.666,4495.0,True,Asignada
-900555,Estandar,Bajo,0.6428,104,baja,5.0,baja,5.0,12.9369,3.32,0.663,4500.0,True,Asignada
-900855,Estandar,Bajo,0.5911,89,baja,5.0,baja,5.0,14.0553,3.31,0.662,4505.0,True,Asignada
-900601,Estandar,Bajo,0.6508,115,baja,5.0,baja,5.0,12.7538,3.3,0.66,4510.0,True,Asignada
-900885,Estandar,Bajo,0.6216,112,baja,5.0,baja,5.0,13.3288,3.29,0.657,4515.0,True,Asignada
-900725,Estandar,Bajo,0.6347,141,baja,5.0,baja,5.0,13.0185,3.26,0.653,4520.0,True,Asignada
-900865,Medio,Bajo,0.6447,118,baja,5.0,baja,5.0,12.8025,3.25,0.651,4525.0,True,Asignada
-900706,Estandar,Bajo,0.692,123,baja,5.0,baja,5.0,11.9184,3.25,0.65,4530.0,True,Asignada
-900605,Estandar,Bajo,0.6777,111,baja,5.0,baja,5.0,12.1215,3.21,0.643,4535.0,True,Asignada
-900738,Estandar,Bajo,0.7007,124,baja,5.0,baja,5.0,11.7206,3.21,0.643,4540.0,True,Asignada
-900493,Medio,Bajo,0.709,117,baja,5.0,baja,5.0,11.5595,3.2,0.639,4545.0,True,Asignada
-900403,Estandar,Bajo,0.5911,114,baja,5.0,baja,5.0,13.8585,3.19,0.638,4550.0,True,Asignada
-900135,Medio,Bajo,0.6853,88,baja,5.0,baja,5.0,11.9388,3.18,0.636,4555.0,True,Asignada
-900046,VIP,Bajo,0.709,102,alta,40.0,alta,40.0,92.033,25.25,0.631,4595.0,True,Asignada
-900398,Estandar,Bajo,0.6683,118,baja,5.0,baja,5.0,12.2009,3.15,0.631,4600.0,True,Asignada
-900756,Estandar,Bajo,0.655,91,baja,5.0,baja,5.0,12.4389,3.15,0.629,4605.0,True,Asignada
-900529,Estandar,Bajo,0.6338,104,baja,5.0,baja,5.0,12.84,3.14,0.628,4610.0,True,Asignada
-900458,Estandar,Bajo,0.6237,112,baja,5.0,baja,5.0,13.0279,3.13,0.625,4615.0,True,Asignada
-900662,Estandar,Bajo,0.6225,100,baja,5.0,baja,5.0,12.9966,3.09,0.618,4620.0,True,Asignada
-900644,Medio,Medio,0.6149,113,baja,5.0,baja,5.0,13.1431,3.08,0.616,4625.0,True,Asignada
-900422,Medio,Bajo,0.6522,113,baja,5.0,baja,5.0,12.3815,3.08,0.615,4630.0,True,Asignada
-900321,Medio,Bajo,0.6216,100,baja,5.0,baja,5.0,12.9821,3.07,0.614,4635.0,True,Asignada
-900589,Estandar,Bajo,0.7007,111,baja,5.0,baja,5.0,11.4718,3.04,0.608,4640.0,True,Asignada
-900564,Medio,Bajo,0.7306,88,baja,5.0,baja,5.0,10.9947,3.03,0.607,4645.0,True,Asignada
-900308,Medio,Bajo,0.6697,118,baja,5.0,baja,5.0,11.9831,3.03,0.605,4650.0,True,Asignada
-900779,Estandar,Bajo,0.7297,106,baja,5.0,baja,5.0,10.9258,2.97,0.595,4655.0,True,Asignada
-900160,Medio,Bajo,0.706,138,baja,5.0,baja,5.0,11.2791,2.96,0.593,4660.0,True,Asignada
-900858,Medio,Bajo,0.6853,118,baja,5.0,baja,5.0,11.5948,2.95,0.589,4665.0,True,Asignada
-900174,Medio,Bajo,0.5911,108,baja,5.0,baja,5.0,13.4337,2.94,0.588,4670.0,True,Asignada
-900746,Estandar,Bajo,0.7297,114,baja,5.0,baja,5.0,10.8412,2.91,0.582,4675.0,True,Asignada
-900611,Estandar,Bajo,0.6683,110,baja,5.0,baja,5.0,11.8189,2.9,0.58,4680.0,True,Asignada
-900376,Estandar,Bajo,0.6338,114,baja,5.0,baja,5.0,12.3839,2.85,0.57,4685.0,True,Asignada
-900795,Medio,Bajo,0.692,120,baja,5.0,baja,5.0,11.3388,2.85,0.569,4690.0,True,Asignada
-900334,Medio,Medio,0.6607,102,baja,5.0,baja,5.0,11.8618,2.84,0.567,4695.0,True,Asignada
-900513,Estandar,Bajo,0.7215,118,baja,5.0,baja,5.0,10.811,2.8,0.56,4700.0,True,Asignada
-900214,Medio,Medio,0.6549,120,baja,5.0,baja,5.0,11.9042,2.8,0.559,4705.0,True,Asignada
-900053,Medio,Bajo,0.6446,127,baja,5.0,baja,5.0,12.0442,2.76,0.553,4710.0,True,Asignada
-900206,Medio,Bajo,0.6216,96,baja,5.0,baja,5.0,12.4307,2.73,0.545,4715.0,True,Asignada
-900692,Estandar,Bajo,0.6277,111,baja,5.0,baja,5.0,12.2947,2.72,0.543,4720.0,True,Asignada
-900518,Estandar,Bajo,0.6497,105,baja,5.0,baja,5.0,11.8656,2.71,0.542,4725.0,True,Asignada
-900404,Estandar,Bajo,0.655,88,baja,5.0,baja,5.0,11.7742,2.71,0.542,4730.0,True,Asignada
-900845,Estandar,Bajo,0.6853,104,baja,5.0,baja,5.0,11.2419,2.7,0.541,4735.0,True,Asignada
-900091,Estandar,Bajo,0.6177,109,baja,5.0,baja,5.0,12.4702,2.7,0.541,4740.0,True,Asignada
-900642,Estandar,Bajo,0.6237,104,baja,5.0,baja,5.0,12.3451,2.7,0.54,4745.0,True,Asignada
-900861,Medio,Bajo,0.6446,121,baja,5.0,baja,5.0,11.9291,2.69,0.538,4750.0,True,Asignada
-900369,Medio,Bajo,0.6428,119,baja,5.0,baja,5.0,11.9232,2.66,0.533,4755.0,True,Asignada
-900025,Estandar,Bajo,0.6933,103,baja,5.0,baja,5.0,11.0277,2.65,0.529,4760.0,True,Asignada
-900548,Medio,Bajo,0.6942,109,baja,5.0,baja,5.0,10.9632,2.61,0.522,4765.0,True,Asignada
-900872,Estandar,Bajo,0.6338,111,baja,5.0,baja,5.0,11.9985,2.6,0.521,4770.0,True,Asignada
-900080,Estandar,Bajo,0.6867,103,baja,5.0,baja,5.0,11.0562,2.59,0.518,4775.0,True,Asignada
-900468,Estandar,Bajo,0.6853,110,baja,5.0,baja,5.0,11.067,2.58,0.517,4780.0,True,Asignada
-900228,Estandar,Bajo,0.6011,101,baja,5.0,baja,5.0,12.6174,2.58,0.517,4785.0,True,Asignada
-900535,Estandar,Bajo,0.7007,108,baja,5.0,baja,5.0,10.8199,2.58,0.516,4790.0,True,Asignada
-900682,Estandar,Bajo,0.6407,122,baja,5.0,baja,5.0,11.8041,2.56,0.513,4795.0,True,Asignada
-900208,Estandar,Bajo,0.6346,113,baja,5.0,baja,5.0,11.8875,2.54,0.509,4800.0,True,Asignada
-900127,Medio,Bajo,0.6995,91,baja,5.0,baja,5.0,10.7508,2.52,0.504,4805.0,True,Asignada
-900463,Estandar,Bajo,0.6683,114,baja,5.0,baja,5.0,11.1517,2.45,0.491,4810.0,True,Asignada
-900637,Medio,Bajo,0.6338,126,baja,5.0,baja,5.0,11.7465,2.44,0.489,4815.0,True,Asignada
-900191,Medio,Bajo,0.6683,115,baja,5.0,baja,5.0,11.1182,2.43,0.486,4820.0,True,Asignada
-900171,Medio,Bajo,0.6327,115,baja,5.0,baja,5.0,11.7282,2.42,0.484,4825.0,True,Asignada
-900424,Medio,Bajo,0.6475,118,baja,5.0,baja,5.0,11.4607,2.42,0.484,4830.0,True,Asignada
-900776,Estandar,Bajo,0.5911,99,baja,5.0,baja,5.0,12.5378,2.41,0.482,4835.0,True,Asignada
-900406,Estandar,Bajo,0.6237,119,baja,5.0,baja,5.0,11.8832,2.41,0.482,4840.0,True,Asignada
-900472,Estandar,Bajo,0.6237,104,baja,5.0,baja,5.0,11.7485,2.33,0.466,4845.0,True,Asignada
-900193,Estandar,Bajo,0.6853,106,baja,5.0,baja,5.0,10.6639,2.31,0.462,4850.0,True,Asignada
-900788,Estandar,Bajo,0.7194,116,baja,5.0,baja,5.0,10.1314,2.29,0.458,4855.0,True,Asignada
-900724,Medio,Bajo,0.6428,114,baja,5.0,baja,5.0,11.3232,2.28,0.456,4860.0,True,Asignada
-900395,Estandar,Bajo,0.7008,99,baja,5.0,baja,5.0,10.3756,2.27,0.454,4865.0,True,Asignada
-900647,Estandar,Bajo,0.6607,113,baja,5.0,baja,5.0,10.9961,2.27,0.453,4870.0,True,Asignada
-900092,Estandar,Bajo,0.7007,110,baja,5.0,baja,5.0,10.3539,2.25,0.451,4875.0,True,Asignada
-900522,Estandar,Bajo,0.7687,127,baja,5.0,baja,5.0,9.3504,2.19,0.438,4880.0,True,Asignada
-900047,Estandar,Bajo,0.6155,106,baja,5.0,baja,5.0,11.6818,2.19,0.438,4885.0,True,Asignada
-900459,Medio,Bajo,0.7008,117,baja,5.0,baja,5.0,10.2482,2.18,0.436,4890.0,True,Asignada
-900487,Estandar,Bajo,0.6411,117,baja,5.0,baja,5.0,11.191,2.17,0.435,4895.0,True,Asignada
-900446,Estandar,Bajo,0.5779,107,baja,5.0,baja,5.0,12.3664,2.15,0.429,4900.0,True,Asignada
-900125,Estandar,Bajo,0.6931,111,baja,5.0,baja,5.0,10.2926,2.13,0.427,4905.0,True,Asignada
-900181,Medio,Bajo,0.6177,110,baja,5.0,baja,5.0,11.5416,2.13,0.426,4910.0,True,Asignada
-900840,Estandar,Bajo,0.6683,108,baja,5.0,baja,5.0,10.6524,2.12,0.424,4915.0,True,Asignada
-900036,Estandar,Bajo,0.6446,109,baja,5.0,baja,5.0,11.0244,2.11,0.421,4920.0,True,Asignada
-900479,VIP,Bajo,0.6746,118,alta,40.0,alta,40.0,83.8682,16.58,0.414,4960.0,True,Asignada
-900392,Estandar,Bajo,0.6177,122,baja,5.0,baja,5.0,11.4213,2.05,0.411,4965.0,True,Asignada
-900065,Estandar,Bajo,0.6942,109,baja,5.0,baja,5.0,10.1646,2.06,0.411,4970.0,True,Asignada
-900268,Estandar,Bajo,0.4819,105,baja,5.0,baja,5.0,14.6358,2.05,0.411,4975.0,True,Asignada
-900699,Alto,Bajo,0.6055,105,baja,5.0,baja,5.0,11.6079,2.03,0.406,4980.0,True,Asignada
-900760,Estandar,Bajo,0.7117,99,baja,5.0,baja,5.0,9.8681,2.02,0.405,4985.0,True,Asignada
-900155,Medio,Bajo,0.7222,137,baja,5.0,baja,5.0,9.6493,1.97,0.394,4990.0,True,Asignada
-900045,Estandar,Bajo,0.6177,101,baja,5.0,baja,5.0,11.2427,1.94,0.389,4995.0,True,Asignada
-900448,Estandar,Bajo,0.5523,108,baja,5.0,baja,5.0,12.5347,1.92,0.385,5000.0,True,Asignada
-900827,Medio,Bajo,0.6683,99,baja,5.0,baja,5.0,10.35,1.92,0.383,5005.0,True,Asignada
-900534,Estandar,Bajo,0.6338,108,baja,5.0,baja,5.0,10.8375,1.87,0.374,5010.0,True,Asignada
-900184,Medio,Bajo,0.6216,116,baja,5.0,baja,5.0,11.0422,1.86,0.373,5015.0,True,Asignada
-900009,Estandar,Bajo,0.6841,114,baja,5.0,baja,5.0,10.0231,1.86,0.371,5020.0,True,Asignada
-900646,Estandar,Bajo,0.6917,109,baja,5.0,baja,5.0,9.8691,1.83,0.365,5025.0,True,Asignada
-900470,Estandar,Bajo,0.6177,115,baja,5.0,baja,5.0,11.0427,1.82,0.364,5030.0,True,Asignada
-900176,Medio,Bajo,0.6572,116,baja,5.0,baja,5.0,10.3459,1.8,0.36,5035.0,True,Asignada
-900066,Medio,Bajo,0.6984,126,baja,5.0,baja,5.0,9.7268,1.79,0.359,5040.0,True,Asignada
-900282,Estandar,Bajo,0.7698,118,baja,5.0,baja,5.0,8.819,1.79,0.358,5045.0,True,Asignada
-900023,Medio,Bajo,0.6011,114,baja,5.0,baja,5.0,11.2792,1.78,0.356,5050.0,True,Asignada
-900126,Alto,Medio,0.3152,100,baja,5.0,baja,5.0,21.4195,1.75,0.35,5055.0,True,Asignada
-900732,Estandar,Bajo,0.7192,124,baja,5.0,baja,5.0,9.3525,1.73,0.345,5060.0,True,Asignada
-900595,Estandar,Bajo,0.7202,115,baja,5.0,baja,5.0,9.3175,1.71,0.342,5065.0,True,Asignada
-900750,Alto,Bajo,0.6225,122,baja,5.0,baja,5.0,10.7357,1.68,0.337,5070.0,True,Asignada
-900149,Estandar,Bajo,0.6683,113,baja,5.0,baja,5.0,9.9463,1.65,0.329,5075.0,True,Asignada
-900782,Estandar,Bajo,0.6853,113,baja,5.0,baja,5.0,9.6668,1.62,0.325,5080.0,True,Asignada
-900524,Estandar,Bajo,0.6216,112,baja,5.0,baja,5.0,10.6551,1.62,0.325,5085.0,True,Asignada
-900185,Alto,Bajo,0.361,109,baja,5.0,baja,5.0,18.3366,1.62,0.324,5090.0,True,Asignada
-900817,Medio,Bajo,0.6592,127,baja,5.0,baja,5.0,9.9521,1.56,0.312,5095.0,True,Asignada
-900307,Estandar,Bajo,0.6338,117,baja,5.0,baja,5.0,10.3409,1.55,0.311,5100.0,True,Asignada
-900578,Estandar,Bajo,0.5452,99,baja,5.0,baja,5.0,11.8773,1.48,0.295,5105.0,True,Asignada
-900274,Medio,Bajo,0.6616,133,baja,5.0,baja,5.0,9.7597,1.46,0.291,5110.0,True,Asignada
-900784,Estandar,Bajo,0.6522,128,baja,5.0,baja,5.0,9.8451,1.42,0.284,5115.0,True,Asignada
-900141,Estandar,Bajo,0.6386,93,baja,5.0,baja,5.0,10.0407,1.41,0.282,5120.0,True,Asignada
-900475,Estandar,Bajo,0.6338,106,baja,5.0,baja,5.0,10.1024,1.4,0.281,5125.0,True,Asignada
-900726,Estandar,Bajo,0.6407,89,baja,5.0,baja,5.0,9.958,1.38,0.276,5130.0,True,Asignada
-900794,Medio,Bajo,0.6683,127,baja,5.0,baja,5.0,9.5481,1.38,0.276,5135.0,True,Asignada
-900689,Estandar,Bajo,0.6867,116,baja,5.0,baja,5.0,9.2592,1.36,0.272,5140.0,True,Asignada
-900300,Medio,Medio,0.6995,113,baja,5.0,baja,5.0,9.0849,1.35,0.271,5145.0,True,Asignada
-900656,Medio,Bajo,0.6428,123,baja,5.0,baja,5.0,9.8634,1.34,0.268,5150.0,True,Asignada
-900823,Estandar,Bajo,0.6325,97,baja,5.0,baja,5.0,10.0081,1.33,0.266,5155.0,True,Asignada
-900691,Estandar,Bajo,0.6616,118,baja,5.0,baja,5.0,9.5557,1.32,0.264,5160.0,True,Asignada
-900095,Estandar,Bajo,0.7073,107,baja,5.0,baja,5.0,8.9381,1.32,0.264,5165.0,True,Asignada
-900456,Medio,Bajo,0.6338,120,baja,5.0,baja,5.0,9.9261,1.29,0.258,5170.0,True,Asignada
-900568,Medio,Bajo,0.6845,121,baja,5.0,baja,5.0,9.1641,1.27,0.255,5175.0,True,Asignada
-900640,Estandar,Bajo,0.6081,86,baja,5.0,baja,5.0,10.3063,1.27,0.253,5180.0,True,Asignada
-900420,Estandar,Bajo,0.6306,104,baja,5.0,baja,5.0,9.9229,1.26,0.251,5185.0,True,Asignada
-900242,Medio,Bajo,0.7202,135,baja,5.0,baja,5.0,8.6171,1.21,0.241,5190.0,True,Asignada
-900447,Estandar,Bajo,0.6867,114,baja,5.0,baja,5.0,9.0217,1.2,0.239,5195.0,True,Asignada
-900720,Estandar,Bajo,0.6237,96,baja,5.0,baja,5.0,9.8986,1.17,0.235,5200.0,True,Asignada
-900005,Alto,Bajo,0.7149,107,alta,40.0,alta,40.0,69.0303,9.35,0.234,5240.0,True,Asignada
-900090,Estandar,Bajo,0.692,116,baja,5.0,baja,5.0,8.9087,1.16,0.233,5245.0,True,Asignada
-900211,Estandar,Bajo,0.6155,107,baja,5.0,baja,5.0,9.9663,1.13,0.227,5250.0,True,Asignada
-900293,Estandar,Bajo,0.6995,104,baja,5.0,baja,5.0,8.7639,1.13,0.226,5255.0,True,Asignada
-900116,Medio,Bajo,0.5911,121,baja,5.0,baja,5.0,10.341,1.11,0.223,5260.0,True,Asignada
-900137,Medio,Bajo,0.6076,108,baja,5.0,baja,5.0,10.0312,1.09,0.219,5265.0,True,Asignada
-900438,Estandar,Bajo,0.6777,119,baja,5.0,baja,5.0,8.9624,1.07,0.215,5270.0,True,Asignada
-900443,Estandar,Bajo,0.6867,119,baja,5.0,baja,5.0,8.8333,1.07,0.213,5275.0,True,Asignada
-900636,Medio,Medio,0.5443,116,baja,5.0,baja,5.0,11.1447,1.07,0.213,5280.0,True,Asignada
-900370,Estandar,Bajo,0.6327,111,baja,5.0,baja,5.0,9.5887,1.07,0.213,5285.0,True,Asignada
-900275,Estandar,Bajo,0.7155,113,baja,5.0,baja,5.0,8.471,1.06,0.212,5290.0,True,Asignada
-900741,Estandar,Bajo,0.639,98,baja,5.0,baja,5.0,9.3661,0.98,0.197,5295.0,True,Asignada
-900498,Estandar,Bajo,0.655,110,baja,5.0,baja,5.0,9.1318,0.98,0.196,5300.0,True,Asignada
-900281,Estandar,Bajo,0.6917,110,baja,5.0,baja,5.0,8.63,0.97,0.194,5305.0,True,Asignada
-900882,Estandar,Bajo,0.6347,111,baja,5.0,baja,5.0,9.3609,0.94,0.188,5310.0,True,Asignada
-900318,Estandar,Bajo,0.6237,120,baja,5.0,baja,5.0,9.5159,0.94,0.187,5315.0,True,Asignada
-900805,Estandar,Bajo,0.6076,118,baja,5.0,baja,5.0,9.7662,0.93,0.187,5320.0,True,Asignada
-900631,Estandar,Bajo,0.692,117,baja,5.0,baja,5.0,8.5683,0.93,0.186,5325.0,True,Asignada
-900770,Medio,Bajo,0.6697,132,baja,5.0,baja,5.0,8.8509,0.93,0.185,5330.0,True,Asignada
-900510,Estandar,Bajo,0.4107,103,baja,5.0,baja,5.0,14.4022,0.91,0.183,5335.0,True,Asignada
-900239,Medio,Bajo,0.5911,117,baja,5.0,baja,5.0,9.9305,0.87,0.174,5340.0,True,Asignada
-900719,Estandar,Bajo,0.6984,123,baja,5.0,baja,5.0,8.4028,0.87,0.174,5345.0,True,Asignada
-900653,Estandar,Bajo,0.6549,114,baja,5.0,baja,5.0,8.9336,0.85,0.17,5350.0,True,Asignada
-900567,Estandar,Bajo,0.6237,111,baja,5.0,baja,5.0,9.3364,0.82,0.165,5355.0,True,Asignada
-900361,Medio,Bajo,0.6237,108,baja,5.0,baja,5.0,9.3345,0.82,0.164,5360.0,True,Asignada
-900868,Estandar,Bajo,0.6155,109,baja,5.0,baja,5.0,9.4292,0.8,0.161,5365.0,True,Asignada
-900124,Medio,Bajo,0.7202,135,baja,5.0,baja,5.0,8.0105,0.77,0.154,5370.0,True,Asignada
-900480,Estandar,Bajo,0.6306,96,baja,5.0,baja,5.0,9.1092,0.74,0.149,5375.0,True,Asignada
-900715,Estandar,Bajo,0.5911,100,baja,5.0,baja,5.0,9.7232,0.75,0.149,5380.0,True,Asignada
-900852,Medio,Bajo,0.6076,117,baja,5.0,baja,5.0,9.4289,0.73,0.146,5385.0,True,Asignada
-900177,Estandar,Bajo,0.6772,109,baja,5.0,baja,5.0,8.4273,0.71,0.141,5390.0,True,Asignada
-900772,Medio,Bajo,0.6248,124,baja,5.0,baja,5.0,9.1157,0.7,0.139,5395.0,True,Asignada
-900081,Estandar,Bajo,0.6853,111,baja,5.0,baja,5.0,8.2552,0.66,0.131,5400.0,True,Asignada
-900028,Estandar,Bajo,0.6598,99,baja,5.0,baja,5.0,8.522,0.62,0.125,5405.0,True,Asignada
-900170,Estandar,Bajo,0.6327,120,baja,5.0,baja,5.0,8.8858,0.62,0.124,5410.0,True,Asignada
-900332,Estandar,Bajo,0.6607,102,baja,5.0,baja,5.0,8.4697,0.6,0.119,5415.0,True,Asignada
-900785,Estandar,Bajo,0.6216,108,baja,5.0,baja,5.0,8.9876,0.59,0.117,5420.0,True,Asignada
-900712,Estandar,Bajo,0.6508,92,baja,5.0,baja,5.0,8.5609,0.57,0.114,5425.0,True,Asignada
-900205,Estandar,Bajo,0.5911,100,baja,5.0,baja,5.0,9.4177,0.57,0.113,5430.0,True,Asignada
-900454,Estandar,Bajo,0.6372,94,baja,5.0,baja,5.0,8.6788,0.53,0.106,5435.0,True,Asignada
-900800,Estandar,Bajo,0.6177,106,baja,5.0,baja,5.0,8.7591,0.41,0.082,5440.0,True,Asignada
-900088,Estandar,Bajo,0.6177,106,baja,5.0,baja,5.0,8.7622,0.41,0.082,5445.0,True,Asignada
-900582,Estandar,Bajo,0.6783,106,baja,5.0,baja,5.0,7.963,0.4,0.08,5450.0,True,Asignada
-900704,Estandar,Bajo,0.6481,107,baja,5.0,baja,5.0,8.3241,0.39,0.079,5455.0,True,Asignada
-900411,Estandar,Bajo,0.6616,110,baja,5.0,baja,5.0,8.0849,0.35,0.07,5460.0,True,Asignada
-900580,Estandar,Bajo,0.6841,128,baja,5.0,baja,5.0,7.7544,0.3,0.061,5465.0,True,Asignada
-900330,Estandar,Bajo,0.6475,115,baja,5.0,baja,5.0,8.1722,0.29,0.058,5470.0,True,Asignada
-900841,Estandar,Bajo,0.5277,128,baja,5.0,baja,5.0,10.0145,0.28,0.057,5475.0,True,Asignada
-900256,Estandar,Bajo,0.6622,112,baja,5.0,baja,5.0,7.9476,0.26,0.053,5480.0,True,Asignada
-900037,Estandar,Bajo,0.6076,110,baja,5.0,baja,5.0,8.6544,0.26,0.052,5485.0,True,Asignada
-900826,Estandar,Bajo,0.6777,109,baja,5.0,baja,5.0,7.6791,0.2,0.041,5490.0,True,Asignada
-900533,Estandar,Bajo,0.6407,99,baja,5.0,baja,5.0,8.0393,0.15,0.03,5495.0,True,Asignada
-900168,Estandar,Bajo,0.6607,109,baja,5.0,baja,5.0,7.7222,0.1,0.02,5500.0,True,Asignada
-900115,Medio,Bajo,0.6683,121,baja,5.0,baja,5.0,7.5439,0.04,0.008,5505.0,True,Asignada
-900008,VIP,Alto,0.7093,120,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900043,VIP,Alto,0.7282,121,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900049,Estandar,Bajo,0.5543,124,,0.0,,0.0,6.4473,-1.43,-0.285,,False,Sin recompensa: valor esperado no positivo
-900051,Estandar,Bajo,0.6347,116,,0.0,,0.0,5.134,-1.74,-0.348,,False,Sin recompensa: valor esperado no positivo
-900061,Alto,Alto,0.6224,117,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900062,VIP,Alto,0.6346,115,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900064,Alto,Bajo,0.3571,126,,0.0,,0.0,8.8189,-1.85,-0.37,,False,Sin recompensa: valor esperado no positivo
-900069,VIP,Alto,0.6647,121,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900074,VIP,Alto,0.6224,102,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900075,Estandar,Bajo,0.6917,115,,0.0,,0.0,6.9124,-0.22,-0.044,,False,Sin recompensa: valor esperado no positivo
-900082,Estandar,Bajo,0.6177,117,,0.0,,0.0,6.4031,-1.04,-0.209,,False,Sin recompensa: valor esperado no positivo
-900083,Medio,Bajo,0.6055,128,,0.0,,0.0,7.4933,-0.46,-0.093,,False,Sin recompensa: valor esperado no positivo
-900086,VIP,Alto,0.6004,117,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900089,VIP,Alto,0.6401,114,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900098,VIP,Alto,0.6795,89,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900102,VIP,Alto,0.6672,105,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900111,Estandar,Bajo,0.5779,97,,0.0,,0.0,6.1755,-1.43,-0.286,,False,Sin recompensa: valor esperado no positivo
-900112,VIP,Alto,0.6346,104,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900114,VIP,Alto,0.701,113,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900117,VIP,Alto,0.5157,107,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900122,Alto,Alto,0.5157,107,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900133,Alto,Alto,0.6366,108,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900142,VIP,Alto,0.6401,129,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900144,VIP,Alto,0.6523,105,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900145,VIP,Alto,0.716,111,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900153,VIP,Alto,0.6224,109,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900154,VIP,Alto,0.6224,95,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900189,VIP,Alto,0.6224,113,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900199,Estandar,Bajo,0.6651,110,,0.0,,0.0,6.251,-0.84,-0.168,,False,Sin recompensa: valor esperado no positivo
-900210,VIP,Alto,0.6496,110,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900215,VIP,Alto,0.6496,127,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900216,VIP,Alto,0.6618,102,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900217,VIP,Alto,0.648,93,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900218,VIP,Alto,0.7282,120,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900243,Alto,Alto,0.4444,115,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900254,Estandar,Bajo,0.5553,107,,0.0,,0.0,8.1266,-0.49,-0.097,,False,Sin recompensa: valor esperado no positivo
-900272,Alto,Alto,0.6401,107,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900305,VIP,Alto,0.6346,113,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900311,Estandar,Bajo,0.7297,108,,0.0,,0.0,6.1525,-0.51,-0.102,,False,Sin recompensa: valor esperado no positivo
-900313,Alto,Alto,0.556,98,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900317,VIP,Alto,0.5662,114,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900324,Estandar,Bajo,0.6347,128,,0.0,,0.0,7.5311,-0.22,-0.044,,False,Sin recompensa: valor esperado no positivo
-900325,Medio,Alto,0.6672,119,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900353,VIP,Alto,0.3824,110,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900377,VIP,Alto,0.6618,121,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900389,Medio,Alto,0.6346,106,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900390,VIP,Alto,0.6888,116,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900402,VIP,Alto,0.6416,107,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900408,VIP,Alto,0.531,103,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900410,Estandar,Bajo,0.6076,110,,0.0,,0.0,7.7966,-0.26,-0.053,,False,Sin recompensa: valor esperado no positivo
-900412,VIP,Alto,0.6224,116,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900418,Medio,Bajo,0.692,135,,0.0,,0.0,4.8322,-1.66,-0.331,,False,Sin recompensa: valor esperado no positivo
-900425,VIP,Alto,0.6224,133,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900429,VIP,Alto,0.701,116,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900433,Estandar,Bajo,0.5911,99,,0.0,,0.0,8.1649,-0.17,-0.035,,False,Sin recompensa: valor esperado no positivo
-900482,VIP,Alto,0.6224,97,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900484,VIP,Alto,0.6224,140,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900488,Estandar,Bajo,0.3016,101,,0.0,,0.0,14.2533,-0.7,-0.14,,False,Sin recompensa: valor esperado no positivo
-900492,VIP,Alto,0.6795,117,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900506,Estandar,Bajo,0.5557,109,,0.0,,0.0,7.8482,-0.64,-0.128,,False,Sin recompensa: valor esperado no positivo
-900507,Alto,Alto,0.5319,112,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900523,Alto,Alto,0.4293,114,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900528,VIP,Alto,0.6401,100,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900537,VIP,Alto,0.6971,118,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900546,VIP,Alto,0.5869,106,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900556,Estandar,Bajo,0.6306,91,,0.0,,0.0,7.8429,-0.05,-0.011,,False,Sin recompensa: valor esperado no positivo
-900563,VIP,Alto,0.6795,127,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900569,Estandar,Bajo,0.6161,99,,0.0,,0.0,7.1707,-0.58,-0.116,,False,Sin recompensa: valor esperado no positivo
-900576,VIP,Alto,0.6971,122,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900577,Alto,Bajo,0.3016,132,,0.0,,0.0,14.1948,-0.72,-0.144,,False,Sin recompensa: valor esperado no positivo
-900596,Estandar,Bajo,0.6697,129,,0.0,,0.0,5.7725,-1.13,-0.227,,False,Sin recompensa: valor esperado no positivo
-900617,Estandar,Bajo,0.7015,106,,0.0,,0.0,6.1715,-0.67,-0.134,,False,Sin recompensa: valor esperado no positivo
-900623,Alto,Alto,0.6224,116,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900629,VIP,Alto,0.6401,112,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900641,VIP,Alto,0.6416,104,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900651,Alto,Alto,0.6401,90,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900671,VIP,Alto,0.6224,116,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900678,VIP,Alto,0.6401,102,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900686,VIP,Alto,0.6618,106,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900701,VIP,Alto,0.6224,108,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900729,Estandar,Bajo,0.6446,131,,0.0,,0.0,6.8969,-0.55,-0.111,,False,Sin recompensa: valor esperado no positivo
-900730,VIP,Alto,0.6224,118,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900742,VIP,Alto,0.6224,125,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900743,VIP,Alto,0.6538,108,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900744,Estandar,Bajo,0.6177,128,,0.0,,0.0,6.4367,-1.02,-0.205,,False,Sin recompensa: valor esperado no positivo
-900787,VIP,Alto,0.6346,113,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900789,VIP,Alto,0.701,114,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900792,Alto,Alto,0.6004,93,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900815,VIP,Alto,0.6224,115,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900819,VIP,Alto,0.716,100,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900820,VIP,Alto,0.8007,111,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900834,Medio,Bajo,0.6683,124,,0.0,,0.0,6.9156,-0.38,-0.076,,False,Sin recompensa: valor esperado no positivo
-900853,VIP,Alto,0.6224,103,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900859,VIP,Alto,0.6401,107,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
-900887,VIP,Alto,0.7282,120,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto
+IdCliente,Segmento,NivelRiesgo,ProbRespuesta,SesionesUltimos90d,RecompensaSugerida,CostoSugerido,Recompensa,Costo,ValorIncremental,ValorEsperado,Eficiencia,GastoAcumulado,Asignada,MotivoDecision,BaselineRecompensa,BaselineCosto,BaselineValorEsperado,BaselineAsignada,RiesgoScore
+900212,VIP,Medio,0.2426,100,baja,5.0,baja,5.0,1836.0009,440.47,88.093,5.0,True,Asignada,baja,5.0,7.95,True,0.5
+900279,VIP,Medio,0.2039,104,baja,5.0,baja,5.0,1860.7718,374.46,74.893,10.0,True,Asignada,baja,5.0,8.1,True,0.5
+900019,VIP,Medio,0.1794,110,baja,5.0,baja,5.0,1966.6177,347.73,69.545,15.0,True,Asignada,baja,5.0,5.78,True,0.5
+900790,VIP,Medio,0.1492,104,baja,5.0,baja,5.0,2340.7499,344.33,68.865,20.0,True,Asignada,baja,5.0,8.0,True,0.5
+900606,VIP,Medio,0.2186,90,baja,5.0,baja,5.0,1585.2257,341.48,68.296,25.0,True,Asignada,baja,5.0,6.21,True,0.5
+900257,VIP,Medio,0.2013,125,baja,5.0,baja,5.0,1715.7689,340.43,68.086,30.0,True,Asignada,baja,5.0,3.47,True,0.5
+900363,VIP,Medio,0.179,111,baja,5.0,baja,5.0,1921.3626,338.96,67.792,35.0,True,Asignada,baja,5.0,11.25,True,0.5
+900337,VIP,Medio,0.148,117,baja,5.0,baja,5.0,2287.0284,333.57,66.715,40.0,True,Asignada,baja,5.0,11.87,True,0.5
+900669,VIP,Medio,0.1696,113,baja,5.0,baja,5.0,1873.6795,312.71,62.542,45.0,True,Asignada,,0.0,-2.83,False,0.5
+900886,VIP,Medio,0.2053,111,baja,5.0,baja,5.0,1489.5943,300.77,60.154,50.0,True,Asignada,,0.0,-0.05,False,0.5
+900232,VIP,Medio,0.1693,109,baja,5.0,baja,5.0,1795.3217,298.92,59.784,55.0,True,Asignada,baja,5.0,4.76,True,0.5
+900551,Alto,Medio,0.1802,113,baja,5.0,baja,5.0,1644.6944,291.45,58.29,60.0,True,Asignada,baja,5.0,4.24,True,0.5
+900632,VIP,Medio,0.1916,126,baja,5.0,baja,5.0,1491.3663,280.71,56.141,65.0,True,Asignada,baja,5.0,1.74,True,0.5
+900685,VIP,Medio,0.1599,109,baja,5.0,baja,5.0,1770.6776,278.14,55.628,70.0,True,Asignada,,0.0,-2.55,False,0.5
+900654,VIP,Medio,0.1736,109,baja,5.0,baja,5.0,1613.2302,275.13,55.026,75.0,True,Asignada,baja,5.0,4.2,True,0.5
+900460,VIP,Medio,0.1578,101,baja,5.0,baja,5.0,1766.1219,273.73,54.746,80.0,True,Asignada,baja,5.0,6.3,True,0.5
+900481,VIP,Medio,0.1391,127,baja,5.0,baja,5.0,2002.9621,273.62,54.724,85.0,True,Asignada,,0.0,-0.54,False,0.5
+900573,VIP,Medio,0.141,110,baja,5.0,baja,5.0,1975.4107,273.53,54.706,90.0,True,Asignada,baja,5.0,4.77,True,0.5
+900838,VIP,Medio,0.1419,125,baja,5.0,baja,5.0,1953.518,272.23,54.446,95.0,True,Asignada,baja,5.0,15.76,True,0.5
+900366,VIP,Medio,0.1691,110,baja,5.0,baja,5.0,1621.9184,269.21,53.841,100.0,True,Asignada,baja,5.0,6.57,True,0.5
+900050,VIP,Medio,0.168,115,baja,5.0,baja,5.0,1618.9212,266.98,53.396,105.0,True,Asignada,baja,5.0,6.42,True,0.5
+900739,VIP,Medio,0.1467,109,baja,5.0,baja,5.0,1804.5885,259.69,51.937,110.0,True,Asignada,baja,5.0,3.4,True,0.5
+900733,VIP,Medio,0.1376,114,baja,5.0,baja,5.0,1920.4012,259.24,51.848,115.0,True,Asignada,baja,5.0,8.09,True,0.5
+900809,VIP,Medio,0.1186,109,baja,5.0,baja,5.0,2202.8309,256.33,51.266,120.0,True,Asignada,baja,5.0,9.05,True,0.5
+900774,VIP,Medio,0.2309,113,baja,5.0,baja,5.0,1119.7936,253.53,50.707,125.0,True,Asignada,baja,5.0,2.0,True,0.5
+900465,VIP,Medio,0.1503,112,baja,5.0,baja,5.0,1713.2949,252.56,50.511,130.0,True,Asignada,baja,5.0,3.19,True,0.5
+900054,VIP,Medio,0.2154,111,baja,5.0,baja,5.0,1192.2754,251.87,50.374,135.0,True,Asignada,baja,5.0,1.98,True,0.5
+900188,VIP,Medio,0.1334,98,baja,5.0,baja,5.0,1917.8141,250.87,50.175,140.0,True,Asignada,baja,5.0,7.94,True,0.5
+900768,Alto,Medio,0.1891,105,baja,5.0,baja,5.0,1349.1115,250.15,50.029,145.0,True,Asignada,baja,5.0,2.88,True,0.5
+900803,VIP,Medio,0.1689,93,baja,5.0,baja,5.0,1494.5122,247.39,49.479,150.0,True,Asignada,,0.0,-2.48,False,0.5
+900269,Alto,Medio,0.1964,103,baja,5.0,baja,5.0,1283.305,247.06,49.412,155.0,True,Asignada,baja,5.0,3.48,True,0.5
+900225,Alto,Medio,0.1484,111,baja,5.0,baja,5.0,1675.6132,243.6,48.721,160.0,True,Asignada,baja,5.0,3.86,True,0.5
+900192,VIP,Medio,0.1347,124,baja,5.0,baja,5.0,1845.506,243.57,48.715,165.0,True,Asignada,,0.0,-0.23,False,0.5
+900021,VIP,Medio,0.1137,109,baja,5.0,baja,5.0,2175.9937,242.46,48.492,170.0,True,Asignada,baja,5.0,5.04,True,0.5
+900661,VIP,Bajo,0.1572,130,baja,5.0,baja,5.0,1563.4207,240.78,48.156,175.0,True,Asignada,baja,5.0,2.7,True,0.0
+900071,VIP,Medio,0.1606,110,baja,5.0,baja,5.0,1524.2522,239.83,47.965,180.0,True,Asignada,baja,5.0,2.98,True,0.5
+900748,VIP,Medio,0.1061,107,baja,5.0,baja,5.0,2303.9792,239.44,47.888,185.0,True,Asignada,baja,5.0,12.91,True,0.5
+900234,Alto,Medio,0.1529,102,baja,5.0,baja,5.0,1596.2128,239.02,47.805,190.0,True,Asignada,,0.0,-2.78,False,0.5
+900723,VIP,Medio,0.162,139,baja,5.0,baja,5.0,1492.8492,236.79,47.359,195.0,True,Asignada,baja,5.0,5.86,True,0.5
+900449,VIP,Medio,0.1727,114,baja,5.0,baja,5.0,1381.7602,233.56,46.713,200.0,True,Asignada,baja,5.0,2.37,True,0.5
+900147,VIP,Medio,0.1659,98,baja,5.0,baja,5.0,1429.3906,232.08,46.417,205.0,True,Asignada,,0.0,-1.51,False,0.5
+900042,VIP,Medio,0.1575,115,baja,5.0,baja,5.0,1492.7613,230.16,46.032,210.0,True,Asignada,,0.0,-2.16,False,0.5
+900304,VIP,Medio,0.1527,113,baja,5.0,baja,5.0,1526.8832,228.22,45.644,215.0,True,Asignada,,0.0,-2.7,False,0.5
+900072,VIP,Medio,0.1675,101,baja,5.0,baja,5.0,1365.9603,223.79,44.758,220.0,True,Asignada,baja,5.0,5.07,True,0.5
+900322,Alto,Bajo,0.1998,104,baja,5.0,baja,5.0,1140.0486,222.73,44.546,225.0,True,Asignada,baja,5.0,2.95,True,0.0
+900731,Alto,Medio,0.19,118,baja,5.0,baja,5.0,1194.7585,221.96,44.392,230.0,True,Asignada,baja,5.0,1.26,True,0.5
+900851,VIP,Medio,0.1532,110,baja,5.0,baja,5.0,1480.6898,221.82,44.364,235.0,True,Asignada,baja,5.0,2.47,True,0.5
+900464,VIP,Medio,0.168,107,baja,5.0,baja,5.0,1337.4805,219.74,43.948,240.0,True,Asignada,baja,5.0,1.28,True,0.5
+900444,Alto,Medio,0.1773,113,baja,5.0,baja,5.0,1260.1965,218.4,43.68,245.0,True,Asignada,baja,5.0,1.74,True,0.5
+900207,VIP,Medio,0.1556,105,baja,5.0,baja,5.0,1432.6577,217.94,43.589,250.0,True,Asignada,baja,5.0,2.22,True,0.5
+900388,Alto,Bajo,0.1803,109,baja,5.0,baja,5.0,1230.2024,216.83,43.366,255.0,True,Asignada,baja,5.0,1.76,True,0.0
+900156,Alto,Medio,0.1748,98,baja,5.0,baja,5.0,1267.4249,216.56,43.312,260.0,True,Asignada,,0.0,-2.84,False,0.5
+900574,VIP,Medio,0.1371,119,baja,5.0,baja,5.0,1601.1747,214.52,42.903,265.0,True,Asignada,baja,5.0,0.19,True,0.5
+900400,VIP,Medio,0.1401,115,baja,5.0,baja,5.0,1563.1417,214.01,42.803,270.0,True,Asignada,,0.0,-1.75,False,0.5
+900428,VIP,Medio,0.1664,120,baja,5.0,baja,5.0,1314.6067,213.8,42.759,275.0,True,Asignada,,0.0,-2.54,False,0.5
+900078,VIP,Medio,0.1353,116,baja,5.0,baja,5.0,1616.3602,213.68,42.737,280.0,True,Asignada,,0.0,-1.92,False,0.5
+900067,VIP,Medio,0.1368,115,baja,5.0,baja,5.0,1592.4345,212.81,42.562,285.0,True,Asignada,,0.0,-0.96,False,0.5
+900832,VIP,Medio,0.1702,130,baja,5.0,baja,5.0,1264.6501,210.24,42.047,290.0,True,Asignada,,0.0,-1.33,False,0.5
+900508,VIP,Medio,0.1269,104,baja,5.0,baja,5.0,1678.0232,207.98,41.596,295.0,True,Asignada,baja,5.0,6.0,True,0.5
+900783,VIP,Medio,0.1822,124,baja,5.0,baja,5.0,1159.4984,206.3,41.261,300.0,True,Asignada,,0.0,-3.01,False,0.5
+900660,VIP,Medio,0.1267,117,baja,5.0,baja,5.0,1641.2855,202.95,40.589,305.0,True,Asignada,baja,5.0,8.58,True,0.5
+900708,VIP,Medio,0.1138,119,baja,5.0,baja,5.0,1808.9791,200.93,40.186,310.0,True,Asignada,,0.0,-2.47,False,0.5
+900581,VIP,Medio,0.1008,121,baja,5.0,baja,5.0,2038.0467,200.4,40.081,315.0,True,Asignada,baja,5.0,7.27,True,0.5
+900303,Alto,Medio,0.1571,113,baja,5.0,baja,5.0,1302.2588,199.52,39.905,320.0,True,Asignada,baja,5.0,2.57,True,0.5
+900416,VIP,Medio,0.1289,115,baja,5.0,baja,5.0,1570.122,197.34,39.468,325.0,True,Asignada,,0.0,-0.68,False,0.5
+900194,Alto,Medio,0.1681,114,baja,5.0,baja,5.0,1201.1326,196.88,39.375,330.0,True,Asignada,,0.0,-3.3,False,0.5
+900373,Alto,Medio,0.1626,116,baja,5.0,baja,5.0,1240.4449,196.74,39.347,335.0,True,Asignada,baja,5.0,1.15,True,0.5
+900006,VIP,Medio,0.1182,130,baja,5.0,baja,5.0,1705.5422,196.61,39.323,340.0,True,Asignada,baja,5.0,2.12,True,0.5
+900087,VIP,Medio,0.1227,119,baja,5.0,baja,5.0,1642.3359,196.44,39.288,345.0,True,Asignada,baja,5.0,5.75,True,0.5
+900864,VIP,Medio,0.1564,132,baja,5.0,baja,5.0,1278.1732,194.89,38.977,350.0,True,Asignada,baja,5.0,1.7,True,0.5
+900280,VIP,Medio,0.1375,117,baja,5.0,baja,5.0,1448.2933,194.09,38.819,355.0,True,Asignada,baja,5.0,6.69,True,0.5
+900182,VIP,Medio,0.1696,112,baja,5.0,baja,5.0,1173.3191,193.99,38.798,360.0,True,Asignada,baja,5.0,0.65,True,0.5
+900146,Alto,Medio,0.1776,107,baja,5.0,baja,5.0,1113.1861,192.68,38.536,365.0,True,Asignada,baja,5.0,3.0,True,0.5
+900383,VIP,Medio,0.1596,101,baja,5.0,baja,5.0,1230.3806,191.35,38.269,370.0,True,Asignada,baja,5.0,2.68,True,0.5
+900600,Alto,Medio,0.1409,110,baja,5.0,baja,5.0,1391.8318,191.06,38.211,375.0,True,Asignada,baja,5.0,4.21,True,0.5
+900587,VIP,Medio,0.1142,99,baja,5.0,baja,5.0,1708.1691,190.07,38.015,380.0,True,Asignada,baja,5.0,11.67,True,0.5
+900298,VIP,Medio,0.1764,126,baja,5.0,baja,5.0,1104.4626,189.78,37.955,385.0,True,Asignada,,0.0,-1.54,False,0.5
+900500,Alto,Bajo,0.1457,91,baja,5.0,baja,5.0,1335.7395,189.59,37.919,390.0,True,Asignada,baja,5.0,3.68,True,0.0
+900121,VIP,Medio,0.1102,129,baja,5.0,baja,5.0,1752.3047,188.08,37.616,395.0,True,Asignada,,0.0,-1.58,False,0.5
+900565,Alto,Medio,0.1485,112,baja,5.0,baja,5.0,1295.4159,187.41,37.483,400.0,True,Asignada,baja,5.0,2.04,True,0.5
+900219,VIP,Medio,0.1356,107,baja,5.0,baja,5.0,1412.3248,186.53,37.306,405.0,True,Asignada,baja,5.0,7.43,True,0.5
+900628,VIP,Medio,0.1532,111,baja,5.0,baja,5.0,1248.8689,186.31,37.262,410.0,True,Asignada,baja,5.0,2.31,True,0.5
+900734,Alto,Medio,0.1599,118,baja,5.0,baja,5.0,1190.9464,185.43,37.086,415.0,True,Asignada,baja,5.0,1.66,True,0.5
+900478,Alto,Medio,0.1115,110,baja,5.0,baja,5.0,1703.8952,184.95,36.99,420.0,True,Asignada,,0.0,-2.73,False,0.5
+900747,VIP,Medio,0.1123,123,baja,5.0,baja,5.0,1683.9805,184.14,36.829,425.0,True,Asignada,baja,5.0,5.92,True,0.5
+900326,VIP,Medio,0.1311,124,baja,5.0,baja,5.0,1435.5804,183.21,36.642,430.0,True,Asignada,baja,5.0,1.41,True,0.5
+900204,VIP,Medio,0.1419,127,baja,5.0,baja,5.0,1276.1574,176.15,35.23,435.0,True,Asignada,baja,5.0,10.02,True,0.5
+900221,VIP,Medio,0.1505,125,baja,5.0,baja,5.0,1202.2901,175.99,35.197,440.0,True,Asignada,baja,5.0,6.44,True,0.5
+900703,Alto,Medio,0.1423,115,baja,5.0,baja,5.0,1260.7254,174.43,34.886,445.0,True,Asignada,,0.0,-3.7,False,0.5
+900273,VIP,Medio,0.1252,132,baja,5.0,baja,5.0,1431.1106,174.24,34.848,450.0,True,Asignada,baja,5.0,3.63,True,0.5
+900504,Alto,Medio,0.1703,106,baja,5.0,baja,5.0,1051.473,174.05,34.81,455.0,True,Asignada,baja,5.0,1.11,True,0.5
+900586,VIP,Medio,0.1216,115,baja,5.0,baja,5.0,1471.2624,173.85,34.771,460.0,True,Asignada,baja,5.0,3.74,True,0.5
+900667,Alto,Bajo,0.1732,111,baja,5.0,baja,5.0,1029.402,173.32,34.665,465.0,True,Asignada,,0.0,-3.55,False,0.0
+900884,Alto,Medio,0.1534,115,baja,5.0,baja,5.0,1154.4409,172.07,34.413,470.0,True,Asignada,baja,5.0,0.8,True,0.5
+900073,VIP,Medio,0.1311,122,baja,5.0,baja,5.0,1346.352,171.54,34.307,475.0,True,Asignada,,0.0,-1.36,False,0.5
+900299,VIP,Medio,0.1119,119,baja,5.0,baja,5.0,1574.4598,171.15,34.23,480.0,True,Asignada,,0.0,-1.91,False,0.5
+900818,Alto,Medio,0.1384,117,baja,5.0,baja,5.0,1256.9125,168.92,33.783,485.0,True,Asignada,baja,5.0,3.23,True,0.5
+900698,VIP,Medio,0.104,148,baja,5.0,baja,5.0,1661.9978,167.88,33.575,490.0,True,Asignada,,0.0,-0.87,False,0.5
+900688,Alto,Medio,0.1347,118,baja,5.0,baja,5.0,1282.5563,167.77,33.555,495.0,True,Asignada,baja,5.0,1.98,True,0.5
+900711,VIP,Medio,0.1394,124,baja,5.0,baja,5.0,1234.3193,167.1,33.421,500.0,True,Asignada,,0.0,-0.88,False,0.5
+900292,VIP,Medio,0.1164,115,baja,5.0,baja,5.0,1474.683,166.59,33.319,505.0,True,Asignada,baja,5.0,2.37,True,0.5
+900029,VIP,Medio,0.1101,128,baja,5.0,baja,5.0,1543.432,164.91,32.981,510.0,True,Asignada,baja,5.0,4.54,True,0.5
+900476,Alto,Medio,0.133,119,baja,5.0,baja,5.0,1259.4637,162.48,32.497,515.0,True,Asignada,baja,5.0,2.61,True,0.5
+900799,VIP,Medio,0.1277,124,baja,5.0,baja,5.0,1306.7863,161.86,32.372,520.0,True,Asignada,baja,5.0,9.58,True,0.5
+900761,VIP,Medio,0.1224,130,baja,5.0,baja,5.0,1361.084,161.6,32.32,525.0,True,Asignada,baja,5.0,1.74,True,0.5
+900004,VIP,Medio,0.159,106,baja,5.0,baja,5.0,1033.9641,159.4,31.879,530.0,True,Asignada,baja,5.0,2.6,True,0.5
+900839,Alto,Medio,0.1753,115,baja,5.0,baja,5.0,931.5262,158.34,31.668,535.0,True,Asignada,,0.0,-3.51,False,0.5
+900301,VIP,Medio,0.1313,128,baja,5.0,baja,5.0,1237.3002,157.45,31.49,540.0,True,Asignada,,0.0,-3.3,False,0.5
+900778,Alto,Medio,0.186,112,baja,5.0,baja,5.0,850.3737,153.13,30.626,545.0,True,Asignada,,0.0,-0.57,False,0.5
+900427,Alto,Bajo,0.1645,104,baja,5.0,baja,5.0,954.042,151.97,30.393,550.0,True,Asignada,,0.0,-3.34,False,0.0
+900413,Alto,Bajo,0.1366,101,baja,5.0,baja,5.0,1142.9575,151.1,30.219,555.0,True,Asignada,,0.0,-3.62,False,0.0
+900614,VIP,Medio,0.1313,122,baja,5.0,baja,5.0,1182.9436,150.37,30.074,560.0,True,Asignada,baja,5.0,0.48,True,0.5
+900287,VIP,Medio,0.1509,112,baja,5.0,baja,5.0,1014.6643,148.12,29.624,565.0,True,Asignada,baja,5.0,1.81,True,0.5
+900773,Alto,Medio,0.1417,115,baja,5.0,baja,5.0,1074.8186,147.3,29.459,570.0,True,Asignada,,0.0,-3.43,False,0.5
+900341,Alto,Medio,0.1387,120,baja,5.0,baja,5.0,1090.2662,146.19,29.237,575.0,True,Asignada,baja,5.0,0.23,True,0.5
+900536,VIP,Medio,0.1374,108,baja,5.0,baja,5.0,1099.4623,146.08,29.216,580.0,True,Asignada,,0.0,-1.8,False,0.5
+900812,VIP,Medio,0.0987,121,baja,5.0,baja,5.0,1523.3107,145.4,29.08,585.0,True,Asignada,,0.0,-3.08,False,0.5
+900658,Alto,Bajo,0.1502,108,baja,5.0,baja,5.0,985.0712,142.99,28.597,590.0,True,Asignada,,0.0,-3.9,False,0.0
+900105,VIP,Medio,0.0993,136,baja,5.0,baja,5.0,1489.4198,142.96,28.592,595.0,True,Asignada,baja,5.0,1.59,True,0.5
+900070,VIP,Medio,0.0916,110,baja,5.0,baja,5.0,1604.1974,141.9,28.381,600.0,True,Asignada,baja,5.0,12.82,True,0.5
+900003,VIP,Medio,0.0992,131,baja,5.0,baja,5.0,1465.6919,140.36,28.072,605.0,True,Asignada,baja,5.0,8.78,True,0.5
+900709,VIP,Medio,0.1059,118,baja,5.0,baja,5.0,1368.9532,139.91,27.983,610.0,True,Asignada,baja,5.0,3.38,True,0.5
+900224,Alto,Medio,0.1531,112,baja,5.0,baja,5.0,946.5916,139.92,27.983,615.0,True,Asignada,,0.0,-3.15,False,0.5
+900286,VIP,Medio,0.1585,93,baja,5.0,baja,5.0,900.869,137.79,27.558,620.0,True,Asignada,,0.0,-2.22,False,0.5
+900764,VIP,Medio,0.1002,127,baja,5.0,baja,5.0,1424.0349,137.75,27.55,625.0,True,Asignada,baja,5.0,4.42,True,0.5
+900558,Alto,Bajo,0.1516,114,baja,5.0,baja,5.0,940.1077,137.53,27.507,630.0,True,Asignada,,0.0,-3.87,False,0.0
+900024,VIP,Medio,0.0977,115,baja,5.0,baja,5.0,1440.408,135.75,27.149,635.0,True,Asignada,,0.0,-3.45,False,0.5
+900833,Alto,Bajo,0.1546,106,baja,5.0,baja,5.0,902.7836,134.55,26.909,640.0,True,Asignada,baja,5.0,1.55,True,0.0
+900372,Alto,Bajo,0.1577,86,baja,5.0,baja,5.0,883.8718,134.42,26.883,645.0,True,Asignada,baja,5.0,0.76,True,0.0
+900136,Alto,Medio,0.1398,108,baja,5.0,baja,5.0,960.4139,129.23,25.847,650.0,True,Asignada,,0.0,-3.39,False,0.5
+900093,VIP,Medio,0.1127,118,baja,5.0,baja,5.0,1187.484,128.8,25.761,655.0,True,Asignada,baja,5.0,2.41,True,0.5
+900352,Alto,Medio,0.13,123,baja,5.0,baja,5.0,1026.8425,128.46,25.692,660.0,True,Asignada,baja,5.0,1.89,True,0.5
+900414,VIP,Medio,0.1703,104,baja,5.0,baja,5.0,778.2976,127.56,25.511,665.0,True,Asignada,baja,5.0,1.22,True,0.5
+900060,VIP,Medio,0.18,104,baja,5.0,baja,5.0,720.7915,124.71,24.942,670.0,True,Asignada,,0.0,-3.44,False,0.5
+900648,Alto,Bajo,0.1297,106,baja,5.0,baja,5.0,999.6069,124.66,24.932,675.0,True,Asignada,,0.0,-3.72,False,0.0
+900593,Medio,Medio,0.1764,125,baja,5.0,baja,5.0,733.8948,124.44,24.888,680.0,True,Asignada,,0.0,-1.4,False,0.5
+900762,Medio,Bajo,0.1902,109,baja,5.0,baja,5.0,674.0914,123.23,24.646,685.0,True,Asignada,,0.0,-1.71,False,0.0
+900519,Alto,Medio,0.1417,116,baja,5.0,baja,5.0,904.729,123.18,24.636,690.0,True,Asignada,baja,5.0,2.44,True,0.5
+900040,Alto,Bajo,0.1358,113,baja,5.0,baja,5.0,934.9054,121.96,24.391,695.0,True,Asignada,baja,5.0,1.18,True,0.0
+900264,Alto,Medio,0.1661,97,baja,5.0,baja,5.0,715.6383,113.89,22.777,700.0,True,Asignada,baja,5.0,1.82,True,0.5
+900863,Medio,Bajo,0.1486,108,baja,5.0,baja,5.0,792.0735,112.74,22.548,705.0,True,Asignada,,0.0,-0.66,False,0.0
+900804,VIP,Medio,0.1356,118,baja,5.0,baja,5.0,864.491,112.26,22.452,710.0,True,Asignada,baja,5.0,0.88,True,0.5
+900610,Medio,Bajo,0.1599,111,baja,5.0,baja,5.0,730.162,111.73,22.347,715.0,True,Asignada,,0.0,-1.02,False,0.0
+900034,Alto,Bajo,0.1301,103,baja,5.0,baja,5.0,891.3642,110.96,22.192,720.0,True,Asignada,,0.0,-3.64,False,0.0
+900786,Alto,Medio,0.1246,127,baja,5.0,baja,5.0,915.2569,109.06,21.813,725.0,True,Asignada,baja,5.0,0.63,True,0.5
+900663,Medio,Medio,0.1321,121,baja,5.0,baja,5.0,860.5675,108.64,21.728,730.0,True,Asignada,,0.0,-0.53,False,0.5
+900278,VIP,Medio,0.1388,121,baja,5.0,baja,5.0,818.6959,108.6,21.72,735.0,True,Asignada,,0.0,-2.98,False,0.5
+900873,Alto,Medio,0.1252,88,baja,5.0,baja,5.0,903.9229,108.21,21.642,740.0,True,Asignada,,0.0,-3.37,False,0.5
+900365,Alto,Medio,0.0997,112,baja,5.0,baja,5.0,1134.0336,108.11,21.621,745.0,True,Asignada,,0.0,-3.45,False,0.5
+900751,Alto,Bajo,0.1192,104,baja,5.0,baja,5.0,948.7917,108.1,21.62,750.0,True,Asignada,baja,5.0,1.53,True,0.0
+900358,Alto,Bajo,0.1484,111,baja,5.0,baja,5.0,753.1339,106.8,21.36,755.0,True,Asignada,baja,5.0,1.02,True,0.0
+900564,Medio,Bajo,0.1636,88,baja,5.0,baja,5.0,678.6892,106.0,21.2,760.0,True,Asignada,,0.0,-4.05,False,0.0
+900186,Medio,Medio,0.1648,108,baja,5.0,baja,5.0,668.6361,105.18,21.035,765.0,True,Asignada,,0.0,-1.02,False,0.5
+900485,Alto,Medio,0.1327,99,baja,5.0,baja,5.0,828.1953,104.87,20.973,770.0,True,Asignada,,0.0,-3.84,False,0.5
+900521,Alto,Medio,0.1445,113,baja,5.0,baja,5.0,753.7821,103.91,20.783,775.0,True,Asignada,,0.0,-3.88,False,0.5
+900483,VIP,Medio,0.1616,117,baja,5.0,baja,5.0,662.0529,101.98,20.396,780.0,True,Asignada,,0.0,-3.25,False,0.5
+900457,VIP,Medio,0.1219,106,baja,5.0,baja,5.0,872.653,101.4,20.279,785.0,True,Asignada,,0.0,-3.28,False,0.5
+900824,Medio,Bajo,0.1421,123,baja,5.0,baja,5.0,734.0924,99.33,19.865,790.0,True,Asignada,,0.0,-3.93,False,0.0
+900753,Medio,Bajo,0.1758,102,baja,5.0,baja,5.0,589.2266,98.59,19.719,795.0,True,Asignada,,0.0,-1.53,False,0.0
+900767,Medio,Medio,0.1368,115,baja,5.0,baja,5.0,750.8035,97.69,19.539,800.0,True,Asignada,,0.0,-4.1,False,0.5
+900594,Alto,Bajo,0.157,105,baja,5.0,baja,5.0,653.765,97.67,19.534,805.0,True,Asignada,,0.0,-1.08,False,0.0
+900227,Medio,Medio,0.1473,126,baja,5.0,baja,5.0,696.3339,97.54,19.508,810.0,True,Asignada,,0.0,-0.93,False,0.5
+900302,Alto,Medio,0.1371,116,baja,5.0,baja,5.0,737.1797,96.06,19.212,815.0,True,Asignada,,0.0,-0.35,False,0.5
+900430,Medio,Bajo,0.1532,126,baja,5.0,baja,5.0,655.9295,95.46,19.093,820.0,True,Asignada,,0.0,-2.25,False,0.0
+900486,Medio,Bajo,0.1708,127,baja,5.0,baja,5.0,586.2476,95.12,19.024,825.0,True,Asignada,,0.0,-4.26,False,0.0
+900657,Alto,Bajo,0.1026,102,baja,5.0,baja,5.0,967.4215,94.29,18.859,830.0,True,Asignada,,0.0,-0.03,False,0.0
+900164,Alto,Medio,0.1497,107,baja,5.0,baja,5.0,659.4988,93.7,18.739,835.0,True,Asignada,baja,5.0,1.26,True,0.5
+900807,Alto,Medio,0.1098,111,baja,5.0,baja,5.0,884.3158,92.11,18.422,840.0,True,Asignada,,0.0,-0.84,False,0.5
+900881,Medio,Bajo,0.1495,112,baja,5.0,baja,5.0,644.0949,91.31,18.261,845.0,True,Asignada,,0.0,-2.19,False,0.0
+900255,Alto,Medio,0.1195,114,baja,5.0,baja,5.0,796.133,90.15,18.029,850.0,True,Asignada,,0.0,-4.07,False,0.5
+900041,Alto,Bajo,0.1525,106,baja,5.0,baja,5.0,621.0819,89.73,17.945,855.0,True,Asignada,baja,5.0,0.58,True,0.0
+900854,VIP,Medio,0.1579,93,baja,5.0,baja,5.0,592.2682,88.5,17.701,860.0,True,Asignada,,0.0,-2.96,False,0.5
+900821,VIP,Bajo,0.1226,105,baja,5.0,baja,5.0,756.1388,87.67,17.534,865.0,True,Asignada,,0.0,-0.22,False,0.0
+900226,Alto,Bajo,0.1617,97,baja,5.0,baja,5.0,569.2437,87.04,17.409,870.0,True,Asignada,,0.0,-3.97,False,0.0
+900284,Medio,Bajo,0.1504,120,baja,5.0,baja,5.0,608.9342,86.59,17.318,875.0,True,Asignada,,0.0,-2.53,False,0.0
+900244,Alto,Bajo,0.0999,109,baja,5.0,baja,5.0,916.1694,86.51,17.301,880.0,True,Asignada,,0.0,-3.08,False,0.0
+900616,Alto,Bajo,0.1485,109,baja,5.0,baja,5.0,609.0023,85.44,17.087,885.0,True,Asignada,,0.0,-3.81,False,0.0
+900387,Medio,Bajo,0.1666,108,baja,5.0,baja,5.0,542.7476,85.43,17.086,890.0,True,Asignada,,0.0,-2.04,False,0.0
+900806,Medio,Bajo,0.1302,103,baja,5.0,baja,5.0,692.6318,85.21,17.042,895.0,True,Asignada,,0.0,-4.51,False,0.0
+900158,Medio,Bajo,0.1652,105,baja,5.0,baja,5.0,539.9696,84.2,16.84,900.0,True,Asignada,,0.0,-1.71,False,0.0
+900247,Alto,Medio,0.1513,126,baja,5.0,baja,5.0,586.6213,83.75,16.749,905.0,True,Asignada,,0.0,-3.35,False,0.5
+900539,Medio,Bajo,0.1793,101,baja,5.0,baja,5.0,495.0133,83.74,16.747,910.0,True,Asignada,,0.0,-1.83,False,0.0
+900231,Alto,Medio,0.1396,117,baja,5.0,baja,5.0,632.4889,83.32,16.664,915.0,True,Asignada,,0.0,-3.79,False,0.5
+900421,Medio,Bajo,0.1635,107,baja,5.0,baja,5.0,538.5928,83.08,16.617,920.0,True,Asignada,,0.0,-1.68,False,0.0
+900173,Alto,Medio,0.1168,103,baja,5.0,baja,5.0,752.9341,82.94,16.589,925.0,True,Asignada,baja,5.0,0.77,True,0.5
+900549,Medio,Bajo,0.1803,131,baja,5.0,baja,5.0,485.1066,82.48,16.495,930.0,True,Asignada,,0.0,-2.78,False,0.0
+900058,Alto,Bajo,0.1223,94,baja,5.0,baja,5.0,715.2635,82.45,16.489,935.0,True,Asignada,baja,5.0,2.38,True,0.0
+900270,Alto,Bajo,0.1695,105,baja,5.0,baja,5.0,509.7382,81.39,16.278,940.0,True,Asignada,,0.0,-3.64,False,0.0
+900473,Alto,Bajo,0.1449,106,baja,5.0,baja,5.0,592.4084,80.82,16.164,945.0,True,Asignada,,0.0,-4.0,False,0.0
+900407,Alto,Medio,0.1128,108,baja,5.0,baja,5.0,756.3541,80.35,16.07,950.0,True,Asignada,baja,5.0,1.01,True,0.5
+900016,VIP,Medio,0.1094,112,baja,5.0,baja,5.0,779.5627,80.26,16.052,955.0,True,Asignada,baja,5.0,1.0,True,0.5
+900825,Medio,Bajo,0.1678,112,baja,5.0,baja,5.0,506.3318,79.95,15.989,960.0,True,Asignada,,0.0,-1.68,False,0.0
+900645,Medio,Bajo,0.1415,105,baja,5.0,baja,5.0,597.2248,79.53,15.906,965.0,True,Asignada,,0.0,-4.34,False,0.0
+900559,VIP,Medio,0.1433,115,baja,5.0,baja,5.0,588.2412,79.32,15.863,970.0,True,Asignada,,0.0,-3.67,False,0.5
+900494,Alto,Bajo,0.2069,105,media,15.0,media,15.0,1217.258,236.86,15.791,985.0,True,Asignada,baja,5.0,3.48,True,0.0
+900592,Medio,Medio,0.164,113,baja,5.0,baja,5.0,511.9146,78.95,15.789,990.0,True,Asignada,,0.0,-2.44,False,0.5
+900489,VIP,Bajo,0.2499,102,alta,40.0,alta,40.0,2636.6435,618.87,15.472,1030.0,True,Asignada,,0.0,-1.78,False,0.0
+900138,Medio,Bajo,0.1568,126,baja,5.0,baja,5.0,524.5148,77.24,15.449,1035.0,True,Asignada,,0.0,-2.41,False,0.0
+900664,Medio,Bajo,0.1521,111,baja,5.0,baja,5.0,535.1373,76.42,15.284,1040.0,True,Asignada,,0.0,-4.03,False,0.0
+900236,Alto,Medio,0.1335,128,baja,5.0,baja,5.0,604.072,75.66,15.132,1045.0,True,Asignada,baja,5.0,0.49,True,0.5
+900822,Medio,Bajo,0.1644,103,baja,5.0,baja,5.0,484.3944,74.64,14.928,1050.0,True,Asignada,,0.0,-1.92,False,0.0
+900543,Alto,Bajo,0.1486,110,baja,5.0,baja,5.0,532.9287,74.2,14.84,1055.0,True,Asignada,,0.0,-3.94,False,0.0
+900123,Medio,Bajo,0.1545,128,baja,5.0,baja,5.0,497.5711,71.85,14.37,1060.0,True,Asignada,,0.0,-2.33,False,0.0
+900241,Alto,Bajo,0.1615,127,baja,5.0,baja,5.0,475.3768,71.8,14.359,1065.0,True,Asignada,,0.0,-4.2,False,0.0
+900201,Medio,Bajo,0.1528,113,baja,5.0,baja,5.0,500.0827,71.41,14.282,1070.0,True,Asignada,,0.0,-2.43,False,0.0
+900120,Alto,Medio,0.105,136,baja,5.0,baja,5.0,725.4523,71.2,14.241,1075.0,True,Asignada,,0.0,-4.08,False,0.5
+900834,Medio,Bajo,0.1268,124,baja,5.0,baja,5.0,591.3259,69.99,13.998,1080.0,True,Asignada,,0.0,-4.27,False,0.0
+900260,Alto,Bajo,0.1476,106,baja,5.0,baja,5.0,507.2481,69.89,13.979,1085.0,True,Asignada,baja,5.0,1.16,True,0.0
+900178,Alto,Medio,0.1317,94,baja,5.0,baja,5.0,568.5091,69.86,13.972,1090.0,True,Asignada,baja,5.0,1.35,True,0.5
+900684,Alto,Medio,0.1323,125,baja,5.0,baja,5.0,563.5723,69.57,13.913,1095.0,True,Asignada,,0.0,-3.84,False,0.5
+900649,Medio,Bajo,0.1551,106,baja,5.0,baja,5.0,479.3758,69.37,13.873,1100.0,True,Asignada,,0.0,-2.12,False,0.0
+900745,VIP,Bajo,0.1287,135,media,15.0,media,15.0,1729.3042,207.58,13.838,1115.0,True,Asignada,baja,5.0,2.71,True,0.0
+900548,Medio,Bajo,0.1422,109,baja,5.0,baja,5.0,519.5017,68.85,13.771,1120.0,True,Asignada,,0.0,-4.12,False,0.0
+900781,VIP,Medio,0.1366,115,baja,5.0,baja,5.0,539.3961,68.7,13.741,1125.0,True,Asignada,,0.0,-3.76,False,0.5
+900132,Medio,Bajo,0.1326,102,baja,5.0,baja,5.0,555.7728,68.69,13.737,1130.0,True,Asignada,,0.0,-1.74,False,0.0
+900214,Medio,Medio,0.1566,120,baja,5.0,baja,5.0,467.2128,68.16,13.633,1135.0,True,Asignada,,0.0,-4.26,False,0.5
+900509,Alto,Bajo,0.1266,107,baja,5.0,baja,5.0,577.132,68.08,13.616,1140.0,True,Asignada,,0.0,-1.06,False,0.0
+900342,Alto,Medio,0.1004,111,baja,5.0,baja,5.0,726.0412,67.92,13.585,1145.0,True,Asignada,,0.0,-4.28,False,0.5
+900560,Medio,Bajo,0.1582,115,baja,5.0,baja,5.0,460.7753,67.91,13.582,1150.0,True,Asignada,,0.0,-2.48,False,0.0
+900345,Alto,Bajo,0.1387,101,baja,5.0,baja,5.0,522.8858,67.5,13.501,1155.0,True,Asignada,,0.0,-4.32,False,0.0
+900599,VIP,Medio,0.1349,114,baja,5.0,baja,5.0,536.7,67.42,13.485,1160.0,True,Asignada,,0.0,-3.81,False,0.5
+900668,Alto,Bajo,0.1392,94,baja,5.0,baja,5.0,520.1014,67.42,13.484,1165.0,True,Asignada,,0.0,-3.32,False,0.0
+900857,Alto,Medio,0.1114,111,baja,5.0,baja,5.0,648.6558,67.25,13.45,1170.0,True,Asignada,,0.0,-3.13,False,0.5
+900579,VIP,Medio,0.1043,105,baja,5.0,baja,5.0,686.8876,66.62,13.324,1175.0,True,Asignada,baja,5.0,1.0,True,0.5
+900866,VIP,Medio,0.1583,116,baja,5.0,baja,5.0,452.2686,66.62,13.323,1180.0,True,Asignada,,0.0,-3.51,False,0.5
+900676,Medio,Bajo,0.167,108,baja,5.0,baja,5.0,425.8271,66.1,13.22,1185.0,True,Asignada,,0.0,-3.98,False,0.0
+900503,Medio,Medio,0.1317,117,baja,5.0,baja,5.0,538.7673,65.96,13.192,1190.0,True,Asignada,,0.0,-4.11,False,0.5
+900436,Alto,Bajo,0.1256,97,baja,5.0,baja,5.0,560.123,65.36,13.072,1195.0,True,Asignada,,0.0,-3.65,False,0.0
+900315,Medio,Bajo,0.1607,107,baja,5.0,baja,5.0,437.5641,65.31,13.062,1200.0,True,Asignada,,0.0,-4.21,False,0.0
+900802,Medio,Bajo,0.1523,102,baja,5.0,baja,5.0,448.0684,63.25,12.65,1205.0,True,Asignada,,0.0,-0.49,False,0.0
+900542,Alto,Bajo,0.1538,98,media,15.0,media,15.0,1325.9625,188.89,12.592,1220.0,True,Asignada,baja,5.0,2.2,True,0.0
+900010,Alto,Bajo,0.1562,109,baja,5.0,baja,5.0,434.9944,62.93,12.585,1225.0,True,Asignada,,0.0,-3.0,False,0.0
+900135,Medio,Bajo,0.1404,88,baja,5.0,baja,5.0,482.7031,62.79,12.558,1230.0,True,Asignada,,0.0,-3.83,False,0.0
+900379,Medio,Bajo,0.1279,127,baja,5.0,baja,5.0,530.0708,62.79,12.557,1235.0,True,Asignada,,0.0,-2.65,False,0.0
+900246,Medio,Bajo,0.1504,113,baja,5.0,baja,5.0,449.335,62.58,12.516,1240.0,True,Asignada,,0.0,-3.89,False,0.0
+900455,Alto,Bajo,0.1815,121,media,15.0,media,15.0,1111.4177,186.77,12.451,1255.0,True,Asignada,baja,5.0,1.22,True,0.0
+900161,VIP,Medio,0.1028,112,baja,5.0,baja,5.0,649.0715,61.71,12.341,1260.0,True,Asignada,,0.0,-3.14,False,0.5
+900150,Alto,Bajo,0.1454,112,baja,5.0,baja,5.0,458.2041,61.62,12.325,1265.0,True,Asignada,,0.0,-4.04,False,0.0
+900179,Medio,Medio,0.1164,109,baja,5.0,baja,5.0,570.5089,61.44,12.287,1270.0,True,Asignada,,0.0,-1.28,False,0.5
+900495,Medio,Medio,0.1338,112,baja,5.0,baja,5.0,495.6444,61.33,12.266,1275.0,True,Asignada,,0.0,-2.63,False,0.5
+900462,VIP,Medio,0.1765,107,baja,5.0,baja,5.0,373.4631,60.93,12.185,1280.0,True,Asignada,,0.0,-3.22,False,0.5
+900005,Alto,Bajo,0.1439,107,baja,5.0,baja,5.0,457.6126,60.87,12.174,1285.0,True,Asignada,,0.0,-3.5,False,0.0
+900566,Medio,Medio,0.1384,104,baja,5.0,baja,5.0,475.3612,60.79,12.157,1290.0,True,Asignada,,0.0,-4.35,False,0.5
+900721,Medio,Bajo,0.12,121,baja,5.0,baja,5.0,545.2936,60.42,12.083,1295.0,True,Asignada,,0.0,-4.37,False,0.0
+900014,Alto,Bajo,0.1398,88,baja,5.0,baja,5.0,466.4731,60.21,12.043,1300.0,True,Asignada,,0.0,-3.66,False,0.0
+900827,Medio,Bajo,0.1645,99,baja,5.0,baja,5.0,396.0023,60.15,12.03,1305.0,True,Asignada,,0.0,-4.2,False,0.0
+900875,Medio,Bajo,0.1673,106,baja,5.0,baja,5.0,388.1393,59.95,11.991,1310.0,True,Asignada,,0.0,-4.37,False,0.0
+900798,Medio,Bajo,0.1385,103,baja,5.0,baja,5.0,468.273,59.87,11.974,1315.0,True,Asignada,,0.0,-2.16,False,0.0
+900032,Medio,Bajo,0.176,127,baja,5.0,baja,5.0,368.2232,59.8,11.961,1320.0,True,Asignada,,0.0,-3.35,False,0.0
+900197,Medio,Bajo,0.1264,109,baja,5.0,baja,5.0,512.4462,59.75,11.95,1325.0,True,Asignada,,0.0,-4.2,False,0.0
+900183,Medio,Bajo,0.1568,105,baja,5.0,baja,5.0,412.3189,59.65,11.929,1330.0,True,Asignada,,0.0,-4.03,False,0.0
+900694,Alto,Bajo,0.1145,103,baja,5.0,baja,5.0,563.3723,59.49,11.897,1335.0,True,Asignada,,0.0,-0.76,False,0.0
+900321,Medio,Bajo,0.1376,100,baja,5.0,baja,5.0,466.4294,59.18,11.835,1340.0,True,Asignada,,0.0,-4.43,False,0.0
+900401,Alto,Medio,0.1214,106,baja,5.0,baja,5.0,527.993,59.11,11.823,1345.0,True,Asignada,,0.0,-3.83,False,0.5
+900327,Alto,Bajo,0.1465,106,baja,5.0,baja,5.0,437.3658,59.09,11.819,1350.0,True,Asignada,,0.0,-1.99,False,0.0
+900001,Medio,Bajo,0.139,137,baja,5.0,baja,5.0,460.8571,59.07,11.814,1355.0,True,Asignada,,0.0,-2.97,False,0.0
+900620,Alto,Medio,0.1707,105,baja,5.0,baja,5.0,373.3331,58.72,11.744,1360.0,True,Asignada,,0.0,-3.23,False,0.5
+900451,VIP,Bajo,0.2326,117,alta,40.0,alta,40.0,2188.0831,469.0,11.725,1400.0,True,Asignada,baja,5.0,6.42,True,0.0
+900385,Alto,Bajo,0.1135,129,baja,5.0,baja,5.0,555.203,58.02,11.604,1405.0,True,Asignada,,0.0,-0.43,False,0.0
+900206,Medio,Bajo,0.137,96,baja,5.0,baja,5.0,455.5284,57.39,11.478,1410.0,True,Asignada,,0.0,-4.13,False,0.0
+900526,Alto,Medio,0.1086,111,baja,5.0,baja,5.0,573.1388,57.25,11.45,1415.0,True,Asignada,,0.0,-3.02,False,0.5
+900296,Alto,Medio,0.1278,110,baja,5.0,baja,5.0,484.777,56.93,11.387,1420.0,True,Asignada,,0.0,-3.91,False,0.5
+900441,Medio,Bajo,0.1368,117,baja,5.0,baja,5.0,451.8128,56.82,11.365,1425.0,True,Asignada,,0.0,-1.73,False,0.0
+900627,VIP,Bajo,0.1423,105,baja,5.0,baja,5.0,433.9391,56.74,11.349,1430.0,True,Asignada,,0.0,-3.16,False,0.0
+900622,Medio,Medio,0.1104,115,baja,5.0,baja,5.0,558.8664,56.7,11.34,1435.0,True,Asignada,,0.0,-3.61,False,0.5
+900320,Alto,Medio,0.1506,103,baja,5.0,baja,5.0,408.806,56.58,11.317,1440.0,True,Asignada,,0.0,-3.97,False,0.5
+900002,Alto,Bajo,0.1113,101,baja,5.0,baja,5.0,548.0286,56.0,11.201,1445.0,True,Asignada,,0.0,-4.08,False,0.0
+900022,Alto,Medio,0.1186,104,baja,5.0,baja,5.0,513.8626,55.96,11.192,1450.0,True,Asignada,,0.0,-4.1,False,0.5
+900758,VIP,Medio,0.1262,132,baja,5.0,baja,5.0,482.6881,55.93,11.185,1455.0,True,Asignada,,0.0,-3.36,False,0.5
+900023,Medio,Bajo,0.1139,114,baja,5.0,baja,5.0,533.4432,55.75,11.15,1460.0,True,Asignada,,0.0,-4.23,False,0.0
+900613,Medio,Bajo,0.1975,104,baja,5.0,baja,5.0,307.2957,55.68,11.135,1465.0,True,Asignada,,0.0,-2.66,False,0.0
+900880,Alto,Bajo,0.1926,127,media,15.0,media,15.0,943.2928,166.69,11.113,1480.0,True,Asignada,baja,5.0,0.03,True,0.0
+900030,Alto,Bajo,0.151,118,media,15.0,media,15.0,1202.9279,166.59,11.106,1495.0,True,Asignada,,0.0,-0.12,False,0.0
+900561,Medio,Bajo,0.1394,117,baja,5.0,baja,5.0,434.1655,55.52,11.104,1500.0,True,Asignada,,0.0,-4.26,False,0.0
+900570,Medio,Bajo,0.1344,102,baja,5.0,baja,5.0,448.3453,55.27,11.055,1505.0,True,Asignada,,0.0,-4.16,False,0.0
+900670,Medio,Bajo,0.1963,100,baja,5.0,baja,5.0,306.6592,55.21,11.041,1510.0,True,Asignada,,0.0,-2.03,False,0.0
+900452,Estandar,Bajo,0.2384,103,baja,5.0,baja,5.0,252.4401,55.17,11.035,1515.0,True,Asignada,,0.0,-3.17,False,0.0
+900013,Alto,Bajo,0.1527,129,baja,5.0,baja,5.0,393.1402,55.04,11.008,1520.0,True,Asignada,,0.0,-3.84,False,0.0
+900396,Medio,Bajo,0.1611,97,baja,5.0,baja,5.0,371.5974,54.87,10.974,1525.0,True,Asignada,,0.0,-4.19,False,0.0
+900501,Alto,Bajo,0.1905,104,media,15.0,media,15.0,937.2029,163.58,10.905,1540.0,True,Asignada,baja,5.0,0.16,True,0.0
+900314,Medio,Bajo,0.1548,109,baja,5.0,baja,5.0,382.9558,54.29,10.857,1545.0,True,Asignada,,0.0,-2.41,False,0.0
+900015,Medio,Medio,0.1223,112,baja,5.0,baja,5.0,483.3736,54.14,10.828,1550.0,True,Asignada,,0.0,-3.03,False,0.5
+900277,Medio,Bajo,0.157,105,baja,5.0,baja,5.0,374.7859,53.86,10.771,1555.0,True,Asignada,,0.0,-2.7,False,0.0
+900638,VIP,Bajo,0.1411,123,media,15.0,media,15.0,1249.4063,161.25,10.75,1570.0,True,Asignada,,0.0,-3.44,False,0.0
+900842,Medio,Bajo,0.1543,104,baja,5.0,baja,5.0,377.2321,53.19,10.639,1575.0,True,Asignada,,0.0,-3.27,False,0.0
+900869,Medio,Bajo,0.1141,116,baja,5.0,baja,5.0,507.885,52.97,10.593,1580.0,True,Asignada,,0.0,-4.4,False,0.0
+900530,Medio,Medio,0.1126,102,baja,5.0,baja,5.0,513.0749,52.76,10.551,1585.0,True,Asignada,,0.0,-1.5,False,0.5
+900127,Medio,Bajo,0.1432,91,baja,5.0,baja,5.0,403.0738,52.71,10.542,1590.0,True,Asignada,,0.0,-4.09,False,0.0
+900405,Alto,Bajo,0.1118,113,baja,5.0,baja,5.0,516.1209,52.71,10.542,1595.0,True,Asignada,baja,5.0,1.27,True,0.0
+900276,Estandar,Bajo,0.1922,102,baja,5.0,baja,5.0,297.0869,52.11,10.422,1600.0,True,Asignada,,0.0,-2.85,False,0.0
+900696,VIP,Bajo,0.2259,111,alta,40.0,alta,40.0,2021.7454,416.76,10.419,1640.0,True,Asignada,baja,5.0,3.73,True,0.0
+900769,Alto,Bajo,0.1708,116,media,15.0,media,15.0,996.0892,155.15,10.344,1655.0,True,Asignada,,0.0,-0.33,False,0.0
+900846,VIP,Bajo,0.2023,112,alta,40.0,alta,40.0,2241.1078,413.36,10.334,1695.0,True,Asignada,,0.0,-0.31,False,0.0
+900130,Alto,Bajo,0.1373,105,baja,5.0,baja,5.0,408.9437,51.13,10.227,1700.0,True,Asignada,,0.0,-4.06,False,0.0
+900289,VIP,Bajo,0.1824,125,alta,40.0,alta,40.0,2459.5801,408.53,10.213,1740.0,True,Asignada,,0.0,-1.19,False,0.0
+900591,Medio,Bajo,0.1197,113,baja,5.0,baja,5.0,468.0889,51.05,10.211,1745.0,True,Asignada,,0.0,-3.66,False,0.0
+900007,Alto,Bajo,0.1846,104,media,15.0,media,15.0,907.5687,152.51,10.168,1760.0,True,Asignada,baja,5.0,1.91,True,0.0
+900100,Medio,Bajo,0.1458,97,baja,5.0,baja,5.0,382.3284,50.76,10.152,1765.0,True,Asignada,,0.0,-2.19,False,0.0
+900624,Medio,Bajo,0.1469,93,baja,5.0,baja,5.0,378.4094,50.6,10.12,1770.0,True,Asignada,,0.0,-3.97,False,0.0
+900562,Medio,Bajo,0.1767,131,baja,5.0,baja,5.0,313.5489,50.4,10.079,1775.0,True,Asignada,,0.0,-3.5,False,0.0
+900515,Medio,Bajo,0.1265,112,baja,5.0,baja,5.0,434.0786,49.92,9.984,1780.0,True,Asignada,,0.0,-2.39,False,0.0
+900575,Alto,Medio,0.0741,121,baja,5.0,baja,5.0,737.6096,49.64,9.929,1785.0,True,Asignada,,0.0,-3.73,False,0.5
+900360,Medio,Bajo,0.1494,104,baja,5.0,baja,5.0,359.3875,48.7,9.74,1790.0,True,Asignada,,0.0,-2.86,False,0.0
+900285,VIP,Bajo,0.17,111,alta,40.0,alta,40.0,2526.7267,389.6,9.74,1830.0,True,Asignada,baja,5.0,5.73,True,0.0
+900655,VIP,Bajo,0.1982,106,alta,40.0,alta,40.0,2166.8022,389.41,9.735,1870.0,True,Asignada,baja,5.0,6.16,True,0.0
+900374,Medio,Bajo,0.1463,97,baja,5.0,baja,5.0,365.1629,48.42,9.683,1875.0,True,Asignada,,0.0,-2.03,False,0.0
+900636,Medio,Medio,0.1498,116,baja,5.0,baja,5.0,355.6825,48.3,9.659,1880.0,True,Asignada,,0.0,-4.27,False,0.5
+900334,Medio,Medio,0.1727,102,baja,5.0,baja,5.0,307.9472,48.19,9.639,1885.0,True,Asignada,,0.0,-4.15,False,0.5
+900497,VIP,Medio,0.1878,99,baja,5.0,baja,5.0,283.0218,48.16,9.632,1890.0,True,Asignada,,0.0,-3.01,False,0.5
+900793,Alto,Bajo,0.1656,94,media,15.0,media,15.0,961.8561,144.33,9.622,1905.0,True,Asignada,baja,5.0,0.63,True,0.0
+900397,Medio,Bajo,0.1714,122,media,15.0,media,15.0,923.6525,143.32,9.554,1920.0,True,Asignada,,0.0,-1.92,False,0.0
+900437,VIP,Medio,0.151,107,baja,5.0,baja,5.0,348.1336,47.57,9.514,1925.0,True,Asignada,,0.0,-3.17,False,0.5
+900710,Medio,Bajo,0.1536,112,baja,5.0,baja,5.0,341.7223,47.5,9.499,1930.0,True,Asignada,,0.0,-4.35,False,0.0
+900883,Medio,Medio,0.1741,101,baja,5.0,baja,5.0,299.0445,47.07,9.414,1935.0,True,Asignada,,0.0,-4.09,False,0.5
+900312,Alto,Bajo,0.145,115,media,15.0,media,15.0,1076.9482,141.13,9.408,1950.0,True,Asignada,,0.0,-0.22,False,0.0
+900151,Alto,Medio,0.1033,153,baja,5.0,baja,5.0,503.2453,46.96,9.392,1955.0,True,Asignada,,0.0,-1.44,False,0.5
+900033,Medio,Bajo,0.1882,115,media,15.0,media,15.0,826.9863,140.65,9.376,1970.0,True,Asignada,,0.0,-1.14,False,0.0
+900619,Alto,Bajo,0.2547,121,alta,40.0,alta,40.0,1621.3688,373.03,9.326,2010.0,True,Asignada,baja,5.0,1.29,True,0.0
+900085,Medio,Bajo,0.172,115,baja,5.0,baja,5.0,299.4653,46.51,9.302,2015.0,True,Asignada,,0.0,-4.22,False,0.0
+900702,Medio,Bajo,0.1054,116,baja,5.0,baja,5.0,485.8962,46.23,9.246,2020.0,True,Asignada,,0.0,-3.99,False,0.0
+900788,Estandar,Bajo,0.2405,116,baja,5.0,baja,5.0,211.9938,45.97,9.195,2025.0,True,Asignada,,0.0,-3.76,False,0.0
+900271,VIP,Bajo,0.1902,112,alta,40.0,alta,40.0,2143.4918,367.74,9.193,2065.0,True,Asignada,baja,5.0,3.73,True,0.0
+900675,Medio,Bajo,0.1827,147,baja,5.0,baja,5.0,278.2269,45.84,9.168,2070.0,True,Asignada,,0.0,-3.64,False,0.0
+900874,Alto,Bajo,0.1458,107,media,15.0,media,15.0,1045.0248,137.33,9.155,2085.0,True,Asignada,,0.0,-1.04,False,0.0
+900235,Medio,Bajo,0.1257,108,baja,5.0,baja,5.0,403.4821,45.73,9.147,2090.0,True,Asignada,,0.0,-4.45,False,0.0
+900471,Medio,Medio,0.1094,115,baja,5.0,baja,5.0,462.2926,45.59,9.119,2095.0,True,Asignada,,0.0,-4.15,False,0.5
+900707,Estandar,Bajo,0.1682,105,baja,5.0,baja,5.0,299.9773,45.46,9.092,2100.0,True,Asignada,,0.0,-2.93,False,0.0
+900630,Medio,Medio,0.11,127,baja,5.0,baja,5.0,456.1729,45.19,9.038,2105.0,True,Asignada,,0.0,-4.35,False,0.5
+900406,Estandar,Bajo,0.2626,119,baja,5.0,baja,5.0,190.586,45.05,9.011,2110.0,True,Asignada,,0.0,-3.74,False,0.0
+900362,Alto,Bajo,0.2002,120,alta,40.0,alta,40.0,1998.8875,360.08,9.002,2150.0,True,Asignada,baja,5.0,1.85,True,0.0
+900571,VIP,Bajo,0.1908,102,alta,40.0,alta,40.0,2093.4471,359.34,8.984,2190.0,True,Asignada,baja,5.0,4.81,True,0.0
+900615,Medio,Bajo,0.1674,105,media,15.0,media,15.0,890.9734,134.16,8.944,2205.0,True,Asignada,baja,5.0,0.03,True,0.0
+900129,Medio,Bajo,0.1353,126,baja,5.0,baja,5.0,367.0661,44.67,8.935,2210.0,True,Asignada,,0.0,-4.38,False,0.0
+900547,Alto,Medio,0.1772,110,baja,5.0,baja,5.0,279.4108,44.52,8.904,2215.0,True,Asignada,,0.0,-3.7,False,0.5
+900514,Alto,Bajo,0.1534,115,media,15.0,media,15.0,966.5703,133.25,8.883,2230.0,True,Asignada,,0.0,-4.24,False,0.0
+900038,Alto,Bajo,0.1542,103,media,15.0,media,15.0,959.2552,132.96,8.864,2245.0,True,Asignada,,0.0,-3.85,False,0.0
+900499,Estandar,Bajo,0.1925,105,baja,5.0,baja,5.0,255.3083,44.14,8.827,2250.0,True,Asignada,,0.0,-3.08,False,0.0
+900126,Alto,Medio,0.1251,100,baja,5.0,baja,5.0,391.7356,44.0,8.8,2255.0,True,Asignada,,0.0,-4.43,False,0.5
+900131,Estandar,Bajo,0.1964,112,baja,5.0,baja,5.0,249.2572,43.95,8.79,2260.0,True,Asignada,,0.0,-3.24,False,0.0
+900796,Medio,Bajo,0.2252,110,baja,5.0,baja,5.0,215.5778,43.54,8.708,2265.0,True,Asignada,,0.0,-3.71,False,0.0
+900461,Medio,Bajo,0.1318,109,baja,5.0,baja,5.0,367.9829,43.52,8.704,2270.0,True,Asignada,,0.0,-2.75,False,0.0
+900361,Medio,Bajo,0.1003,108,baja,5.0,baja,5.0,483.1639,43.48,8.696,2275.0,True,Asignada,,0.0,-4.35,False,0.0
+900862,Estandar,Bajo,0.1551,107,baja,5.0,baja,5.0,312.5848,43.47,8.694,2280.0,True,Asignada,,0.0,-3.11,False,0.0
+900253,VIP,Bajo,0.1784,102,alta,40.0,alta,40.0,2172.3322,347.46,8.687,2320.0,True,Asignada,baja,5.0,4.15,True,0.0
+900099,Medio,Bajo,0.1687,128,baja,5.0,baja,5.0,286.6589,43.36,8.673,2325.0,True,Asignada,,0.0,-2.56,False,0.0
+900175,Alto,Medio,0.1661,104,baja,5.0,baja,5.0,290.5313,43.27,8.653,2330.0,True,Asignada,,0.0,-3.92,False,0.5
+900349,Medio,Bajo,0.1509,97,baja,5.0,baja,5.0,318.4077,43.04,8.609,2335.0,True,Asignada,,0.0,-0.94,False,0.0
+900545,VIP,Bajo,0.2107,111,alta,40.0,alta,40.0,1816.3903,342.63,8.566,2375.0,True,Asignada,baja,5.0,3.98,True,0.0
+900027,Medio,Medio,0.1582,113,baja,5.0,baja,5.0,300.6376,42.56,8.513,2380.0,True,Asignada,,0.0,-4.01,False,0.5
+900328,VIP,Bajo,0.1748,117,alta,40.0,alta,40.0,2160.9452,337.72,8.443,2420.0,True,Asignada,baja,5.0,4.47,True,0.0
+900181,Medio,Bajo,0.109,110,baja,5.0,baja,5.0,433.1219,42.2,8.44,2425.0,True,Asignada,,0.0,-4.36,False,0.0
+900348,Alto,Bajo,0.1675,91,media,15.0,media,15.0,843.978,126.35,8.423,2440.0,True,Asignada,baja,5.0,2.1,True,0.0
+900453,Alto,Bajo,0.1281,108,media,15.0,media,15.0,1100.9094,126.0,8.4,2455.0,True,Asignada,,0.0,-3.42,False,0.0
+900309,VIP,Bajo,0.2013,108,alta,40.0,alta,40.0,1861.5921,334.82,8.371,2495.0,True,Asignada,baja,5.0,5.67,True,0.0
+900643,Medio,Bajo,0.174,100,baja,5.0,baja,5.0,268.6949,41.74,8.349,2500.0,True,Asignada,,0.0,-3.29,False,0.0
+900371,VIP,Bajo,0.183,128,alta,40.0,alta,40.0,2041.3137,333.65,8.341,2540.0,True,Asignada,baja,5.0,4.45,True,0.0
+900137,Medio,Bajo,0.1323,108,baja,5.0,baja,5.0,352.7963,41.68,8.336,2545.0,True,Asignada,,0.0,-4.35,False,0.0
+900171,Medio,Bajo,0.1698,115,media,15.0,media,15.0,823.5163,124.84,8.323,2560.0,True,Asignada,,0.0,-4.29,False,0.0
+900878,Alto,Bajo,0.1497,108,media,15.0,media,15.0,931.967,124.53,8.302,2575.0,True,Asignada,,0.0,-3.59,False,0.0
+900335,Estandar,Bajo,0.1912,124,baja,5.0,baja,5.0,243.0549,41.47,8.295,2580.0,True,Asignada,,0.0,-3.61,False,0.0
+900493,Medio,Bajo,0.2411,117,baja,5.0,baja,5.0,192.2366,41.35,8.269,2585.0,True,Asignada,,0.0,-3.56,False,0.0
+900369,Medio,Bajo,0.1775,119,media,15.0,media,15.0,782.0897,123.82,8.255,2600.0,True,Asignada,,0.0,-4.12,False,0.0
+900847,Alto,Bajo,0.146,112,media,15.0,media,15.0,947.9813,123.45,8.23,2615.0,True,Asignada,,0.0,-0.79,False,0.0
+900607,Estandar,Bajo,0.1724,99,baja,5.0,baja,5.0,266.1811,40.88,8.176,2620.0,True,Asignada,,0.0,-2.32,False,0.0
+900291,Alto,Bajo,0.1334,114,baja,5.0,baja,5.0,340.839,40.46,8.092,2625.0,True,Asignada,,0.0,-3.99,False,0.0
+900364,Alto,Bajo,0.1109,100,media,15.0,media,15.0,1221.195,120.4,8.027,2640.0,True,Asignada,,0.0,-3.39,False,0.0
+900355,Estandar,Bajo,0.1542,102,baja,5.0,baja,5.0,292.2646,40.06,8.012,2645.0,True,Asignada,,0.0,-3.0,False,0.0
+900784,Estandar,Bajo,0.1471,128,baja,5.0,baja,5.0,304.6659,39.81,7.962,2650.0,True,Asignada,,0.0,-4.03,False,0.0
+900713,Medio,Bajo,0.1661,124,baja,5.0,baja,5.0,269.0324,39.68,7.937,2655.0,True,Asignada,,0.0,-3.25,False,0.0
+900470,Estandar,Bajo,0.1842,115,baja,5.0,baja,5.0,241.9874,39.58,7.917,2660.0,True,Asignada,,0.0,-4.04,False,0.0
+900172,Estandar,Bajo,0.1957,113,baja,5.0,baja,5.0,227.3576,39.5,7.9,2665.0,True,Asignada,,0.0,-3.23,False,0.0
+900263,Estandar,Bajo,0.1614,100,baja,5.0,baja,5.0,275.6445,39.5,7.9,2670.0,True,Asignada,,0.0,-3.01,False,0.0
+900057,Alto,Bajo,0.2143,125,alta,40.0,alta,40.0,1661.1433,315.99,7.9,2710.0,True,Asignada,baja,5.0,2.25,True,0.0
+900282,Estandar,Bajo,0.2838,118,baja,5.0,baja,5.0,155.2889,39.07,7.815,2715.0,True,Asignada,,0.0,-3.83,False,0.0
+900639,Medio,Bajo,0.1533,117,baja,5.0,baja,5.0,285.6031,38.77,7.754,2720.0,True,Asignada,,0.0,-3.91,False,0.0
+900876,VIP,Bajo,0.1577,129,alta,40.0,alta,40.0,2218.4983,309.9,7.747,2760.0,True,Asignada,,0.0,-1.74,False,0.0
+900347,Medio,Bajo,0.1129,128,baja,5.0,baja,5.0,386.7049,38.64,7.729,2765.0,True,Asignada,,0.0,-4.05,False,0.0
+900351,Estandar,Bajo,0.1872,108,baja,5.0,baja,5.0,231.8051,38.4,7.68,2770.0,True,Asignada,,0.0,-3.6,False,0.0
+900450,Medio,Bajo,0.1545,106,baja,5.0,baja,5.0,279.0257,38.12,7.624,2775.0,True,Asignada,,0.0,-2.3,False,0.0
+900000,Estandar,Bajo,0.2042,101,baja,5.0,baja,5.0,211.073,38.1,7.621,2780.0,True,Asignada,,0.0,-3.55,False,0.0
+900368,Estandar,Bajo,0.1686,108,baja,5.0,baja,5.0,255.6263,38.09,7.618,2785.0,True,Asignada,,0.0,-3.48,False,0.0
+900714,Medio,Bajo,0.1586,124,baja,5.0,baja,5.0,271.134,37.99,7.598,2790.0,True,Asignada,,0.0,-3.52,False,0.0
+900555,Estandar,Bajo,0.1708,104,baja,5.0,baja,5.0,251.1683,37.89,7.578,2795.0,True,Asignada,,0.0,-3.89,False,0.0
+900511,Alto,Bajo,0.1427,96,media,15.0,media,15.0,900.3495,113.47,7.564,2810.0,True,Asignada,,0.0,-4.41,False,0.0
+900585,Medio,Bajo,0.1555,109,baja,5.0,baja,5.0,274.609,37.7,7.541,2815.0,True,Asignada,,0.0,-3.36,False,0.0
+900113,Medio,Bajo,0.1548,100,media,15.0,media,15.0,825.9083,112.86,7.524,2830.0,True,Asignada,,0.0,-0.12,False,0.0
+900647,Estandar,Bajo,0.1842,113,baja,5.0,baja,5.0,229.5644,37.29,7.459,2835.0,True,Asignada,,0.0,-3.22,False,0.0
+900380,Estandar,Bajo,0.1744,123,baja,5.0,baja,5.0,242.1854,37.25,7.449,2840.0,True,Asignada,,0.0,-3.45,False,0.0
+900828,Estandar,Bajo,0.1514,116,baja,5.0,baja,5.0,278.7758,37.21,7.443,2845.0,True,Asignada,,0.0,-3.31,False,0.0
+900094,Alto,Bajo,0.1527,116,media,15.0,media,15.0,828.9172,111.54,7.436,2860.0,True,Asignada,baja,5.0,0.3,True,0.0
+900535,Estandar,Bajo,0.1698,108,baja,5.0,baja,5.0,248.1652,37.14,7.429,2865.0,True,Asignada,,0.0,-4.17,False,0.0
+900633,VIP,Bajo,0.1929,122,alta,40.0,alta,40.0,1744.7149,296.62,7.416,2905.0,True,Asignada,baja,5.0,5.95,True,0.0
+900766,Estandar,Bajo,0.1555,114,baja,5.0,baja,5.0,270.5806,37.06,7.413,2910.0,True,Asignada,,0.0,-2.72,False,0.0
+900860,Medio,Bajo,0.1075,104,baja,5.0,baja,5.0,391.0309,37.03,7.406,2915.0,True,Asignada,,0.0,-3.8,False,0.0
+900333,Estandar,Bajo,0.1671,119,baja,5.0,baja,5.0,250.3869,36.85,7.369,2920.0,True,Asignada,,0.0,-3.44,False,0.0
+900505,Estandar,Medio,0.1432,115,baja,5.0,baja,5.0,290.3528,36.58,7.316,2925.0,True,Asignada,,0.0,-2.99,False,0.5
+900252,VIP,Bajo,0.2128,94,alta,40.0,alta,40.0,1559.1266,291.78,7.294,2965.0,True,Asignada,baja,5.0,0.06,True,0.0
+900160,Medio,Bajo,0.0998,138,baja,5.0,baja,5.0,414.3975,36.35,7.27,2970.0,True,Asignada,,0.0,-3.96,False,0.0
+900415,Alto,Bajo,0.1336,107,media,15.0,media,15.0,928.3211,109.04,7.269,2985.0,True,Asignada,baja,5.0,0.67,True,0.0
+900047,Estandar,Bajo,0.1577,106,baja,5.0,baja,5.0,260.5309,36.09,7.218,2990.0,True,Asignada,,0.0,-4.27,False,0.0
+900169,Estandar,Bajo,0.2079,119,baja,5.0,baja,5.0,197.396,36.04,7.208,2995.0,True,Asignada,,0.0,-3.68,False,0.0
+900316,Medio,Bajo,0.149,116,baja,5.0,baja,5.0,275.3609,36.03,7.205,3000.0,True,Asignada,,0.0,-3.29,False,0.0
+900238,Estandar,Bajo,0.1459,103,baja,5.0,baja,5.0,279.3543,35.77,7.153,3005.0,True,Asignada,,0.0,-3.16,False,0.0
+900422,Medio,Bajo,0.1725,113,baja,5.0,baja,5.0,235.9155,35.69,7.138,3010.0,True,Asignada,,0.0,-3.6,False,0.0
+900384,Alto,Bajo,0.1517,112,media,15.0,media,15.0,802.7059,106.77,7.118,3025.0,True,Asignada,,0.0,-1.07,False,0.0
+900517,Medio,Bajo,0.1457,121,media,15.0,media,15.0,834.1497,106.57,7.105,3040.0,True,Asignada,,0.0,-3.83,False,0.0
+900185,Alto,Bajo,0.1165,109,baja,5.0,baja,5.0,347.6671,35.5,7.1,3045.0,True,Asignada,,0.0,-4.45,False,0.0
+900717,Medio,Bajo,0.1525,124,baja,5.0,baja,5.0,263.8593,35.25,7.05,3050.0,True,Asignada,,0.0,-2.98,False,0.0
+900084,Medio,Bajo,0.163,118,baja,5.0,baja,5.0,246.9023,35.24,7.049,3055.0,True,Asignada,,0.0,-3.63,False,0.0
+900634,Alto,Bajo,0.1294,106,baja,5.0,baja,5.0,310.037,35.12,7.024,3060.0,True,Asignada,,0.0,-3.86,False,0.0
+900381,VIP,Bajo,0.1589,129,alta,40.0,alta,40.0,2016.1782,280.39,7.01,3100.0,True,Asignada,baja,5.0,2.98,True,0.0
+900202,Estandar,Bajo,0.1518,105,baja,5.0,baja,5.0,263.5143,35.01,7.002,3105.0,True,Asignada,,0.0,-4.18,False,0.0
+900209,Medio,Bajo,0.1575,120,baja,5.0,baja,5.0,253.4452,34.92,6.985,3110.0,True,Asignada,,0.0,-3.76,False,0.0
+900540,Alto,Bajo,0.1933,120,alta,40.0,alta,40.0,1638.0167,276.68,6.917,3150.0,True,Asignada,,0.0,-3.43,False,0.0
+900810,Medio,Bajo,0.1472,104,baja,5.0,baja,5.0,268.8657,34.57,6.914,3155.0,True,Asignada,,0.0,-2.57,False,0.0
+900306,Estandar,Bajo,0.1617,115,baja,5.0,baja,5.0,244.6927,34.56,6.913,3160.0,True,Asignada,,0.0,-3.15,False,0.0
+900340,Estandar,Bajo,0.1672,112,baja,5.0,baja,5.0,235.9585,34.45,6.891,3165.0,True,Asignada,,0.0,-3.17,False,0.0
+900200,Medio,Bajo,0.1659,121,baja,5.0,baja,5.0,237.3759,34.37,6.874,3170.0,True,Asignada,,0.0,-3.68,False,0.0
+900870,VIP,Bajo,0.1892,113,alta,40.0,alta,40.0,1663.5877,274.67,6.867,3210.0,True,Asignada,,0.0,-2.5,False,0.0
+900097,Medio,Bajo,0.1699,101,baja,5.0,baja,5.0,231.424,34.33,6.866,3215.0,True,Asignada,,0.0,-2.75,False,0.0
+900262,VIP,Bajo,0.1728,128,alta,40.0,alta,40.0,1813.7881,273.39,6.835,3255.0,True,Asignada,baja,5.0,0.64,True,0.0
+900553,Estandar,Bajo,0.1565,119,baja,5.0,baja,5.0,250.234,34.17,6.834,3260.0,True,Asignada,,0.0,-3.62,False,0.0
+900245,Alto,Bajo,0.1375,118,media,15.0,media,15.0,853.8433,102.39,6.826,3275.0,True,Asignada,baja,5.0,0.53,True,0.0
+900165,Medio,Bajo,0.144,126,baja,5.0,baja,5.0,271.4406,34.07,6.815,3280.0,True,Asignada,,0.0,-3.75,False,0.0
+900749,Estandar,Bajo,0.1553,103,baja,5.0,baja,5.0,250.0735,33.83,6.767,3285.0,True,Asignada,,0.0,-3.23,False,0.0
+900139,Alto,Bajo,0.1891,119,alta,40.0,alta,40.0,1642.816,270.67,6.767,3325.0,True,Asignada,baja,5.0,1.82,True,0.0
+900350,Alto,Bajo,0.1128,110,baja,5.0,baja,5.0,342.9937,33.69,6.738,3330.0,True,Asignada,,0.0,-4.24,False,0.0
+900755,VIP,Bajo,0.1599,119,alta,40.0,alta,40.0,1934.6804,269.39,6.735,3370.0,True,Asignada,,0.0,-2.3,False,0.0
+900109,Estandar,Bajo,0.1582,109,baja,5.0,baja,5.0,244.1133,33.63,6.726,3375.0,True,Asignada,,0.0,-2.71,False,0.0
+900527,Alto,Bajo,0.1865,117,alta,40.0,alta,40.0,1657.0459,268.98,6.725,3415.0,True,Asignada,baja,5.0,1.76,True,0.0
+900665,Alto,Bajo,0.2006,121,alta,40.0,alta,40.0,1538.6294,268.59,6.715,3455.0,True,Asignada,baja,5.0,1.3,True,0.0
+900148,Medio,Bajo,0.1459,104,media,15.0,media,15.0,786.4533,99.77,6.651,3470.0,True,Asignada,,0.0,-0.0,False,0.0
+900399,Medio,Bajo,0.187,120,media,15.0,media,15.0,613.4743,99.75,6.65,3485.0,True,Asignada,,0.0,-1.84,False,0.0
+900026,Medio,Bajo,0.147,107,baja,5.0,baja,5.0,259.4053,33.14,6.628,3490.0,True,Asignada,,0.0,-4.0,False,0.0
+900439,Estandar,Bajo,0.16,117,baja,5.0,baja,5.0,238.1491,33.1,6.621,3495.0,True,Asignada,,0.0,-3.6,False,0.0
+900446,Estandar,Bajo,0.1949,107,baja,5.0,baja,5.0,195.2256,33.05,6.611,3500.0,True,Asignada,,0.0,-3.53,False,0.0
+900544,Medio,Bajo,0.187,110,baja,5.0,baja,5.0,203.4328,33.04,6.609,3505.0,True,Asignada,,0.0,-3.81,False,0.0
+900808,Medio,Bajo,0.1325,118,baja,5.0,baja,5.0,287.155,33.04,6.607,3510.0,True,Asignada,,0.0,-2.72,False,0.0
+900724,Medio,Bajo,0.1605,114,baja,5.0,baja,5.0,236.4656,32.96,6.592,3515.0,True,Asignada,,0.0,-4.29,False,0.0
+900124,Medio,Bajo,0.1843,135,baja,5.0,baja,5.0,205.2412,32.83,6.567,3520.0,True,Asignada,,0.0,-4.08,False,0.0
+900229,Alto,Bajo,0.1175,112,media,15.0,media,15.0,965.3172,98.39,6.559,3535.0,True,Asignada,,0.0,-0.92,False,0.0
+900849,Medio,Bajo,0.1353,118,media,15.0,media,15.0,833.5209,97.74,6.516,3550.0,True,Asignada,,0.0,-2.0,False,0.0
+900394,Estandar,Bajo,0.1795,100,baja,5.0,baja,5.0,209.0005,32.51,6.502,3555.0,True,Asignada,,0.0,-3.67,False,0.0
+900261,VIP,Bajo,0.1977,120,alta,40.0,alta,40.0,1514.9884,259.58,6.489,3595.0,True,Asignada,baja,5.0,1.21,True,0.0
+900083,Medio,Bajo,0.1601,128,baja,5.0,baja,5.0,232.9051,32.28,6.456,3600.0,True,Asignada,,0.0,-4.35,False,0.0
+900187,Medio,Bajo,0.1303,124,baja,5.0,baja,5.0,284.13,32.03,6.406,3605.0,True,Asignada,,0.0,-3.52,False,0.0
+900871,Alto,Bajo,0.1908,125,alta,40.0,alta,40.0,1551.919,256.09,6.402,3645.0,True,Asignada,baja,5.0,0.45,True,0.0
+900496,Medio,Bajo,0.1309,102,baja,5.0,baja,5.0,282.5071,31.98,6.396,3650.0,True,Asignada,,0.0,-3.44,False,0.0
+900877,Alto,Bajo,0.1866,113,alta,40.0,alta,40.0,1572.4378,253.43,6.336,3690.0,True,Asignada,baja,5.0,1.9,True,0.0
+900466,Medio,Bajo,0.1105,112,baja,5.0,baja,5.0,331.574,31.63,6.326,3695.0,True,Asignada,,0.0,-3.62,False,0.0
+900732,Estandar,Bajo,0.215,124,baja,5.0,baja,5.0,169.9348,31.53,6.306,3700.0,True,Asignada,,0.0,-3.78,False,0.0
+900729,Estandar,Bajo,0.1728,131,baja,5.0,baja,5.0,211.427,31.53,6.305,3705.0,True,Asignada,,0.0,-4.52,False,0.0
+900359,Estandar,Bajo,0.1484,96,baja,5.0,baja,5.0,244.3382,31.26,6.251,3710.0,True,Asignada,,0.0,-3.62,False,0.0
+900426,VIP,Bajo,0.1967,89,alta,40.0,alta,40.0,1467.5575,248.61,6.215,3750.0,True,Asignada,baja,5.0,0.62,True,0.0
+900283,Estandar,Bajo,0.1522,94,baja,5.0,baja,5.0,236.7843,31.04,6.207,3755.0,True,Asignada,,0.0,-3.35,False,0.0
+900716,Medio,Bajo,0.1002,119,baja,5.0,baja,5.0,359.5343,31.03,6.206,3760.0,True,Asignada,,0.0,-3.23,False,0.0
+900213,Estandar,Bajo,0.1364,118,baja,5.0,baja,5.0,264.0771,31.03,6.205,3765.0,True,Asignada,,0.0,-3.67,False,0.0
+900830,Medio,Bajo,0.1512,120,baja,5.0,baja,5.0,237.9155,30.98,6.196,3770.0,True,Asignada,,0.0,-2.8,False,0.0
+900487,Estandar,Bajo,0.1423,117,baja,5.0,baja,5.0,252.6474,30.96,6.192,3775.0,True,Asignada,,0.0,-4.35,False,0.0
+900467,Estandar,Bajo,0.1646,129,baja,5.0,baja,5.0,217.7043,30.83,6.167,3780.0,True,Asignada,,0.0,-3.66,False,0.0
+900856,Medio,Bajo,0.1249,106,baja,5.0,baja,5.0,285.6464,30.68,6.136,3785.0,True,Asignada,,0.0,-0.76,False,0.0
+900424,Medio,Bajo,0.1683,118,baja,5.0,baja,5.0,211.4846,30.6,6.12,3790.0,True,Asignada,,0.0,-3.8,False,0.0
+900104,Medio,Bajo,0.1263,106,baja,5.0,baja,5.0,281.7386,30.58,6.117,3795.0,True,Asignada,,0.0,-3.53,False,0.0
+900637,Medio,Bajo,0.1292,126,baja,5.0,baja,5.0,274.9841,30.54,6.107,3800.0,True,Asignada,,0.0,-3.97,False,0.0
+900690,Estandar,Bajo,0.1704,108,baja,5.0,baja,5.0,208.2983,30.49,6.099,3805.0,True,Asignada,,0.0,-3.43,False,0.0
+900435,Alto,Bajo,0.181,99,alta,40.0,alta,40.0,1567.9071,243.83,6.096,3845.0,True,Asignada,baja,5.0,2.96,True,0.0
+900608,Medio,Bajo,0.1453,134,baja,5.0,baja,5.0,243.9891,30.44,6.088,3850.0,True,Asignada,,0.0,-3.78,False,0.0
+900529,Estandar,Bajo,0.141,104,baja,5.0,baja,5.0,251.3418,30.43,6.085,3855.0,True,Asignada,,0.0,-4.49,False,0.0
+900184,Medio,Bajo,0.1599,116,baja,5.0,baja,5.0,221.3134,30.39,6.077,3860.0,True,Asignada,,0.0,-3.8,False,0.0
+900162,Estandar,Bajo,0.1617,108,baja,5.0,baja,5.0,218.0583,30.25,6.05,3865.0,True,Asignada,,0.0,-3.5,False,0.0
+900079,VIP,Bajo,0.1301,121,alta,40.0,alta,40.0,2157.1819,240.71,6.018,3905.0,True,Asignada,baja,5.0,0.66,True,0.0
+900190,Estandar,Bajo,0.1318,119,baja,5.0,baja,5.0,266.0724,30.08,6.015,3910.0,True,Asignada,,0.0,-3.94,False,0.0
+900409,Estandar,Bajo,0.1685,104,baja,5.0,baja,5.0,207.853,30.01,6.003,3915.0,True,Asignada,,0.0,-2.97,False,0.0
+900595,Estandar,Bajo,0.1747,115,baja,5.0,baja,5.0,199.6337,29.88,5.975,3920.0,True,Asignada,,0.0,-4.18,False,0.0
+900656,Medio,Bajo,0.1318,123,baja,5.0,baja,5.0,264.3054,29.84,5.968,3925.0,True,Asignada,,0.0,-4.37,False,0.0
+900737,Medio,Bajo,0.1654,122,media,15.0,media,15.0,631.6435,89.5,5.966,3940.0,True,Asignada,,0.0,-3.2,False,0.0
+900056,Alto,Bajo,0.1146,112,media,15.0,media,15.0,911.1176,89.4,5.96,3955.0,True,Asignada,,0.0,-3.81,False,0.0
+900843,Medio,Bajo,0.1391,115,baja,5.0,baja,5.0,248.7038,29.6,5.92,3960.0,True,Asignada,,0.0,-3.49,False,0.0
+900240,Estandar,Bajo,0.1462,111,baja,5.0,baja,5.0,236.3694,29.55,5.91,3965.0,True,Asignada,,0.0,-2.9,False,0.0
+900677,Estandar,Bajo,0.1536,118,baja,5.0,baja,5.0,224.8577,29.53,5.906,3970.0,True,Asignada,,0.0,-3.47,False,0.0
+900726,Estandar,Bajo,0.1726,89,baja,5.0,baja,5.0,199.9048,29.5,5.9,3975.0,True,Asignada,,0.0,-4.14,False,0.0
+900018,Estandar,Bajo,0.1206,125,baja,5.0,baja,5.0,285.9691,29.48,5.896,3980.0,True,Asignada,,0.0,-3.33,False,0.0
+900674,Alto,Bajo,0.1716,117,alta,40.0,alta,40.0,1606.4744,235.61,5.89,4020.0,True,Asignada,baja,5.0,2.41,True,0.0
+900338,Medio,Bajo,0.1552,109,baja,5.0,baja,5.0,221.8159,29.42,5.884,4025.0,True,Asignada,,0.0,-4.15,False,0.0
+900589,Estandar,Bajo,0.1427,111,baja,5.0,baja,5.0,240.4628,29.32,5.865,4030.0,True,Asignada,,0.0,-4.05,False,0.0
+900249,VIP,Bajo,0.1468,116,alta,40.0,alta,40.0,1868.2052,234.24,5.856,4070.0,True,Asignada,baja,5.0,5.07,True,0.0
+900738,Estandar,Bajo,0.1632,124,baja,5.0,baja,5.0,209.7898,29.24,5.848,4075.0,True,Asignada,,0.0,-3.77,False,0.0
+900378,Estandar,Bajo,0.1376,115,baja,5.0,baja,5.0,248.5963,29.2,5.841,4080.0,True,Asignada,,0.0,-4.12,False,0.0
+900759,Estandar,Bajo,0.1441,118,baja,5.0,baja,5.0,237.3893,29.2,5.84,4085.0,True,Asignada,,0.0,-3.58,False,0.0
+900525,Alto,Bajo,0.1595,120,alta,40.0,alta,40.0,1713.7941,233.28,5.832,4125.0,True,Asignada,,0.0,-3.9,False,0.0
+900689,Estandar,Bajo,0.1686,116,baja,5.0,baja,5.0,202.6066,29.16,5.831,4130.0,True,Asignada,,0.0,-4.04,False,0.0
+900159,Estandar,Bajo,0.1728,102,baja,5.0,baja,5.0,197.4703,29.11,5.823,4135.0,True,Asignada,,0.0,-3.82,False,0.0
+900572,Alto,Bajo,0.1134,103,baja,5.0,baja,5.0,300.8797,29.11,5.821,4140.0,True,Asignada,,0.0,-3.98,False,0.0
+900829,VIP,Bajo,0.2011,107,alta,40.0,alta,40.0,1356.1338,232.74,5.819,4180.0,True,Asignada,baja,5.0,3.78,True,0.0
+900357,Alto,Bajo,0.174,123,alta,40.0,alta,40.0,1566.6552,232.59,5.815,4220.0,True,Asignada,,0.0,-3.16,False,0.0
+900817,Medio,Bajo,0.1453,127,baja,5.0,baja,5.0,234.4236,29.06,5.812,4225.0,True,Asignada,,0.0,-4.12,False,0.0
+900020,Estandar,Bajo,0.1263,111,baja,5.0,baja,5.0,269.0567,28.99,5.799,4230.0,True,Asignada,,0.0,-2.7,False,0.0
+900538,Alto,Bajo,0.2174,115,alta,40.0,alta,40.0,1250.6365,231.9,5.798,4270.0,True,Asignada,baja,5.0,0.41,True,0.0
+900728,VIP,Bajo,0.1689,121,alta,40.0,alta,40.0,1609.2308,231.81,5.795,4310.0,True,Asignada,baja,5.0,1.43,True,0.0
+900479,VIP,Bajo,0.1694,118,alta,40.0,alta,40.0,1603.0466,231.58,5.789,4350.0,True,Asignada,,0.0,-2.96,False,0.0
+900532,Estandar,Bajo,0.1377,103,baja,5.0,baja,5.0,246.1669,28.9,5.779,4355.0,True,Asignada,,0.0,-3.47,False,0.0
+900583,VIP,Bajo,0.1523,120,alta,40.0,alta,40.0,1774.1963,230.15,5.754,4395.0,True,Asignada,baja,5.0,3.58,True,0.0
+900443,Estandar,Bajo,0.1649,119,baja,5.0,baja,5.0,204.52,28.72,5.744,4400.0,True,Asignada,,0.0,-4.19,False,0.0
+900801,Alto,Medio,0.1529,98,baja,5.0,baja,5.0,219.37,28.55,5.71,4405.0,True,Asignada,,0.0,-4.03,False,0.5
+900797,VIP,Bajo,0.1621,118,alta,40.0,alta,40.0,1646.2196,226.88,5.672,4445.0,True,Asignada,baja,5.0,2.36,True,0.0
+900621,Alto,Bajo,0.1689,125,alta,40.0,alta,40.0,1578.6512,226.65,5.666,4485.0,True,Asignada,,0.0,-3.7,False,0.0
+900603,Medio,Bajo,0.1448,116,baja,5.0,baja,5.0,230.0482,28.31,5.662,4490.0,True,Asignada,,0.0,-4.41,False,0.0
+900848,Medio,Bajo,0.1335,109,media,15.0,media,15.0,746.908,84.73,5.649,4505.0,True,Asignada,,0.0,-4.35,False,0.0
+900602,Estandar,Bajo,0.1619,119,baja,5.0,baja,5.0,204.8304,28.16,5.632,4510.0,True,Asignada,,0.0,-3.66,False,0.0
+900879,Alto,Bajo,0.1881,114,alta,40.0,alta,40.0,1396.1285,222.56,5.564,4550.0,True,Asignada,,0.0,-3.51,False,0.0
+900534,Estandar,Bajo,0.1765,108,baja,5.0,baja,5.0,185.796,27.79,5.557,4555.0,True,Asignada,,0.0,-4.41,False,0.0
+900092,Estandar,Bajo,0.1369,110,baja,5.0,baja,5.0,239.5356,27.78,5.556,4560.0,True,Asignada,,0.0,-4.26,False,0.0
+900386,Alto,Bajo,0.2118,132,alta,40.0,alta,40.0,1232.9741,221.14,5.528,4600.0,True,Asignada,baja,5.0,0.43,True,0.0
+900250,VIP,Bajo,0.2058,110,alta,40.0,alta,40.0,1269.1056,221.12,5.528,4640.0,True,Asignada,,0.0,-2.99,False,0.0
+900865,Medio,Bajo,0.1471,118,media,15.0,media,15.0,662.3493,82.45,5.497,4655.0,True,Asignada,,0.0,-4.07,False,0.0
+900009,Estandar,Bajo,0.1551,114,baja,5.0,baja,5.0,209.0224,27.41,5.483,4660.0,True,Asignada,,0.0,-4.22,False,0.0
+900297,Medio,Bajo,0.1171,114,baja,5.0,baja,5.0,276.7945,27.41,5.482,4665.0,True,Asignada,,0.0,-3.3,False,0.0
+900882,Estandar,Bajo,0.173,111,baja,5.0,baja,5.0,186.8058,27.32,5.464,4670.0,True,Asignada,,0.0,-4.11,False,0.0
+900672,Estandar,Bajo,0.1203,121,baja,5.0,baja,5.0,268.4942,27.31,5.463,4675.0,True,Asignada,,0.0,-3.38,False,0.0
+900031,Medio,Bajo,0.1398,117,media,15.0,media,15.0,691.7101,81.71,5.447,4690.0,True,Asignada,,0.0,-4.2,False,0.0
+900646,Estandar,Bajo,0.2062,109,baja,5.0,baja,5.0,156.0264,27.17,5.434,4695.0,True,Asignada,,0.0,-4.14,False,0.0
+900763,Medio,Bajo,0.1689,115,baja,5.0,baja,5.0,190.2607,27.13,5.427,4700.0,True,Asignada,,0.0,-4.4,False,0.0
+900106,Estandar,Bajo,0.1393,107,baja,5.0,baja,5.0,230.6686,27.12,5.424,4705.0,True,Asignada,,0.0,-2.84,False,0.0
+900469,Medio,Bajo,0.1219,116,baja,5.0,baja,5.0,263.3386,27.1,5.42,4710.0,True,Asignada,,0.0,-2.64,False,0.0
+900740,Medio,Bajo,0.1932,121,media,15.0,media,15.0,497.8758,81.19,5.413,4725.0,True,Asignada,,0.0,-2.43,False,0.0
+900319,Medio,Bajo,0.1461,111,baja,5.0,baja,5.0,218.7128,26.96,5.393,4730.0,True,Asignada,,0.0,-2.86,False,0.0
+900438,Estandar,Bajo,0.1369,119,baja,5.0,baja,5.0,233.2184,26.92,5.384,4735.0,True,Asignada,,0.0,-4.34,False,0.0
+900044,Alto,Bajo,0.2009,125,alta,40.0,alta,40.0,1269.7582,215.12,5.378,4775.0,True,Asignada,baja,5.0,0.12,True,0.0
+900867,Medio,Bajo,0.135,111,baja,5.0,baja,5.0,236.1012,26.87,5.373,4780.0,True,Asignada,,0.0,-3.64,False,0.0
+900318,Estandar,Bajo,0.169,120,baja,5.0,baja,5.0,187.8165,26.74,5.348,4785.0,True,Asignada,,0.0,-4.21,False,0.0
+900772,Medio,Bajo,0.1684,124,baja,5.0,baja,5.0,188.2434,26.71,5.341,4790.0,True,Asignada,,0.0,-4.41,False,0.0
+900852,Medio,Bajo,0.1213,117,baja,5.0,baja,5.0,261.1778,26.68,5.335,4795.0,True,Asignada,,0.0,-4.39,False,0.0
+900382,Alto,Bajo,0.1752,108,alta,40.0,alta,40.0,1443.0361,212.88,5.322,4835.0,True,Asignada,baja,5.0,1.84,True,0.0
+900604,Estandar,Bajo,0.1351,111,baja,5.0,baja,5.0,233.9727,26.6,5.32,4840.0,True,Asignada,,0.0,-3.36,False,0.0
+900861,Medio,Bajo,0.1144,121,baja,5.0,baja,5.0,276.115,26.6,5.32,4845.0,True,Asignada,,0.0,-4.23,False,0.0
+900180,Estandar,Bajo,0.149,109,baja,5.0,baja,5.0,211.08,26.46,5.291,4850.0,True,Asignada,,0.0,-3.67,False,0.0
+900557,Alto,Bajo,0.2005,107,alta,40.0,alta,40.0,1254.0735,211.45,5.286,4890.0,True,Asignada,baja,5.0,1.76,True,0.0
+900330,Estandar,Bajo,0.179,115,baja,5.0,baja,5.0,175.2102,26.36,5.273,4895.0,True,Asignada,,0.0,-4.47,False,0.0
+900168,Estandar,Bajo,0.1206,109,baja,5.0,baja,5.0,259.8838,26.33,5.267,4900.0,True,Asignada,,0.0,-4.5,False,0.0
+900727,Alto,Bajo,0.1891,128,alta,40.0,alta,40.0,1325.092,210.55,5.264,4940.0,True,Asignada,,0.0,-0.01,False,0.0
+900431,Medio,Bajo,0.1504,118,baja,5.0,baja,5.0,207.9437,26.27,5.253,4945.0,True,Asignada,,0.0,-2.86,False,0.0
+900065,Estandar,Bajo,0.1912,109,baja,5.0,baja,5.0,161.8021,25.94,5.188,4950.0,True,Asignada,,0.0,-3.93,False,0.0
+900816,VIP,Bajo,0.1302,121,alta,40.0,alta,40.0,1892.4206,206.4,5.16,4990.0,True,Asignada,,0.0,-3.2,False,0.0
+900683,Medio,Bajo,0.107,111,baja,5.0,baja,5.0,287.7206,25.78,5.157,4995.0,True,Asignada,,0.0,-2.44,False,0.0
+900644,Medio,Medio,0.1484,113,baja,5.0,baja,5.0,207.4054,25.78,5.157,5000.0,True,Asignada,,0.0,-4.28,False,0.5
+900290,Alto,Bajo,0.127,107,media,15.0,media,15.0,725.5118,77.14,5.143,5015.0,True,Asignada,,0.0,-1.06,False,0.0
+900248,Estandar,Bajo,0.1334,108,baja,5.0,baja,5.0,230.3155,25.72,5.143,5020.0,True,Asignada,,0.0,-3.64,False,0.0
+900679,Medio,Bajo,0.1477,118,media,15.0,media,15.0,623.7338,77.14,5.143,5035.0,True,Asignada,,0.0,-4.17,False,0.0
+900780,VIP,Bajo,0.2167,105,alta,40.0,alta,40.0,1128.4435,204.55,5.114,5075.0,True,Asignada,baja,5.0,3.79,True,0.0
+900275,Estandar,Bajo,0.1835,113,baja,5.0,baja,5.0,166.3939,25.54,5.108,5080.0,True,Asignada,,0.0,-4.38,False,0.0
+900611,Estandar,Bajo,0.1768,110,baja,5.0,baja,5.0,172.3865,25.47,5.095,5085.0,True,Asignada,,0.0,-3.7,False,0.0
+900596,Estandar,Bajo,0.1557,129,baja,5.0,baja,5.0,194.6927,25.31,5.062,5090.0,True,Asignada,,0.0,-4.42,False,0.0
+900522,Estandar,Bajo,0.1515,127,baja,5.0,baja,5.0,199.6945,25.25,5.051,5095.0,True,Asignada,,0.0,-3.84,False,0.0
+900757,Medio,Bajo,0.1281,109,baja,5.0,baja,5.0,235.8371,25.21,5.043,5100.0,True,Asignada,,0.0,-3.32,False,0.0
+900294,Estandar,Bajo,0.1433,115,baja,5.0,baja,5.0,210.5394,25.18,5.036,5105.0,True,Asignada,,0.0,-3.27,False,0.0
+900354,Medio,Bajo,0.1361,106,baja,5.0,baja,5.0,221.5966,25.15,5.031,5110.0,True,Asignada,,0.0,-2.32,False,0.0
+900011,Medio,Bajo,0.1214,103,baja,5.0,baja,5.0,247.6833,25.08,5.016,5115.0,True,Asignada,,0.0,-3.18,False,0.0
+900735,Alto,Bajo,0.1691,117,alta,40.0,alta,40.0,1422.1185,200.54,5.014,5155.0,True,Asignada,baja,5.0,1.29,True,0.0
+900332,Estandar,Bajo,0.1949,102,baja,5.0,baja,5.0,154.0908,25.04,5.007,5160.0,True,Asignada,,0.0,-4.43,False,0.0
+900191,Medio,Bajo,0.1118,115,baja,5.0,baja,5.0,268.2551,25.0,5.0,5165.0,True,Asignada,,0.0,-3.92,False,0.0
+900475,Estandar,Bajo,0.1384,106,baja,5.0,baja,5.0,216.6677,24.99,4.999,5170.0,True,Asignada,,0.0,-4.1,False,0.0
+900673,Alto,Bajo,0.189,117,alta,40.0,alta,40.0,1266.272,199.32,4.983,5210.0,True,Asignada,,0.0,-3.66,False,0.0
+900577,Alto,Bajo,0.1292,132,media,15.0,media,15.0,694.0408,74.64,4.976,5225.0,True,Asignada,,0.0,-4.36,False,0.0
+900567,Estandar,Bajo,0.2091,111,baja,5.0,baja,5.0,142.7219,24.85,4.969,5230.0,True,Asignada,,0.0,-4.19,False,0.0
+900053,Medio,Bajo,0.1207,127,baja,5.0,baja,5.0,246.2431,24.73,4.945,5235.0,True,Asignada,,0.0,-3.8,False,0.0
+900662,Estandar,Bajo,0.2016,100,baja,5.0,baja,5.0,147.3062,24.7,4.94,5240.0,True,Asignada,,0.0,-3.83,False,0.0
+900300,Medio,Medio,0.1344,113,baja,5.0,baja,5.0,220.8935,24.69,4.939,5245.0,True,Asignada,,0.0,-4.26,False,0.5
+900845,Estandar,Bajo,0.1803,104,baja,5.0,baja,5.0,164.5061,24.66,4.932,5250.0,True,Asignada,,0.0,-4.03,False,0.0
+900077,Estandar,Bajo,0.1272,113,baja,5.0,baja,5.0,232.9474,24.63,4.926,5255.0,True,Asignada,,0.0,-3.68,False,0.0
+900080,Estandar,Bajo,0.1417,103,baja,5.0,baja,5.0,208.8094,24.6,4.92,5260.0,True,Asignada,,0.0,-4.13,False,0.0
+900445,Medio,Bajo,0.1108,106,baja,5.0,baja,5.0,266.8006,24.57,4.914,5265.0,True,Asignada,,0.0,-3.41,False,0.0
+900140,Alto,Bajo,0.1745,109,alta,40.0,alta,40.0,1349.576,195.54,4.889,5305.0,True,Asignada,baja,5.0,2.94,True,0.0
+900375,Medio,Bajo,0.2004,125,alta,40.0,alta,40.0,1166.2944,193.73,4.843,5345.0,True,Asignada,,0.0,-0.3,False,0.0
+900823,Estandar,Bajo,0.1488,97,baja,5.0,baja,5.0,195.9181,24.15,4.83,5350.0,True,Asignada,,0.0,-4.18,False,0.0
+900653,Estandar,Bajo,0.1315,114,baja,5.0,baja,5.0,221.6929,24.14,4.828,5355.0,True,Asignada,,0.0,-4.4,False,0.0
+900584,Estandar,Bajo,0.1203,117,baja,5.0,baja,5.0,242.2115,24.14,4.828,5360.0,True,Asignada,,0.0,-3.51,False,0.0
+900096,VIP,Bajo,0.1304,118,alta,40.0,alta,40.0,1786.4787,192.91,4.823,5400.0,True,Asignada,,0.0,-0.23,False,0.0
+900052,Alto,Bajo,0.1823,109,alta,40.0,alta,40.0,1277.2057,192.87,4.822,5440.0,True,Asignada,,0.0,-3.09,False,0.0
+900307,Estandar,Bajo,0.1623,117,baja,5.0,baja,5.0,179.2881,24.1,4.82,5445.0,True,Asignada,,0.0,-3.89,False,0.0
+900170,Estandar,Bajo,0.1898,120,baja,5.0,baja,5.0,152.7322,23.99,4.798,5450.0,True,Asignada,,0.0,-4.16,False,0.0
+900699,Alto,Bajo,0.1547,105,baja,5.0,baja,5.0,187.2011,23.97,4.793,5455.0,True,Asignada,,0.0,-4.33,False,0.0
+900681,VIP,Bajo,0.1806,122,alta,40.0,alta,40.0,1279.6683,191.07,4.777,5495.0,True,Asignada,,0.0,-0.21,False,0.0
+900208,Estandar,Bajo,0.1396,113,baja,5.0,baja,5.0,206.4575,23.83,4.766,5500.0,True,Asignada,,0.0,-3.87,False,0.0
+900459,Medio,Bajo,0.1503,117,baja,5.0,baja,5.0,191.5538,23.79,4.758,5505.0,True,Asignada,,0.0,-3.88,False,0.0
+900756,Estandar,Bajo,0.1545,91,baja,5.0,baja,5.0,186.3413,23.78,4.756,5510.0,True,Asignada,,0.0,-3.9,False,0.0
+900746,Estandar,Bajo,0.1296,114,baja,5.0,baja,5.0,222.0933,23.77,4.755,5515.0,True,Asignada,,0.0,-3.76,False,0.0
+900167,Medio,Bajo,0.1138,128,baja,5.0,baja,5.0,252.5882,23.75,4.75,5520.0,True,Asignada,,0.0,-3.32,False,0.0
+900813,Alto,Bajo,0.1423,115,alta,40.0,alta,40.0,1610.6575,189.12,4.728,5560.0,True,Asignada,,0.0,-3.47,False,0.0
+900705,Estandar,Bajo,0.1822,103,baja,5.0,baja,5.0,156.9975,23.61,4.722,5565.0,True,Asignada,,0.0,-3.05,False,0.0
+900831,Estandar,Bajo,0.1251,107,baja,5.0,baja,5.0,228.2351,23.56,4.712,5570.0,True,Asignada,,0.0,-2.87,False,0.0
+900193,Estandar,Bajo,0.1458,106,baja,5.0,baja,5.0,195.7845,23.54,4.709,5575.0,True,Asignada,,0.0,-4.02,False,0.0
+900118,Alto,Bajo,0.1631,111,alta,40.0,alta,40.0,1396.345,187.76,4.694,5615.0,True,Asignada,baja,5.0,0.39,True,0.0
+900490,Alto,Bajo,0.1687,122,alta,40.0,alta,40.0,1349.9937,187.74,4.694,5655.0,True,Asignada,baja,5.0,1.08,True,0.0
+900791,Alto,Bajo,0.1513,116,media,15.0,media,15.0,562.887,70.15,4.677,5670.0,True,Asignada,,0.0,-1.46,False,0.0
+900101,Alto,Bajo,0.1751,114,alta,40.0,alta,40.0,1293.5731,186.56,4.664,5710.0,True,Asignada,baja,5.0,0.87,True,0.0
+900370,Estandar,Bajo,0.1659,111,baja,5.0,baja,5.0,170.1121,23.23,4.646,5715.0,True,Asignada,,0.0,-4.4,False,0.0
+900617,Estandar,Bajo,0.1747,106,baja,5.0,baja,5.0,160.6525,23.07,4.614,5720.0,True,Asignada,,0.0,-4.42,False,0.0
+900308,Medio,Bajo,0.1502,118,baja,5.0,baja,5.0,186.5897,23.03,4.606,5725.0,True,Asignada,,0.0,-4.46,False,0.0
+900125,Estandar,Bajo,0.1578,111,baja,5.0,baja,5.0,176.8797,22.91,4.581,5730.0,True,Asignada,,0.0,-3.93,False,0.0
+900392,Estandar,Bajo,0.1344,122,baja,5.0,baja,5.0,206.9044,22.8,4.56,5735.0,True,Asignada,,0.0,-3.22,False,0.0
+900281,Estandar,Bajo,0.1904,110,baja,5.0,baja,5.0,145.6842,22.74,4.549,5740.0,True,Asignada,,0.0,-4.11,False,0.0
+900625,VIP,Bajo,0.166,124,alta,40.0,alta,40.0,1335.5244,181.76,4.544,5780.0,True,Asignada,baja,5.0,2.01,True,0.0
+900652,Medio,Bajo,0.125,113,baja,5.0,baja,5.0,221.3471,22.67,4.534,5785.0,True,Asignada,,0.0,-3.33,False,0.0
+900782,Estandar,Bajo,0.1787,113,baja,5.0,baja,5.0,154.1074,22.54,4.507,5790.0,True,Asignada,,0.0,-4.13,False,0.0
+900012,Alto,Bajo,0.1023,114,baja,5.0,baja,5.0,268.7876,22.49,4.498,5795.0,True,Asignada,,0.0,-1.26,False,0.0
+900765,Medio,Bajo,0.1951,129,media,15.0,media,15.0,422.0782,67.35,4.49,5810.0,True,Asignada,,0.0,-3.14,False,0.0
+900356,Medio,Bajo,0.0993,123,baja,5.0,baja,5.0,276.54,22.45,4.489,5815.0,True,Asignada,,0.0,-3.45,False,0.0
+900149,Estandar,Bajo,0.1715,113,baja,5.0,baja,5.0,159.8924,22.43,4.486,5820.0,True,Asignada,,0.0,-4.28,False,0.0
+900554,Alto,Bajo,0.2134,122,alta,40.0,alta,40.0,1027.5065,179.25,4.481,5860.0,True,Asignada,,0.0,-3.45,False,0.0
+900090,Estandar,Bajo,0.1354,116,baja,5.0,baja,5.0,201.444,22.28,4.455,5865.0,True,Asignada,,0.0,-4.39,False,0.0
+900850,Estandar,Bajo,0.1304,113,baja,5.0,baja,5.0,208.8281,22.22,4.444,5870.0,True,Asignada,,0.0,-3.87,False,0.0
+900718,Medio,Bajo,0.1078,112,baja,5.0,baja,5.0,251.3578,22.11,4.422,5875.0,True,Asignada,,0.0,-2.48,False,0.0
+900064,Alto,Bajo,0.1577,126,media,15.0,media,15.0,514.6602,66.17,4.411,5890.0,True,Asignada,,0.0,-4.24,False,0.0
+900447,Estandar,Bajo,0.1385,114,baja,5.0,baja,5.0,194.612,21.95,4.39,5895.0,True,Asignada,,0.0,-4.22,False,0.0
+900650,Alto,Bajo,0.1711,110,alta,40.0,alta,40.0,1259.5506,175.45,4.386,5935.0,True,Asignada,baja,5.0,2.09,True,0.0
+900066,Medio,Bajo,0.17,126,media,15.0,media,15.0,474.511,65.68,4.379,5950.0,True,Asignada,,0.0,-4.4,False,0.0
+900814,Alto,Bajo,0.1553,121,alta,40.0,alta,40.0,1377.8665,174.05,4.351,5990.0,True,Asignada,baja,5.0,0.25,True,0.0
+900513,Estandar,Bajo,0.1444,118,baja,5.0,baja,5.0,184.303,21.62,4.324,5995.0,True,Asignada,,0.0,-3.85,False,0.0
+900039,Estandar,Medio,0.1367,102,baja,5.0,baja,5.0,194.4922,21.59,4.318,6000.0,True,Asignada,,0.0,-3.85,False,0.5
+900706,Estandar,Bajo,0.1298,123,baja,5.0,baja,5.0,204.5696,21.56,4.311,6005.0,True,Asignada,,0.0,-3.85,False,0.0
+900691,Estandar,Bajo,0.1192,118,baja,5.0,baja,5.0,221.7533,21.43,4.287,6010.0,True,Asignada,,0.0,-4.4,False,0.0
+900222,Alto,Bajo,0.1953,110,alta,40.0,alta,40.0,1082.5156,171.41,4.285,6050.0,True,Asignada,baja,5.0,0.83,True,0.0
+900752,Estandar,Bajo,0.1678,111,baja,5.0,baja,5.0,157.3517,21.4,4.279,6055.0,True,Asignada,,0.0,-3.33,False,0.0
+900259,Alto,Bajo,0.1891,117,alta,40.0,alta,40.0,1114.8948,170.78,4.27,6095.0,True,Asignada,,0.0,-1.0,False,0.0
+900794,Medio,Bajo,0.1452,127,baja,5.0,baja,5.0,180.8884,21.26,4.252,6100.0,True,Asignada,,0.0,-3.93,False,0.0
+900635,VIP,Bajo,0.1827,107,alta,40.0,alta,40.0,1148.798,169.92,4.248,6140.0,True,Asignada,,0.0,-3.03,False,0.0
+900055,Alto,Bajo,0.1736,132,alta,40.0,alta,40.0,1207.426,169.56,4.239,6180.0,True,Asignada,baja,5.0,0.03,True,0.0
+900520,Medio,Bajo,0.1483,118,media,15.0,media,15.0,527.296,63.19,4.213,6195.0,True,Asignada,,0.0,-4.13,False,0.0
+900239,Medio,Bajo,0.1255,117,baja,5.0,baja,5.0,207.5812,21.04,4.209,6200.0,True,Asignada,,0.0,-4.06,False,0.0
+900103,Medio,Bajo,0.159,117,media,15.0,media,15.0,491.0175,63.06,4.204,6215.0,True,Asignada,,0.0,-2.4,False,0.0
+900700,Alto,Bajo,0.1197,117,media,15.0,media,15.0,650.6413,62.87,4.191,6230.0,True,Asignada,,0.0,-3.65,False,0.0
+900687,Alto,Bajo,0.1787,129,alta,40.0,alta,40.0,1159.6703,167.21,4.18,6270.0,True,Asignada,,0.0,-3.42,False,0.0
+900771,Alto,Bajo,0.1848,113,alta,40.0,alta,40.0,1121.0103,167.22,4.18,6310.0,True,Asignada,,0.0,-0.42,False,0.0
+900531,Medio,Bajo,0.1398,121,baja,5.0,baja,5.0,185.1455,20.88,4.175,6315.0,True,Asignada,,0.0,-3.6,False,0.0
+900119,Estandar,Bajo,0.1257,108,baja,5.0,baja,5.0,205.232,20.8,4.161,6320.0,True,Asignada,,0.0,-3.35,False,0.0
+900266,Alto,Bajo,0.1667,106,alta,40.0,alta,40.0,1236.7551,166.21,4.155,6360.0,True,Asignada,baja,5.0,1.8,True,0.0
+900666,Medio,Bajo,0.1299,111,baja,5.0,baja,5.0,197.5098,20.65,4.13,6365.0,True,Asignada,,0.0,-4.51,False,0.0
+900510,Estandar,Bajo,0.1217,103,baja,5.0,baja,5.0,209.8848,20.55,4.11,6370.0,True,Asignada,,0.0,-3.13,False,0.0
+900068,Estandar,Bajo,0.1331,105,baja,5.0,baja,5.0,191.6257,20.51,4.102,6375.0,True,Asignada,,0.0,-3.12,False,0.0
+900134,Alto,Bajo,0.1766,120,media,15.0,media,15.0,430.9505,61.11,4.074,6390.0,True,Asignada,,0.0,-0.39,False,0.0
+900295,Alto,Bajo,0.1561,117,media,15.0,media,15.0,485.1303,60.72,4.048,6405.0,True,Asignada,,0.0,-0.46,False,0.0
+900800,Estandar,Bajo,0.1781,106,baja,5.0,baja,5.0,141.4604,20.2,4.04,6410.0,True,Asignada,,0.0,-4.14,False,0.0
+900725,Estandar,Bajo,0.1289,141,baja,5.0,baja,5.0,194.6531,20.08,4.017,6415.0,True,Asignada,,0.0,-3.57,False,0.0
+900343,Medio,Bajo,0.1242,110,baja,5.0,baja,5.0,201.9537,20.09,4.017,6420.0,True,Asignada,,0.0,-3.9,False,0.0
+900844,Alto,Bajo,0.1301,109,alta,40.0,alta,40.0,1537.5603,159.99,4.0,6460.0,True,Asignada,,0.0,-3.77,False,0.0
+900448,Estandar,Bajo,0.1478,108,baja,5.0,baja,5.0,168.6832,19.93,3.985,6465.0,True,Asignada,,0.0,-3.86,False,0.0
+900091,Estandar,Bajo,0.115,109,baja,5.0,baja,5.0,216.436,19.89,3.978,6470.0,True,Asignada,,0.0,-4.01,False,0.0
+900017,VIP,Bajo,0.2166,107,alta,40.0,alta,40.0,917.5738,158.74,3.969,6510.0,True,Asignada,,0.0,-2.8,False,0.0
+900795,Medio,Bajo,0.183,120,media,15.0,media,15.0,406.137,59.34,3.956,6525.0,True,Asignada,,0.0,-4.19,False,0.0
+900242,Medio,Bajo,0.0932,135,baja,5.0,baja,5.0,265.722,19.76,3.952,6530.0,True,Asignada,,0.0,-4.25,False,0.0
+900811,Medio,Bajo,0.1728,120,media,15.0,media,15.0,429.3151,59.17,3.945,6545.0,True,Asignada,,0.0,-2.57,False,0.0
+900423,Alto,Bajo,0.1625,123,alta,40.0,alta,40.0,1214.0277,157.25,3.931,6585.0,True,Asignada,,0.0,-3.62,False,0.0
+900840,Estandar,Bajo,0.1632,108,baja,5.0,baja,5.0,151.0132,19.65,3.929,6590.0,True,Asignada,,0.0,-3.99,False,0.0
+900095,Estandar,Bajo,0.1824,107,baja,5.0,baja,5.0,135.0273,19.63,3.927,6595.0,True,Asignada,,0.0,-4.24,False,0.0
+900715,Estandar,Bajo,0.1511,100,baja,5.0,baja,5.0,161.8423,19.45,3.891,6600.0,True,Asignada,,0.0,-4.51,False,0.0
+900174,Medio,Bajo,0.1209,108,media,15.0,media,15.0,604.1367,58.06,3.871,6615.0,True,Asignada,,0.0,-4.33,False,0.0
+900251,Estandar,Bajo,0.1139,85,baja,5.0,baja,5.0,213.152,19.28,3.855,6620.0,True,Asignada,,0.0,-3.73,False,0.0
+900631,Estandar,Bajo,0.1427,117,baja,5.0,baja,5.0,169.481,19.19,3.839,6625.0,True,Asignada,,0.0,-4.43,False,0.0
+900697,Alto,Bajo,0.1682,111,media,15.0,media,15.0,431.2309,57.55,3.836,6640.0,True,Asignada,,0.0,-0.42,False,0.0
+900035,Estandar,Bajo,0.1186,124,baja,5.0,baja,5.0,203.698,19.17,3.833,6645.0,True,Asignada,,0.0,-3.4,False,0.0
+900046,VIP,Bajo,0.1781,102,alta,40.0,alta,40.0,1085.0677,153.23,3.831,6685.0,True,Asignada,,0.0,-2.91,False,0.0
+900837,Estandar,Bajo,0.1807,106,baja,5.0,baja,5.0,132.4003,18.93,3.786,6690.0,True,Asignada,,0.0,-3.31,False,0.0
+900267,Estandar,Bajo,0.1315,101,baja,5.0,baja,5.0,181.8819,18.92,3.785,6695.0,True,Asignada,,0.0,-3.16,False,0.0
+900143,Estandar,Bajo,0.1628,93,baja,5.0,baja,5.0,146.7695,18.9,3.779,6700.0,True,Asignada,,0.0,-3.51,False,0.0
+900744,Estandar,Bajo,0.1896,128,baja,5.0,baja,5.0,125.6832,18.83,3.765,6705.0,True,Asignada,,0.0,-4.33,False,0.0
+900488,Estandar,Bajo,0.1252,101,baja,5.0,baja,5.0,190.0132,18.8,3.759,6710.0,True,Asignada,,0.0,-4.38,False,0.0
+900141,Estandar,Bajo,0.1687,93,baja,5.0,baja,5.0,140.6481,18.72,3.745,6715.0,True,Asignada,,0.0,-4.24,False,0.0
+900258,Medio,Bajo,0.1564,121,media,15.0,media,15.0,451.3524,55.59,3.706,6730.0,True,Asignada,,0.0,-2.57,False,0.0
+900203,Alto,Bajo,0.1785,128,alta,40.0,alta,40.0,1054.5159,148.22,3.705,6770.0,True,Asignada,,0.0,-0.66,False,0.0
+900601,Estandar,Bajo,0.1422,115,baja,5.0,baja,5.0,164.5343,18.4,3.68,6775.0,True,Asignada,,0.0,-3.85,False,0.0
+900719,Estandar,Bajo,0.1535,123,baja,5.0,baja,5.0,151.2184,18.21,3.642,6780.0,True,Asignada,,0.0,-4.22,False,0.0
+900609,Medio,Bajo,0.1629,121,alta,40.0,alta,40.0,1138.3828,145.44,3.636,6820.0,True,Asignada,,0.0,-0.58,False,0.0
+900805,Estandar,Bajo,0.0937,118,baja,5.0,baja,5.0,244.7785,17.94,3.588,6825.0,True,Asignada,,0.0,-4.43,False,0.0
+900220,Alto,Bajo,0.1668,122,alta,40.0,alta,40.0,1097.4568,143.09,3.577,6865.0,True,Asignada,,0.0,-3.84,False,0.0
+900233,VIP,Bajo,0.1708,124,alta,40.0,alta,40.0,1070.717,142.89,3.572,6905.0,True,Asignada,,0.0,-3.46,False,0.0
+900395,Estandar,Bajo,0.1644,99,baja,5.0,baja,5.0,138.9515,17.84,3.569,6910.0,True,Asignada,,0.0,-3.9,False,0.0
+900704,Estandar,Bajo,0.1823,107,baja,5.0,baja,5.0,125.2517,17.84,3.568,6915.0,True,Asignada,,0.0,-4.24,False,0.0
+900059,Alto,Bajo,0.1187,136,alta,40.0,alta,40.0,1534.5741,142.09,3.552,6955.0,True,Asignada,,0.0,-3.28,False,0.0
+900344,Medio,Bajo,0.1002,106,baja,5.0,baja,5.0,226.9922,17.75,3.55,6960.0,True,Asignada,,0.0,-4.22,False,0.0
+900265,VIP,Bajo,0.1785,116,alta,40.0,alta,40.0,1013.0094,140.84,3.521,7000.0,True,Asignada,,0.0,-3.29,False,0.0
+900692,Estandar,Bajo,0.1096,111,baja,5.0,baja,5.0,206.0877,17.59,3.518,7005.0,True,Asignada,,0.0,-3.74,False,0.0
+900420,Estandar,Bajo,0.1971,104,baja,5.0,baja,5.0,114.3986,17.55,3.509,7010.0,True,Asignada,,0.0,-4.5,False,0.0
+900339,Medio,Bajo,0.139,123,media,15.0,media,15.0,485.467,52.49,3.499,7025.0,True,Asignada,,0.0,-3.12,False,0.0
+900311,Estandar,Bajo,0.1608,108,baja,5.0,baja,5.0,138.9028,17.33,3.467,7030.0,True,Asignada,,0.0,-4.67,False,0.0
+900418,Medio,Bajo,0.122,135,baja,5.0,baja,5.0,183.0115,17.33,3.466,7035.0,True,Asignada,,0.0,-4.52,False,0.0
+900037,Estandar,Bajo,0.1223,110,baja,5.0,baja,5.0,182.4887,17.32,3.464,7040.0,True,Asignada,,0.0,-4.33,False,0.0
+900618,Alto,Bajo,0.1819,108,alta,40.0,alta,40.0,978.2025,137.9,3.447,7080.0,True,Asignada,baja,5.0,1.7,True,0.0
+900498,Estandar,Bajo,0.1522,110,baja,5.0,baja,5.0,145.8585,17.21,3.441,7085.0,True,Asignada,,0.0,-4.15,False,0.0
+900076,VIP,Bajo,0.1696,111,alta,40.0,alta,40.0,1047.2684,137.66,3.441,7125.0,True,Asignada,,0.0,-0.76,False,0.0
+900108,VIP,Bajo,0.1662,113,alta,40.0,alta,40.0,1062.5681,136.59,3.415,7165.0,True,Asignada,baja,5.0,5.33,True,0.0
+900051,Estandar,Bajo,0.154,116,baja,5.0,baja,5.0,142.8244,16.99,3.399,7170.0,True,Asignada,,0.0,-4.66,False,0.0
+900323,Alto,Bajo,0.1518,129,alta,40.0,alta,40.0,1158.073,135.81,3.395,7210.0,True,Asignada,baja,5.0,0.49,True,0.0
+900403,Estandar,Bajo,0.1223,114,baja,5.0,baja,5.0,178.9683,16.89,3.378,7215.0,True,Asignada,,0.0,-3.25,False,0.0
+900741,Estandar,Bajo,0.1622,98,baja,5.0,baja,5.0,133.3534,16.63,3.327,7220.0,True,Asignada,,0.0,-4.17,False,0.0
+900419,Alto,Bajo,0.1843,122,alta,40.0,alta,40.0,933.7226,132.12,3.303,7260.0,True,Asignada,,0.0,-0.98,False,0.0
+900293,Estandar,Bajo,0.1668,104,baja,5.0,baja,5.0,128.863,16.49,3.299,7265.0,True,Asignada,,0.0,-4.12,False,0.0
+900198,Medio,Bajo,0.177,92,media,15.0,media,15.0,362.165,49.1,3.273,7280.0,True,Asignada,,0.0,-2.82,False,0.0
+900128,Medio,Bajo,0.1664,121,alta,40.0,alta,40.0,1026.1043,130.71,3.268,7320.0,True,Asignada,,0.0,-0.57,False,0.0
+900518,Estandar,Bajo,0.1817,105,baja,5.0,baja,5.0,117.0762,16.27,3.254,7325.0,True,Asignada,,0.0,-4.48,False,0.0
+900612,Estandar,Bajo,0.1116,118,baja,5.0,baja,5.0,189.4954,16.15,3.231,7330.0,True,Asignada,,0.0,-3.39,False,0.0
+900274,Medio,Bajo,0.1009,133,baja,5.0,baja,5.0,209.7089,16.16,3.231,7335.0,True,Asignada,,0.0,-4.16,False,0.0
+900868,Estandar,Bajo,0.1129,109,baja,5.0,baja,5.0,186.4097,16.04,3.208,7340.0,True,Asignada,,0.0,-4.27,False,0.0
+900049,Estandar,Bajo,0.2001,124,baja,5.0,baja,5.0,105.0582,16.02,3.205,7345.0,True,Asignada,,0.0,-4.64,False,0.0
+900516,Alto,Bajo,0.1308,115,media,15.0,media,15.0,482.0134,48.05,3.204,7360.0,True,Asignada,,0.0,-4.07,False,0.0
+900223,Alto,Bajo,0.1721,114,alta,40.0,alta,40.0,975.6932,127.95,3.199,7400.0,True,Asignada,baja,5.0,0.52,True,0.0
+900166,Alto,Bajo,0.1723,110,alta,40.0,,0.0,970.9959,127.34,3.184,7400.0,False,No asignada: tope 25% en recompensas altas,,0.0,-2.7,False,0.0
+900036,Estandar,Bajo,0.1318,109,baja,5.0,baja,5.0,158.2487,15.86,3.172,7405.0,True,Asignada,,0.0,-3.92,False,0.0
+900695,Medio,Bajo,0.1611,113,alta,40.0,,0.0,1035.3508,126.79,3.17,7405.0,False,No asignada: tope 25% en recompensas altas,,0.0,-0.17,False,0.0
+900048,Estandar,Bajo,0.1234,116,baja,5.0,baja,5.0,166.8694,15.59,3.118,7410.0,True,Asignada,,0.0,-3.82,False,0.0
+900659,VIP,Bajo,0.092,134,alta,40.0,,0.0,1789.9024,124.69,3.117,7410.0,False,No asignada: tope 25% en recompensas altas,baja,5.0,2.21,True,0.0
+900541,Estandar,Bajo,0.112,112,baja,5.0,baja,5.0,183.472,15.55,3.109,7415.0,True,Asignada,,0.0,-3.83,False,0.0
+900331,Alto,Bajo,0.1692,106,alta,40.0,,0.0,971.4483,124.38,3.109,7415.0,False,No asignada: tope 25% en recompensas altas,baja,5.0,1.36,True,0.0
+900885,Estandar,Bajo,0.1407,112,baja,5.0,baja,5.0,145.6665,15.5,3.099,7420.0,True,Asignada,,0.0,-4.02,False,0.0
+900736,Alto,Bajo,0.1498,98,alta,40.0,,0.0,1088.752,123.05,3.076,7420.0,False,No asignada: tope 25% en recompensas altas,,0.0,-1.62,False,0.0
+900590,Medio,Bajo,0.2009,115,alta,40.0,,0.0,808.4953,122.42,3.061,7420.0,False,No asignada: tope 25% en recompensas altas,,0.0,-1.74,False,0.0
+900111,Estandar,Bajo,0.1266,97,baja,5.0,baja,5.0,160.4435,15.3,3.061,7425.0,True,Asignada,,0.0,-4.66,False,0.0
+900376,Estandar,Bajo,0.1022,114,baja,5.0,baja,5.0,196.4737,15.08,3.016,7430.0,True,Asignada,,0.0,-3.81,False,0.0
+900440,Medio,Bajo,0.1811,119,alta,40.0,,0.0,880.8102,119.54,2.988,7430.0,False,No asignada: tope 25% en recompensas altas,,0.0,-3.75,False,0.0
+900722,Alto,Bajo,0.2143,117,alta,40.0,,0.0,737.4726,118.03,2.951,7430.0,False,No asignada: tope 25% en recompensas altas,,0.0,-3.28,False,0.0
+900288,Alto,Bajo,0.1209,103,media,15.0,media,15.0,488.7407,44.07,2.938,7445.0,True,Asignada,,0.0,-4.41,False,0.0
+900779,Estandar,Bajo,0.153,106,baja,5.0,baja,5.0,128.0435,14.59,2.919,7450.0,True,Asignada,,0.0,-4.08,False,0.0
+900552,Estandar,Bajo,0.136,97,baja,5.0,baja,5.0,142.6296,14.4,2.879,7455.0,True,Asignada,,0.0,-3.49,False,0.0
+900110,VIP,Bajo,0.1995,111,alta,40.0,,0.0,777.3022,115.04,2.876,7455.0,False,No asignada: tope 25% en recompensas altas,baja,5.0,2.89,True,0.0
+900177,Estandar,Bajo,0.1384,109,baja,5.0,baja,5.0,139.8652,14.36,2.871,7460.0,True,Asignada,,0.0,-4.18,False,0.0
+900324,Estandar,Bajo,0.1417,128,baja,5.0,baja,5.0,136.2545,14.3,2.861,7465.0,True,Asignada,,0.0,-4.27,False,0.0
+900826,Estandar,Bajo,0.1661,109,baja,5.0,baja,5.0,116.065,14.28,2.856,7470.0,True,Asignada,,0.0,-4.42,False,0.0
+900785,Estandar,Bajo,0.1279,108,baja,5.0,baja,5.0,150.7572,14.28,2.855,7475.0,True,Asignada,,0.0,-4.28,False,0.0
+900115,Medio,Bajo,0.1328,121,baja,5.0,baja,5.0,144.85,14.23,2.846,7480.0,True,Asignada,,0.0,-4.4,False,0.0
+900458,Estandar,Bajo,0.1064,112,baja,5.0,baja,5.0,179.8441,14.13,2.826,7485.0,True,Asignada,,0.0,-3.73,False,0.0
+900858,Medio,Bajo,0.1072,118,baja,5.0,baja,5.0,178.3599,14.12,2.824,7490.0,True,Asignada,,0.0,-3.95,False,0.0
+900088,Estandar,Bajo,0.1333,106,baja,5.0,baja,5.0,142.2501,13.96,2.791,7495.0,True,Asignada,,0.0,-4.12,False,0.0
+900196,Alto,Bajo,0.1287,120,alta,40.0,,0.0,1177.5518,111.57,2.789,7495.0,False,No asignada: tope 25% en recompensas altas,baja,5.0,0.28,True,0.0
+900556,Estandar,Bajo,0.1252,91,baja,5.0,baja,5.0,150.8348,13.88,2.776,7500.0,True,Asignada,,0.0,-4.26,False,0.0
+900680,Estandar,Bajo,0.1081,114,baja,5.0,baja,5.0,173.4974,13.76,2.751,7505.0,True,Asignada,,0.0,-2.67,False,0.0
+900533,Estandar,Bajo,0.1666,99,baja,5.0,baja,5.0,112.2769,13.7,2.741,7510.0,True,Asignada,,0.0,-4.55,False,0.0
+900550,Medio,Bajo,0.1753,115,alta,40.0,,0.0,851.5888,109.27,2.732,7510.0,False,No asignada: tope 25% en recompensas altas,,0.0,-1.11,False,0.0
+900417,Medio,Bajo,0.1835,120,alta,40.0,,0.0,803.3602,107.41,2.685,7510.0,False,No asignada: tope 25% en recompensas altas,,0.0,-1.58,False,0.0
+900640,Estandar,Bajo,0.123,86,baja,5.0,baja,5.0,148.5723,13.27,2.655,7515.0,True,Asignada,,0.0,-4.2,False,0.0
+900477,Alto,Bajo,0.1486,118,alta,40.0,,0.0,981.4748,105.81,2.645,7515.0,False,No asignada: tope 25% en recompensas altas,,0.0,-3.54,False,0.0
+900268,Estandar,Bajo,0.1775,105,baja,5.0,baja,5.0,102.2874,13.16,2.631,7520.0,True,Asignada,,0.0,-4.38,False,0.0
+900442,Estandar,Bajo,0.1285,108,baja,5.0,baja,5.0,141.2371,13.14,2.628,7525.0,True,Asignada,,0.0,-3.61,False,0.0
+900480,Estandar,Bajo,0.1524,96,baja,5.0,baja,5.0,118.9288,13.13,2.626,7530.0,True,Asignada,,0.0,-4.47,False,0.0
+900502,Alto,Bajo,0.1815,128,alta,40.0,,0.0,798.7328,105.0,2.625,7530.0,False,No asignada: tope 25% en recompensas altas,,0.0,-3.97,False,0.0
+900336,Alto,Bajo,0.1554,111,alta,40.0,,0.0,931.2023,104.71,2.618,7530.0,False,No asignada: tope 25% en recompensas altas,baja,5.0,1.27,True,0.0
+900254,Estandar,Bajo,0.1781,107,baja,5.0,baja,5.0,101.4098,13.06,2.612,7535.0,True,Asignada,,0.0,-4.48,False,0.0
+900199,Estandar,Bajo,0.1284,110,baja,5.0,baja,5.0,139.2891,12.88,2.577,7540.0,True,Asignada,,0.0,-4.44,False,0.0
+900228,Estandar,Bajo,0.1208,101,baja,5.0,baja,5.0,146.7342,12.73,2.546,7545.0,True,Asignada,,0.0,-3.99,False,0.0
+900237,VIP,Bajo,0.1577,112,alta,40.0,,0.0,883.5489,99.36,2.484,7545.0,False,No asignada: tope 25% en recompensas altas,,0.0,-3.4,False,0.0
+900836,Alto,Bajo,0.1173,125,alta,40.0,,0.0,1178.6577,98.28,2.457,7545.0,False,No asignada: tope 25% en recompensas altas,,0.0,-3.81,False,0.0
+900434,Estandar,Bajo,0.1214,107,baja,5.0,baja,5.0,141.8385,12.22,2.444,7550.0,True,Asignada,,0.0,-3.87,False,0.0
+900605,Estandar,Bajo,0.1305,111,baja,5.0,baja,5.0,131.8067,12.2,2.44,7555.0,True,Asignada,,0.0,-3.62,False,0.0
+900872,Estandar,Bajo,0.1317,111,baja,5.0,baja,5.0,130.396,12.18,2.436,7560.0,True,Asignada,,0.0,-3.38,False,0.0
+900432,Medio,Bajo,0.2001,98,alta,40.0,,0.0,686.6349,97.39,2.435,7560.0,False,No asignada: tope 25% en recompensas altas,,0.0,-4.06,False,0.0
+900597,Alto,Bajo,0.1571,132,alta,40.0,,0.0,862.1364,95.46,2.387,7560.0,False,No asignada: tope 25% en recompensas altas,,0.0,-3.97,False,0.0
+900760,Estandar,Bajo,0.1222,99,baja,5.0,baja,5.0,138.1107,11.88,2.376,7565.0,True,Asignada,,0.0,-4.06,False,0.0
+900367,Alto,Bajo,0.1225,141,alta,40.0,,0.0,1098.1302,94.51,2.363,7565.0,False,No asignada: tope 25% en recompensas altas,,0.0,-4.02,False,0.0
+900211,Estandar,Bajo,0.1199,107,baja,5.0,baja,5.0,140.0212,11.79,2.358,7570.0,True,Asignada,,0.0,-4.58,False,0.0
+900454,Estandar,Bajo,0.1414,94,baja,5.0,baja,5.0,118.063,11.7,2.34,7575.0,True,Asignada,,0.0,-4.28,False,0.0
+900569,Estandar,Bajo,0.1231,99,baja,5.0,baja,5.0,133.5888,11.44,2.288,7580.0,True,Asignada,,0.0,-4.62,False,0.0
+900393,Medio,Bajo,0.2034,132,alta,40.0,,0.0,646.3184,91.44,2.286,7580.0,False,No asignada: tope 25% en recompensas altas,,0.0,-2.47,False,0.0
+900855,Estandar,Bajo,0.1029,89,baja,5.0,baja,5.0,159.3287,11.4,2.279,7585.0,True,Asignada,,0.0,-3.12,False,0.0
+900256,Estandar,Bajo,0.1198,112,baja,5.0,baja,5.0,136.6999,11.38,2.276,7590.0,True,Asignada,,0.0,-4.19,False,0.0
+900582,Estandar,Bajo,0.1104,106,baja,5.0,baja,5.0,147.9767,11.34,2.268,7595.0,True,Asignada,,0.0,-4.61,False,0.0
+900712,Estandar,Bajo,0.1346,92,baja,5.0,baja,5.0,120.9413,11.27,2.255,7600.0,True,Asignada,,0.0,-4.21,False,0.0
+900693,Estandar,Bajo,0.1048,92,baja,5.0,baja,5.0,155.1548,11.27,2.253,7605.0,True,Asignada,,0.0,-3.72,False,0.0
+900045,Estandar,Bajo,0.1181,101,baja,5.0,baja,5.0,136.0326,11.06,2.212,7610.0,True,Asignada,,0.0,-3.92,False,0.0
+900512,Estandar,Bajo,0.1942,119,media,15.0,media,15.0,247.9951,33.17,2.211,7625.0,True,Asignada,,0.0,-2.79,False,0.0
+900491,Estandar,Bajo,0.1111,96,baja,5.0,baja,5.0,144.2046,11.03,2.206,7630.0,True,Asignada,,0.0,-3.45,False,0.0
+900598,Alto,Bajo,0.1384,134,alta,40.0,,0.0,916.5961,86.88,2.172,7630.0,False,No asignada: tope 25% en recompensas altas,,0.0,-3.75,False,0.0
+900720,Estandar,Bajo,0.1176,96,baja,5.0,baja,5.0,134.5717,10.82,2.164,7635.0,True,Asignada,,0.0,-4.23,False,0.0
+900776,Estandar,Bajo,0.1308,99,baja,5.0,baja,5.0,120.832,10.81,2.162,7640.0,True,Asignada,,0.0,-3.59,False,0.0
+900506,Estandar,Bajo,0.1075,109,baja,5.0,baja,5.0,145.9893,10.7,2.14,7645.0,True,Asignada,,0.0,-4.64,False,0.0
+900411,Estandar,Bajo,0.1125,110,baja,5.0,baja,5.0,138.355,10.57,2.113,7650.0,True,Asignada,,0.0,-4.53,False,0.0
+900063,Estandar,Bajo,0.2093,118,media,15.0,media,15.0,222.5981,31.59,2.106,7665.0,True,Asignada,,0.0,-3.58,False,0.0
+900081,Estandar,Bajo,0.1044,111,baja,5.0,baja,5.0,145.0084,10.14,2.027,7670.0,True,Asignada,,0.0,-4.34,False,0.0
+900588,Alto,Bajo,0.1158,140,alta,40.0,,0.0,1043.2175,80.76,2.019,7670.0,False,No asignada: tope 25% en recompensas altas,,0.0,-2.73,False,0.0
+900195,Estandar,Bajo,0.1172,88,baja,5.0,baja,5.0,128.8415,10.1,2.019,7675.0,True,Asignada,,0.0,-3.25,False,0.0
+900775,Estandar,Bajo,0.1055,90,baja,5.0,baja,5.0,142.775,10.07,2.013,7680.0,True,Asignada,,0.0,-3.36,False,0.0
+900841,Estandar,Bajo,0.1286,128,baja,5.0,baja,5.0,115.9683,9.92,1.983,7685.0,True,Asignada,,0.0,-3.99,False,0.0
+900468,Estandar,Bajo,0.1036,110,baja,5.0,baja,5.0,143.9104,9.91,1.981,7690.0,True,Asignada,,0.0,-3.43,False,0.0
+900310,Alto,Bajo,0.1782,114,alta,40.0,,0.0,668.8733,79.2,1.98,7690.0,False,No asignada: tope 25% en recompensas altas,,0.0,-3.1,False,0.0
+900433,Estandar,Bajo,0.1118,99,baja,5.0,baja,5.0,133.2419,9.9,1.979,7695.0,True,Asignada,,0.0,-4.48,False,0.0
+900163,Medio,Bajo,0.1556,122,media,15.0,media,15.0,286.3967,29.56,1.97,7710.0,True,Asignada,,0.0,-2.97,False,0.0
+900152,VIP,Bajo,0.2145,107,alta,40.0,,0.0,548.3077,77.64,1.941,7710.0,False,No asignada: tope 25% en recompensas altas,,0.0,-3.44,False,0.0
+900642,Estandar,Bajo,0.1039,104,baja,5.0,baja,5.0,140.8476,9.64,1.928,7715.0,True,Asignada,,0.0,-3.79,False,0.0
+900463,Estandar,Bajo,0.1032,114,baja,5.0,baja,5.0,141.3907,9.59,1.918,7720.0,True,Asignada,,0.0,-3.93,False,0.0
+900578,Estandar,Bajo,0.1142,99,baja,5.0,baja,5.0,126.6023,9.46,1.892,7725.0,True,Asignada,,0.0,-4.4,False,0.0
+900116,Medio,Bajo,0.1904,121,media,15.0,media,15.0,227.0922,28.25,1.883,7740.0,True,Asignada,,0.0,-3.65,False,0.0
+900329,Alto,Bajo,0.1529,110,alta,40.0,,0.0,750.0692,74.66,1.866,7740.0,False,No asignada: tope 25% en recompensas altas,,0.0,-3.36,False,0.0
+900777,Alto,Bajo,0.138,133,alta,40.0,,0.0,829.2954,74.48,1.862,7740.0,False,No asignada: tope 25% en recompensas altas,,0.0,-4.14,False,0.0
+900205,Estandar,Bajo,0.1167,100,baja,5.0,baja,5.0,121.8749,9.23,1.846,7745.0,True,Asignada,,0.0,-4.61,False,0.0
+900568,Medio,Bajo,0.1207,121,baja,5.0,baja,5.0,117.1505,9.14,1.827,7750.0,True,Asignada,,0.0,-4.42,False,0.0
+900626,Medio,Bajo,0.1291,114,media,15.0,media,15.0,321.464,26.51,1.768,7765.0,True,Asignada,,0.0,-4.19,False,0.0
+900404,Estandar,Bajo,0.0991,88,baja,5.0,baja,5.0,139.5105,8.82,1.765,7770.0,True,Asignada,,0.0,-3.97,False,0.0
+900176,Medio,Bajo,0.098,116,baja,5.0,baja,5.0,139.5535,8.68,1.735,7775.0,True,Asignada,,0.0,-4.17,False,0.0
+900028,Estandar,Bajo,0.1157,99,baja,5.0,baja,5.0,118.0099,8.66,1.732,7780.0,True,Asignada,,0.0,-4.53,False,0.0
+900107,Alto,Bajo,0.1368,117,alta,40.0,,0.0,798.3012,69.19,1.73,7780.0,False,No asignada: tope 25% en recompensas altas,,0.0,-3.97,False,0.0
+900155,Medio,Bajo,0.1669,137,alta,40.0,,0.0,652.8153,68.96,1.724,7780.0,False,No asignada: tope 25% en recompensas altas,,0.0,-4.13,False,0.0
+900682,Estandar,Bajo,0.2007,122,media,15.0,media,15.0,203.3684,25.82,1.721,7795.0,True,Asignada,,0.0,-3.84,False,0.0
+900082,Estandar,Bajo,0.099,117,baja,5.0,baja,5.0,135.7509,8.45,1.689,7800.0,True,Asignada,,0.0,-4.6,False,0.0
+900835,Estandar,Bajo,0.0975,102,baja,5.0,baja,5.0,137.5941,8.42,1.684,7805.0,True,Asignada,,0.0,-3.42,False,0.0
+900770,Medio,Bajo,0.126,132,alta,40.0,,0.0,847.4108,66.79,1.67,7805.0,False,No asignada: tope 25% en recompensas altas,,0.0,-4.28,False,0.0
+900754,Medio,Bajo,0.1678,116,alta,40.0,,0.0,633.416,66.3,1.657,7805.0,False,No asignada: tope 25% en recompensas altas,,0.0,-3.78,False,0.0
+900524,Estandar,Bajo,0.0928,112,baja,5.0,baja,5.0,142.4874,8.22,1.645,7810.0,True,Asignada,,0.0,-3.8,False,0.0
+900391,Medio,Bajo,0.1608,130,alta,40.0,,0.0,654.321,65.19,1.63,7810.0,False,No asignada: tope 25% en recompensas altas,,0.0,-3.8,False,0.0
+900410,Estandar,Bajo,0.0902,110,baja,5.0,baja,5.0,141.4158,7.75,1.551,7815.0,True,Asignada,,0.0,-4.61,False,0.0
+900580,Estandar,Bajo,0.0946,128,baja,5.0,baja,5.0,132.0377,7.5,1.499,7820.0,True,Asignada,,0.0,-4.3,False,0.0
+900474,VIP,Bajo,0.136,113,alta,40.0,,0.0,728.0061,58.97,1.474,7820.0,False,No asignada: tope 25% en recompensas altas,baja,5.0,2.1,True,0.0
+900472,Estandar,Bajo,0.0968,104,baja,5.0,baja,5.0,124.1583,7.02,1.403,7825.0,True,Asignada,,0.0,-3.54,False,0.0
+900075,Estandar,Bajo,0.0838,115,baja,5.0,baja,5.0,143.2369,7.0,1.4,7830.0,True,Asignada,,0.0,-4.44,False,0.0
+900398,Estandar,Bajo,0.157,118,media,15.0,media,15.0,222.4582,19.93,1.328,7845.0,True,Asignada,,0.0,-3.93,False,0.0
+900230,Medio,Bajo,0.1668,119,media,15.0,media,15.0,206.5029,19.44,1.296,7860.0,True,Asignada,,0.0,-3.8,False,0.0
+900346,VIP,Bajo,0.1144,116,alta,40.0,,0.0,788.933,50.28,1.257,7860.0,False,No asignada: tope 25% en recompensas altas,,0.0,-3.49,False,0.0
+900025,Estandar,Bajo,0.0836,103,baja,5.0,baja,5.0,133.7349,6.17,1.235,7865.0,True,Asignada,,0.0,-4.01,False,0.0
+900456,Medio,Bajo,0.1664,120,media,15.0,media,15.0,189.548,16.54,1.102,7880.0,True,Asignada,,0.0,-4.11,False,0.0
+900750,Alto,Bajo,0.1253,122,alta,40.0,,0.0,669.3395,43.86,1.097,7880.0,False,No asignada: tope 25% en recompensas altas,,0.0,-4.49,False,0.0
+900157,Medio,Bajo,0.1415,100,alta,40.0,,0.0,585.8019,42.89,1.072,7880.0,False,No asignada: tope 25% en recompensas altas,,0.0,-3.24,False,0.0
+900008,VIP,Alto,0.7093,120,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900043,VIP,Alto,0.7282,121,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900061,Alto,Alto,0.6224,117,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900062,VIP,Alto,0.6346,115,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900069,VIP,Alto,0.6647,121,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900074,VIP,Alto,0.6224,102,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900086,VIP,Alto,0.6004,117,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900089,VIP,Alto,0.6401,114,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900098,VIP,Alto,0.6795,89,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900102,VIP,Alto,0.6672,105,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900112,VIP,Alto,0.6346,104,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900114,VIP,Alto,0.701,113,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900117,VIP,Alto,0.5157,107,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900122,Alto,Alto,0.5157,107,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900133,Alto,Alto,0.6366,108,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900142,VIP,Alto,0.6401,129,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900144,VIP,Alto,0.6523,105,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900145,VIP,Alto,0.716,111,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900153,VIP,Alto,0.6224,109,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900154,VIP,Alto,0.6224,95,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900189,VIP,Alto,0.6224,113,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900210,VIP,Alto,0.6496,110,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900215,VIP,Alto,0.6496,127,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900216,VIP,Alto,0.6618,102,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900217,VIP,Alto,0.648,93,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900218,VIP,Alto,0.7282,120,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900243,Alto,Alto,0.4444,115,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900272,Alto,Alto,0.6401,107,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900305,VIP,Alto,0.6346,113,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900313,Alto,Alto,0.556,98,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900317,VIP,Alto,0.5662,114,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900325,Medio,Alto,0.6672,119,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900353,VIP,Alto,0.3824,110,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900377,VIP,Alto,0.6618,121,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900389,Medio,Alto,0.6346,106,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900390,VIP,Alto,0.6888,116,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900402,VIP,Alto,0.6416,107,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900408,VIP,Alto,0.531,103,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900412,VIP,Alto,0.6224,116,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900425,VIP,Alto,0.6224,133,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900429,VIP,Alto,0.701,116,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900482,VIP,Alto,0.6224,97,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900484,VIP,Alto,0.6224,140,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900492,VIP,Alto,0.6795,117,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900507,Alto,Alto,0.5319,112,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900523,Alto,Alto,0.4293,114,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900528,VIP,Alto,0.6401,100,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900537,VIP,Alto,0.6971,118,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900546,VIP,Alto,0.5869,106,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900563,VIP,Alto,0.6795,127,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900576,VIP,Alto,0.6971,122,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900623,Alto,Alto,0.6224,116,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900629,VIP,Alto,0.6401,112,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900641,VIP,Alto,0.6416,104,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900651,Alto,Alto,0.6401,90,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900671,VIP,Alto,0.6224,116,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900678,VIP,Alto,0.6401,102,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900686,VIP,Alto,0.6618,106,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900701,VIP,Alto,0.6224,108,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900730,VIP,Alto,0.6224,118,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900742,VIP,Alto,0.6224,125,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900743,VIP,Alto,0.6538,108,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900787,VIP,Alto,0.6346,113,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900789,VIP,Alto,0.701,114,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900792,Alto,Alto,0.6004,93,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900815,VIP,Alto,0.6224,115,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900819,VIP,Alto,0.716,100,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900820,VIP,Alto,0.8007,111,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900853,VIP,Alto,0.6224,103,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900859,VIP,Alto,0.6401,107,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0
+900887,VIP,Alto,0.7282,120,,0.0,,0.0,,,,,False,Sin recompensa: riesgo alto,,0.0,,False,1.0

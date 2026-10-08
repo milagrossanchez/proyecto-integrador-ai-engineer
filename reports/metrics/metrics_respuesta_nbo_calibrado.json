@@ -17,145 +17,145 @@
   "candidate_validation": {
     "logistic_regression": {
       "rows": 1080,
-      "responses": 146,
-      "response_rate": 0.135185,
-      "roc_auc": 0.532179,
-      "pr_auc": 0.15378,
-      "brier": 0.117116,
-      "log_loss": 0.396584,
-      "lift_top_decile": 1.027397
+      "responses": 151,
+      "response_rate": 0.139815,
+      "roc_auc": 0.544861,
+      "pr_auc": 0.16478,
+      "brier": 0.119876,
+      "log_loss": 0.402773,
+      "lift_top_decile": 1.258278
     },
     "hist_gradient_boosting": {
       "rows": 1080,
-      "responses": 146,
-      "response_rate": 0.135185,
-      "roc_auc": 0.547271,
-      "pr_auc": 0.163956,
-      "brier": 0.116574,
-      "log_loss": 0.394968,
-      "lift_top_decile": 1.164384
+      "responses": 151,
+      "response_rate": 0.139815,
+      "roc_auc": 0.568442,
+      "pr_auc": 0.198918,
+      "brier": 0.119194,
+      "log_loss": 0.400588,
+      "lift_top_decile": 1.192053
     }
   },
   "validation": {
     "rows": 1080,
-    "responses": 146,
-    "response_rate": 0.135185,
-    "roc_auc": 0.547271,
-    "pr_auc": 0.163956,
-    "brier": 0.116574,
-    "log_loss": 0.394968,
-    "lift_top_decile": 1.164384,
+    "responses": 151,
+    "response_rate": 0.139815,
+    "roc_auc": 0.568442,
+    "pr_auc": 0.198918,
+    "brier": 0.119194,
+    "log_loss": 0.400588,
+    "lift_top_decile": 1.192053,
     "by_reward": {
       "alta": {
         "rows": 270,
         "responses": 40,
         "response_rate": 0.148148,
-        "roc_auc": 0.583043,
-        "pr_auc": 0.216746,
-        "brier": 0.12428,
-        "log_loss": 0.412451,
-        "lift_top_decile": 2.0,
-        "predicted_mean_rate": 0.154938
+        "roc_auc": 0.617826,
+        "pr_auc": 0.278062,
+        "brier": 0.123424,
+        "log_loss": 0.409653,
+        "lift_top_decile": 2.25,
+        "predicted_mean_rate": 0.158975
       },
       "baja": {
         "rows": 270,
-        "responses": 34,
-        "response_rate": 0.125926,
-        "roc_auc": 0.535892,
-        "pr_auc": 0.137205,
-        "brier": 0.110364,
-        "log_loss": 0.379515,
-        "lift_top_decile": 1.176471,
-        "predicted_mean_rate": 0.13938
+        "responses": 39,
+        "response_rate": 0.144444,
+        "roc_auc": 0.509102,
+        "pr_auc": 0.164867,
+        "brier": 0.123914,
+        "log_loss": 0.41456,
+        "lift_top_decile": 0.769231,
+        "predicted_mean_rate": 0.142508
       },
       "control": {
         "rows": 270,
-        "responses": 32,
-        "response_rate": 0.118519,
-        "roc_auc": 0.567752,
-        "pr_auc": 0.165078,
-        "brier": 0.103938,
-        "log_loss": 0.361788,
-        "lift_top_decile": 1.875,
-        "predicted_mean_rate": 0.12655
+        "responses": 29,
+        "response_rate": 0.107407,
+        "roc_auc": 0.558377,
+        "pr_auc": 0.165231,
+        "brier": 0.095495,
+        "log_loss": 0.33952,
+        "lift_top_decile": 1.724138,
+        "predicted_mean_rate": 0.123294
       },
       "media": {
         "rows": 270,
-        "responses": 40,
-        "response_rate": 0.148148,
-        "roc_auc": 0.457391,
-        "pr_auc": 0.136148,
-        "brier": 0.127716,
-        "log_loss": 0.426119,
-        "lift_top_decile": 1.0,
-        "predicted_mean_rate": 0.145832
+        "responses": 43,
+        "response_rate": 0.159259,
+        "roc_auc": 0.529505,
+        "pr_auc": 0.178299,
+        "brier": 0.133942,
+        "log_loss": 0.438619,
+        "lift_top_decile": 0.697674,
+        "predicted_mean_rate": 0.148002
       }
     },
     "value_if_response": {
-      "rows": 114,
-      "mae": 400.574828,
-      "r2": 0.381748
+      "rows": 122,
+      "mae": 411.833752,
+      "r2": 0.302692
     }
   },
   "test": {
     "rows": 1032,
-    "responses": 168,
-    "response_rate": 0.162791,
-    "roc_auc": 0.549948,
-    "pr_auc": 0.201071,
-    "brier": 0.135944,
-    "log_loss": 0.442976,
-    "lift_top_decile": 1.535714,
+    "responses": 167,
+    "response_rate": 0.161822,
+    "roc_auc": 0.560829,
+    "pr_auc": 0.200321,
+    "brier": 0.135034,
+    "log_loss": 0.440381,
+    "lift_top_decile": 1.307232,
     "by_reward": {
       "alta": {
         "rows": 258,
-        "responses": 43,
-        "response_rate": 0.166667,
-        "roc_auc": 0.556679,
-        "pr_auc": 0.246485,
-        "brier": 0.138155,
-        "log_loss": 0.448298,
-        "lift_top_decile": 2.076923,
-        "predicted_mean_rate": 0.153149
+        "responses": 46,
+        "response_rate": 0.178295,
+        "roc_auc": 0.53466,
+        "pr_auc": 0.236265,
+        "brier": 0.146472,
+        "log_loss": 0.469714,
+        "lift_top_decile": 1.725753,
+        "predicted_mean_rate": 0.155996
       },
       "baja": {
         "rows": 258,
-        "responses": 42,
-        "response_rate": 0.162791,
-        "roc_auc": 0.47134,
-        "pr_auc": 0.152759,
-        "brier": 0.137586,
-        "log_loss": 0.449297,
-        "lift_top_decile": 0.472527,
-        "predicted_mean_rate": 0.136002
+        "responses": 40,
+        "response_rate": 0.155039,
+        "roc_auc": 0.466743,
+        "pr_auc": 0.139354,
+        "brier": 0.131924,
+        "log_loss": 0.434602,
+        "lift_top_decile": 0.496154,
+        "predicted_mean_rate": 0.138528
       },
       "control": {
         "rows": 258,
-        "responses": 35,
-        "response_rate": 0.135659,
-        "roc_auc": 0.528956,
-        "pr_auc": 0.158376,
-        "brier": 0.117042,
-        "log_loss": 0.395794,
-        "lift_top_decile": 1.701099,
-        "predicted_mean_rate": 0.126828
+        "responses": 33,
+        "response_rate": 0.127907,
+        "roc_auc": 0.595892,
+        "pr_auc": 0.184035,
+        "brier": 0.110552,
+        "log_loss": 0.377944,
+        "lift_top_decile": 2.405594,
+        "predicted_mean_rate": 0.123518
       },
       "media": {
         "rows": 258,
         "responses": 48,
         "response_rate": 0.186047,
-        "roc_auc": 0.602381,
-        "pr_auc": 0.242355,
-        "brier": 0.150994,
-        "log_loss": 0.478513,
-        "lift_top_decile": 1.447115,
-        "predicted_mean_rate": 0.146331
+        "roc_auc": 0.588492,
+        "pr_auc": 0.235968,
+        "brier": 0.151188,
+        "log_loss": 0.479266,
+        "lift_top_decile": 1.033654,
+        "predicted_mean_rate": 0.147581
       }
     },
     "value_if_response": {
-      "rows": 133,
-      "mae": 434.350624,
-      "r2": 0.567207
+      "rows": 134,
+      "mae": 400.08398,
+      "r2": 0.603604
     }
   },
   "anchors": {

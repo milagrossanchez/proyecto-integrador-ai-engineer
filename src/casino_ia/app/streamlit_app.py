@@ -34,11 +34,11 @@ def _modelos():
     """Carga riesgo + respuesta V1 + NBO.
 
     El NBO calibrado (`ModeloRespuestaNBOCalibrado`, anclado a evidencia RCT
-    real de Hillstrom/Criteo — ver docs/etapa3_modelo_respuesta_nbo.md) todavía
-    no se puede entrenar aquí: sus fuentes `ext.HillstromEmail` y
-    `ext.CriteoUpliftV21` no están cargadas en esta base. Mientras tanto se usa
-    el NBO semi-sintético anterior (`ModeloRespuestaNBO`), sin romper la demo.
-    Apenas exista `modelo_respuesta_nbo_calibrado.joblib`, la app lo adopta solo.
+    real de Hillstrom/Criteo — ver docs/etapa3_modelo_respuesta_nbo.md) se usa
+    si `modelo_respuesta_nbo_calibrado.joblib` existe (se genera con
+    `scripts/train_response_nbo.py`, que requiere `ext.HillstromEmail` y
+    `ext.CriteoUpliftV21` — ver sql/README.md). Si no existe, cae sin romperse
+    al NBO semi-sintético anterior (`ModeloRespuestaNBO`).
     """
     riesgo = ModeloRiesgo.load(config.MODELS_STORE / "modelo_riesgo.joblib")
     respuesta = ModeloRespuesta.load(config.MODELS_STORE / "modelo_respuesta.joblib")

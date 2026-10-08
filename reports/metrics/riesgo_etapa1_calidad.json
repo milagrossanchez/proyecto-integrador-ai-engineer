@@ -144,9 +144,9 @@
     }
   },
   "artifacts": {
-    "parquet": "D:\\PEA INFINITY DMC\\3. IA ENGINEER\\proyecto-integrador-ai-engineer\\data\\processed\\abt_riesgo_supervisado.parquet",
-    "summary": "D:\\PEA INFINITY DMC\\3. IA ENGINEER\\proyecto-integrador-ai-engineer\\reports\\metrics\\riesgo_etapa1_resumen.csv",
-    "correlations": "D:\\PEA INFINITY DMC\\3. IA ENGINEER\\proyecto-integrador-ai-engineer\\reports\\metrics\\riesgo_etapa1_correlaciones.csv",
-    "figure": "D:\\PEA INFINITY DMC\\3. IA ENGINEER\\proyecto-integrador-ai-engineer\\reports\\figures\\riesgo_etapa1_eda.png"
+    "parquet": "C:\\Users\\mili-\\OneDrive\\Documentos\\Proyecto_Sistema de Recomendación\\Sistema_Recomendación\\data\\processed\\abt_riesgo_supervisado.parquet",
+    "summary": "C:\\Users\\mili-\\OneDrive\\Documentos\\Proyecto_Sistema de Recomendación\\Sistema_Recomendación\\reports\\metrics\\riesgo_etapa1_resumen.csv",
+    "correlations": "C:\\Users\\mili-\\OneDrive\\Documentos\\Proyecto_Sistema de Recomendación\\Sistema_Recomendación\\reports\\metrics\\riesgo_etapa1_correlaciones.csv",
+    "figure": "C:\\Users\\mili-\\OneDrive\\Documentos\\Proyecto_Sistema de Recomendación\\Sistema_Recomendación\\reports\\figures\\riesgo_etapa1_eda.png"
   }
 }
