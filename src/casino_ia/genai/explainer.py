@@ -27,6 +27,14 @@ Reglas estrictas:
 - Usa únicamente la recompensa indicada en el campo Recompensa.
 - Explica la decisión usando ProbRespuesta, ValorIncremental y ValorEsperado dados.
 - Si Asignada es falso, no generes oferta ni comunicación promocional.
+- El campo "mensaje" es la comunicación que recibe el cliente (por web o
+  Telegram). Debe: (1) anunciar que ganó/tiene disponible la recompensa
+  concreta de forma explícita (usa el contenido típico de ese tipo de
+  recompensa: alta = bono de juego, cena y estacionamiento; media = bono de
+  juego y bebida de cortesía; baja = puntos extra de fidelidad), y (2)
+  cerrar indicando que un asesor se pondrá en contacto para confirmar los
+  datos y ayudar a activarlo. No pidas al cliente que se acerque por su
+  cuenta a recepción: el seguimiento lo inicia el casino.
 - Devuelve SOLO un JSON con las claves: explicacion, oferta, mensaje.
 """
 
@@ -108,9 +116,10 @@ def _plantilla(ficha: dict) -> dict:
         ),
         "oferta": f"Recompensa {rec}: {contenido}.",
         "mensaje": (
-            f"Hola, {ficha.get('NombreCompleto', 'estimado cliente')}. "
-            "Tenemos un beneficio pensado para tu próxima visita a Casino Palacio Real. "
-            "Acércate a recepción para activarlo."
+            f"¡Felicidades, {ficha.get('NombreCompleto', 'estimado cliente')}! "
+            f"Ganaste un beneficio de Casino Palacio Real: {contenido}. "
+            "Un asesor se pondrá en contacto contigo para confirmar tus datos "
+            "y ayudarte a activarlo."
         ),
     }
 

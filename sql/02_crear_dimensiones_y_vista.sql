@@ -231,33 +231,44 @@ CREATE TABLE dbo.DimCliente
 seg AS (
     SELECT *, NTILE(4) OVER (ORDER BY TotalCoinIn DESC) AS q FROM agg
 )
+-- Nota: CHECKSUM(IdCliente, seed) tiene muy mala distribución para IDs
+-- secuenciales (ciclo corto) y llegó a repetir el mismo nombre completo
+-- cada 15 clientes. Se reemplaza por HASHBYTES('MD5', ...), que para la
+-- misma secuencia de IDs da una distribución realista (con ~900 clientes,
+-- unas pocas coincidencias de nombre completo son esperables, como en
+-- datos reales de personas; no cientos de repeticiones del mismo nombre).
 INSERT dbo.DimCliente (IdCliente, CodigoCliente, NombreCompleto, Segmento, Ciudad, FechaAlta, Activo)
 SELECT s.IdCliente,
        'CLI-' + RIGHT('000000' + CAST(s.IdCliente AS varchar(10)), 6),
        n.v + ' ' + a1.v + ' ' + a2.v,
        CASE s.q WHEN 1 THEN 'VIP' WHEN 2 THEN 'Alto' WHEN 3 THEN 'Medio' ELSE 'Estandar' END,
        c.v,
-       DATEADD(day, -((CHECKSUM(s.IdCliente, 9) & 2147483647) % 900) - 30, s.PrimeraSesion),
+       DATEADD(day, -h9.i - 30, s.PrimeraSesion),
        1
 FROM seg s
+CROSS APPLY (SELECT ABS(CAST(HASHBYTES('MD5', CAST(s.IdCliente AS varchar(10)) + '|n')  AS bigint)) % 24  AS i) h1
+CROSS APPLY (SELECT ABS(CAST(HASHBYTES('MD5', CAST(s.IdCliente AS varchar(10)) + '|a1') AS bigint)) % 20  AS i) h2
+CROSS APPLY (SELECT ABS(CAST(HASHBYTES('MD5', CAST(s.IdCliente AS varchar(10)) + '|a2') AS bigint)) % 20  AS i) h3
+CROSS APPLY (SELECT ABS(CAST(HASHBYTES('MD5', CAST(s.IdCliente AS varchar(10)) + '|c')  AS bigint)) % 10  AS i) h4
+CROSS APPLY (SELECT ABS(CAST(HASHBYTES('MD5', CAST(s.IdCliente AS varchar(10)) + '|f')  AS bigint)) % 900 AS i) h9
 JOIN (VALUES (0,'Maria'),(1,'Jose'),(2,'Carlos'),(3,'Ana'),(4,'Luis'),(5,'Rosa'),
              (6,'Miguel'),(7,'Carmen'),(8,'Jorge'),(9,'Lucia'),(10,'Pedro'),(11,'Elena'),
              (12,'Juan'),(13,'Sofia'),(14,'Diego'),(15,'Paula'),(16,'Andres'),(17,'Valeria'),
              (18,'Fernando'),(19,'Camila'),(20,'Ricardo'),(21,'Daniela'),(22,'Gabriel'),(23,'Patricia')
-     ) n(i, v)   ON n.i  = (CHECKSUM(s.IdCliente, 1) & 2147483647) % 24
+     ) n(i, v)   ON n.i  = h1.i
 JOIN (VALUES (0,'Garcia'),(1,'Rodriguez'),(2,'Gonzalez'),(3,'Fernandez'),(4,'Lopez'),
              (5,'Martinez'),(6,'Sanchez'),(7,'Perez'),(8,'Gomez'),(9,'Diaz'),(10,'Torres'),
              (11,'Flores'),(12,'Rivera'),(13,'Vargas'),(14,'Castro'),(15,'Rojas'),(16,'Ramos'),
              (17,'Chavez'),(18,'Mendoza'),(19,'Quispe')
-     ) a1(i, v)  ON a1.i = (CHECKSUM(s.IdCliente, 2) & 2147483647) % 20
+     ) a1(i, v)  ON a1.i = h2.i
 JOIN (VALUES (0,'Garcia'),(1,'Rodriguez'),(2,'Gonzalez'),(3,'Fernandez'),(4,'Lopez'),
              (5,'Martinez'),(6,'Sanchez'),(7,'Perez'),(8,'Gomez'),(9,'Diaz'),(10,'Torres'),
              (11,'Flores'),(12,'Rivera'),(13,'Vargas'),(14,'Castro'),(15,'Rojas'),(16,'Ramos'),
              (17,'Chavez'),(18,'Mendoza'),(19,'Quispe')
-     ) a2(i, v)  ON a2.i = (CHECKSUM(s.IdCliente, 3) & 2147483647) % 20
+     ) a2(i, v)  ON a2.i = h3.i
 JOIN (VALUES (0,'Lima'),(1,'Arequipa'),(2,'Trujillo'),(3,'Cusco'),(4,'Piura'),
              (5,'Chiclayo'),(6,'Huancayo'),(7,'Tacna'),(8,'Iquitos'),(9,'Callao')
-     ) c(i, v)   ON c.i  = (CHECKSUM(s.IdCliente, 4) & 2147483647) % 10;
+     ) c(i, v)   ON c.i  = h4.i;
 GO
 
 /* ----------------------------------------------------------------------------

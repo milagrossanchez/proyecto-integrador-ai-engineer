@@ -129,6 +129,17 @@ _DICCIONARIO_CLIENTE = [
     ("EsPerfilAtipico", "Marca del detector de anomalías (IsolationForest): si el patrón de juego es inusual frente al resto de la cartera."),
 ]
 
+# Clientes fijados al inicio de la pestaña Cliente con un chat_id real de
+# Telegram precargado, para poder demostrar el envío de una oferta real sin
+# tener que escribirle al bot y copiar el chat_id en el momento. Son
+# ficticios como el resto de la cartera; el chat_id es el de quien hace la
+# demo (capturado al escribirle /start al bot).
+_DEMO_TELEGRAM_CLIENTES = {
+    900000: "8574346078",
+    900001: "8574346078",
+    900002: "8574346078",
+}
+
 _EJEMPLOS_CHAT = [
     "¿Un cliente de riesgo medio puede recibir recompensa alta?",
     "¿Qué pasa con los clientes de riesgo alto?",
@@ -221,7 +232,11 @@ def _widget_flotante() -> None:
         with st.container(key="chat_toggle"):
             if st.button("💬", key="btn_abrir_chat", help="Abrir el asistente"):
                 st.session_state.chat_abierto = True
-                st.rerun()
+                # Sin st.rerun(): el clic del botón ya dispara un rerun
+                # automático en Streamlit; llamarlo de nuevo acá duplicaba
+                # el rerun y, si coincidía con otro widget actualizándose
+                # (p. ej. el selector de Cliente), producía un error de
+                # React al reconciliar el DOM ("removeChild").
         return
 
     with st.container(key="chat_panel"):
@@ -230,7 +245,6 @@ def _widget_flotante() -> None:
             c1.markdown("**Asistente Palacio Real**")
             if c2.button("✕", key="btn_cerrar_chat", help="Cerrar el asistente"):
                 st.session_state.chat_abierto = False
-                st.rerun()
         st.caption(
             "Consulta las políticas de juego responsable y la guía de recompensas."
         )
@@ -256,7 +270,7 @@ def _widget_flotante() -> None:
             if r["fuentes"]:
                 texto += "\n\n_Fuentes: " + ", ".join(sorted(set(r["fuentes"]))) + "_"
             st.session_state.chat_historial.append({"role": "assistant", "content": texto})
-            st.rerun()
+            # Sin st.rerun(): form_submit_button ya dispara un rerun automático.
 
 
 feats = _data()
@@ -393,11 +407,29 @@ with tab_cliente:
     ]
     fichas = pred.drop(columns="ProbRespuesta").merge(
         cand[columnas_decision], on="IdCliente", how="left"
-    ).sort_values("NombreCompleto")
+    )
+    # Los 3 clientes de demo de Telegram van primero; el resto, alfabético.
+    fichas["_orden_demo"] = (~fichas["IdCliente"].isin(_DEMO_TELEGRAM_CLIENTES)).astype(int)
+    fichas = fichas.sort_values(["_orden_demo", "NombreCompleto"]).drop(columns="_orden_demo")
+    # El generador de nombres ficticios combina un número limitado de nombres
+    # y apellidos (ver sql/02_crear_dimensiones_y_vista.sql): con ~900
+    # clientes, algunas combinaciones se repiten. Se desambigua en el
+    # desplegable agregando el IdCliente solo a los nombres duplicados.
+    _repetidos = set(fichas["NombreCompleto"][fichas["NombreCompleto"].duplicated(keep=False)])
+
+    def _etiqueta_cliente(id_cliente: int) -> str:
+        fila = fichas.loc[fichas["IdCliente"] == id_cliente].iloc[0]
+        nombre = fila["NombreCompleto"]
+        if nombre in _repetidos:
+            nombre = f"{nombre} (#{id_cliente})"
+        if id_cliente in _DEMO_TELEGRAM_CLIENTES:
+            nombre = f"🟢 DEMO TELEGRAM · {nombre}"
+        return nombre
+
     cid = st.selectbox(
         "Cliente",
         fichas["IdCliente"].tolist(),
-        format_func=lambda i: fichas.loc[fichas["IdCliente"] == i, "NombreCompleto"].iloc[0],
+        format_func=_etiqueta_cliente,
     )
     ficha = fichas[fichas["IdCliente"] == cid].iloc[0].to_dict()
     with st.expander("¿Qué significa cada dato?"):
@@ -426,15 +458,27 @@ with tab_cliente:
     st.markdown(f"**Oferta**  \n{textos['oferta']}")
     st.markdown(f"**Mensaje**  \n{textos['mensaje']}")
 
-    with st.expander("📨 Enviar esta oferta por Telegram"):
+    with st.expander("📨 Enviar esta oferta por Telegram", expanded=cid in _DEMO_TELEGRAM_CLIENTES):
         _icono_tg_cli, _detalle_tg_cli = _estado_telegram()
         st.caption(f"{_icono_tg_cli} {_detalle_tg_cli}")
-        st.caption(
-            "Escribile a **@CasinoPalacioReal_bot** en Telegram y mandale `/start`: "
-            "te responde con tu `chat_id`. Pegalo acá para recibir esta oferta real "
-            "con botones Sí / No."
+        if cid in _DEMO_TELEGRAM_CLIENTES:
+            st.caption(
+                "🟢 Cliente de demo: ya tiene un chat_id real precargado (el de "
+                "quien prueba la app). Tocá \"Enviar oferta por Telegram\" y revisá tu Telegram."
+            )
+        else:
+            st.caption(
+                "Escribile a **@CasinoPalacioReal_bot** en Telegram y mandale `/start`: "
+                "te responde con tu `chat_id`. Pegalo acá para recibir esta oferta real "
+                "con botones Sí / No. En producción, cada cliente real ya tendría su "
+                "chat_id vinculado y esto se enviaría automáticamente desde el panel "
+                "de marketing, sin que nadie lo tipee a mano."
+            )
+        chat_id_input = st.text_input(
+            "Chat_id de Telegram del destinatario",
+            value=_DEMO_TELEGRAM_CLIENTES.get(cid, ""),
+            key=f"telegram_chat_id_{cid}",
         )
-        chat_id_input = st.text_input("Tu chat_id de Telegram", key="telegram_chat_id")
         if st.button("Enviar oferta por Telegram", disabled=not chat_id_input):
             resultado = enviar_oferta(chat_id_input, ficha, id_campana="DEMO-WEB")
             if resultado["enviado"]:
