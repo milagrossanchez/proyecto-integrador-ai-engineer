@@ -217,6 +217,15 @@ optimizador (`optimization/allocate.py::evaluar_recompensas`) las usa para
 calcular el valor esperado de **cada** combinación cliente-recompensa y elegir
 la mejor — en vez de asumir la misma probabilidad sin importar qué se ofrezca.
 
+Cuando está activo el NBO **calibrado** (ver
+[`etapa3_modelo_respuesta_nbo.md`](etapa3_modelo_respuesta_nbo.md)), que sí
+entrena con un grupo de control, `predict_wide()` agrega además
+`UpliftProbability_<tipo>` e `IncrementalExpectedValue_<tipo>`, y el
+optimizador usa ese valor incremental (causal) como criterio de decisión en
+vez del valor esperado bruto — para no premiar a un cliente que
+probablemente habría vuelto igual sin campaña. Con el NBO V1 de esta sección
+(sin brazo de control) no hay ese concepto y el comportamiento no cambia.
+
 ### 3.4 Reemplazo por datos reales
 
 En cuanto existan resultados reales de campañas (ver la sección de

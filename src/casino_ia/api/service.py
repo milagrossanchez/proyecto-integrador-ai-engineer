@@ -28,6 +28,8 @@ _COLUMNAS_LISTADO = [
     "Recompensa",
     "Costo",
     "ValorEsperado",
+    "ValorEsperadoBruto",
+    "UpliftProbabilidad",
     "Asignada",
     "MotivoDecision",
     "EsPerfilAtipico",
@@ -59,7 +61,9 @@ _COLUMNAS_FICHA = [
     "Recompensa",
     "Costo",
     "ValorIncremental",
+    "UpliftProbabilidad",
     "ValorEsperado",
+    "ValorEsperadoBruto",
     "Asignada",
     "MotivoDecision",
 ]

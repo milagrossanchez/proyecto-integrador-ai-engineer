@@ -499,6 +499,16 @@ class ModeloRespuestaNBOCalibrado:
         return result
 
     def predict_wide(self, features: pd.DataFrame) -> pd.DataFrame:
+        """Formato ancho que consume el optimizador (`allocate.py`).
+
+        Además de `ProbRespuesta_<tipo>` / `ValorIncremental_<tipo>` /
+        `ValorEsperado_<tipo>` (compatibles con el NBO V1 semi-sintético),
+        expone `UpliftProbability_<tipo>` e `IncrementalExpectedValue_<tipo>`:
+        el beneficio incremental causal — (P(respuesta|recompensa) -
+        P(respuesta|control)) × valor - costo — que evita premiar a quien
+        probablemente habría vuelto sin campaña. `ControlProbability` no
+        depende del tipo de recompensa, así que se expone una sola vez.
+        """
         options = self.predict_options(features)
         renamed = options.rename(
             columns={
@@ -510,10 +520,19 @@ class ModeloRespuestaNBOCalibrado:
         wide = renamed.pivot(
             index="IdCliente",
             columns="RewardType",
-            values=["ProbRespuesta", "ValorIncremental", "ValorEsperado"],
+            values=[
+                "ProbRespuesta",
+                "ValorIncremental",
+                "ValorEsperado",
+                "UpliftProbability",
+                "IncrementalExpectedValue",
+            ],
         )
         wide.columns = [f"{metric}_{reward}" for metric, reward in wide.columns]
-        return wide.reset_index()
+        wide = wide.reset_index()
+        control = renamed.groupby("IdCliente")["ControlProbability"].first()
+        wide = wide.merge(control, on="IdCliente", validate="one_to_one")
+        return wide
 
     def save(self, path: str | Path) -> None:
         joblib.dump(self, path)

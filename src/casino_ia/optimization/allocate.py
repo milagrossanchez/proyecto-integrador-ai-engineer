@@ -47,6 +47,8 @@ _COLUMNAS_DECISION = [
     "Costo",
     "ValorIncremental",
     "ValorEsperado",
+    "ValorEsperadoBruto",
+    "UpliftProbabilidad",
     "Eficiencia",
     "GastoAcumulado",
     "Asignada",
@@ -82,6 +84,17 @@ def evaluar_recompensas(
     V2 se reconoce por las columnas ``ProbRespuesta_<tipo>`` y
     ``ValorIncremental_<tipo>``. Si no existen, se conserva el comportamiento V1
     con una probabilidad única y el uplift derivado de las features del cliente.
+
+    Cuando el modelo NBO calibrado publicó además
+    ``IncrementalExpectedValue_<tipo>`` (beneficio incremental causal:
+    uplift de respuesta × valor − costo, ver ``response_nbo_calibrated.py``),
+    ese valor reemplaza a ``prob × valor − costo`` como ``ValorEsperado`` y,
+    por lo tanto, como criterio de ranking (``Eficiencia``). Esto evita premiar
+    a un cliente que probablemente habría vuelto sin campaña: se prioriza la
+    ganancia atribuible a la recompensa, no la probabilidad bruta de
+    respuesta. ``ValorEsperadoBruto`` conserva el cálculo anterior para
+    comparación/trazabilidad y ``UpliftProbabilidad`` queda disponible cuando
+    existe.
     """
 
     costos = costos or REWARDS.costo
@@ -91,12 +104,20 @@ def evaluar_recompensas(
         for recompensa in permitidas:
             columna_prob = f"ProbRespuesta_{recompensa}"
             columna_valor = f"ValorIncremental_{recompensa}"
+            columna_incremental = f"IncrementalExpectedValue_{recompensa}"
+            columna_uplift = f"UpliftProbability_{recompensa}"
             prob = float(cliente.get(columna_prob, cliente.get("ProbRespuesta", 0.0)))
             valor_incremental = float(
                 cliente.get(columna_valor, _uplift_valor(cliente))
             )
             costo = float(costos[recompensa])
-            valor_esperado = prob * valor_incremental - costo
+            valor_esperado_bruto = prob * valor_incremental - costo
+
+            incremental = cliente.get(columna_incremental)
+            uplift = cliente.get(columna_uplift)
+            tiene_causal = incremental is not None and not pd.isna(incremental)
+            valor_esperado = float(incremental) if tiene_causal else valor_esperado_bruto
+
             filas.append(
                 {
                     "IdCliente": cliente["IdCliente"],
@@ -105,6 +126,12 @@ def evaluar_recompensas(
                     "ValorIncremental": round(valor_incremental, 4),
                     "Costo": costo,
                     "ValorEsperado": round(valor_esperado, 2),
+                    "ValorEsperadoBruto": round(valor_esperado_bruto, 2),
+                    "UpliftProbabilidad": (
+                        round(float(uplift), 4)
+                        if uplift is not None and not pd.isna(uplift)
+                        else None
+                    ),
                     "Eficiencia": round(valor_esperado / costo, 3),
                 }
             )
@@ -117,6 +144,8 @@ def evaluar_recompensas(
             "ValorIncremental",
             "Costo",
             "ValorEsperado",
+            "ValorEsperadoBruto",
+            "UpliftProbabilidad",
             "Eficiencia",
         ],
     )
@@ -160,6 +189,8 @@ def asignar_recompensas(
             "Costo": 0.0,
             "ValorIncremental": None,
             "ValorEsperado": None,
+            "ValorEsperadoBruto": None,
+            "UpliftProbabilidad": None,
             "Eficiencia": None,
             "GastoAcumulado": None,
             "Asignada": False,
@@ -190,6 +221,8 @@ def asignar_recompensas(
         decision["ProbRespuesta"] = mejor["ProbRespuesta"]
         decision["ValorIncremental"] = mejor["ValorIncremental"]
         decision["ValorEsperado"] = mejor["ValorEsperado"]
+        decision["ValorEsperadoBruto"] = mejor["ValorEsperadoBruto"]
+        decision["UpliftProbabilidad"] = mejor["UpliftProbabilidad"]
         decision["Eficiencia"] = mejor["Eficiencia"]
         if mejor["ValorEsperado"] <= 0:
             decision["MotivoDecision"] = "Sin recompensa: valor esperado no positivo"

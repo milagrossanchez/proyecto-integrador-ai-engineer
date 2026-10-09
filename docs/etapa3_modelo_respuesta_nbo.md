@@ -61,3 +61,34 @@ Este modelo es adecuado para demostrar y probar el optimizador. Debe reemplazars
 o recalibrarse cuando existan campañas reales del casino con tratamiento, costo,
 respuesta y ventana de atribución documentados.
 
+## Integración causal con el optimizador
+
+`IncrementalExpectedValue` y `UpliftProbability` ya se calculaban en
+`predict_options()`, pero `predict_wide()` solo exponía `ProbRespuesta`,
+`ValorIncremental` y `ValorEsperado` (el `ExpectedValue` bruto,
+`P(respuesta) × valor − costo`) — el optimizador nunca llegaba a verlos.
+
+`predict_wide()` ahora también pivota `UpliftProbability_<tipo>` e
+`IncrementalExpectedValue_<tipo>` por recompensa, más `ControlProbability`
+(constante por cliente). `evaluar_recompensas()` (`optimization/allocate.py`)
+usa `IncrementalExpectedValue_<tipo>` como `ValorEsperado` —y por lo tanto
+como criterio de `Eficiencia`/ranking— cuando esas columnas existen; conserva
+el cálculo bruto en `ValorEsperadoBruto` solo para comparación. Sin esas
+columnas (NBO V1 semi-sintético, sin brazo de control) el comportamiento es
+idéntico al anterior: no hay regresión para el modelo V1.
+
+Con datos reales (presupuesto S/ 15 000): 492 clientes asignados con el
+criterio causal, frente a los que resultarían de rankear por `ProbRespuesta ×
+valor − costo` sin restar el control — la diferencia son clientes que el
+NBO calibrado estima que habrían respondido casi igual sin campaña (poco
+uplift), aunque su probabilidad bruta fuera alta.
+
+**Pendiente (fuera de alcance de esta iteración):** el modelo sigue siendo un
+hurdle de dos etapas simple sobre `Responded` binario dentro de la campaña
+simulada, no sobre ventanas de retorno observables (7/14/30 días), no modela
+`DaysToReturn` con supervivencia/censura, y el uplift es la diferencia de dos
+modelos de probabilidad (enfoque tipo two-model/T-learner), no un
+T/S/X-learner o doubly-robust learner dedicado, ni se evalúa con Qini/AUUC.
+Son extensiones razonables para una siguiente iteración con campañas reales,
+no una limitación oculta de lo que aquí se reporta.
+

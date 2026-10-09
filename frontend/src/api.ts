@@ -10,6 +10,8 @@ export type ClientRow = {
   Recompensa: string | null
   Costo: number
   ValorEsperado: number | null
+  ValorEsperadoBruto: number | null
+  UpliftProbabilidad: number | null
   Asignada: boolean
   MotivoDecision: string
   EsPerfilAtipico: boolean

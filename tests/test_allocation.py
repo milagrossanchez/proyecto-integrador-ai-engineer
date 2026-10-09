@@ -237,6 +237,80 @@ def test_v2_riesgo_medio_ignora_opciones_media_y_alta():
     assert decision["ValorEsperado"] == 35.0
 
 
+def test_v2_usa_valor_incremental_causal_cuando_esta_disponible():
+    """El ranking debe priorizar el beneficio incremental (uplift x valor -
+    costo), no la probabilidad bruta: un cliente que probablemente volvería
+    igual (poco uplift) no debe ganarle a uno con menor probabilidad bruta
+    pero mayor ganancia atribuible a la campaña."""
+    scoring = pd.DataFrame(
+        {
+            "IdCliente": [1],
+            "Segmento": ["VIP"],
+            "NivelRiesgo": ["Bajo"],
+            "ProbRespuesta": [0.5],
+            "ProbRespuesta_baja": [0.9],
+            "ProbRespuesta_media": [0.6],
+            "ProbRespuesta_alta": [0.5],
+            "ValorIncremental_baja": [100.0],
+            "ValorIncremental_media": [100.0],
+            "ValorIncremental_alta": [100.0],
+            # "baja" tiene la mayor probabilidad y valor_esperado_bruto más alto,
+            # pero casi no hay uplift (el cliente volvería igual sin campaña):
+            "UpliftProbability_baja": [0.02],
+            "UpliftProbability_media": [0.35],
+            "UpliftProbability_alta": [0.05],
+            "IncrementalExpectedValue_baja": [0.02 * 100.0 - 5.0],
+            "IncrementalExpectedValue_media": [0.35 * 100.0 - 15.0],
+            "IncrementalExpectedValue_alta": [0.05 * 100.0 - 40.0],
+            "ValorTeoricoCasa": [1_000],
+            "NroSesiones": [10],
+            "RatioTendenciaCoinIn": [1.0],
+        }
+    )
+    decision = asignar_recompensas(
+        scoring,
+        presupuesto=100,
+        max_fraccion_altas=1.0,
+        max_fraccion_segmento=1.0,
+    ).iloc[0]
+    assert decision["Recompensa"] == "media"
+    assert decision["ValorEsperado"] == pytest.approx(20.0)
+    assert decision["ValorEsperadoBruto"] == pytest.approx(0.6 * 100.0 - 15.0)
+    assert decision["UpliftProbabilidad"] == pytest.approx(0.35)
+
+
+def test_v2_sin_columnas_causales_mantiene_comportamiento_anterior():
+    """Sin IncrementalExpectedValue_<tipo> (NBO V1 semi-sintético), el ranking
+    sigue usando prob x valor - costo, igual que antes de este cambio."""
+    scoring = pd.DataFrame(
+        {
+            "IdCliente": [1],
+            "Segmento": ["VIP"],
+            "NivelRiesgo": ["Bajo"],
+            "ProbRespuesta": [0.5],
+            "ProbRespuesta_baja": [0.4],
+            "ProbRespuesta_media": [0.8],
+            "ProbRespuesta_alta": [0.9],
+            "ValorIncremental_baja": [30.0],
+            "ValorIncremental_media": [100.0],
+            "ValorIncremental_alta": [50.0],
+            "ValorTeoricoCasa": [1_000],
+            "NroSesiones": [10],
+            "RatioTendenciaCoinIn": [1.0],
+        }
+    )
+    decision = asignar_recompensas(
+        scoring,
+        presupuesto=100,
+        max_fraccion_altas=1.0,
+        max_fraccion_segmento=1.0,
+    ).iloc[0]
+    assert decision["Recompensa"] == "media"
+    assert decision["ValorEsperado"] == 65.0
+    assert decision["ValorEsperadoBruto"] == 65.0
+    assert decision["UpliftProbabilidad"] is None
+
+
 def test_etapa4_rechaza_opciones_nbo_incompletas():
     options = pd.DataFrame(
         {

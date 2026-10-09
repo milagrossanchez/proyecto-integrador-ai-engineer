@@ -96,7 +96,9 @@ _DICCIONARIO_CARTERA = [
     ("Recompensa", "Tipo elegido por el optimizador: baja, media o alta — o vacío si no se le asigna nada."),
     ("Costo", "Lo que cuesta esa recompensa (parámetro de negocio: alta S/40, media S/15, baja S/5)."),
     ("ValorIncremental", "Cuánto gana el casino si el cliente responde a esa recompensa (salida del modelo de valor)."),
-    ("ValorEsperado", "ProbRespuesta × ValorIncremental − Costo. Solo se asignan recompensas con este valor positivo."),
+    ("UpliftProbabilidad", "ProbRespuesta con la recompensa menos ProbRespuesta en un grupo de control (sin campaña). Mide cuánto de la respuesta es atribuible a la campaña y no algo que iba a pasar igual. Solo disponible con el NBO calibrado (V2)."),
+    ("ValorEsperado", "Beneficio incremental: UpliftProbabilidad × ValorIncremental − Costo cuando hay NBO calibrado (V2); si no, ProbRespuesta × ValorIncremental − Costo (V1). Es el criterio de ranking del optimizador — evita premiar a quien habría vuelto igual sin campaña."),
+    ("ValorEsperadoBruto", "ProbRespuesta × ValorIncremental − Costo, sin restar el escenario de control. Se muestra solo para comparar contra ValorEsperado; el optimizador NO decide con este campo."),
     ("Eficiencia", "ValorEsperado ÷ Costo: retorno por cada sol invertido. Es el criterio de orden para repartir el presupuesto."),
     ("GastoAcumulado", "Suma acumulada del costo recorriendo la lista ordenada por Eficiencia, hasta ese cliente — marca dónde se corta el presupuesto."),
     ("Asignada", "True/False — si entró dentro del presupuesto y los topes (25% en recompensas altas, 40% por segmento)."),
@@ -339,6 +341,7 @@ with tab_cartera:
                 "Recompensa",
                 "Costo",
                 "ValorIncremental",
+                "UpliftProbabilidad",
                 "ValorEsperado",
                 "Eficiencia",
                 "GastoAcumulado",
@@ -362,7 +365,9 @@ with tab_cliente:
         "Costo",
         "ProbRespuesta",
         "ValorIncremental",
+        "UpliftProbabilidad",
         "ValorEsperado",
+        "ValorEsperadoBruto",
         "Asignada",
         "MotivoDecision",
     ]
@@ -387,9 +392,12 @@ with tab_cliente:
     c4.metric("CoinIn total", f"S/ {ficha['CoinInTotal']:,.0f}")
     if ficha.get("EsPerfilAtipico"):
         st.caption("⚠️ Marcado como perfil atípico por el detector de anomalías (IsolationForest).")
+    uplift = ficha.get("UpliftProbabilidad")
+    uplift_valido = uplift is not None and isinstance(uplift, (int, float)) and uplift == uplift
     st.caption(
         f"**Decisión del optimizador:** {ficha.get('MotivoDecision') or '—'}"
         + (f" · recompensa **{ficha['Recompensa']}**" if ficha.get("Recompensa") else "")
+        + (f" · uplift de respuesta vs. control: **{uplift:+.1%}**" if uplift_valido else "")
     )
 
     with st.spinner("Generando explicación..."):
