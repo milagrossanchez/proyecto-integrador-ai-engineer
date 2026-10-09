@@ -7,8 +7,8 @@ Esta revisión comprueba el repositorio y la aplicación local, no una suscripci
 
 ## Cuánto está aplicado
 
-Se agruparon los requisitos en **22 capacidades**: **6 implementadas en el
-prototipo, 4 parciales y 12 pendientes**. No es un porcentaje de avance del
+Se agruparon los requisitos en **22 capacidades**: **7 implementadas en el
+prototipo, 3 parciales y 12 pendientes**. No es un porcentaje de avance del
 proyecto: las capacidades tienen esfuerzos y criterios de aceptación distintos.
 El núcleo local está implementado; la plataforma distribuida de producción todavía no.
 
@@ -21,7 +21,7 @@ El núcleo local está implementado; la plataforma distribuida de producción to
 | 5. Explicaciones y mensajes | Implementada local | `genai/explainer.py`: integración LLM, controles y plantillas de respaldo. La existencia de configuración no verifica disponibilidad del proveedor. |
 | 6. Panel interno y chat flotante | Implementada local | `app/streamlit_app.py`: Cartera, Cliente e historial en sesión. Panel corregido con fondo opaco y contraste; no equivale al frontend público. |
 | 7. Servicio compartido de chat | Parcial | Web y Telegram reutilizan `AsistentePoliticas`; son llamadas a la misma clase, no un servicio de API independiente. Recupera documentos con TF-IDF; faltan embeddings/índice vectorial y consultas autorizadas a cartera. |
-| 8. Canal Telegram | Parcial | `genai/telegram_bot.py`: envío y procesamiento de mensajes/botones, con modo dry-run. Faltan endpoint HTTPS, validación del secreto, vinculación de identidad y persistencia de eventos pendientes. |
+| 8. Canal Telegram | Implementada local | `genai/telegram_bot.py` + `scripts/run_telegram_bot.py`: bot real conectado (@CasinoPalacioReal_bot), escucha por *long polling* (no webhook), envía ofertas con botones Sí/No y responde texto libre con el mismo RAG de la web. Para producción falta: endpoint HTTPS con webhook, validación del secreto, vinculación de identidad (IdCliente↔chat_id) y persistencia de eventos pendientes (hoy en memoria del proceso). |
 | 9. Resultados y métricas reales | Parcial | `metrics/respuesta_real.py`: Parquet y métricas de respuesta/calibración. Faltan tabla SQL, concurrencia, costos/ROI, vencimiento de ofertas y medición del resultado económico real. |
 | 10. Validación y pruebas | Parcial | `tests/` y métricas guardadas. Faltan pruebas de carga, integración de todos los canales, evaluación formal del RAG y validación temporal sin fuga para todos los modelos. |
 | 11. Frontend público React/Next.js | Pendiente | No hay proyecto frontend ni integración por API. Streamlit sigue siendo la interfaz. |
@@ -45,10 +45,13 @@ Las rutas de módulos Python de la tabla son relativas a `src/casino_ia/`.
   `rag/`; no recibe la tabla de clientes ni el historial de ofertas. Tampoco
   pasa el historial conversacional al LLM. La interfaz ya describe únicamente
   sus consultas sobre políticas y recompensas.
-- **No hay webhook de Telegram:** `TELEGRAM_WEBHOOK_SECRET` está configurado,
-  pero no existe un endpoint que lo valide. Los pendientes se guardan en un
-  diccionario por chat: se pierden al reiniciar y una segunda oferta sustituye
-  la referencia anterior. Hace falta identificar cada oferta en el botón y
+- **Telegram corre por polling, no por webhook:** `scripts/run_telegram_bot.py`
+  consulta `getUpdates` en un bucle — funciona para la demo y no depende de
+  una URL pública estable, pero no es el diseño de producción (webhook HTTPS
+  + `TELEGRAM_WEBHOOK_SECRET`, que está configurado pero sin endpoint que lo
+  valide). Los eventos pendientes se guardan en un diccionario en memoria del
+  proceso: se pierden al reiniciarlo y una segunda oferta sustituye la
+  referencia anterior. Hace falta identificar cada oferta en el botón y
   procesar respuestas de forma persistente e idempotente.
 - **El dataset real no sustituye directamente al simulado:** el registro
   guarda `ValorGenerado` y predicciones; NBO exige `ValorIncremental` y las

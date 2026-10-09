@@ -3,6 +3,10 @@
 solo el flujo principal numerado) + iconos dibujados a mano (sin depender de
 fuentes emoji, para que el PNG se vea igual en cualquier maquina).
 
+Estilo corporativo: una sola paleta de marca (navy + dorado) en vez de un
+color distinto por zona, para que se lea como un diagrama de arquitectura
+de consultoria, no como un mockup de producto.
+
 Salida: docs/img/arquitectura_produccion.png (referenciado desde
 docs/arquitectura_produccion.md). Regenerar con:
     python scripts/generar_diagrama_produccion.py
@@ -19,9 +23,9 @@ from matplotlib.patches import (FancyBboxPatch, FancyArrowPatch, Rectangle,
 ROOT = Path(__file__).resolve().parents[1]
 
 NAVY, GOLD, CREAM, WHITE, INK, MUT = (
-    "#0B1C3D", "#C9A24B", "#F7F4EC", "#FFFFFF", "#1D2233", "#767A86")
-Z_CANAL, Z_RED, Z_APP, Z_PROC, Z_DATA, Z_CROSS = (
-    "#15213F", "#51607A", "#2C6E68", "#8A5A2B", "#2B557C", "#9C3B31")
+    "#0B1C3D", "#B8923F", "#F5F3EE", "#FFFFFF", "#1D2233", "#6B6F7A")
+SLATE = "#3C4A63"      # color unico de zona (en vez de uno distinto por banda)
+Z_CROSS = "#8C3A32"    # unico color semantico adicional: guardrail / riesgo
 
 W = 26  # ancho fijo del lienzo
 fig, ax = plt.subplots(figsize=(W, 24), dpi=160)
@@ -89,10 +93,6 @@ def ic_bubble(cx, cy, s, c):
                  boxstyle=f"round,pad=0,rounding_size={s*.2}", facecolor=c, zorder=9))
     ax.add_patch(Polygon([(cx-s*.2, cy-s*.28), (cx-s*.35, cy-s*.58), (cx+s*.05, cy-s*.28)],
                  closed=True, facecolor=c, zorder=9))
-
-def ic_paperplane(cx, cy, s, c):
-    ax.add_patch(Polygon([(cx-s*.55, cy-s*.35), (cx+s*.6, cy), (cx-s*.55, cy+s*.35),
-                 (cx-s*.2, cy)], closed=True, facecolor=c, zorder=9))
 
 def ic_layers(cx, cy, s, c):
     for i, dy in enumerate((-.32, 0, .32)):
@@ -164,46 +164,49 @@ def ic_warn(cx, cy, s, c):
     ax.plot([cx, cx], [cy+s*.15, cy-s*.1], color=c, lw=s*5, zorder=9, solid_capstyle="round")
     ax.add_patch(Circle((cx, cy-s*.28), s*.045, facecolor=c, zorder=9))
 
+def ic_paperplane(cx, cy, s, c):
+    ax.add_patch(Polygon([(cx-s*.55, cy-s*.35), (cx+s*.6, cy), (cx-s*.55, cy+s*.35),
+                 (cx-s*.2, cy)], closed=True, facecolor=c, zorder=9))
+
 
 # ============================================================ utilidades ==
 def shadow(x, y, w, h, r=0.12):
-    ax.add_patch(FancyBboxPatch((x+0.06, y-0.06), w, h, boxstyle=f"round,pad=0.0,rounding_size={r}",
-                 linewidth=0, facecolor="#000000", alpha=0.07, zorder=1))
+    ax.add_patch(FancyBboxPatch((x+0.045, y-0.045), w, h, boxstyle=f"round,pad=0.0,rounding_size={r}",
+                 linewidth=0, facecolor="#000000", alpha=0.05, zorder=1))
 
-def zone(x, y, w, h, title, color, icon_fn):
-    shadow(x, y, w, h, r=0.18)
-    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.0,rounding_size=0.18",
-                 linewidth=1.4, edgecolor=color, facecolor=WHITE, zorder=2))
-    ax.add_patch(FancyBboxPatch((x, y+h-0.6), w, 0.6, boxstyle="round,pad=0.0,rounding_size=0.18",
+def zone(x, y, w, h, title, icon_fn, color=NAVY):
+    shadow(x, y, w, h, r=0.14)
+    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.0,rounding_size=0.14",
+                 linewidth=1.1, edgecolor="#D9D4C8", facecolor=WHITE, zorder=2))
+    ax.add_patch(FancyBboxPatch((x, y+h-0.6), w, 0.6, boxstyle="round,pad=0.0,rounding_size=0.14",
                  linewidth=0, facecolor=color, zorder=3))
     ax.add_patch(Rectangle((x, y+h-0.6), w, 0.3, facecolor=color, linewidth=0, zorder=3))
-    icon_fn(x+0.42, y+h-0.3, 0.23, WHITE)
-    ax.text(x+0.85, y+h-0.3, title, fontsize=14, fontweight="bold", color=WHITE,
+    icon_fn(x+0.42, y+h-0.3, 0.22, WHITE)
+    ax.text(x+0.85, y+h-0.3, title, fontsize=13.5, fontweight="bold", color=WHITE,
             va="center", ha="left", zorder=4)
 
-def card(x, y, w, h, title, sub, color, icon_fn, fs=10.2, subfs=8.0):
-    shadow(x, y, w, h, r=0.1)
-    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.0,rounding_size=0.1",
-                 linewidth=0, facecolor="#F2F0EA", zorder=3))
-    ax.add_patch(Rectangle((x, y), 0.08, h, facecolor=color, linewidth=0, zorder=4))
-    icon_fn(x+0.42, y+h/2, h*0.3, color)
-    tx0 = x+0.82
+def card(x, y, w, h, title, sub, icon_fn, fs=10.2, subfs=8.0, color=SLATE):
+    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.0,rounding_size=0.08",
+                 linewidth=0, facecolor="#F0EEE7", zorder=3))
+    ax.add_patch(Rectangle((x, y), 0.06, h, facecolor=color, linewidth=0, zorder=4))
+    icon_fn(x+0.4, y+h/2, h*0.28, color)
+    tx0 = x+0.78
     ax.text(tx0, y+h*0.64, title, fontsize=fs, fontweight="bold", color=INK, va="center", ha="left", zorder=5)
     if sub:
         ax.text(tx0, y+h*0.27, sub, fontsize=subfs, color=MUT, va="center", ha="left", zorder=5)
 
-def row_cards(items, y, h, color, icon_fns, x0, x1, gap=0.28):
+def row_cards(items, y, h, icon_fns, x0, x1, gap=0.26, color=SLATE):
     n = len(items)
     w = (x1-x0-gap*(n-1))/n
     for i, (title, sub) in enumerate(items):
-        card(x0+i*(w+gap), y, w, h, title, sub, color, icon_fns[i])
+        card(x0+i*(w+gap), y, w, h, title, sub, icon_fns[i], color=color)
 
 def flow_arrow(cx, y_top, y_bot, label):
-    ax.add_patch(FancyArrowPatch((cx, y_top), (cx, y_bot), arrowstyle="-|>", mutation_scale=22,
-                 color=GOLD, linewidth=3.2, zorder=6, capstyle="round"))
+    ax.add_patch(FancyArrowPatch((cx, y_top), (cx, y_bot), arrowstyle="-|>", mutation_scale=20,
+                 color=GOLD, linewidth=2.6, zorder=6, capstyle="round"))
     my = (y_top+y_bot)/2
-    ax.add_patch(Circle((cx, my), 0.26, facecolor=NAVY, zorder=7))
-    ax.text(cx, my, label, fontsize=11, color=WHITE, ha="center", va="center", fontweight="bold", zorder=8)
+    ax.add_patch(Circle((cx, my), 0.24, facecolor=NAVY, zorder=7))
+    ax.text(cx, my, label, fontsize=10.5, color=WHITE, ha="center", va="center", fontweight="bold", zorder=8)
 
 
 # =============================================================== layout ===
@@ -218,24 +221,24 @@ def place(h):
     cursor += h
     return y
 
-GAP_ZONE = 0.35
-GAP_ARROW = 0.55
+GAP_ZONE = 0.3
+GAP_ARROW = 0.5
 
 # ---- de abajo hacia arriba: Transversal, Datos, Procesamiento, Aplicacion, Red, Clientes
-y_trans = place(1.95)
+y_trans = place(1.9)
 cursor += GAP_ZONE
-y_datos = place(1.95)
+y_datos = place(1.9)
 cursor += GAP_ARROW
 y_proc  = place(4.15)
 cursor += GAP_ARROW
-y_app   = place(1.95)
+y_app   = place(1.9)
 cursor += GAP_ARROW
-y_red   = place(1.95)
+y_red   = place(1.9)
 cursor += GAP_ARROW
-y_cli   = place(1.95)
+y_cli   = place(1.9)
 
 ZONE_TOP = cursor            # tope de la zona 1 (la ultima colocada)
-BANNER_H = 1.15
+BANNER_H = 1.1
 banner_y0 = ZONE_TOP + 0.3
 YLIM_TOP = banner_y0 + BANNER_H + 0.15
 
@@ -245,83 +248,83 @@ ax.set_ylim(0, YLIM_TOP)
 
 # ----- titulo -----
 ax.add_patch(Rectangle((0, banner_y0), W, BANNER_H, facecolor=NAVY, zorder=1, linewidth=0))
-ax.add_patch(Rectangle((0, banner_y0), 0.16, BANNER_H, facecolor=GOLD, zorder=2, linewidth=0))
-ax.text(0.45, banner_y0 + 0.83, "Arquitectura de producción — Casino Palacio Real", fontsize=23,
+ax.add_patch(Rectangle((0, banner_y0), 0.14, BANNER_H, facecolor=GOLD, zorder=2, linewidth=0))
+ax.text(0.45, banner_y0 + 0.8, "Arquitectura de producción", fontsize=23,
         fontweight="bold", color=WHITE, va="center", family="serif")
-ax.text(0.45, banner_y0 + 0.3, "Entorno real con tráfico masivo de clientes · orquestación, Telegram, observabilidad",
+ax.text(0.45, banner_y0 + 0.28, "Casino Palacio Real · entorno con tráfico masivo de clientes",
         fontsize=12, color="#C7D0E4", va="center")
 
 # ----- 1 Clientes -----
-zone(XM, y_cli, X1-XM, 1.95, "1 · CLIENTES Y CANALES", Z_CANAL, ic_phone)
-row_cards([("Cliente del casino", "Telegram, recibe ofertas y responde"),
+zone(XM, y_cli, X1-XM, 1.9, "1 · CLIENTES Y CANALES", ic_phone)
+row_cards([("Cliente del casino", "recibe la oferta y responde por Telegram"),
            ("Operador de marketing", "consultas sobre clientes"),
            ("Piso de juego", "sesiones en vivo, alto volumen"),
            ("Público en general", "web, miles de sesiones concurrentes")],
-          y_cli + 0.32, 1.0, Z_CANAL, [ic_phone, ic_monitor, ic_grid, ic_globe], XM+0.45, X1-0.45)
-flow_arrow(cx_mid, y_cli, y_red + 1.95, "1")
+          y_cli + 0.3, 0.95, [ic_phone, ic_monitor, ic_grid, ic_globe], XM+0.4, X1-0.4)
+flow_arrow(cx_mid, y_cli, y_red + 1.9, "1")
 
 # ----- 2 Red -----
-zone(XM, y_red, X1-XM, 1.95, "2 · RED Y CONECTIVIDAD", Z_RED, ic_shield)
+zone(XM, y_red, X1-XM, 1.9, "2 · RED Y CONECTIVIDAD", ic_shield)
 row_cards([("CDN + WAF", "cachea estáticos, filtra ataques"),
            ("API Gateway", "autenticación, rate limiting"),
            ("Load Balancer", "reparte carga, autoescalado"),
            ("VPN / Private Link", "acceso privado al SQL on-prem")],
-          y_red + 0.32, 1.0, Z_RED, [ic_globe, ic_funnel, ic_scale, ic_key], XM+0.45, X1-0.45)
-flow_arrow(cx_mid, y_red, y_app + 1.95, "2")
+          y_red + 0.3, 0.95, [ic_globe, ic_funnel, ic_scale, ic_key], XM+0.4, X1-0.4)
+flow_arrow(cx_mid, y_red, y_app + 1.9, "2")
 
 # ----- 3 Aplicacion -----
-zone(XM, y_app, X1-XM, 1.95, "3 · APLICACIÓN Y ORQUESTACIÓN", Z_APP, ic_gear)
+zone(XM, y_app, X1-XM, 1.9, "3 · APLICACIÓN Y ORQUESTACIÓN", ic_gear)
 row_cards([("Frontend web", "React / Next.js, reemplaza a Streamlit"),
            ("Orquestador", "FastAPI, coordina todo"),
            ("Servicio de Chat", "RAG + LLM, un único motor"),
            ("Bot de Telegram", "envía oferta, registra respuesta"),
            ("Panel interno", "Streamlit, solo equipo de datos")],
-          y_app + 0.32, 1.0, Z_APP, [ic_window, ic_gear, ic_bubble, ic_paperplane, ic_monitor], XM+0.45, X1-0.45)
+          y_app + 0.3, 0.95, [ic_window, ic_gear, ic_bubble, ic_paperplane, ic_monitor], XM+0.4, X1-0.4)
 flow_arrow(cx_mid, y_app, y_proc + 4.15, "3")
 
 # ----- 4 Procesamiento -----
-zone(XM, y_proc, X1-XM, 4.15, "4 · PROCESAMIENTO ASÍNCRONO Y NÚCLEO ML", Z_PROC, ic_cpu)
+zone(XM, y_proc, X1-XM, 4.15, "4 · PROCESAMIENTO ASÍNCRONO Y NÚCLEO ML", ic_cpu)
 row_cards([("Cola de eventos", "Service Bus / Kafka, tráfico masivo"),
            ("Workers de scoring", "auto-escalables, en paralelo")],
-          y_proc + 2.75, 1.0, Z_PROC, [ic_layers, ic_cpu], XM+3.9, X1-3.9)
+          y_proc + 2.55, 0.95, [ic_layers, ic_cpu], XM+3.9, X1-3.9)
 row_cards([("Modelo de riesgo", "Bajo / Medio / Alto"),
            ("Modelo de respuesta V1", "P(responde)"),
            ("Modelo NBO (V2)", "P y valor por recompensa"),
-           ("Optimizador", "valor esperado − costo")],
-          y_proc + 1.35, 1.0, Z_PROC, [ic_gauge, ic_target, ic_target, ic_funnel], XM+0.45, X1-0.45)
+           ("Optimizador", "beneficio incremental − costo")],
+          y_proc + 1.35, 0.95, [ic_gauge, ic_target, ic_target, ic_funnel], XM+0.4, X1-0.4)
 # franja de guardrail (ancho completo, sin solaparse con nada)
-gy = y_proc + 0.25
-ax.add_patch(FancyBboxPatch((XM+0.45, gy), X1-XM-0.9, 0.85, boxstyle="round,pad=0,rounding_size=0.09",
-             facecolor="#F6E3DF", edgecolor=Z_CROSS, linewidth=1.3, zorder=6))
-ic_warn(XM+1.05, gy+0.42, 0.22, Z_CROSS)
-ax.text(XM+1.5, gy+0.42, "Guardrail duro: un cliente de riesgo Alto no recibe ninguna oferta "
+gy = y_proc + 0.3
+ax.add_patch(FancyBboxPatch((XM+0.4, gy), X1-XM-0.8, 0.8, boxstyle="round,pad=0,rounding_size=0.08",
+             facecolor="#F3E1DC", edgecolor=Z_CROSS, linewidth=1.1, zorder=6))
+ic_warn(XM+1.0, gy+0.4, 0.2, Z_CROSS)
+ax.text(XM+1.45, gy+0.4, "Guardrail duro: un cliente de riesgo Alto no recibe ninguna oferta "
         "y se deriva al protocolo de juego responsable — la regla vive en el optimizador, no en la interfaz.",
-        fontsize=9.3, color=Z_CROSS, va="center", ha="left", fontweight="bold", zorder=7)
-flow_arrow(cx_mid, y_proc, y_datos + 1.95, "4")
+        fontsize=9.1, color=Z_CROSS, va="center", ha="left", fontweight="bold", zorder=7)
+flow_arrow(cx_mid, y_proc, y_datos + 1.9, "4")
 
 # ----- 5 Datos -----
-zone(XM, y_datos, X1-XM, 1.95, "5 · DATOS", Z_DATA, ic_db)
+zone(XM, y_datos, X1-XM, 1.9, "5 · DATOS", ic_db)
 row_cards([("Azure SQL", "réplica productiva"),
            ("Cache (Redis)", "features calientes"),
            ("Vector Store (RAG)", "políticas + guías"),
            ("Data Lake / Blob", "logs, resultados de campaña")],
-          y_datos + 0.32, 1.0, Z_DATA, [ic_db, ic_bolt, ic_cluster, ic_lake], XM+0.45, X1-0.45)
+          y_datos + 0.3, 0.95, [ic_db, ic_bolt, ic_cluster, ic_lake], XM+0.4, X1-0.4)
 
 # ----- Transversal -----
-zone(XM, y_trans, X1-XM, 1.95, "TRANSVERSAL — en todas las capas", Z_CROSS, ic_shield)
+zone(XM, y_trans, X1-XM, 1.9, "TRANSVERSAL — en todas las capas", ic_shield)
 row_cards([("Seguridad", "Key Vault, IAM, cifrado"),
            ("Logs y observabilidad", "Application Insights / ELK"),
            ("Resultados de campaña", "oferta, respuesta real, reentrenamiento")],
-          y_trans + 0.32, 1.0, Z_CROSS, [ic_key, ic_doc, ic_loop], XM+0.45, X1-0.45)
+          y_trans + 0.3, 0.95, [ic_key, ic_doc, ic_loop], XM+0.4, X1-0.4)
 
 # lazo de reentrenamiento: Resultados de campaña -> Modelo NBO, por el margen derecho
 fx = X1 - 0.15
-y_nbo = y_proc + 1.35 + 0.5
-ax.plot([X1 - 0.95, fx, fx, X1 - 0.95], [y_trans + 0.82, y_trans + 0.82, y_nbo, y_nbo],
-        color=GOLD, linewidth=2.6, zorder=6, solid_capstyle="round")
-ax.add_patch(FancyArrowPatch((fx, y_nbo), (X1 - 0.95, y_nbo), arrowstyle="-|>", mutation_scale=16,
-             color=GOLD, linewidth=2.6, zorder=6))
-ax.text(fx + 0.2, (y_trans + y_nbo) / 2, "reentrena con respuestas reales", fontsize=8.8, color="#8A6A20",
+y_nbo = y_proc + 1.35 + 0.48
+ax.plot([X1 - 0.9, fx, fx, X1 - 0.9], [y_trans + 0.78, y_trans + 0.78, y_nbo, y_nbo],
+        color=GOLD, linewidth=2.2, zorder=6, solid_capstyle="round")
+ax.add_patch(FancyArrowPatch((fx, y_nbo), (X1 - 0.9, y_nbo), arrowstyle="-|>", mutation_scale=14,
+             color=GOLD, linewidth=2.2, zorder=6))
+ax.text(fx + 0.18, (y_trans + y_nbo) / 2, "reentrena con respuestas reales", fontsize=8.6, color="#8A6A20",
         fontweight="bold", ha="left", va="center", rotation=90)
 
 out = ROOT / "docs" / "img" / "arquitectura_produccion.png"

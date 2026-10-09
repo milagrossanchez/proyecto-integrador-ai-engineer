@@ -13,6 +13,7 @@ import streamlit as st
 from casino_ia import config
 from casino_ia.data import cargar_features_cliente
 from casino_ia.genai import AsistentePoliticas, explicar_cliente
+from casino_ia.genai.telegram_bot import enviar_oferta
 from casino_ia.models import (
     ModeloRespuesta,
     ModeloRespuestaNBO,
@@ -72,6 +73,23 @@ def _estado_llm() -> tuple[str, str]:
         return "🟢", f"Conectada ({config.LLM.model})"
     except Exception as exc:  # noqa: BLE001
         return "🔴", f"Clave inválida o sin acceso ({type(exc).__name__}) — modo plantilla"
+
+
+@st.cache_resource
+def _estado_telegram() -> tuple[str, str]:
+    """Igual que `_estado_llm`: prueba una vez por sesión si el bot responde
+    de verdad (`getMe`), no solo si hay token configurado."""
+    if not config.TELEGRAM.enabled:
+        return "⚪", "Sin configurar (falta TELEGRAM_BOT_TOKEN) — modo dry-run"
+    try:
+        import requests
+
+        r = requests.get(config.TELEGRAM.api_url("getMe"), timeout=10)
+        r.raise_for_status()
+        username = r.json()["result"]["username"]
+        return "🟢", f"Conectado (@{username})"
+    except Exception as exc:  # noqa: BLE001
+        return "🔴", f"Token inválido o sin acceso ({type(exc).__name__}) — modo dry-run"
 
 
 @st.cache_data(show_spinner=False)
@@ -274,6 +292,8 @@ with st.sidebar:
     st.markdown("**IA generativa**")
     _icono_llm, _detalle_llm = _estado_llm()
     st.caption(f"{_icono_llm} {_detalle_llm}")
+    _icono_tg, _detalle_tg = _estado_telegram()
+    st.caption(f"{_icono_tg} Telegram: {_detalle_tg}")
     st.divider()
     st.caption(
         "Guardrail: los clientes de **riesgo alto** quedan excluidos de toda "
@@ -405,6 +425,22 @@ with tab_cliente:
     st.markdown(f"**Explicación**  \n{textos['explicacion']}")
     st.markdown(f"**Oferta**  \n{textos['oferta']}")
     st.markdown(f"**Mensaje**  \n{textos['mensaje']}")
+
+    with st.expander("📨 Enviar esta oferta por Telegram"):
+        _icono_tg_cli, _detalle_tg_cli = _estado_telegram()
+        st.caption(f"{_icono_tg_cli} {_detalle_tg_cli}")
+        st.caption(
+            "Escribile a **@CasinoPalacioReal_bot** en Telegram y mandale `/start`: "
+            "te responde con tu `chat_id`. Pegalo acá para recibir esta oferta real "
+            "con botones Sí / No."
+        )
+        chat_id_input = st.text_input("Tu chat_id de Telegram", key="telegram_chat_id")
+        if st.button("Enviar oferta por Telegram", disabled=not chat_id_input):
+            resultado = enviar_oferta(chat_id_input, ficha, id_campana="DEMO-WEB")
+            if resultado["enviado"]:
+                st.success("Oferta enviada — revisá tu Telegram.")
+            else:
+                st.warning(f"No se envió: {resultado['motivo']}")
 
 # -------------------------------------------------- asistente (flotante) --
 # Vive fuera de las pestañas: no está "dentro" de Cartera ni de Cliente, así

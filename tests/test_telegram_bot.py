@@ -1,16 +1,33 @@
-"""Pruebas del canal de Telegram en modo dry-run (sin TELEGRAM_BOT_TOKEN)."""
+"""Pruebas del canal de Telegram en modo dry-run (sin TELEGRAM_BOT_TOKEN).
+
+Fuerzan dry-run explícitamente vía monkeypatch: este proyecto sí tiene un
+TELEGRAM_BOT_TOKEN real en .env para la demo en vivo (ver
+scripts/run_telegram_bot.py), así que estas pruebas no pueden depender de
+que el token esté ausente — de lo contrario llamarían a la API real de
+Telegram con chat_ids falsos.
+"""
 
 import sys
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from casino_ia.config import TELEGRAM
+from casino_ia.config import TelegramConfig
 from casino_ia.genai import telegram_bot as tb
 
 
+@pytest.fixture(autouse=True)
+def _forzar_dry_run(monkeypatch):
+    monkeypatch.setattr(tb, "TELEGRAM", TelegramConfig(bot_token="", webhook_secret=""))
+
+
 def test_dry_run_activo_sin_token():
-    assert TELEGRAM.enabled is False  # entorno de test: sin token configurado
+    # No depende de si el entorno local tiene TELEGRAM_BOT_TOKEN en .env
+    # (en este proyecto sí lo tiene, para la demo en vivo): construye la
+    # config explícitamente vacía, como en un entorno sin credenciales.
+    assert TelegramConfig(bot_token="", webhook_secret="").enabled is False
 
 
 def test_enviar_oferta_riesgo_alto_no_envia():

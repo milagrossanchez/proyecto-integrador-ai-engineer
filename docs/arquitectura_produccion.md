@@ -8,8 +8,8 @@ El documento [`arquitectura.md`](arquitectura.md) describe el **prototipo**
 (lo que corre hoy en una laptop, con Streamlit y SQL Server local). Este
 documento describe cómo se vería el mismo sistema en un **entorno real de
 casino con tráfico masivo de clientes**: con orquestador, mensajería
-asíncrona, Telegram, logs centralizados y las piezas de red que hacen falta
-para que aguante carga de verdad.
+asíncrona, Telegram por webhook, logs centralizados y las piezas de red que
+hacen falta para que aguante carga de verdad.
 
 ![Arquitectura de producción](img/arquitectura_produccion.png)
 
@@ -26,7 +26,7 @@ para que aguante carga de verdad.
 | Un script Python llama a los modelos en secuencia | **Orquestador** (FastAPI / Azure Functions) que coordina modelos, optimizador y notificaciones vía API |
 | Sin cola: todo es síncrono | **Cola de eventos** (Azure Service Bus / Kafka) + **workers de scoring autoescalables** para absorber el tráfico masivo del piso de juego |
 | SQL Server local, sin caché | **Azure SQL** (réplica de lectura) + **Redis** para features de alta frecuencia con baja latencia |
-| Sin canal de notificación al cliente | **Bot de Telegram**: envía la oferta y captura la respuesta |
+| Telegram por *long polling* (`scripts/run_telegram_bot.py`) | **Bot de Telegram por webhook HTTPS**: envía la oferta y captura la respuesta, sin un proceso dedicado consultando la API cada pocos segundos |
 | Chat solo en la pestaña "Asistente" de la web | **Un único servicio de Chat (RAG + LLM)** compartido por el widget flotante de la web, Telegram y las consultas del operador de marketing |
 | Sin logs centralizados | **Application Insights / ELK** con tracing de cada request |
 | Etiquetas de respuesta simuladas | **Tabla de resultados de campaña real** que alimenta el reentrenamiento periódico |
@@ -89,16 +89,21 @@ bajo carga alta.
 
 ## 6. Telegram: notificación de la recompensa y captura de la respuesta
 
-Implementado como prototipo funcional (modo *dry-run* sin credenciales) en
-[`src/casino_ia/genai/telegram_bot.py`](../src/casino_ia/genai/telegram_bot.py):
+Hoy conectado en vivo (bot real `@CasinoPalacioReal_bot`), implementado en
+[`src/casino_ia/genai/telegram_bot.py`](../src/casino_ia/genai/telegram_bot.py)
+y escuchado en la demo por
+[`scripts/run_telegram_bot.py`](../scripts/run_telegram_bot.py) (*long
+polling*, sin necesidad de una URL pública estable):
 
 - **`enviar_oferta(chat_id, ficha)`** — el orquestador la llama cuando el
   optimizador asignó una recompensa. Envía el mensaje (generado por
   `genai.explainer`, el mismo texto que se ve en la web) con dos botones:
   *"Sí, me interesa"* / *"No, gracias"*. Registra el evento como **pendiente**
-  en la tabla de resultados.
-- **`procesar_actualizacion(update)`** — la llama el webhook por cada evento
-  de Telegram:
+  en la tabla de resultados. En la demo se dispara manualmente desde la
+  pestaña "Cliente" de la web, pegando el `chat_id` que el bot entrega al
+  escribirle `/start`.
+- **`procesar_actualizacion(update)`** — procesa cada evento entrante
+  (en producción, vía webhook; hoy, vía el bucle de polling):
   - **Botón tocado** → respuesta estructurada, cierra el evento pendiente con
     el desenlace real (sí/no).
   - **Texto libre** → se delega al mismo `AsistentePoliticas` (RAG) del
@@ -107,8 +112,14 @@ Implementado como prototipo funcional (modo *dry-run* sin credenciales) en
     consultar sobre un cliente puntual.
 
 Sin `TELEGRAM_BOT_TOKEN`, el módulo arma los mensajes y los loguea sin llamar
-a la API real — se puede probar y demostrar sin depender de un bot desplegado
-(ver `tests/test_telegram_bot.py`).
+a la API real — el *dry-run* se sigue usando en los tests (ver
+`tests/test_telegram_bot.py`), para no depender de credenciales ni de red.
+
+**Pendiente para producción:** migrar de polling a webhook HTTPS detrás del
+API Gateway, validar `TELEGRAM_WEBHOOK_SECRET` en el endpoint, vincular
+`IdCliente` ↔ `chat_id` de forma persistente (hoy el mapeo es manual, pegado
+en la web) y mover los eventos pendientes de un diccionario en memoria a la
+tabla de resultados (ver `docs/estado_arquitectura.md`).
 
 ## 7. El chatbot: un único motor, tres puntos de entrada
 
