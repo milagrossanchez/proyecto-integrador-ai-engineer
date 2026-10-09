@@ -126,6 +126,21 @@ streamlit run src/casino_ia/app/streamlit_app.py
 Si no hay conexión a SQL Server, el pipeline usa como *fallback* el CSV de
 `data/raw/` y las vistas se replican en pandas.
 
+### Canal de Telegram (opcional)
+
+Con `TELEGRAM_BOT_TOKEN` en `.env` (se obtiene hablando con
+[@BotFather](https://t.me/BotFather) en Telegram), el chatbot y la
+notificación de ofertas también funcionan por Telegram:
+
+```bash
+python scripts/run_telegram_bot.py
+```
+
+Corre por *long polling* — no necesita una URL pública ni webhook. Escribile
+`/start` a tu bot para obtener tu `chat_id` y probar el envío de una oferta
+real desde la pestaña "Cliente" de la web. Sin el token, el módulo sigue
+funcionando en modo *dry-run* (arma los mensajes, no los envía).
+
 ## Interfaz React y API administrativa
 
 La interfaz React consume una API FastAPI que reutiliza los modelos, features y
@@ -176,7 +191,7 @@ y se evalúan, y un diagrama: [`docs/modelos.md`](docs/modelos.md).
 - [x] Optimizador de asignación de recompensas, con política trazable (`MotivoDecision`)
 - [x] Capa de IA generativa integrada (explicación + oferta + chatbot RAG)
 - [x] Chatbot como widget flotante en la web (persiste entre pestañas)
-- [x] Módulo de Telegram — notificación de la oferta y captura de la respuesta (modo dry-run sin token)
+- [x] Bot de Telegram conectado en vivo (@CasinoPalacioReal_bot, `scripts/run_telegram_bot.py`) — notificación de la oferta y captura de la respuesta
 - [x] Medición de la respuesta real (`metrics/respuesta_real.py`) para reemplazar las campañas simuladas
 - [x] Arquitectura de producción documentada (orquestador, colas, red, logs) con diagrama
 - [x] App de demo (Streamlit)
