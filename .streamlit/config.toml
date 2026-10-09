@@ -1,0 +1,11 @@
+# Tema de la app: misma paleta que frontend/src/Dashboard.css (interfaz
+# React de Miguel Ochoa) en su variante oscura, para que la demo Streamlit
+# y la interfaz administrativa se sientan como un mismo producto en vez de
+# el gris/azul genérico por defecto de Streamlit.
+[theme]
+base = "dark"
+primaryColor = "#b98543"
+backgroundColor = "#16211d"
+secondaryBackgroundColor = "#1f2d27"
+textColor = "#edf3f0"
+font = "sans serif"

@@ -8,6 +8,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "src"))
 
+import altair as alt
+import pandas as pd
 import streamlit as st
 
 from casino_ia import config
@@ -23,6 +25,57 @@ from casino_ia.models import (
 from casino_ia.optimization.allocate import asignar_recompensas
 
 st.set_page_config(page_title="Palacio Real · Recompensas", layout="wide", page_icon="🎰")
+
+# Misma paleta que frontend/src/Dashboard.css (interfaz React de Miguel
+# Ochoa), para que la demo Streamlit y la interfaz administrativa se vean
+# como un mismo producto en vez de dos estilos distintos.
+_COLOR_INK = "#26352f"
+_COLOR_MUTED = "#78847e"
+_COLOR_PINE = "#183f37"
+_COLOR_GOLD = "#b98543"
+_COLOR_RIESGO = {"Bajo": "#43877b", "Medio": "#d49b43", "Alto": "#ca6653"}
+
+
+def _grafico_riesgo(pred: pd.DataFrame) -> alt.Chart:
+    datos = (
+        pred["NivelRiesgo"].value_counts().reindex(["Bajo", "Medio", "Alto"]).fillna(0)
+        .rename_axis("Nivel").reset_index(name="Clientes")
+    )
+    return (
+        alt.Chart(datos)
+        .mark_bar(size=54, cornerRadiusTopLeft=4, cornerRadiusTopRight=4)
+        .encode(
+            x=alt.X("Nivel:N", sort=["Bajo", "Medio", "Alto"], title=None,
+                    axis=alt.Axis(labelColor=_COLOR_MUTED, labelFontSize=12, domain=False, tickSize=0)),
+            y=alt.Y("Clientes:Q", title=None,
+                    axis=alt.Axis(labelColor=_COLOR_MUTED, labelFontSize=11, domain=False, tickSize=0, gridColor="#e8ece9")),
+            color=alt.Color("Nivel:N", scale=alt.Scale(domain=list(_COLOR_RIESGO), range=list(_COLOR_RIESGO.values())), legend=None),
+            tooltip=[alt.Tooltip("Nivel:N", title="Riesgo"), alt.Tooltip("Clientes:Q", title="Clientes")],
+        )
+        .properties(height=240)
+        .configure_view(strokeWidth=0)
+    )
+
+
+def _grafico_recompensas(asignadas: pd.DataFrame) -> alt.Chart:
+    if len(asignadas):
+        datos = asignadas["Recompensa"].value_counts().reindex(["baja", "media", "alta"]).fillna(0)
+    else:
+        datos = pd.Series({"baja": 0, "media": 0, "alta": 0})
+    datos = datos.rename_axis("Tipo").reset_index(name="Asignadas")
+    return (
+        alt.Chart(datos)
+        .mark_bar(size=54, color=_COLOR_GOLD, cornerRadiusTopLeft=4, cornerRadiusTopRight=4)
+        .encode(
+            x=alt.X("Tipo:N", sort=["baja", "media", "alta"], title=None,
+                    axis=alt.Axis(labelColor=_COLOR_MUTED, labelFontSize=12, domain=False, tickSize=0)),
+            y=alt.Y("Asignadas:Q", title=None,
+                    axis=alt.Axis(labelColor=_COLOR_MUTED, labelFontSize=11, domain=False, tickSize=0, gridColor="#e8ece9")),
+            tooltip=[alt.Tooltip("Tipo:N", title="Recompensa"), alt.Tooltip("Asignadas:Q", title="Asignadas")],
+        )
+        .properties(height=240)
+        .configure_view(strokeWidth=0)
+    )
 
 
 @st.cache_data
@@ -152,28 +205,28 @@ _CSS_WIDGET = """
 div.st-key-chat_toggle button {
     position: fixed; bottom: 22px; right: 22px; z-index: 999999;
     width: 58px; height: 58px; border-radius: 50%; font-size: 1.4rem;
-    background: #142238; color: #ffffff; border: 1px solid #c9a866;
+    background: #183f37; color: #ffffff; border: 1px solid #b98543;
     box-shadow: 0 6px 18px rgba(0,0,0,.28);
 }
 div.st-key-chat_panel {
     position: fixed; bottom: 22px; right: 22px; z-index: 999999;
     width: min(460px, calc(100vw - 32px));
     max-height: min(82vh, calc(100dvh - 60px)); overflow-y: auto;
-    background: #101b2d; color: #f5f7fb; color-scheme: dark;
-    border: 1px solid #43516a; border-top: 3px solid #c9a866;
+    background: #16211d; color: #edf3f0; color-scheme: dark;
+    border: 1px solid #2e4038; border-top: 3px solid #b98543;
     border-radius: 16px; box-sizing: border-box; isolation: isolate;
     padding: 18px; box-shadow: 0 16px 48px rgba(0,0,0,.45);
-    scrollbar-color: #697a94 #101b2d;
+    scrollbar-color: #5c6e63 #16211d;
 }
 div.st-key-chat_panel [data-testid="stMarkdownContainer"],
 div.st-key-chat_panel label {
-    color: #f5f7fb;
+    color: #edf3f0;
 }
 div.st-key-chat_panel [data-testid="stCaptionContainer"],
 div.st-key-chat_panel [data-testid="stCaptionContainer"] p {
-    color: #c1cbdc; opacity: 1;
+    color: #c2d2cb; opacity: 1;
 }
-div.st-key-chat_panel a { color: #9eceff; }
+div.st-key-chat_panel a { color: #e6c98f; }
 div.st-key-chat_header [data-testid="stHorizontalBlock"] { flex-wrap: nowrap; }
 div.st-key-chat_header [data-testid="stColumn"]:first-child {
     flex: 1 1 auto; min-width: 0;
@@ -182,29 +235,29 @@ div.st-key-chat_header [data-testid="stColumn"]:last-child {
     flex: 0 0 40px; min-width: 40px;
 }
 div.st-key-chat_panel [data-testid="stChatMessage"] {
-    background: #1c2c44; border: 1px solid #43516a; border-radius: 12px;
+    background: #223830; border: 1px solid #2e4038; border-radius: 12px;
 }
 div.st-key-chat_panel [data-testid="stForm"] {
-    background: #101b2d; border: 1px solid #43516a; border-radius: 12px;
+    background: #16211d; border: 1px solid #2e4038; border-radius: 12px;
 }
 div.st-key-chat_panel [data-baseweb="input"],
 div.st-key-chat_panel input {
-    background: #20314a; color: #ffffff; caret-color: #ffffff;
+    background: #28392f; color: #ffffff; caret-color: #ffffff;
 }
-div.st-key-chat_panel input::placeholder { color: #c1cbdc; opacity: 1; }
+div.st-key-chat_panel input::placeholder { color: #c2d2cb; opacity: 1; }
 div.st-key-chat_panel button {
-    background: #243650; color: #ffffff; border: 1px solid #697a94;
+    background: #2a3c33; color: #ffffff; border: 1px solid #5c6e63;
 }
 div.st-key-chat_panel button:hover,
 div.st-key-chat_toggle button:hover {
-    background: #354d6b; color: #ffffff; border-color: #c9a866;
+    background: #34493d; color: #ffffff; border-color: #b98543;
 }
 div.st-key-chat_panel [data-testid="stFormSubmitButton"] button {
-    background: #c9a866; color: #101b2d; border-color: #c9a866;
+    background: #b98543; color: #16211d; border-color: #b98543;
     width: 100%; font-weight: 600;
 }
 div.st-key-chat_panel [data-testid="stFormSubmitButton"] button:hover {
-    background: #dfc38c; border-color: #dfc38c;
+    background: #d7a362; border-color: #d7a362;
 }
 div.st-key-chat_panel button [data-testid="stMarkdownContainer"],
 div.st-key-chat_panel button p { color: inherit; }
@@ -354,10 +407,10 @@ with tab_cartera:
     col_a, col_b = st.columns(2)
     with col_a:
         st.caption("Clientes por nivel de riesgo")
-        st.bar_chart(pred["NivelRiesgo"].value_counts().reindex(["Bajo", "Medio", "Alto"]))
+        st.altair_chart(_grafico_riesgo(pred), use_container_width=True)
     with col_b:
         st.caption("Recompensas asignadas por tipo")
-        st.bar_chart(asignadas["Recompensa"].value_counts() if len(asignadas) else pred["NivelRiesgo"].value_counts() * 0)
+        st.altair_chart(_grafico_recompensas(asignadas), use_container_width=True)
 
     with st.expander("¿Qué significa cada columna?"):
         st.table({"Columna": [c for c, _ in _DICCIONARIO_CARTERA],
@@ -387,6 +440,9 @@ with tab_cartera:
         st.dataframe(
             cand[cols].rename(columns={"NombreCompleto": "Cliente"}),
             width="stretch", hide_index=True,
+            column_config={
+                "MotivoDecision": st.column_config.TextColumn("MotivoDecision", width="large"),
+            },
         )
     else:
         st.info("Ningún cliente tiene valor esperado positivo con estos parámetros.")

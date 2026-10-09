@@ -225,7 +225,10 @@ def asignar_recompensas(
         decision["UpliftProbabilidad"] = mejor["UpliftProbabilidad"]
         decision["Eficiencia"] = mejor["Eficiencia"]
         if mejor["ValorEsperado"] <= 0:
-            decision["MotivoDecision"] = "Sin recompensa: valor esperado no positivo"
+            decision["MotivoDecision"] = (
+                f"Sin recompensa: incluso la mejor opción ({mejor['Recompensa']}) "
+                f"tiene beneficio incremental no positivo (S/ {mejor['ValorEsperado']:.2f})"
+            )
         else:
             decision["RecompensaSugerida"] = mejor["Recompensa"]
             decision["CostoSugerido"] = mejor["Costo"]
@@ -260,15 +263,25 @@ def asignar_recompensas(
 
         if gasto_total + costo > presupuesto:
             cand.at[idx, "GastoAcumulado"] = gasto_total
-            cand.at[idx, "MotivoDecision"] = "No asignada: presupuesto insuficiente"
+            cand.at[idx, "MotivoDecision"] = (
+                f"No asignada: presupuesto insuficiente "
+                f"(quedaban S/ {presupuesto - gasto_total:.2f}, la recompensa {recompensa} cuesta S/ {costo:.2f})"
+            )
             continue
         if recompensa == "alta" and gasto_altas + costo > limite_altas:
             cand.at[idx, "GastoAcumulado"] = gasto_total
-            cand.at[idx, "MotivoDecision"] = "No asignada: tope 25% en recompensas altas"
+            cand.at[idx, "MotivoDecision"] = (
+                f"No asignada: tope 25% en recompensas altas "
+                f"(ya se gastó S/ {gasto_altas:.2f} de S/ {limite_altas:.2f} permitidos)"
+            )
             continue
         if gasto_segmento.get(segmento, 0.0) + costo > limite_segmento:
             cand.at[idx, "GastoAcumulado"] = gasto_total
-            cand.at[idx, "MotivoDecision"] = "No asignada: tope 40% por segmento"
+            cand.at[idx, "MotivoDecision"] = (
+                f"No asignada: tope 40% por segmento "
+                f"(el segmento {segmento} ya recibió S/ {gasto_segmento.get(segmento, 0.0):.2f} "
+                f"de S/ {limite_segmento:.2f} permitidos)"
+            )
             continue
 
         gasto_total += costo
@@ -279,7 +292,10 @@ def asignar_recompensas(
         cand.at[idx, "Costo"] = costo
         cand.at[idx, "GastoAcumulado"] = gasto_total
         cand.at[idx, "Asignada"] = True
-        cand.at[idx, "MotivoDecision"] = "Asignada"
+        cand.at[idx, "MotivoDecision"] = (
+            f"Asignada: recompensa {recompensa} (eficiencia {cand.at[idx, 'Eficiencia']:.2f}, "
+            f"beneficio incremental S/ {cand.at[idx, 'ValorEsperado']:.2f})"
+        )
 
     asignadas = cand[cand["Asignada"]]
     cand.attrs["presupuesto"] = presupuesto
