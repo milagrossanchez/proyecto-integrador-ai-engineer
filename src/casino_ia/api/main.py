@@ -43,6 +43,12 @@ class ChatRequest(BaseModel):
     question: str = Field(min_length=1, max_length=1000)
 
 
+class TelegramSendRequest(BaseModel):
+    model_config = ConfigDict(str_strip_whitespace=True)
+
+    chat_id: str = Field(min_length=1, max_length=40)
+
+
 def _service() -> DashboardService:
     try:
         return get_dashboard_service()
@@ -102,6 +108,24 @@ def explanation(
 ) -> dict[str, str]:
     try:
         return service.explanation(client_id, budget)
+    except ClientNotFoundError as exc:
+        raise HTTPException(status_code=404, detail="Cliente no encontrado.") from exc
+
+
+@app.get("/api/v1/telegram/status")
+def telegram_status(service: Annotated[DashboardService, Depends(_service)]) -> dict:
+    return service.telegram_status()
+
+
+@app.post("/api/v1/clients/{client_id}/telegram")
+def send_telegram(
+    client_id: int,
+    request: TelegramSendRequest,
+    service: Annotated[DashboardService, Depends(_service)],
+    budget: Annotated[float, Query(gt=0, le=1_000_000)] = config.REWARDS.presupuesto,
+) -> dict:
+    try:
+        return service.send_telegram(client_id, budget, request.chat_id)
     except ClientNotFoundError as exc:
         raise HTTPException(status_code=404, detail="Cliente no encontrado.") from exc
 

@@ -2,11 +2,12 @@ import { lazy, Suspense, useDeferredValue, useEffect, useState, type FormEvent }
 import {
   AlertTriangle, BadgeCheck, Bot, ChevronDown,
   ChevronLeft, ChevronRight, CircleHelp, Coins, Gift, MessageSquareText,
-  RefreshCw, Search, Send, ShieldCheck, Sparkles, UsersRound, X,
+  RefreshCw, Search, Send, SendHorizontal, ShieldCheck, Sparkles, UsersRound, X,
 } from 'lucide-react'
 import {
-  ApiError, getChatReply, getClient, getExplanation, getPortfolio,
-  type ChatMessage, type ClientDetail, type Portfolio,
+  ApiError, DEMO_TELEGRAM_CLIENTES, getChatReply, getClient, getExplanation, getPortfolio,
+  getTelegramStatus, sendTelegramOffer,
+  type ChatMessage, type ClientDetail, type Portfolio, type TelegramStatus,
 } from './api'
 import './Dashboard.css'
 
@@ -39,6 +40,10 @@ function App() {
   const [clientResult, setClientResult] = useState<{ id: number; budget: number; data: ClientDetail } | null>(null)
   const [explanation, setExplanation] = useState<{ explicacion: string; oferta: string; mensaje: string } | null>(null)
   const [explanationLoading, setExplanationLoading] = useState(false)
+  const [telegramStatus, setTelegramStatus] = useState<TelegramStatus | null>(null)
+  const [chatIdInput, setChatIdInput] = useState('')
+  const [telegramSending, setTelegramSending] = useState(false)
+  const [telegramMessage, setTelegramMessage] = useState<{ ok: boolean; text: string } | null>(null)
   const [chatOpen, setChatOpen] = useState(false)
   const [chatInput, setChatInput] = useState('')
   const [chatLoading, setChatLoading] = useState(false)
@@ -62,6 +67,12 @@ function App() {
     }, 160)
     return () => { window.clearTimeout(timer); controller.abort() }
   }, [budget, deferredSearch, risk, assignment, page, refreshToken])
+
+  useEffect(() => {
+    const controller = new AbortController()
+    getTelegramStatus(controller.signal).then(setTelegramStatus).catch(() => setTelegramStatus(null))
+    return () => controller.abort()
+  }, [])
 
   useEffect(() => {
     if (selectedId === null) return
@@ -98,6 +109,8 @@ function App() {
     setExplanation(null)
     setClientResult(null)
     setSelectedId(id)
+    setChatIdInput(DEMO_TELEGRAM_CLIENTES[id] ?? '')
+    setTelegramMessage(null)
   }
 
   const requestExplanation = async () => {
@@ -106,6 +119,24 @@ function App() {
     try { setExplanation(await getExplanation(selectedId, budget)) }
     catch (cause) { setError(cause instanceof Error ? cause.message : 'No se pudo generar la explicación.') }
     finally { setExplanationLoading(false) }
+  }
+
+  const sendTelegram = async () => {
+    if (selectedId === null || !chatIdInput.trim()) return
+    setTelegramSending(true)
+    setTelegramMessage(null)
+    try {
+      const result = await sendTelegramOffer(selectedId, budget, chatIdInput.trim())
+      setTelegramMessage(
+        result.enviado
+          ? { ok: true, text: 'Oferta enviada — revisá Telegram.' }
+          : { ok: false, text: `No se envió: ${result.motivo ?? 'motivo desconocido'}` },
+      )
+    } catch (cause) {
+      setTelegramMessage({ ok: false, text: cause instanceof Error ? cause.message : 'No se pudo enviar la oferta.' })
+    } finally {
+      setTelegramSending(false)
+    }
   }
 
   const submitChat = async (event: FormEvent<HTMLFormElement>) => {
@@ -168,7 +199,14 @@ function App() {
         {clientLoading || !client ? <div className="drawer-loading">Cargando ficha y decisión...</div> : <><div className="drawer-risk"><RiskBadge risk={client.NivelRiesgo} /><span>{client.EsPerfilAtipico ? <><AlertTriangle size={14} /> Perfil atípico</> : <><BadgeCheck size={14} /> Perfil analizado</>}</span></div><div className="drawer-metrics"><div><span>Probabilidad de respuesta</span><strong>{percent(client.ProbRespuesta ?? 0)}</strong></div><div><span>CoinIn histórico</span><strong>{money(client.CoinInTotal)}</strong></div></div>
           <section className="drawer-section"><h3>Decisión de campaña</h3><div className="decision-block"><div><span>Estado</span><strong>{client.Asignada ? 'Recompensa asignada' : 'Sin asignación'}</strong></div><div><span>Recompensa</span><strong>{client.Recompensa ?? 'No aplica'}</strong></div><div><span>Valor esperado</span><strong>{client.ValorEsperado === null ? '—' : money(client.ValorEsperado)}</strong></div><p>{client.MotivoDecision}</p></div></section>
           <section className="drawer-section"><h3>Actividad y señales</h3><dl className="signal-list"><div><dt>Sesiones registradas</dt><dd>{client.NroSesiones}</dd></div><div><dt>Días desde última sesión</dt><dd>{client.DiasDesdeUltimaSesion}</dd></div><div><dt>Antigüedad observada</dt><dd>{client.AntiguedadDias} días</dd></div><div><dt>Sesiones con chasing</dt><dd>{percent(client.PctSesionesChasing ?? 0)}</dd></div><div><dt>Sesiones largas</dt><dd>{percent(client.PctSesionesLargas ?? 0)}</dd></div><div><dt>Actividad de madrugada</dt><dd>{percent(client.PctJuegoMadrugada ?? 0)}</dd></div></dl></section>
-          <section className="drawer-section explanation-section"><div className="section-heading"><h3>Lectura del modelo</h3><Sparkles size={16} /></div>{explanation ? <div className="explanation-copy"><p>{explanation.explicacion}</p><strong>{explanation.oferta}</strong><p>{explanation.mensaje}</p></div> : <p className="muted">Genera una explicación a partir de las señales del cliente y la decisión actual.</p>}<button className="secondary-button" onClick={requestExplanation} disabled={explanationLoading}>{explanationLoading ? 'Preparando explicación...' : <><Sparkles size={15} /> Generar explicación</>}</button></section></>}</aside></div>}
+          <section className="drawer-section explanation-section"><div className="section-heading"><h3>Lectura del modelo</h3><Sparkles size={16} /></div>{explanation ? <div className="explanation-copy"><p>{explanation.explicacion}</p><strong>{explanation.oferta}</strong><p>{explanation.mensaje}</p></div> : <p className="muted">Genera una explicación a partir de las señales del cliente y la decisión actual.</p>}<button className="secondary-button" onClick={requestExplanation} disabled={explanationLoading}>{explanationLoading ? 'Preparando explicación...' : <><Sparkles size={15} /> Generar explicación</>}</button></section>
+          <section className="drawer-section telegram-section"><div className="section-heading"><h3>Enviar por Telegram</h3><SendHorizontal size={16} /></div>
+            <p className="muted">{telegramStatus === null ? 'Verificando conexión con Telegram...' : telegramStatus.connected ? `🟢 Conectado (@${telegramStatus.username}).` : telegramStatus.enabled ? '🔴 Token configurado pero sin conexión — modo dry-run.' : '⚪ Sin configurar (falta TELEGRAM_BOT_TOKEN) — modo dry-run.'}</p>
+            {selectedId !== null && DEMO_TELEGRAM_CLIENTES[selectedId] ? <p className="muted">🟢 Cliente de demo: ya tiene un chat_id real precargado.</p> : <p className="muted">Escribile a <strong>@CasinoPalacioReal_bot</strong> en Telegram y mandale <code>/start</code>: te responde con tu chat_id. En producción, cada cliente ya tendría el suyo vinculado.</p>}
+            <label className="search-field"><SendHorizontal size={16} /><input value={chatIdInput} onChange={(event) => setChatIdInput(event.target.value)} placeholder="chat_id de Telegram del destinatario" aria-label="chat_id de Telegram del destinatario" /></label>
+            <button className="secondary-button" onClick={sendTelegram} disabled={telegramSending || !chatIdInput.trim()}>{telegramSending ? 'Enviando...' : <><SendHorizontal size={15} /> Enviar oferta por Telegram</>}</button>
+            {telegramMessage && <p className={telegramMessage.ok ? 'telegram-ok' : 'telegram-error'}>{telegramMessage.text}</p>}
+          </section></>}</aside></div>}
 
       {chatOpen && <section className="chat-panel" aria-label="Asistente de políticas"><div className="chat-header"><div className="chat-avatar"><Bot size={17} /></div><div><strong>Asistente de políticas</strong><span>RAG · Base documental</span></div><button className="icon-button" onClick={() => setChatOpen(false)} title="Cerrar asistente" aria-label="Cerrar asistente"><X size={17} /></button></div><div className="chat-messages">{messages.length === 0 && <div className="chat-welcome"><span className="chat-spark"><Sparkles size={16} /></span><strong>¿Qué necesitas revisar?</strong><p>Consulta reglas de elegibilidad, recompensas y juego responsable.</p><button onClick={() => setChatInput('¿Qué ocurre con clientes de riesgo alto?')}>¿Qué ocurre con riesgo alto?</button><button onClick={() => setChatInput('¿Qué límites tiene el presupuesto?')}>Límites del presupuesto</button></div>}{messages.map((message, index) => <div key={`${message.role}-${index}`} className={`chat-message ${message.role}`}>{message.content}</div>)}{chatLoading && <div className="chat-message assistant typing">Consultando políticas...</div>}</div><form className="chat-form" onSubmit={submitChat}><input value={chatInput} onChange={(event) => setChatInput(event.target.value)} placeholder="Pregunta sobre las políticas..." aria-label="Pregunta para el asistente" maxLength={1000} /><button type="submit" disabled={!chatInput.trim() || chatLoading} title="Enviar pregunta" aria-label="Enviar pregunta"><Send size={16} /></button></form><div className="chat-disclaimer">Respuestas basadas en documentos internos.</div></section>}
       {!chatOpen && <button className="chat-fab" onClick={() => setChatOpen(true)} aria-label="Abrir asistente de políticas" title="Asistente de políticas"><MessageSquareText size={20} /><span>Políticas</span></button>}

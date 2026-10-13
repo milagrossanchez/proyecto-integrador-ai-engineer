@@ -24,6 +24,14 @@ class FakeService:
     def explanation(self, client_id, budget):
         return {"explicacion": "Sin recompensa", "oferta": "No aplica", "mensaje": "No enviar"}
 
+    def telegram_status(self):
+        return {"enabled": True, "connected": True, "username": "CasinoPalacioReal_bot"}
+
+    def send_telegram(self, client_id, budget, chat_id):
+        if client_id != 42:
+            raise ClientNotFoundError(client_id)
+        return {"enviado": True, "id_evento": "evt-1", "telegram": {"ok": True}}
+
     def chat(self, question):
         return {"respuesta": question, "fuentes": []}
 
@@ -57,3 +65,27 @@ def test_chat_trims_and_rejects_empty_question(monkeypatch):
         "respuesta"
     ] == "política"
     assert client.post("/api/v1/chat", json={"question": "   "}).status_code == 422
+
+
+def test_telegram_status_forwards_service_response(monkeypatch):
+    monkeypatch.setattr(main, "get_dashboard_service", FakeService)
+
+    response = TestClient(main.app).get("/api/v1/telegram/status")
+
+    assert response.status_code == 200
+    assert response.json() == {"enabled": True, "connected": True, "username": "CasinoPalacioReal_bot"}
+
+
+def test_send_telegram_ok_and_not_found(monkeypatch):
+    monkeypatch.setattr(main, "get_dashboard_service", FakeService)
+    client = TestClient(main.app)
+
+    ok = client.post("/api/v1/clients/42/telegram", json={"chat_id": "123"})
+    assert ok.status_code == 200
+    assert ok.json()["enviado"] is True
+
+    not_found = client.post("/api/v1/clients/999/telegram", json={"chat_id": "123"})
+    assert not_found.status_code == 404
+
+    empty = client.post("/api/v1/clients/42/telegram", json={"chat_id": "   "})
+    assert empty.status_code == 422

@@ -10,6 +10,7 @@ import pandas as pd
 from casino_ia import config
 from casino_ia.data import cargar_features_cliente
 from casino_ia.genai import AsistentePoliticas, explicar_cliente
+from casino_ia.genai.telegram_bot import enviar_oferta
 from casino_ia.models import (
     ModeloRespuesta,
     ModeloRespuestaNBO,
@@ -17,6 +18,15 @@ from casino_ia.models import (
     ModeloRiesgo,
 )
 from casino_ia.optimization.allocate import asignar_recompensas, baseline_reglas
+
+# Mismos 3 clientes de demo que en la app Streamlit (ver streamlit_app.py),
+# con un chat_id real de Telegram precargado para poder demostrar el envío
+# sin tener que escribirle al bot y copiar el chat_id en el momento.
+DEMO_TELEGRAM_CLIENTES: dict[int, str] = {
+    900000: "8574346078",
+    900001: "8574346078",
+    900002: "8574346078",
+}
 
 _COLUMNAS_LISTADO = [
     "IdCliente",
@@ -208,6 +218,24 @@ class DashboardService:
 
     def explanation(self, client_id: int, budget: float) -> dict:
         return explicar_cliente(self.client(client_id, budget))
+
+    def telegram_status(self) -> dict:
+        if not config.TELEGRAM.enabled:
+            return {"enabled": False, "connected": False, "username": None}
+        try:
+            import requests
+
+            r = requests.get(config.TELEGRAM.api_url("getMe"), timeout=10)
+            r.raise_for_status()
+            return {"enabled": True, "connected": True, "username": r.json()["result"]["username"]}
+        except Exception:  # noqa: BLE001
+            return {"enabled": True, "connected": False, "username": None}
+
+    def send_telegram(self, client_id: int, budget: float, chat_id: str) -> dict:
+        # enviar_oferta() ya llama a explicar_cliente() internamente para
+        # redactar el mensaje — mismo flujo que usa la app Streamlit.
+        ficha = self.client(client_id, budget)
+        return enviar_oferta(chat_id, ficha, id_campana="DEMO-WEB")
 
     def chat(self, question: str) -> dict:
         if self._assistant is None:

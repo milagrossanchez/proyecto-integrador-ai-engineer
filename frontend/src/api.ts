@@ -48,6 +48,17 @@ export type Portfolio = {
 }
 
 export type ChatMessage = { role: 'user' | 'assistant'; content: string }
+export type TelegramStatus = { enabled: boolean; connected: boolean; username: string | null }
+export type TelegramSendResult = { enviado: boolean; motivo?: string; id_evento?: string }
+
+// Mismos 3 clientes de demo que en la app Streamlit, con un chat_id real de
+// Telegram precargado para poder demostrar el envío sin escribir nada a mano.
+export const DEMO_TELEGRAM_CLIENTES: Record<number, string> = {
+  900000: '8574346078',
+  900001: '8574346078',
+  900002: '8574346078',
+}
+
 type PortfolioParams = { budget: number; search: string; risk: string; assignment: string; page: number; pageSize: number; signal: AbortSignal }
 const apiRoot = `${import.meta.env.VITE_API_URL ?? ''}/api/v1`
 
@@ -99,4 +110,15 @@ export function getExplanation(id: number, budget: number): Promise<{ explicacio
 
 export function getChatReply(question: string): Promise<{ respuesta: string; fuentes: string[] }> {
   return request('/chat', { method: 'POST', body: JSON.stringify({ question }) })
+}
+
+export function getTelegramStatus(signal?: AbortSignal): Promise<TelegramStatus> {
+  return request('/telegram/status', { signal })
+}
+
+export function sendTelegramOffer(id: number, budget: number, chatId: string): Promise<TelegramSendResult> {
+  return request(`/clients/${id}/telegram?budget=${budget}`, {
+    method: 'POST',
+    body: JSON.stringify({ chat_id: chatId }),
+  })
 }
