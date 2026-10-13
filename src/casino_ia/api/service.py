@@ -160,7 +160,15 @@ class DashboardService:
         ).merge(decisions, on="IdCliente", validate="one_to_one")
 
         if search:
-            view = view[view["IdCliente"].astype(str).str.contains(search.strip(), case=False)]
+            query = search.strip()
+            if query.lower() == "demo":
+                view = view[view["IdCliente"].isin(DEMO_TELEGRAM_CLIENTES)]
+            elif query.isdigit():
+                # IdCliente es único: búsqueda exacta, no "contiene" (si no,
+                # buscar "900000" también trae 900001..900009 por prefijo).
+                view = view[view["IdCliente"] == int(query)]
+            else:
+                view = view[view["NombreCompleto"].str.contains(query, case=False, na=False)]
         if risk:
             view = view[view["NivelRiesgo"] == risk]
         if assignment == "assigned":
