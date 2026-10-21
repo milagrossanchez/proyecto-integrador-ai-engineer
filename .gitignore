@@ -39,3 +39,12 @@ desktop.ini
 
 # deck obsoleto (reemplazado por Primer_Seguimiento_Riesgos_Recompensas.pptx)
 entregables/*_obs.pptx
+
+# --- Material de apoyo (PDF/PPT/Word/imágenes de presentación): queda local,
+# no se versiona. El repositorio es solo código, pruebas y documentación
+# técnica del código. ---
+PDF/
+entregables/*.docx
+entregables/*.png
+entregables/*.jpg
+entregables/*.jpeg
